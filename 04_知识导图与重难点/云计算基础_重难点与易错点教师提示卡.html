@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>云计算基础 · 重难点与易错点教师提示卡</title>
+<style>
+  body{font-family:"Microsoft YaHei",sans-serif;background:#f5f6fa;margin:0;padding:24px;color:#2c2c2c;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  h1{text-align:center;color:#0d47a1;}
+  .sub{text-align:center;color:#666;font-size:14px;margin-bottom:18px;}
+  .card{background:#fff;border-radius:10px;padding:18px 26px;margin:18px 0;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:6px solid #1a73e8;}
+  .card h2{margin:0 0 10px;color:#0d47a1;font-size:18px;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .box{border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.6;}
+  .b-key{background:#e8f5e9;border:1px solid #a5d6a7;}
+  .b-err{background:#ffebee;border:1px solid #ef9a9a;}
+  .b-ask{background:#e3f2fd;border:1px solid #90caf9;}
+  .b-board{background:#fff3e0;border:1px solid #ffcc80;}
+  .box h3{margin:0 0 6px;font-size:14px;}
+  .b-key h3{color:#2e7d32;} .b-err h3{color:#c62828;} .b-ask h3{color:#1565c0;} .b-board h3{color:#e65100;}
+  ul{margin:2px 0;padding-left:18px;} li{margin:3px 0;}
+  .tag{display:inline-block;background:#1a73e8;color:#fff;border-radius:4px;padding:1px 9px;font-size:12px;margin-bottom:4px;}
+  @media print{.card{box-shadow:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>《云计算基础》重难点与易错点 · 教师随堂提示卡</h1>
+<div class="sub">每单元一卡：重点讲什么 · 学生常错什么 · 怎么提问 · 板书怎么写</div>
+
+<!-- 单元一 -->
+<div class="card">
+  <span class="tag">第一单元 · 课时1-12 · 概念/服务/部署</span>
+  <h2>云计算基础概念</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>NIST 3-5-4 框架（3服务/5特征/4部署）</li>
+      <li>IaaS/PaaS/SaaS 区别与例子</li>
+      <li>4 种部署模型及适用场景</li>
+      <li>云计算特点（按需、弹性、池化…）</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>把 3/5/4 记反（常说成 3 特征）</li>
+      <li>分不清 IaaS 和 PaaS（都“给平台”错觉）</li>
+      <li>以为私有云一定更安全/更便宜</li>
+      <li>把“云”等同于“网盘”</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“你手机里哪些 App 其实是在‘云’上跑的？”</li>
+      <li>“租毛坯房、精装房、住酒店，分别像哪种云服务？”</li>
+      <li>“学校的内部系统，该用公有云还是私有云？”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>左：NIST 3-5-4 三段式框架图</li>
+      <li>中：I/P/S 三层对比表（管什么/例子）</li>
+      <li>右：4 部署模型 + 一句话场景</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- 单元二 -->
+<div class="card" style="border-left-color:#e53935;">
+  <span class="tag">第二单元 · 课时13-24 · 安全/市场</span>
+  <h2>云安全与云市场</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>CIA 三要素（机密/完整/可用）</li>
+      <li>加密、哈希、数字签名的作用区别</li>
+      <li>责任共担模型（厂商 vs 用户）</li>
+      <li>国内主流云厂商（阿里/腾讯/天翼/华为）</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>哈希当加密用（哈希不可逆！）</li>
+      <li>以为“上云=厂商全包安全”</li>
+      <li>分不清对称/非对称加密</li>
+      <li>DDoS 破坏的是“可用性”不是“机密性”</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“文件被偷看、被改了、打不开，分别破坏 CIA 哪一条？”</li>
+      <li>“租房时，房东和租客各管什么安全？”</li>
+      <li>“为什么不能把存储桶设成‘公开’？”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>CIA 三角 + 每角对应技术手段</li>
+      <li>加密/哈希/签名 三栏对比</li>
+      <li>责任共担：左右两列分清楚</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- 单元三 -->
+<div class="card" style="border-left-color:#00897b;">
+  <span class="tag">第三单元 · 课时25-36 · 网络/数据库</span>
+  <h2>计算机网络与数据库</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>IP 地址、DNS 域名解析</li>
+      <li>HTTP/HTTPS、路由器/交换机</li>
+      <li>关系型数据库：表/行/列/主键</li>
+      <li>SQL 基本查询 SELECT</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>把 DNS 当 IP 本身</li>
+      <li>主键可以重复（错！必须唯一）</li>
+      <li>混淆“字段”和“记录”</li>
+      <li>以为 NoSQL 不是数据库</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“输入网址到看到页面，中间发生了什么？”</li>
+      <li>“Excel 的表、行、列，对应数据库叫什么？”</li>
+      <li>“怎么一句话找到表里‘张三’那条记录？”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>“输入网址→DNS→IP→HTTP→返回”流程图</li>
+      <li>数据库：表结构图（主键标红）</li>
+      <li>SELECT 例句写在右侧</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- 单元四 -->
+<div class="card" style="border-left-color:#8e24aa;">
+  <span class="tag">第四单元 · 课时37-48 · 虚拟化/Linux</span>
+  <h2>虚拟化基础与 Linux</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>虚拟化概念与 Hypervisor</li>
+      <li>虚拟机、快照、迁移</li>
+      <li>Linux 常见命令（ls/cd/pwd/mkdir/rm）</li>
+      <li>文件权限 rwx</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>rm -rf 当普通删除用（危险！）</li>
+      <li>混淆 cd 和 ls 的用途</li>
+      <li>以为虚拟机=一台真电脑（是软件模拟）</li>
+      <li>权限 r/w/x 含义记混</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“一栋楼隔成多个房间，像不像虚拟化？”</li>
+      <li>“我要看现在在哪个目录，用哪条命令？”</li>
+      <li>“删东西前为什么要先确认路径？”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>物理机 → Hypervisor → 多虚拟机 层级图</li>
+      <li>命令速查表（5 条 + 一句话用途）</li>
+      <li>权限 rwx 三位示例</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- 单元五 -->
+<div class="card" style="border-left-color:#fb8c00;">
+  <span class="tag">第五单元 · 课时49-60 · Web/公有云</span>
+  <h2>Web 服务与公有云</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>网站上线链路：域名→DNS→ECS→Nginx</li>
+      <li>对象存储 OSS/COS 用途</li>
+      <li>VPC、负载均衡、CDN、弹性伸缩</li>
+      <li>按需付费模式</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>把对象存储当数据库用</li>
+      <li>以为 CDN 让网站更慢</li>
+      <li>混淆 ECS 和对象存储</li>
+      <li>不懂“弹性”为什么省钱</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“双十一流量暴涨，传统机房和云谁更扛得住？为什么？”</li>
+      <li>“视频网站的大文件该存 ECS 还是对象存储？”</li>
+      <li>“为什么要做负载均衡？”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>“网站上线全链路”箭头图</li>
+      <li>公有云组件对照表（ECS/存储/VPC/LB/CDN）</li>
+    </ul></div>
+  </div>
+</div>
+
+<!-- 单元六 -->
+<div class="card" style="border-left-color:#607d8b;">
+  <span class="tag">第六单元 · 课时61-72 · 私有云/复习</span>
+  <h2>私有云与综合复习</h2>
+  <div class="grid">
+    <div class="box b-key"><h3>★ 教学重点</h3><ul>
+      <li>私有云 vs 公有云 取舍</li>
+      <li>课程全链路回顾（概念→技术→平台）</li>
+      <li>综合卷查漏补缺</li>
+    </ul></div>
+    <div class="box b-err"><h3>⚠ 学生易错</h3><ul>
+      <li>复习时只背术语、不会串联</li>
+      <li>混淆公有/私有/混合的适用场景</li>
+      <li>简答题写太短、缺例子</li>
+    </ul></div>
+    <div class="box b-ask"><h3>❓ 课堂提问话术</h3><ul>
+      <li>“医院病历这种敏感数据，该放哪种云？”</li>
+      <li>“用一张图，把咱们学的云串起来”</li>
+    </ul></div>
+    <div class="box b-board"><h3>📋 板书要点</h3><ul>
+      <li>用知识导图 ⑥ 做整书串联</li>
+      <li>红笔标出高频考点（3-5-4、CIA、ECS）</li>
+    </ul></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云计算基础技术与应用 · 前12课时教案（职高版）</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface:#f8f7f4; --border:#e0ddd5; --border2:#ccc9c0;
+    --text:#2c2c2a; --text2:#666460; --text3:#999692;
+    --blue:#185fa5; --blue-bg:#e6f1fb; --teal:#0f6e56; --teal-bg:#e1f5ee;
+    --coral:#993c1d; --coral-bg:#faece7; --amber:#854f0b; --amber-bg:#faeeda;
+    --radius:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Microsoft YaHei","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:14px;padding:40px 20px}
+  .container{max-width:860px;margin:0 auto}
+  h1{font-size:22px;font-weight:600;text-align:center;margin-bottom:6px;letter-spacing:1px}
+  .subtitle{text-align:center;color:var(--text2);font-size:13px;margin-bottom:30px}
+  .info-box{background:var(--amber-bg);border:1px solid #f0d9a8;border-radius:var(--radius);padding:14px 18px;margin-bottom:30px;font-size:13px;color:var(--amber);line-height:1.8}
+  .info-box b{color:var(--coral)}
+  h2.section-title{font-size:18px;font-weight:600;margin:36px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--blue);color:var(--blue)}
+  table.overview{width:100%;border-collapse:collapse;margin-bottom:30px;font-size:13px}
+  table.overview th{background:var(--blue);color:#fff;padding:10px 8px;text-align:center;font-weight:500;font-size:13px}
+  table.overview td{padding:8px;border:1px solid var(--border);text-align:center}
+  table.overview td.ch{background:var(--blue-bg);color:var(--blue);font-weight:500}
+  table.overview tr:nth-child(even) td{background:#fafaf8}
+  .lesson{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:24px;overflow:hidden}
+  .lesson-header{padding:14px 20px;display:flex;align-items:center;gap:12px}
+  .lesson-header.l1{background:var(--blue-bg);border-bottom:2px solid var(--blue)}
+  .lesson-header.l2{background:var(--teal-bg);border-bottom:2px solid var(--teal)}
+  .lesson-header.l3{background:var(--coral-bg);border-bottom:2px solid var(--coral)}
+  .lesson-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff;flex-shrink:0}
+  .lesson-header.l1 .lesson-num{background:var(--blue)}
+  .lesson-header.l2 .lesson-num{background:var(--teal)}
+  .lesson-header.l3 .lesson-num{background:var(--coral)}
+  .lesson-title{font-size:15px;font-weight:600}
+  .lesson-meta{font-size:12px;color:var(--text2);margin-top:2px}
+  .lesson-body{padding:16px 20px}
+  .field{margin-bottom:14px}
+  .field-label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:5px;display:flex;align-items:center;gap:6px}
+  .field-label::before{content:"";width:3px;height:13px;border-radius:2px;display:inline-block}
+  .field-label.goal::before{background:var(--teal)}
+  .field-label.focus::before{background:var(--coral)}
+  .field-label.diff::before{background:var(--amber)}
+  .field-label.content::before{background:var(--blue)}
+  .field-label.process::before{background:#7F77DD}
+  .field-label.hw::before{background:var(--text3)}
+  .field-content{font-size:13px;line-height:1.85;padding-left:9px}
+  .field-content ul{list-style:none;padding:0}
+  .field-content li{padding-left:16px;position:relative;margin-bottom:3px}
+  .field-content li::before{content:"·";position:absolute;left:4px;font-weight:700;color:var(--text3)}
+  .field-content strong{color:var(--text)}
+  .process-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+  .process-table th{background:var(--surface);padding:6px 8px;border:1px solid var(--border);text-align:center;font-weight:500;color:var(--text2);white-space:nowrap}
+  .process-table td{padding:6px 8px;border:1px solid var(--border);vertical-align:top}
+  .process-table td.time{text-align:center;color:var(--text2);white-space:nowrap;width:60px}
+  .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin:0 3px 3px 0}
+  .tag theory{background:var(--blue-bg);color:var(--blue)}
+  .tag.practice{background:var(--teal-bg);color:var(--teal)}
+  .tag.review{background:var(--coral-bg);color:var(--coral)}
+  .phase-banner{text-align:center;padding:10px;border-radius:var(--radius);margin:30px 0 20px;font-size:14px;font-weight:600;letter-spacing:1px}
+  .phase-banner.p1{background:var(--blue-bg);color:var(--blue)}
+  .phase-banner.p2{background:var(--teal-bg);color:var(--teal)}
+  .phase-banner.p3{background:var(--coral-bg);color:var(--coral)}
+  .note{font-size:12px;color:var(--text3);margin-top:8px;padding:8px 12px;background:var(--surface);border-radius:6px;line-height:1.7}
+  .note b{color:var(--text2)}
+  @media print{body{padding:10px}.lesson{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>云计算基础技术与应用 · 前12课时教案</h1>
+<p class="subtitle">教材：易海博、池瑞楠主编（ISBN 9787115664570） ｜ 适用：职业高中 ｜ 总课时68，本册覆盖第1～4章（课时1-12）</p>
+
+<div class="info-box">
+  <b>使用说明：</b>本教案基于教材配套PPT课件编写，针对职高学生特点做了"降维"处理——理论讲够用、重实操体验、多生活化类比。每课时按2课时（90分钟）设计，含教学目标、重难点、内容要点、教学过程（分时段）、课后作业五个模块，可直接打印作为备课底稿。PPT页码标注便于课堂切换幻灯片。
+</div>
+
+<h2 class="section-title">12课时进度概览</h2>
+<table class="overview">
+  <tr>
+    <th style="width:50px">课时</th>
+    <th style="width:70px">对应章节</th>
+    <th>课题</th>
+    <th style="width:80px">类型</th>
+    <th style="width:60px">PPT页码</th>
+  </tr>
+  <tr><td class="ch">1</td><td>第1章 上</td><td>初识云计算——概念与内涵</td><td>理论</td><td>P1-P11</td></tr>
+  <tr><td class="ch">2</td><td>第1章 中</td><td>云计算发展历程与并行/分布式计算</td><td>理论</td><td>P12-P27</td></tr>
+  <tr><td class="ch">3</td><td>第1章 下</td><td>集群/网格/效用计算 + 实战：云端Office协作</td><td>理论+实战</td><td>P28-P43</td></tr>
+  <tr><td class="ch">4</td><td>第2章 上</td><td>SaaS详解——软件即服务</td><td>理论</td><td>P1-P18</td></tr>
+  <tr><td class="ch">5</td><td>第2章 中</td><td>PaaS与IaaS详解 + 三种服务模式关系</td><td>理论</td><td>P19-P35</td></tr>
+  <tr><td class="ch">6</td><td>第2章 下</td><td>服务模式衍生 + 天翼云案例 + 实战：Gitee代码仓库</td><td>理论+实战</td><td>P36-P48</td></tr>
+  <tr><td class="ch">7</td><td>第3章 上</td><td>公有云与社区云</td><td>理论</td><td>P1-P20</td></tr>
+  <tr><td class="ch">8</td><td>第3章 中</td><td>私有云与混合云</td><td>理论</td><td>P21-P34</td></tr>
+  <tr><td class="ch">9</td><td>第3章 下</td><td>四种部署方式对比 + 实战：部署CloudSim平台</td><td>理论+实战</td><td>P35-P45</td></tr>
+  <tr><td class="ch">10</td><td>第4章 上</td><td>云计算的本质与超大规模、高可靠、高性价比</td><td>理论</td><td>P1-P12</td></tr>
+  <tr><td class="ch">11</td><td>第4章 中</td><td>按需计费、资源利用率、虚拟化透明化、高扩展性、异构支持</td><td>理论</td><td>P13-P24</td></tr>
+  <tr><td class="ch">12</td><td>第4章 下</td><td>实战：安装VMware虚拟机 + 第一阶段小结与测验</td><td>实战+考核</td><td>P25-P28</td></tr>
+</table>
+
+<!-- ==================== 第1章 ==================== -->
+<div class="phase-banner p1">第一阶段 · 认知入门（课时1-12，覆盖第1-4章）</div>
+
+<!-- 课时1 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">1</div>
+    <div>
+      <div class="lesson-title">初识云计算——概念与内涵</div>
+      <div class="lesson-meta">第1章 云计算的简介（上） ｜ 对应PPT：P1-P11 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解云计算的基本概念，掌握NIST定义的核心要素；理解云计算与互联网、虚拟化的关系</li>
+          <li><strong>能力目标：</strong>能用自己的话解释"什么是云计算"，能从厂商、用户、抽象三个角度描述云计算</li>
+          <li><strong>素养目标：</strong>建立对云计算的初步兴趣，意识到云技术已渗透日常生活</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">云计算的NIST正式定义（按使用量付费、按需访问、资源共享池）；"云"与互联网的关系</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">从多个角度理解云计算定义；理解虚拟化作为云计算基础的作用</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>云计算的概念（PPT P3-P6）：</strong>厂商角度（服务器集群上的硬件+软件资源）、用户角度（免费或按需租用）、抽象角度（商业计算模型）、NIST正式定义（5个关键特征：按需付费、网络访问、资源共享池、快速提供、少管理）</li>
+          <li><strong>云计算的内涵（PPT P7-P11）：</strong>"云"=互联网的比喻；云计算="互联网+计算"；大规模互联网应用推动云发展；移动终端加速数据上云；虚拟化是云计算的重要基础（一台物理机虚拟为多台逻辑机→资源池→按需配给）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">导入</td><td>10min</td><td>展示三组生活对比：U盘拷文件 vs 网盘下载 / 买DVD vs 在线看视频 / 本地装PS vs 在线修图。提问："右边的方式有什么共同点？"</td><td>观察对比、同桌讨论、回答</td></tr>
+        <tr><td class="time">新授①</td><td>20min</td><td>讲解云计算概念。先用一句话通俗定义："通过互联网使用别人的计算机资源，按用多少付多少钱"。再依次讲厂商角度、用户角度、抽象角度，最后讲NIST定义（PPT P4-P6）</td><td>听讲、记笔记</td></tr>
+        <tr><td class="time">新授②</td><td>15min</td><td>讲解云计算内涵。重点讲"云=互联网"、虚拟化概念。用"自来水公司"类比：水厂（云服务商）供水（计算资源），用户拧开水龙头就有水（按需使用），按水表付费（按量计费）</td><td>参与类比讨论</td></tr>
+        <tr><td class="time">互动</td><td>15min</td><td>提问讨论："你手机里哪些APP用了云计算？"引导学生说出网盘、在线视频、微信、王者荣耀（云服务器）等</td><td>思考、举手回答、互相补充</td></tr>
+        <tr><td class="time">巩固</td><td>10min</td><td>用5道判断题快速检验："云计算必须有互联网""云计算就是网站"等，逐题讲解</td><td>判断、讨论对错</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>板书思维导图：云计算=互联网+计算+虚拟化+按需付费。布置作业</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>10min</td><td>说明作业要求</td><td>记录作业</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>列举生活中3个使用云计算的场景，每个用一句话说明用了什么云服务</li>
+          <li>用自己的话写一段50字以内的"云计算定义"（不许抄书）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>职高教学提示：</b>这节课是整门课的"第一印象"，务必用生活案例拉近距离，不要一上来就念定义。NIST定义只需学生知道5个关键词即可，不要求背诵原文。虚拟化概念点到为止，第9章会深入讲。</div>
+  </div>
+</div>
+
+<!-- 课时2 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">2</div>
+    <div>
+      <div class="lesson-title">云计算发展历程与并行/分布式计算</div>
+      <div class="lesson-meta">第1章 云计算的简介（中） ｜ 对应PPT：P12-P27 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>了解云计算发展的关键时间节点（2006-2013）；理解并行计算和分布式计算的概念及区别</li>
+          <li><strong>能力目标：</strong>能画出云计算发展简史时间轴；能区分并行计算与分布式计算</li>
+          <li><strong>素养目标：</strong>感受技术发展的脉络，理解云计算不是凭空出现的</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">2006年Amazon EC2和Google提出"云计算"概念；并行计算与分布式计算的区别</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">并行计算与分布式计算的区别（共享内存 vs 不共享内存）；理解"云计算源于并行计算"</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>云计算发展历史（PPT P12-P16）：</strong>2006年3月Amazon推出EC2（首个云服务）；2006年8月Google CEO施密特首次公开使用"云计算"一词；2007年Google与IBM在大学推广云计算；2008年IBM在无锡建全球首个云计算中心；2010年OpenStack开源计划启动；2013年IBM、AWS进入中国大陆</li>
+          <li><strong>并行计算（PPT P19-P23）：</strong>同时使用多种计算资源解决大型问题；任务分解为离散部分并行执行；云计算源于并行计算；用户群体不同（并行计算面向科学领域，云计算面向大众）；高性能 vs 低要求</li>
+          <li><strong>分布式计算（PPT P24-P27）：</strong>数据分块由多台计算机分别计算后合并；与并行计算区别（共享内存=并行，不共享=分布式）；任务包互相独立、实时性要求不高、允许计算错误；分布式与云计算理念更接近</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>5min</td><td>提问上节课核心：什么是云计算？云计算和什么技术关系最密切？</td><td>回答复习</td></tr>
+        <tr><td class="time">新授①</td><td>20min</td><td>讲云计算发展史。在黑板画时间轴：2006(Amazon EC2)→2006(Google提出"云计算")→2007(Google+IBM大学推广)→2008(IBM无锡云计算中心)→2010(OpenStack)→2013(IBM/AWS入华)。每个节点配一句话说明意义</td><td>记时间轴笔记</td></tr>
+        <tr><td class="time">新授②</td><td>15min</td><td>讲并行计算。用"多人同时搬砖盖房子"类比——把大任务拆成小块，多人同时干。讲解特点：任务分解、多资源并行、速度快（PPT P19-P23）</td><td>听讲、理解类比</td></tr>
+        <tr><td class="time">新授③</td><td>15min</td><td>讲分布式计算。用"不同城市的人各自算一部分再汇总"类比。重点对比：并行计算=共享内存（同一台多核电脑），分布式计算=不共享内存（多台电脑联网）（PPT P24-P27）</td><td>对比理解</td></tr>
+        <tr><td class="time">互动</td><td>15min</td><td>分组讨论：给3个场景让学生判断是并行还是分布式（①一台8核电脑同时渲染视频 ②全球志愿者电脑协作寻找外星人信号 ③机房10台服务器共同处理网站请求）</td><td>小组讨论、派代表回答</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>总结：并行→分布式→云计算，是一条技术演进线。云计算站在了"巨人肩膀"上</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>10min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>画一条云计算发展时间轴（至少标注5个关键事件，每个事件写年份+一句话）</li>
+          <li>用自己的话说明并行计算和分布式计算的区别（不超过100字）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时3 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">3</div>
+    <div>
+      <div class="lesson-title">集群/网格/效用计算 + 实战：云端Office协作</div>
+      <div class="lesson-meta">第1章 云计算的简介（下） ｜ 对应PPT：P28-P43 ｜ 类型：理论+实战课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解集群计算、网格计算、效用计算的概念；能对比5种计算模式与云计算的异同</li>
+          <li><strong>能力目标：</strong>体验云端文档协作，感受SaaS服务模式</li>
+          <li><strong>素养目标：</strong>体会云计算的协作价值</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">集群计算与云计算的异同（连接方式同、组织方式不同）；5种计算模式与云计算的关系总结</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">区分5种计算模式（并行、分布式、集群、网格、效用），学生容易混淆</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>集群计算（PPT P29-P31）：</strong>多台计算机+存储+互连线路组成单一高可用系统；节点通过局域网连接；与云计算异同：连接方式相同、组织方式不同（集群同构/云可异构）、用途不同（集群负载均衡/云更广泛）</li>
+          <li><strong>网格计算（PPT P32-P35）：</strong>利用互联网把地理分布的资源连成逻辑整体；异构、不信任节点；与云计算：都能提高资源利用率，但网格侧重组织间计算能力连接，云侧重互联网资源整合和商业模式</li>
+          <li><strong>效用计算（PPT P36-P37）：</strong>按实际占用资源收费（非按时长）；个性化计算服务；是云计算"按量计费"理念的来源</li>
+          <li><strong>实战项目（PPT P38-P43）：</strong>多人共同使用云端Office——体验多人实时在线协作编辑文档</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>5min</td><td>回顾上节课的并行计算和分布式计算</td><td>回答</td></tr>
+        <tr><td class="time">新授①</td><td>12min</td><td>讲集群计算。用"一组服务器绑在一起当一台用"类比。重点讲与云计算的3个异同点（PPT P29-P31）</td><td>听讲</td></tr>
+        <tr><td class="time">新授②</td><td>10min</td><td>讲网格计算。用"全球志愿者电脑联合算力"类比（如寻找外星人信号项目）。讲与云计算的区别（PPT P32-P35）</td><td>听讲</td></tr>
+        <tr><td class="time">新授③</td><td>8min</td><td>讲效用计算。重点讲"按实际用量收费"——这就是云计算"按量计费"的老祖宗（PPT P36-P37）</td><td>听讲</td></tr>
+        <tr><td class="time">总结</td><td>10min</td><td>板书5种计算模式对比表：名称/核心思想/与云计算关系。强调：云计算吸收了前面所有模式的优点</td><td>抄对比表</td></tr>
+        <tr><td class="time">实战</td><td>35min</td><td><strong>实战项目：多人共同使用云端Office</strong><br>① 教师演示：打开腾讯文档（docs.qq.com），创建一个在线文档，分享链接给学生<br>② 学生点击链接进入文档，每人写一行"姓名+对云计算的期待"<br>③ 体验多人实时协作：观察光标、实时编辑、评论功能<br>④ 讨论：这比传统U盘拷文件方便在哪？</td><td>动手操作、体验协作</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>第1章总结：从概念→发展史→5种计算模式→实战体验，完整了解"云计算是什么"</td><td>记笔记</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>填写5种计算模式对比表（名称/核心思想/与云计算的关系）</li>
+          <li>在腾讯文档中创建一个自己的文档，写一段100字的"我对云计算的理解"，分享链接给老师</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>实战注意：</b>如学校网络条件有限，可改为教师演示+部分学生上台体验。确保每人都至少能看到多人协作的效果。腾讯文档无需注册即可通过链接编辑（可设置），适合快速体验。</div>
+  </div>
+</div>
+
+<!-- ==================== 第2章 ==================== -->
+<div class="phase-banner p2">第二阶段 · 云计算服务（课时4-6，第2章）</div>
+
+<!-- 课时4 -->
+<div class="lesson">
+  <div class="lesson-header l2">
+    <div class="lesson-num">4</div>
+    <div>
+      <div class="lesson-title">SaaS详解——软件即服务</div>
+      <div class="lesson-meta">第2章 云计算的服务（上） ｜ 对应PPT：P1-P18 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解云计算三大服务模式的整体框架；深入理解SaaS的概念、特点和典型应用</li>
+          <li><strong>能力目标：</strong>能判断一个应用是否属于SaaS；能列举至少5个SaaS应用</li>
+          <li><strong>素养目标：</strong>认识到日常使用的很多在线服务就是SaaS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">SaaS的定义（软件即服务）、核心特点（即开即用、无需安装、按需付费）、典型SaaS应用</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解SaaS"用户不管理底层，直接用软件"的服务模式</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>云计算服务概述（PPT P1-P5）：</strong>云计算通过互联网以"服务"形式提供资源；三种主要服务模式：SaaS（软件即服务）、PaaS（平台即服务）、IaaS（基础设施即服务）</li>
+          <li><strong>SaaS详解（PPT P6-P18）：</strong>SaaS=Software as a Service；云服务商将应用软件统一部署在云端，用户通过互联网使用软件，无需安装；用户只管"用"，不管"装和维护"；主要用户是普通用户和中小企业；典型SaaS：在线Office（腾讯文档/WPS在线）、在线设计（Canva/稿定设计）、CRM（销售易）、ERP、邮箱、网盘等；SaaS特点：即开即用、无需维护、按需付费、多租户共享</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">导入</td><td>10min</td><td>提问："上节课我们在腾讯文档上一起编辑，谁安装了软件？"（没人安装）"那我们怎么用的？"引出SaaS概念</td><td>回忆、回答</td></tr>
+        <tr><td class="time">新授①</td><td>15min</td><td>讲云计算服务概述：云把资源包装成"服务"提供。画三层金字塔图：SaaS（顶层-软件）→PaaS（中层-平台）→IaaS（底层-基础设施）。本节课先讲顶层SaaS（PPT P1-P5）</td><td>记金字塔图</td></tr>
+        <tr><td class="time">新授②</td><td>20min</td><td>深入讲SaaS。定义+特点+用户群体。用"住酒店"类比SaaS：你只管住（用软件），酒店管打扫维护（运维），按天付费（按需付费）。举大量例子：微信、QQ邮箱、腾讯文档、王者荣耀（部分SaaS特征）、在线PS（PPT P6-P18）</td><td>听讲、记例子</td></tr>
+        <tr><td class="time">互动</td><td>15min</td><td>游戏环节：屏幕上列10个应用，让学生判断哪些是SaaS（微信、Word本地版、腾讯文档、Photoshop本地版、稿定设计、QQ邮箱、爱奇艺、Chrome浏览器、WPS在线版、淘宝）</td><td>举手判断、讨论</td></tr>
+        <tr><td class="time">深化</td><td>10min</td><td>讲SaaS多租户概念（一栋楼很多租户共享水电但房间独立）。讲SaaS的优点（省钱省事）和局限（数据在别人那、依赖网络）</td><td>听讲</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>SaaS=别人装好软件你直接用。布置作业</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>10min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>找2个你平时在用的SaaS应用，说明它们为什么是SaaS（不用安装、通过浏览器/APP使用、在线服务）</li>
+          <li>思考题：王者荣耀是SaaS吗？为什么？（下节课讨论）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时5 -->
+<div class="lesson">
+  <div class="lesson-header l2">
+    <div class="lesson-num">5</div>
+    <div>
+      <div class="lesson-title">PaaS与IaaS详解 + 三种服务模式关系</div>
+      <div class="lesson-meta">第2章 云计算的服务（中） ｜ 对应PPT：P19-P35 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解PaaS和IaaS的概念、特点和用户群体；掌握三种服务模式的关系与区别</li>
+          <li><strong>能力目标：</strong>能区分SaaS/PaaS/IaaS，能根据用户角色判断该用哪种服务</li>
+          <li><strong>素养目标：</strong>理解云计算"分层服务"的设计思想</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">PaaS（平台即服务，面向开发者）、IaaS（基础设施即服务，面向系统管理员）；三种模式的用户群体和技术关系</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解三种模式"用户体验角度独立、技术角度有依赖"的关系</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>PaaS详解（PPT P19-P25）：</strong>Platform as a Service；云服务商提供开发平台（操作系统+数据库+开发环境+运行环境），用户在上面开发部署应用；主要用户是开发者；典型：微信小程序云开发、阿里云EDAS、Google App Engine；用户不管底层服务器，只管写代码</li>
+          <li><strong>IaaS详解（PPT P26-P32）：</strong>Infrastructure as a Service；云服务商提供虚拟化的计算/存储/网络资源（虚拟机），用户自己装系统、装软件；主要用户是系统管理员；典型：阿里云ECS、腾讯云CVM、AWS EC2；IaaS七大功能：资源抽象、监控、负载管理、数据管理、资源部署、安全管理、计费管理</li>
+          <li><strong>三种服务模式关系（PPT P33-P35）：</strong>用户体验角度：三种模式独立（面向不同用户）；技术角度：SaaS可基于PaaS或直接基于IaaS，PaaS可基于IaaS或直接基于物理资源；不是简单继承关系</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>8min</td><td>复习SaaS。讨论上节课思考题：王者荣耀是SaaS吗？（游戏本身是SaaS特征，但底层用了IaaS/PaaS）</td><td>回答讨论</td></tr>
+        <tr><td class="time">新授①</td><td>20min</td><td>讲PaaS。用"租一个带工具的工作间"类比：工作间（平台）已配好水电工具（操作系统+数据库+开发环境），你只管做东西（写代码）。举例：开发小程序不用自己买服务器搭环境，用云开发平台直接写（PPT P19-P25）</td><td>听讲、理解类比</td></tr>
+        <tr><td class="time">新授②</td><td>20min</td><td>讲IaaS。用"租毛坯房"类比：给你空房间（虚拟机），你自己装修（装系统装软件）。举例：阿里云买一台云服务器ECS，自己装Linux/Windows、自己部署网站。简要讲IaaS七大功能（PPT P26-P32）</td><td>听讲、理解类比</td></tr>
+        <tr><td class="time">对比</td><td>15min</td><td>用"吃饭"终极类比对比三种模式：<br>· SaaS=去餐厅吃饭（菜做好了直接吃）<br>· PaaS=叫外卖到自己厨房加热（半成品加工）<br>· IaaS=自己买菜自己做（全自己来）<br>板书三种模式对比表：服务内容/用户群体/典型产品/用户控制程度</td><td>抄对比表、参与讨论</td></tr>
+        <tr><td class="time">关系</td><td>7min</td><td>讲三种模式关系：技术上有依赖（SaaS可以跑在PaaS上，PaaS可以跑在IaaS上），但不是必须的。画关系图（PPT P33-P35）</td><td>记关系图</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>总结三层金字塔：SaaS（直接用）→PaaS（开发用）→IaaS（自己搭）。布置作业</td><td>记笔记</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>完成三种服务模式对比表（模式/全称/服务内容/用户群体/典型产品/用户控制范围）</li>
+          <li>情景题：小王想开网店卖衣服，他可以分别用SaaS、PaaS、IaaS怎么实现？各写一句话</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时6 -->
+<div class="lesson">
+  <div class="lesson-header l2">
+    <div class="lesson-num">6</div>
+    <div>
+      <div class="lesson-title">服务模式衍生 + 天翼云案例 + 实战：Gitee代码仓库</div>
+      <div class="lesson-meta">第2章 云计算的服务（下） ｜ 对应PPT：P36-P48 ｜ 类型：理论+实战课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>了解SaaS/PaaS/IaaS的衍生模式（BaaS、HaaS、CaaS等）；了解天翼云的IaaS/PaaS/SaaS体系</li>
+          <li><strong>能力目标：</strong>掌握Gitee代码仓库的注册和使用，体验云端代码管理</li>
+          <li><strong>素养目标：</strong>感受云计算在企业中的实际应用</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">天翼云案例（IaaS/PaaS/SaaS三层体系）；Gitee代码仓库注册与使用</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">衍生模式概念多易混（了解即可，不要求深记）；Gitee的Git操作对零基础学生有门槛</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>服务模式衍生（PPT P36-P38）：</strong>HaaS（硬件即服务）、BaaS（后端即服务）、MBaaS（移动后端即服务）、MaaS（金属即服务）、ITaaS（IT即服务）、CaaS（通信即服务）——了解即可，重点知道这些都是"XaaS"（一切皆服务）趋势</li>
+          <li><strong>天翼云案例（PPT P39-P44）：</strong>中国电信2011年发布天翼云；包含HaaS（硬件设备）、IaaS（虚拟机/弹性存储/弹性计算）、PaaS（OS-PaaS/AS-PaaS）、SaaS（融合通信/移动办公）、ITaaS（ERP/OA/SCM）；是一个完整的三层云服务体系实例</li>
+          <li><strong>实战项目（PPT P45-P47）：</strong>Gitee云端代码仓库——注册账号、创建仓库、配置SSH、上传代码</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>5min</td><td>快速复习三种服务模式和"吃饭"类比</td><td>回答</td></tr>
+        <tr><td class="time">新授①</td><td>12min</td><td>讲衍生模式。快速过一遍HaaS/BaaS/CaaS等，强调"XaaS=一切皆服务"趋势，不要求死记。重点讲BaaS（手机APP后端云服务，如腾讯云开发）</td><td>了解</td></tr>
+        <tr><td class="time">新授②</td><td>15min</td><td>讲天翼云案例。展示天翼云三层架构图，让学生看到一个真实的云平台是如何同时提供IaaS+PaaS+SaaS的。提问："中国电信为什么能做云？"（有大量机房和网络基础设施）</td><td>看图、思考回答</td></tr>
+        <tr><td class="time">实战</td><td>45min</td><td><strong>实战项目：Gitee云端代码仓库</strong><br>① 教师演示：打开gitee.com，注册账号（5min）<br>② 创建一个新仓库，命名为"my-first-repo"（5min）<br>③ 演示通过网页端上传一个文件（如README.txt）（10min）<br>④ 学生动手操作：注册→建仓库→上传文件（20min）<br>⑤ 体验：修改文件→查看历史版本→感受云端代码管理的优势（5min）<br>注：SSH配置和Git命令行操作对零基础学生较难，本课先用网页端操作体验，命令行留到后续Linux章节再讲</td><td>动手操作</td></tr>
+        <tr><td class="time">小结</td><td>8min</td><td>第2章总结：三种服务模式+衍生+天翼云实例+Gitee实战。布置作业</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>5min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>在Gitee上创建个人仓库，上传一个包含自我介绍的文本文件，将仓库链接发给老师</li>
+          <li>简答：天翼云同时提供了哪三种云服务？各举一个例子</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>实战降维提示：</b>原书实战项目涉及Git命令行和SSH配置，对职高零基础学生门槛偏高。本教案建议先用Gitee网页端操作体验"云端存代码、看版本变化"的核心概念，等第10章学完Linux命令行后再回过头讲Git命令操作。这样既保证体验感，又避免一开始就劝退。</div>
+  </div>
+</div>
+
+<!-- ==================== 第3章 ==================== -->
+<div class="phase-banner p3">第三阶段 · 云计算的部署（课时7-9，第3章）</div>
+
+<!-- 课时7 -->
+<div class="lesson">
+  <div class="lesson-header l3">
+    <div class="lesson-num">7</div>
+    <div>
+      <div class="lesson-title">公有云与社区云</div>
+      <div class="lesson-meta">第3章 云计算的部署（上） ｜ 对应PPT：P1-P20 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解云计算四种部署模型的整体框架；深入理解公有云和社区云的概念、特点和典型应用</li>
+          <li><strong>能力目标：</strong>能列举主流公有云厂商；能判断哪些场景适合公有云</li>
+          <li><strong>素养目标：</strong>了解国内云计算市场格局</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">公有云的定义和特点（共享资源、低价、互联网访问）；主流公有云厂商；公有云的安全隐患</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解公有云"共享资源"的核心属性；公有云安全性问题的两面性</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>部署概述（PPT P1-P7）：</strong>云计算四种部署模型：公有云、社区云、私有云、混合云</li>
+          <li><strong>公有云（PPT P8-P16）：</strong>云服务商为公众提供云平台；核心属性=共享资源服务；任何人可通过授权接入；服务大部分免费或按需付费；只能通过互联网访问；典型：天翼云、AWS、Azure、阿里云、腾讯云；四类厂商：电信运营商（移动云/联通云/天翼云）、互联网巨头（腾讯云/百度云）、软硬件厂商（微软Azure）、IDC运营商（AWS/阿里云）；最大问题：安全性和可用性不受用户控制</li>
+          <li><strong>社区云（PPT P17-P20）：</strong>特定地域/社区内由云服务商统一提供资源；多个目标相似的成员共享基础设施；特点：区域性、行业性、有限特色应用、资源高效共享、高度参与性</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">导入</td><td>8min</td><td>提问："我们用的腾讯文档、阿里云服务器，是谁的？"（服务商的，我们只是租用）。再问："银行的数据也会放云上吗？"引出不同部署方式</td><td>思考回答</td></tr>
+        <tr><td class="time">新授①</td><td>10min</td><td>讲部署概述：四种部署模型。用"住房"类比框架：公有云=租公寓（公共）、社区云=合租小区、私有云=自建别墅、混合云=有别墅+租公寓（PPT P1-P7）</td><td>记类比框架</td></tr>
+        <tr><td class="time">新授②</td><td>25min</td><td>深入讲公有云。定义+核心属性（共享）+访问方式（互联网）+优缺点。重点讲国内厂商格局：阿里云（最大）、腾讯云、华为云、天翼云、百度智能云。展示阿里云官网截图，让学生感受真实云平台（PPT P8-P16）</td><td>听讲、看截图</td></tr>
+        <tr><td class="time">讨论</td><td>12min</td><td>讨论公有云安全问题："你的照片传到云端，安全吗？"引导学生从两方面想：方便（随时访问、多备份）vs 风险（数据在别人服务器上、泄露风险）</td><td>讨论发言</td></tr>
+        <tr><td class="time">新授③</td><td>12min</td><td>讲社区云。用"小区共享健身房"类比：特定社区成员共享。举例：政务云、医疗行业云、教育云。讲四个特点（PPT P17-P20）</td><td>听讲</td></tr>
+        <tr><td class="time">小结</td><td>8min</td><td>总结：公有云=大众共享、社区云=特定群体共享。下节课讲私有云和混合云</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>5min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>列举3个国内公有云厂商，各写一个特点或代表产品</li>
+          <li>思考题：学校里的教务系统适合用公有云吗？为什么？</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时8 -->
+<div class="lesson">
+  <div class="lesson-header l3">
+    <div class="lesson-num">8</div>
+    <div>
+      <div class="lesson-title">私有云与混合云</div>
+      <div class="lesson-meta">第3章 云计算的部署（中） ｜ 对应PPT：P21-P34 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解私有云和混合云的概念、特点和适用场景</li>
+          <li><strong>能力目标：</strong>能对比四种部署方式的优缺点；能根据场景判断适合哪种部署方式</li>
+          <li><strong>素养目标：</strong>理解企业选择云部署方式的考量因素（安全、成本、控制力）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">私有云的优势（数据安全、SLA、利用现有资源）；混合云"两全其美"的特点</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解混合云"核心数据放私有云、非核心业务放公有云"的策略</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>私有云（PPT P21-P27）：</strong>建立在私有网络上的云；为用户单独使用而构建；核心属性=专有资源；数据安全性和服务质量用户自己控制；适合大型企业/政府部门；三个部分：私有云平台/计算服务/管理；优势：数据安全、SLA、利用现有资源；缺点：投资大、规模经济效益受限</li>
+          <li><strong>混合云（PPT P28-P34）：</strong>两种以上云模式混合（通常公有云+私有云）；相互独立又结合；企业策略：核心数据和业务放私有云，非核心应用放公有云；三大优势：更完美（安全+资源兼得）、可扩展（突破私有云硬件限制）、更节省（成本优化）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>8min</td><td>复习公有云和社区云。讨论上节课思考题：学校教务系统适合公有云吗？（引导：涉及学生隐私数据，可能更适合私有云）</td><td>回答讨论</td></tr>
+        <tr><td class="time">新授①</td><td>22min</td><td>讲私有云。定义+核心属性（专有）+适用对象。用"自建别墅"类比：自己建自己管，安全可控但贵。讲三个优势（数据安全/SLA/利用现有资源）和两个缺点（投资大/规模效益低）。举例：银行私有云、军队私有云（PPT P21-P27）</td><td>听讲、理解类比</td></tr>
+        <tr><td class="time">新授②</td><td>20min</td><td>讲混合云。定义+策略。用"有自建房+偶尔租公寓"类比：平时住自己家（私有云），来客人了住不下就去租（公有云）。重点讲企业策略：核心数据→私有云，非核心业务→公有云。讲三大优势（PPT P28-P34）</td><td>听讲、理解类比</td></tr>
+        <tr><td class="time">互动</td><td>20min</td><td>情景选择游戏：给4个场景，分组讨论选哪种部署方式并说明理由：<br>① 个人开发者想搭博客网站<br>② 大型银行核心交易系统<br>③ 电商公司双十一促销（平时流量小，促销流量大）<br>④ 政府部门间数据共享平台</td><td>分组讨论、派代表发言</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>四种部署方式特点一句话总结。预告下节课做对比表+实战</td><td>记笔记</td></tr>
+        <tr><td class="time">作业</td><td>10min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>设计一个中型电商企业的云部署方案：核心数据和促销业务分别用什么云？为什么？（100字以内）</li>
+          <li>预习课本第3章"部署方式的联系和区别"部分</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时9 -->
+<div class="lesson">
+  <div class="lesson-header l3">
+    <div class="lesson-num">9</div>
+    <div>
+      <div class="lesson-title">四种部署方式对比 + 实战：部署CloudSim平台</div>
+      <div class="lesson-meta">第3章 云计算的部署（下） ｜ 对应PPT：P35-P45 ｜ 类型：理论+实战课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>综合对比四种部署方式的联系和区别；理解四种方式长期共存、互补的关系</li>
+          <li><strong>能力目标：</strong>完成CloudSim云计算平台的部署，体验云平台仿真</li>
+          <li><strong>素养目标：</strong>建立"没有最好的云，只有最合适的云"的认知</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">四种部署方式对比表；CloudSim平台部署流程</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">CloudSim部署涉及JDK安装、环境变量配置、Eclipse导入项目，对零基础学生有门槛</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>四种部署方式对比（PPT P35-P41）：</strong>①私有云安全性好（适合关键业务/大型企业）②公有云更符合规模经济效益（成本优势，安全问题逐步解决）③社区云降低运营和开发成本（成员共担）④混合云集成双重优势（安全+经济）⑤四种方式长期共存、优势互补</li>
+          <li><strong>实战项目（PPT P42-P45）：</strong>部署CloudSim云计算平台——安装JDK→配置环境变量→安装Eclipse→导入CloudSim项目</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">对比</td><td>20min</td><td>带领学生一起完成四种部署方式对比表（部署方式/资源属性/安全性/成本/适用场景/典型代表）。强调第5点：四种方式不是谁取代谁，而是长期共存互补（PPT P35-P41）</td><td>抄对比表</td></tr>
+        <tr><td class="time">实战准备</td><td>10min</td><td>介绍CloudSim：一个云计算仿真工具，可以在电脑上模拟云平台的资源调度。讲解部署流程：JDK→环境变量→Eclipse→导入项目</td><td>听讲</td></tr>
+        <tr><td class="time">实战</td><td>50min</td><td><strong>实战项目：部署CloudSim云计算平台</strong><br>① 教师演示安装JDK（已预装可跳过），讲解JAVA_HOME配置（10min）<br>② 学生配置环境变量，验证java -version（10min）<br>③ 打开Eclipse（已预装），导入CloudSim项目（15min）<br>④ 运行示例程序，观察仿真输出结果（10min）<br>⑤ 教师讲解输出含义：云平台如何分配虚拟机资源（5min）<br>注：如环境预装有困难，可教师演示为主，学生观察</td><td>动手操作/观察</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>第3章总结：四种部署方式+CloudSim实战。布置作业和阶段预告</td><td>记笔记</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>完成四种部署方式对比表（完整版，含6个维度）</li>
+          <li>简答：为什么说四种部署方式会"长期共存"？（不超过80字）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>实战降维提示：</b>CloudSim部署对职高学生有一定难度（涉及Java环境）。建议教师提前在机房所有电脑上预装好JDK和Eclipse，课上学生只需配置环境变量+导入项目即可。如条件实在不足，可改为教师完整演示+录屏发给学生课后参考。核心目标是让学生"看到"云平台仿真效果，不必苛求每人独立完成全部步骤。</div>
+  </div>
+</div>
+
+<!-- ==================== 第4章 ==================== -->
+<div class="phase-banner p1">第四阶段 · 云计算的特点（课时10-12，第4章）</div>
+
+<!-- 课时10 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">10</div>
+    <div>
+      <div class="lesson-title">云计算的本质与超大规模、高可靠、高性价比</div>
+      <div class="lesson-meta">第4章 云计算的特点（上） ｜ 对应PPT：P1-P12 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>理解云计算的本质（公共设施化）；掌握超大规模、高可靠和容灾能力、廉价和高性价比三大特点</li>
+          <li><strong>能力目标：</strong>能用数据说明云计算的超大规模；能解释云计算为什么比传统计算更可靠</li>
+          <li><strong>素养目标：</strong>体会云计算"让计算像水电一样方便"的愿景</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">云计算本质（像用水电一样用计算资源）；超大规模（Google百万服务器）；高可靠容灾（数据多副本）</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解"数据多副本容错"机制；理解"廉价节点组成高性能云"的思路</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>云计算的本质（PPT P1-P7）：</strong>大数据背景（2006年全球161EB数据，人类5000年文字仅5EB）；传统计算无法处理海量数据→云计算应运而生；本质目标：将计算、服务和应用作为公共设施，像用水电煤气一样使用计算资源</li>
+          <li><strong>超大规模（PPT P9）：</strong>多数据中心、每中心上万节点；Google超100万台服务器，Amazon/IBM/微软数十万台；赋予用户前所未有的计算能力</li>
+          <li><strong>高可靠和容灾能力（PPT P10-P11）：</strong>数据多副本容错、计算节点同构可互换；分布式数据中心异地备份；比本地计算机更可靠（本地硬盘损坏数据难恢复，云有多份备份）；防病毒、防黑客、防地震火灾</li>
+          <li><strong>廉价和性价比高（PPT P12）：</strong>用廉价甚至过时计算机组成云（不追求单台高性能）；特殊容错措施允许使用廉价节点；自动化集中管理降低运维成本；建在电力丰富地区降低能源成本</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">导入</td><td>10min</td><td>展示数据：2006年全球产生161EB数据（印成书是地球到太阳距离的10倍！），人类5000年文字才5EB。提问："这么大的数据量，一台电脑能处理吗？"引出云计算的本质</td><td>惊叹、思考</td></tr>
+        <tr><td class="time">新授①</td><td>15min</td><td>讲云计算本质：把计算变成"公共设施"，像用水电气一样用计算资源。回顾第1课的"自来水公司"类比——现在加深理解：水厂=数据中心，水管=互联网，水表=按量计费（PPT P5-P7）</td><td>回忆类比、深化理解</td></tr>
+        <tr><td class="time">新授②</td><td>15min</td><td>讲超大规模。展示Google/Amazon/微软数据中心图片。用数据震撼："Google有100多万台服务器，如果每台1万元，光服务器就100亿！"对比：普通企业机房几十台就算多了（PPT P9）</td><td>看图片、感受规模</td></tr>
+        <tr><td class="time">新授③</td><td>15min</td><td>讲高可靠和容灾。用"把鸡蛋放多个篮子"类比讲数据多副本：你的文件在云端存了3份，分别在不同机房，一个机房坏了还有2份。提问："你的U盘坏了数据还在吗？云盘呢？"（PPT P10-P11）</td><td>理解类比、回答</td></tr>
+        <tr><td class="time">新授④</td><td>10min</td><td>讲廉价高性价比。关键点：云不追求单台最强，而是用大量廉价机器组集群。用"蚂蚁搬大象"类比——一只蚂蚁搬不动，百万只蚂蚁轻松搞定，每只蚂蚁还很便宜（PPT P12）</td><td>听讲</td></tr>
+        <tr><td class="time">巩固</td><td>10min</td><td>3道思考题快速检验：①为什么云比本地硬盘可靠？②为什么云能用便宜机器？③Google有多少台服务器？</td><td>回答</td></tr>
+        <tr><td class="time">小结</td><td>5min</td><td>本节课讲了本质+3大特点，下节课讲剩下5大特点</td><td>记笔记</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>简答云计算的3个主要特点（超大规模、高可靠容灾、廉价高性价比），每个特点写一句话</li>
+          <li>思考题：如果你有重要照片，存在本地硬盘和存在云盘，哪个更安全？为什么？</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时11 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">11</div>
+    <div>
+      <div class="lesson-title">按需计费、资源利用率、虚拟化透明化、高扩展性、异构支持</div>
+      <div class="lesson-meta">第4章 云计算的特点（中） ｜ 对应PPT：P13-P24 ｜ 类型：理论课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>掌握按需服务按量计费、资源利用率高、资源虚拟化和透明化、高可伸缩和高扩展性、支持异构基础资源五大特点</li>
+          <li><strong>能力目标：</strong>能用思维导图整理云计算8大特点；能结合实例解释每个特点</li>
+          <li><strong>素养目标：</strong>理解云计算"按需弹性"的核心价值</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">按需服务按量计费（云计算商业模式核心）；资源虚拟化和透明化（技术核心）；高可伸缩和高扩展性</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">理解"虚拟化和透明化"——对用户透明（不用知道在哪运行）、对服务商统一管理（异构资源屏蔽）</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>按需服务按量计费（PPT P13-P14）：</strong>即付即用；像自来水电气一样按实际用量付费；资源可被监测和控制；几百元一天完成以前数万元数月的任务</li>
+          <li><strong>资源利用率高（PPT P15-P16）：</strong>资源池"削峰填谷"提高利用率达80%；传统服务器利用率仅10%-15%；云计算利用率是传统的5-7倍</li>
+          <li><strong>资源虚拟化和透明化（PPT P17-P18）：</strong>用户：不用知道应用在哪运行，有网就能用；服务商：底层异构资源被屏蔽统一管理；用户只看虚拟设备，底层透明</li>
+          <li><strong>高可伸缩和高扩展性（PPT P19-P22）：</strong>资源动态伸缩；增删节点不影响业务；业务高时启动闲置资源，低时转入节能模式；弹性服务按需匹配</li>
+          <li><strong>支持异构基础资源（PPT P23-P24）：</strong>兼容不同硬件和软件；同一平台支撑不同应用；提供编程模型和自助服务</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">复习</td><td>5min</td><td>复习上节课3大特点（超大规模、高可靠、廉价）</td><td>回答</td></tr>
+        <tr><td class="time">新授①</td><td>15min</td><td>讲按需服务按量计费。用"共享充电宝"类比：用的时候租，不用就不花钱，按时间计费。对比传统买服务器：不管用不用都花钱（电费/机房/折旧）。举数据对比（PPT P13-P14）</td><td>理解类比</td></tr>
+        <tr><td class="time">新授②</td><td>12min</td><td>讲资源利用率高。用"拼车"类比：一个人开一辆车（传统服务器，利用率15%）vs 多人拼一辆车（云计算"削峰填谷"，利用率80%）。讲清5-7倍的数据对比（PPT P15-P16）</td><td>理解类比</td></tr>
+        <tr><td class="time">新授③</td><td>15min</td><td>讲虚拟化和透明化（本课难点）。用"住酒店不知道在哪栋楼"类比：你只管住（用服务），不用关心房间在几楼几号（底层在哪运行）。对用户=透明（看不见底层），对服务商=虚拟化（统一管理异构资源）（PPT P17-P18）</td><td>理解类比</td></tr>
+        <tr><td class="time">新授④</td><td>12min</td><td>讲高可伸缩和扩展性。用"弹性腰带"类比：吃多了松一松（加资源），瘦了紧一紧（减资源）。举双十一例子：阿里云双十一自动扩容应对流量洪峰（PPT P19-P22）</td><td>理解类比</td></tr>
+        <tr><td class="time">新授⑤</td><td>8min</td><td>讲支持异构资源。云不挑硬件软件，什么牌子服务器都能用，什么系统都能跑（PPT P23-P24）</td><td>听讲</td></tr>
+        <tr><td class="time">总结</td><td>15min</td><td>带领学生画8大特点思维导图：云计算特点→（超大规模/高可靠容灾/廉价高性价比/按需计费/资源利用率高/虚拟化透明化/高可伸缩扩展/异构支持）。每个特点配一个关键词和一个生活类比</td><td>画思维导图</td></tr>
+        <tr><td class="time">作业</td><td>8min</td><td>说明作业</td><td>记录</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>完成云计算8大特点思维导图（每个特点写关键词+一个生活类比）</li>
+          <li>预习课本第4章实战项目"安装虚拟机软件VMware"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 课时12 -->
+<div class="lesson">
+  <div class="lesson-header l1">
+    <div class="lesson-num">12</div>
+    <div>
+      <div class="lesson-title">实战：安装VMware虚拟机 + 第一阶段小结与测验</div>
+      <div class="lesson-meta">第4章 云计算的特点（下） ｜ 对应PPT：P25-P28 ｜ 类型：实战+考核课</div>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <div class="field">
+      <div class="field-label goal">教学目标</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>知识目标：</strong>了解虚拟机软件的概念和作用；巩固第1-4章全部知识点</li>
+          <li><strong>能力目标：</strong>能独立安装VMware并创建一台虚拟机；通过阶段测验检验学习成果</li>
+          <li><strong>素养目标：</strong>通过动手安装虚拟机，直观感受"虚拟化"技术，为后续Linux章节做铺垫</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label focus">教学重点</div>
+      <div class="field-content">VMware安装与虚拟机创建流程；第1-4章核心知识点复习</div>
+    </div>
+    <div class="field">
+      <div class="field-label diff">教学难点</div>
+      <div class="field-content">虚拟机配置参数理解（内存/硬盘/CPU分配）；阶段测验中概念辨析题</div>
+    </div>
+    <div class="field">
+      <div class="field-label content">内容要点</div>
+      <div class="field-content">
+        <ul>
+          <li><strong>实战项目（PPT P25-P28）：</strong>安装虚拟机软件VMware——了解虚拟化特点；安装VMware Workstation；创建一台虚拟机（分配内存/硬盘/CPU）</li>
+          <li><strong>第一阶段知识串讲：</strong>第1章（云计算概念/内涵/发展史/5种计算模式）→第2章（SaaS/PaaS/IaaS/关系/天翼云）→第3章（公有云/社区云/私有云/混合云/对比）→第4章（本质/8大特点）</li>
+          <li><strong>阶段测验：</strong>覆盖第1-4章，15题（10选择+5判断/简答），30分钟</li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <div class="field-label process">教学过程设计（90分钟）</div>
+      <table class="process-table">
+        <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
+        <tr><td class="time">实战演示</td><td>15min</td><td>教师演示VMware安装全过程：下载安装包→安装→新建虚拟机向导→选择操作系统→分配2G内存/20G硬盘/2核CPU→完成创建。讲解每个参数含义</td><td>观察演示</td></tr>
+        <tr><td class="time">实战操作</td><td>25min</td><td><strong>学生动手安装VMware并创建虚拟机</strong><br>① 安装VMware Workstation（已预装可跳过）<br>② 新建一台虚拟机（选择Linux/Ubuntu）<br>③ 分配内存2G、硬盘20G、CPU 2核<br>④ 启动虚拟机（如无ISO镜像可只创建不启动）<br>⑤ 教师巡场指导<br>注：本课只要求创建虚拟机，系统安装留到后续Linux章节</td><td>动手操作</td></tr>
+        <tr><td class="time">知识串讲</td><td>15min</td><td>快速串讲第1-4章核心知识点（10分钟板书提纲+5分钟提问互动）。重点回顾：云计算定义→三种服务模式→四种部署方式→八大特点</td><td>听讲、回答</td></tr>
+        <tr><td class="time">阶段测验</td><td>30min</td><td><strong>第一阶段测验（30分钟）</strong><br>10道选择题 + 5道判断/简答题，覆盖第1-4章<br>参考题型：<br>① 下列哪个是SaaS应用？<br>② 公有云的核心属性是？<br>③ 云计算的本质目标是什么？<br>④ 并行计算和分布式计算的区别？<br>⑤ 列举云计算的3个特点并各举一例</td><td>独立完成测验</td></tr>
+        <tr><td class="time">收尾</td><td>5min</td><td>收卷。预告：下阶段进入技术基础篇（计算机网络/数据库/虚拟化/Linux/Web服务），需要更多动手操作</td><td>交卷</td></tr>
+      </table>
+    </div>
+    <div class="field">
+      <div class="field-label hw">课后作业</div>
+      <div class="field-content">
+        <ul>
+          <li>复习第1-4章，整理错题</li>
+          <li>预习第5章"云计算安全"（内容较多较深，提前浏览）</li>
+          <li>（可选）在自己电脑上安装VMware，为下阶段学习做准备</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>阶段衔接提示：</b>本课是认知入门阶段的收官。从下一课时（课时13）开始进入"技术基础"阶段，难度会明显上升（第5章云计算安全的密码学内容较深，第7章计算机网络涉及协议，第10章Linux涉及命令行）。建议根据本次测验成绩判断学生基础，对掌握较差的知识点在后续教学中有意识地回顾补强。第5章密码学部分建议大幅简化，只讲概念不深入算法细节。</div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

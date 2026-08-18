@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云计算基础 - 第13-72课时教案（无上机视频演示版）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: #f5f5f5;
+    padding: 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 40px 50px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  h1 { text-align: center; color: #1a5276; font-size: 26px; margin-bottom: 8px; }
+  .subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 30px; }
+  .unit-header {
+    background: linear-gradient(135deg, #1a5276, #2980b9);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 6px;
+    margin: 40px 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .unit-info { background: #eaf2f8; padding: 10px 15px; border-radius: 4px; margin-bottom: 20px; font-size: 13px; color: #555; }
+  .lesson {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+  .lesson-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #1a5276;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .lesson-title .num { background: #2980b9; color: #fff; padding: 2px 10px; border-radius: 3px; font-size: 14px; margin-right: 8px; }
+  .obj-box { background: #fef9e7; border-left: 4px solid #f39c12; padding: 8px 12px; margin-bottom: 10px; font-size: 13px; }
+  .obj-box b { color: #b7950b; }
+  .key-box { background: #fdedec; border-left: 4px solid #e74c3c; padding: 8px 12px; margin-bottom: 10px; font-size: 13px; }
+  .key-box b { color: #c0392b; }
+  .time-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 13px; }
+  .time-table th { background: #2980b9; color: #fff; padding: 6px 8px; text-align: left; }
+  .time-table td { border: 1px solid #e0e0e0; padding: 6px 8px; vertical-align: top; }
+  .time-table tr:nth-child(even) td { background: #f8f9fa; }
+  .time-table .td-time { white-space: nowrap; width: 80px; color: #2980b9; font-weight: bold; }
+  .time-table .td-type { white-space: nowrap; width: 90px; }
+  .type-teach { color: #e74c3c; font-weight: bold; }
+  .type-video { color: #8e44ad; font-weight: bold; }
+  .type-act { color: #27ae60; font-weight: bold; }
+  .type-demo { color: #e67e22; font-weight: bold; }
+  .type-rest { color: #999; }
+  .type-review { color: #2980b9; font-weight: bold; }
+  .video-link { color: #8e44ad; text-decoration: none; border-bottom: 1px dashed #8e44ad; }
+  .video-link:hover { color: #6c3483; }
+  .hw-box { background: #e8f6f3; border-left: 4px solid #1abc9c; padding: 8px 12px; font-size: 13px; }
+  .hw-box b { color: #16a085; }
+  .ppt-ref { color: #7f8c8d; font-size: 12px; }
+  .section-label { font-weight: bold; color: #34495e; margin: 8px 0 4px; font-size: 13px; }
+  .content-list { font-size: 13px; padding-left: 20px; margin-bottom: 8px; }
+  .content-list li { margin-bottom: 3px; }
+  .act-box { background: #fef5ff; border: 1px dashed #8e44ad; padding: 8px 12px; border-radius: 4px; margin: 8px 0; font-size: 13px; }
+  .act-box b { color: #8e44ad; }
+  .toc { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px 25px; margin-bottom: 30px; }
+  .toc h2 { font-size: 16px; color: #1a5276; margin-bottom: 10px; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { padding: 3px 0; font-size: 13px; }
+  .toc .toc-unit { font-weight: bold; color: #2980b9; margin-top: 8px; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .container { box-shadow: none; padding: 0; max-width: 100%; }
+    .lesson { page-break-inside: avoid; border: 1px solid #ccc; }
+    .unit-header { page-break-before: always; }
+    .video-link { color: #8e44ad; }
+  }
+  .note-box { background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px; padding: 10px 15px; margin: 10px 0; font-size: 13px; }
+  .note-box b { color: #856404; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>云计算基础技术与应用 - 第13-72课时教案</h1>
+<p class="subtitle">无上机视频演示版 | 教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 9787115664570 | 适用于职高教学</p>
+
+<div class="note-box">
+<b>使用说明：</b>本教案覆盖第13-72课时（共60课时），按每12课时一个单元组织，共5个单元。
+每课时90分钟，采用"教师讲授+视频播放+纸面活动"模式，无上机环节，学生不需携带手机。
+视频链接均为B站在线资源，需教室联网播放。建议教师课前试看并记录关键时间点。
+</div>
+
+<div class="toc">
+<h2>目录</h2>
+<ul>
+<li class="toc-unit">第二单元（课时13-24）：云计算安全 + 云计算市场</li>
+<li>课时13-20：第5章 云计算安全（64页，8课时）</li>
+<li>课时21-24：第6章 云计算市场（48页，4课时）</li>
+<li class="toc-unit">第三单元（课时25-36）：计算机网络 + 数据库基础</li>
+<li>课时25-30：第7章 计算机网络（78页，6课时）</li>
+<li>课时31-36：第8章 数据库基础（69页，6课时）</li>
+<li class="toc-unit">第四单元（课时37-48）：虚拟化基础 + Linux基础</li>
+<li>课时37-43：第9章 虚拟化基础（95页，7课时）</li>
+<li>课时44-48：第10章 Linux基础（77页，5课时）</li>
+<li class="toc-unit">第五单元（课时49-60）：Web服务 + 公有云平台</li>
+<li>课时49-54：第11章 Web服务（103页，6课时）</li>
+<li>课时55-60：第12章 公有云平台（72页，6课时）</li>
+<li class="toc-unit">第六单元（课时61-72）：私有云平台 + 综合复习与期末</li>
+<li>课时61-64：第13章 私有云平台（40页，4课时）</li>
+<li>课时65-72：综合复习与期末考试（8课时）</li>
+</ul>
+</div>
+
+<!-- ===== 第二单元 课时13-24 ===== -->
+<div class="unit-header">第二单元（课时13-24）：云计算安全 + 云计算市场</div>
+<div class="unit-info">
+  覆盖章节：第5章 云计算安全（64页，8课时）+ 第6章 云计算市场（48页，4课时）<br>
+  教学目标：理解云计算安全的基本概念和密码学基础；掌握对称/非对称加密原理；了解数字证书与PKI体系；认识云计算市场格局和主流厂商<br>
+  教学方式：教师讲授 + B站视频播放 + 纸面练习活动（无上机）
+</div>
+
+<!-- 课时13 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第13课时</span>云计算安全概述</div>
+  <div class="obj-box"><b>教学目标：</b>了解信息安全三要素（CIA）；理解云计算面临的安全挑战；认识云安全与传统安全的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=信息安全CIA三要素；难点=理解云安全责任共担模型</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P1-P8）</span></div>
+  <ul class="content-list">
+    <li>信息安全三要素：机密性(Confidentiality)、完整性(Integrity)、可用性(Availability)</li>
+    <li>云计算安全面临的独特挑战：多租户、数据外存、API风险</li>
+    <li>云安全责任共担模型：云厂商负责基础设施安全，用户负责数据和应用安全</li>
+    <li>生活中的安全类比：租房子——房东负责房屋结构安全，租客负责自己财物安全</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问导入：你在网上存的照片安全吗？引出云安全话题</td></tr>
+    <tr><td class="td-time">10-25</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解信息安全CIA三要素，用"写日记"类比：机密性=别人看不到、完整性=别人不能改、可用性=自己随时能看</td></tr>
+    <tr><td class="td-time">25-40</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1yf4y1h7Pm" target="_blank" class="video-link">浅谈云计算安全</a>（B站，选前15分钟）</td></tr>
+    <tr><td class="td-time">40-50</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云安全责任共担模型，用租房类比</td></tr>
+    <tr><td class="td-time">50-65</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>给出5个安全场景，学生判断属于C/I/A哪个要素被破坏（如：照片被删除=可用性；密码被泄露=机密性）</td></tr>
+    <tr><td class="td-time">65-80</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">北京理工大学-虚拟化与云计算</a>（B站，选安全相关章节片段）</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾CIA三要素和责任共担模型，布置作业</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理CIA三要素的定义和举例，各写2个生活场景</div>
+</div>
+
+<!-- 课时14 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第14课时</span>密码学基础</div>
+  <div class="obj-box"><b>教学目标：</b>了解密码学发展简史；理解明文、密文、密钥、加密、解密等基本概念；认识古典密码与现代密码的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=密码学基本术语；难点=理解加密和解密的可逆关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P9-P16）</span></div>
+  <ul class="content-list">
+    <li>密码学发展史：从凯撒密码到现代密码，从手工到计算机</li>
+    <li>基本术语：明文(Plaintext)、密文(Ciphertext)、密钥(Key)、加密(Encrypt)、解密(Decrypt)</li>
+    <li>古典密码：替换密码（凯撒密码）、置换密码</li>
+    <li>现代密码学分类：对称加密 vs 非对称加密</li>
+    <li>生活类比：加密=把信装进带锁箱子，密钥=开箱子的钥匙</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>讲述凯撒密码故事：古罗马皇帝用字母位移传递军令</td></tr>
+    <tr><td class="td-time">10-25</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解密码学基本术语，用"锁箱子"类比</td></tr>
+    <tr><td class="td-time">25-45</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Kt411h7nP" target="_blank" class="video-link">武汉大学-密码学</a>（B站，选第1-2讲片段，约20分钟）</td></tr>
+    <tr><td class="td-time">45-55</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解对称加密vs非对称加密的区别，用"同一把钥匙"vs"两把钥匙"类比</td></tr>
+    <tr><td class="td-time">55-70</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>用凯撒密码（位移3位）加密一段文字"HELLO"→"KHOOR"，并解密一段密文</td></tr>
+    <tr><td class="td-time">70-82</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1i44y1C7rZ" target="_blank" class="video-link">密码学-信息安全全套</a>（B站，选密码学简史部分）</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾术语表，布置作业</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写密码学5个基本术语定义；用凯撒密码加密自己的名字</div>
+</div>
+
+<!-- 课时15 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第15课时</span>对称加密算法（DES与AES）</div>
+  <div class="obj-box"><b>教学目标：</b>理解对称加密的工作原理；了解DES和AES算法的特点；掌握对称加密的优缺点</div>
+  <div class="key-box"><b>重点难点：</b>重点=对称加密原理和特点；难点=理解密钥保管问题（密钥分发难题）</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P17-P24）</span></div>
+  <ul class="content-list">
+    <li>对称加密原理：加密和解密使用同一把密钥</li>
+    <li>DES算法：56位密钥，已被淘汰（暴力破解只需数小时）</li>
+    <li>AES算法：128/192/256位密钥，当前标准，安全性高</li>
+    <li>对称加密优点：速度快、适合大量数据加密</li>
+    <li>对称加密缺点：密钥分发难题——如何安全地把钥匙给对方？</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-08</td><td>导入</td><td class="td-type type-teach">讲授</td><td>复习上节课术语，提问：如果用同一把钥匙，怎么把钥匙安全给对方？</td></tr>
+    <tr><td class="td-time">08-25</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解对称加密原理、DES和AES对比（用"门锁"类比：一把钥匙开一把锁）</td></tr>
+    <tr><td class="td-time">25-42</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://b23.tv/CPeo8e5" target="_blank" class="video-link">DES加密算法详解</a>（B站，选前15分钟动画演示）</td></tr>
+    <tr><td class="td-time">42-55</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://b23.tv/tdNSaYX" target="_blank" class="video-link">AES加密过程详解</a>（B站，选前10分钟动画演示）</td></tr>
+    <tr><td class="td-time">55-70</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>对比表格填写DES vs AES（密钥长度、安全等级、速度、是否淘汰）；思考题：为什么DES会被淘汰？</td></tr>
+    <tr><td class="td-time">70-82</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解密钥分发难题，引出下节课非对称加密</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾对称加密优缺点，布置作业</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画出对称加密的加密-解密流程图；思考"密钥分发难题"有什么解决办法</div>
+</div>
+
+<!-- 课时16 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第16课时</span>非对称加密算法（RSA）</div>
+  <div class="obj-box"><b>教学目标：</b>理解非对称加密的原理；了解公钥和私钥的关系；认识RSA算法的基本思想</div>
+  <div class="key-box"><b>重点难点：</b>重点=公钥加密/私钥解密的原理；难点=理解"两把钥匙"的数学关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P25-P32）</span></div>
+  <ul class="content-list">
+    <li>非对称加密原理：公钥加密、私钥解密（或私钥签名、公钥验证）</li>
+    <li>公钥和私钥：公钥可以公开给所有人，私钥自己保管</li>
+    <li>RSA算法：基于大数分解难题（两个大素数相乘容易，分解回两个素数极难）</li>
+    <li>非对称加密优点：解决了密钥分发难题</li>
+    <li>非对称加密缺点：速度慢，不适合大量数据加密</li>
+    <li>混合加密：用非对称加密传对称密钥，用对称加密传数据（HTTPS就是这么做的）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>回顾上节"密钥分发难题"，引出非对称加密的解决方案</td></tr>
+    <tr><td class="td-time">10-25</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解公钥/私钥概念，用"信箱"类比：公钥=信箱地址（谁都能投信），私钥=信箱钥匙（只有你能取信）</td></tr>
+    <tr><td class="td-time">25-45</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1gf4y1r75B/" target="_blank" class="video-link">小学生都懂的RSA加密算法</a>（B站，约11分钟，通俗易懂）</td></tr>
+    <tr><td class="td-time">45-58</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/av26639065" target="_blank" class="video-link">李永乐老师讲RSA加密算法</a>（B站，选前10分钟）</td></tr>
+    <tr><td class="td-time">58-72</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①画出非对称加密流程图（公钥加密→私钥解密）②对比表格：对称vs非对称（密钥数量、速度、安全性、适用场景）③简答题：为什么HTTPS要同时用两种加密？</td></tr>
+    <tr><td class="td-time">72-85</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解混合加密思想：非对称传钥匙、对称传数据</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾非对称加密优缺点，布置作业</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画图说明"混合加密"的工作流程；用自己的话解释公钥和私钥的关系</div>
+</div>
+
+<!-- 课时17 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第17课时</span>哈希算法与数字签名</div>
+  <div class="obj-box"><b>教学目标：</b>理解哈希算法的特点和用途；了解MD5和SHA算法；掌握数字签名的原理和作用</div>
+  <div class="key-box"><b>重点难点：</b>重点=哈希算法的不可逆性和数字签名原理；难点=理解哈希与加密的区别</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P33-P40）</span></div>
+  <ul class="content-list">
+    <li>哈希算法：将任意长度数据变成固定长度的"指纹"（摘要）</li>
+    <li>哈希特点：不可逆（不能从摘要还原原文）、唯一性（不同数据哈希值不同）、确定性（同一数据哈希值不变）</li>
+    <li>常见哈希算法：MD5（128位，已不安全）、SHA-256（256位，当前推荐）</li>
+    <li>哈希应用：密码存储（不存明文存哈希）、文件完整性校验</li>
+    <li>数字签名：用私钥对哈希值加密，用公钥验证——证明"是你发的"且"没被改过"</li>
+    <li>生活类比：哈希=按手印（每个手指印独一无二但不能还原手指），数字签名=盖章+手印</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：网站怎么知道你的密码对不对，又为什么不存你的明文密码？引出哈希</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解哈希算法原理和特点，用"按手印"类比；介绍MD5和SHA-256</td></tr>
+    <tr><td class="td-time">28-45</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1i44y1C7rZ" target="_blank" class="video-link">密码学-摘要算法MD5/SHA</a>（B站，选摘要算法部分，约15分钟）</td></tr>
+    <tr><td class="td-time">45-58</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解数字签名原理：哈希+非对称加密=签名；用"盖章+手印"类比</td></tr>
+    <tr><td class="td-time">58-73</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV18N411X7ty" target="_blank" class="video-link">数字签名及数字证书原理</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">73-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①判断题：哈希是可逆的（×）②画出数字签名生成和验证流程图 ③简答：数字签名能防止什么？</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾哈希与数字签名要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理哈希算法的4个特点；画图说明数字签名的完整流程</div>
+</div>
+
+<!-- 课时18 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第18课时</span>数字证书与PKI</div>
+  <div class="obj-box"><b>教学目标：</b>理解数字证书的作用和结构；了解CA机构和PKI体系；认识证书在HTTPS中的应用</div>
+  <div class="key-box"><b>重点难点：</b>重点=CA的作用和数字证书的概念；难点=理解PKI信任链</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P41-P48）</span></div>
+  <ul class="content-list">
+    <li>数字证书：由权威机构（CA）签发的"网络身份证"</li>
+    <li>CA（Certificate Authority）：受信任的第三方机构，负责颁发和管理证书</li>
+    <li>PKI（公钥基础设施）：CA + 证书 + 密钥管理的完整体系</li>
+    <li>证书内容：持有者信息、公钥、CA签名、有效期</li>
+    <li>信任链：根CA → 中间CA → 终端证书，逐级验证</li>
+    <li>生活类比：数字证书=身份证，CA=公安局，PKI=整个户籍管理系统</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你怎么知道网上银行的公钥是真的而不是黑客的？引出CA和证书</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解CA和数字证书概念，用"身份证"类比；介绍PKI体系</td></tr>
+    <tr><td class="td-time">28-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://b23.tv/BV1mj421d7VE" target="_blank" class="video-link">数字签名和CA数字证书原理</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">48-60</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1JS4y127ed/" target="_blank" class="video-link">证书是什么</a>（B站，约10分钟）</td></tr>
+    <tr><td class="td-time">60-75</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填写数字证书包含的信息表格 ②画出信任链示意图 ③简答：如果CA被黑客控制会怎样？</td></tr>
+    <tr><td class="td-time">75-85</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解证书在HTTPS中的实际应用</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾CA-PKI-证书体系</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画出PKI体系结构图；列举3个日常生活中使用数字证书的场景</div>
+</div>
+
+<!-- 课时19 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第19课时</span>SSL/TLS与HTTPS</div>
+  <div class="obj-box"><b>教学目标：</b>理解SSL/TLS协议的作用；了解HTTPS的工作流程；认识加密技术在HTTPS中的综合应用</div>
+  <div class="key-box"><b>重点难点：</b>重点=HTTPS的握手流程；难点=理解非对称加密、对称加密、数字证书在HTTPS中的配合使用</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P49-P56）</span></div>
+  <ul class="content-list">
+    <li>SSL/TLS协议：在HTTP基础上添加加密层，保护数据传输安全</li>
+    <li>HTTPS = HTTP + SSL/TLS</li>
+    <li>HTTPS握手流程：①客户端请求→②服务器返回证书→③客户端验证证书→④协商对称密钥→⑤加密通信</li>
+    <li>综合应用：非对称加密传密钥、对称加密传数据、数字证书验身份、哈希校验完整性</li>
+    <li>浏览器中的安全标识：锁头图标=HTTPS连接</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>打开浏览器演示：访问http网站显示"不安全"，https网站显示锁头</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解HTTPS握手流程5步骤，结合前几节课的加密技术综合串讲</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1F54y1t7Dx" target="_blank" class="video-link">240分钟搞懂HTTP和HTTPS协议</a>（B站，选HTTPS原理部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-62</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/av53590261" target="_blank" class="video-link">SSL认证视频讲解</a>（B站，约10分钟）</td></tr>
+    <tr><td class="td-time">62-78</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①按顺序排列HTTPS握手5步骤 ②标注每一步用到了哪种加密技术 ③画图：完整的HTTPS通信流程</td></tr>
+    <tr><td class="td-time">78-88</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>回顾第5章全部密码学知识，串联成"安全通信全流程"</td></tr>
+    <tr><td class="td-time">88-90</td><td>小结</td><td class="td-type type-review">小结</td><td>总结密码学知识体系</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画一张完整图，标注HTTPS通信中用到的所有安全技术（对称/非对称加密、哈希、数字证书）</div>
+</div>
+
+<!-- 课时20 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第20课时</span>云安全防护技术</div>
+  <div class="obj-box"><b>教学目标：</b>了解防火墙、IDS/IPS等网络安全设备；认识云环境中的访问控制和数据安全措施</div>
+  <div class="key-box"><b>重点难点：</b>重点=防火墙和IDS/IPS的基本概念；难点=理解云环境中的多层安全防护</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第5章 P57-P64）</span></div>
+  <ul class="content-list">
+    <li>防火墙：网络大门的保安，按规则放行或拦截流量</li>
+    <li>IDS（入侵检测系统）：监控网络异常，只报警不拦截（像监控摄像头）</li>
+    <li>IPS（入侵防御系统）：检测并主动拦截攻击（像保安直接出手）</li>
+    <li>访问控制（IAM）：谁能访问什么资源，能做什么操作</li>
+    <li>数据安全：数据加密存储、数据脱敏、备份恢复</li>
+    <li>云安全防护体系：网络层→主机层→应用层→数据层，多层纵深防御</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-08</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：小区安全靠什么？（门禁、保安、监控）引出网络安全设备</td></tr>
+    <tr><td class="td-time">08-25</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解防火墙、IDS、IPS概念和区别，用小区安保类比</td></tr>
+    <tr><td class="td-time">25-45</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV197411b7Ve" target="_blank" class="video-link">千锋-4小时弄懂什么是防火墙</a>（B站，选前15分钟基础概念部分）</td></tr>
+    <tr><td class="td-time">45-58</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解IAM访问控制和数据安全措施</td></tr>
+    <tr><td class="td-time">58-72</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师演示：在PPT上展示云平台安全配置界面截图，讲解安全组规则</td></tr>
+    <tr><td class="td-time">72-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第5章复习纸面测试：</b>15道选择题+判断题，覆盖CIA、加密、哈希、签名、证书、防火墙等知识点</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第5章总结，布置复习作业</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完成第5章复习思维导图；整理云安全防护体系（4层防御）笔记</div>
+</div>
+
+<!-- 课时21 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第21课时</span>云计算市场概述</div>
+  <div class="obj-box"><b>教学目标：</b>了解全球和中国云计算市场格局；认识云计算的发展趋势；理解云计算对传统IT的影响</div>
+  <div class="key-box"><b>重点难点：</b>重点=云计算市场格局和发展趋势；难点=理解云计算对不同行业的影响</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第6章 P1-P12）</span></div>
+  <ul class="content-list">
+    <li>全球云计算市场规模：千亿级市场，年增长率20%+</li>
+    <li>中国市场格局：阿里云领先，华为云/腾讯云紧随</li>
+    <li>云计算发展趋势：混合云、边缘计算、云原生、AI+云</li>
+    <li>云计算对传统IT的冲击：从买服务器到买服务，从资本支出到运营支出</li>
+    <li>生活类比：云计算=自来水（拧开就用、按量付费），传统IT=自己打井（一次性投入大）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你用过哪些云服务？（网盘、在线文档、游戏云存档）引出云计算市场</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解全球和中国云计算市场格局，用"自来水"类比云计算</td></tr>
+    <tr><td class="td-time">28-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1EE411A7C9/" target="_blank" class="video-link">企业上云指南-云时代机遇与挑战</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">48-60</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云计算发展趋势：混合云、边缘计算、AI+云</td></tr>
+    <tr><td class="td-time">60-75</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：传统IT vs 云计算对比（投入方式、维护方式、付费模式、扩展速度）②讨论题：为什么企业要上云？</td></tr>
+    <tr><td class="td-time">75-85</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">北京理工大学-虚拟化与云计算</a>（B站，选市场分析片段）</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾市场格局要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>查资料：列出中国排名前5的云计算厂商及其特点</div>
+</div>
+
+<!-- 课时22 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第22课时</span>主流云服务厂商</div>
+  <div class="obj-box"><b>教学目标：</b>了解全球主流云厂商（AWS、Azure、Google Cloud）；认识国内主流云厂商（阿里云、腾讯云、华为云）及其特色</div>
+  <div class="key-box"><b>重点难点：</b>重点=各厂商的特色和优势领域；难点=理解不同厂商的定位差异</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第6章 P13-P24）</span></div>
+  <ul class="content-list">
+    <li>全球三大云：AWS（市场份额第一）、Microsoft Azure（企业集成强）、Google Cloud（AI和数据分析强）</li>
+    <li>国内三大云：阿里云（综合实力第一、生态最全）、腾讯云（音视频/游戏优势）、华为云（政务/安全可信）</li>
+    <li>各厂商特色对比：产品线、价格、技术支持、行业优势</li>
+    <li>其他厂商：百度智能云（AI聚焦）、京东云（电商物流）、UCloud（中小企业）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你听说过哪些云计算公司？引出厂商介绍</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解全球三大云和国内三大云，重点对比各家特色优势</td></tr>
+    <tr><td class="td-time">30-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1y7411A76U/" target="_blank" class="video-link">业务迁移上云要点解读</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">48-60</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解各厂商在不同行业的优势（政务=华为云、游戏=腾讯云、电商=阿里云）</td></tr>
+    <tr><td class="td-time">60-78</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填写厂商对比表（厂商名/全球or国内/核心优势/代表产品/适合行业）②情景题：如果你开一家游戏公司，选哪个云？为什么？</td></tr>
+    <tr><td class="td-time">78-85</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解选云建议：根据业务需求、预算、技术栈选择</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾各厂商特色</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>选一个云厂商，写一段200字介绍其特色和优势</div>
+</div>
+
+<!-- 课时23 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第23课时</span>企业上云</div>
+  <div class="obj-box"><b>教学目标：</b>了解企业上云的动机和流程；认识云迁移的策略和挑战；理解混合云的概念</div>
+  <div class="key-box"><b>重点难点：</b>重点=企业上云的流程和策略；难点=理解不同迁移策略的适用场景</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第6章 P25-P36）</span></div>
+  <ul class="content-list">
+    <li>企业上云动机：降低成本、弹性扩展、专注业务、加速创新</li>
+    <li>云迁移策略：重新托管（Lift & Shift）、重构、修改、替换</li>
+    <li>混合云：公有云+私有云组合，核心数据放私有云、弹性业务放公有云</li>
+    <li>上云挑战：数据安全、迁移风险、技术人员培训、厂商锁定</li>
+    <li>生活类比：企业上云=从自建仓库搬到物流公司（按需使用、弹性扩展）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：如果你开网店，是自己建仓库还是用第三方仓库？引出企业上云</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解上云动机、迁移策略和混合云概念</td></tr>
+    <tr><td class="td-time">30-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1f54y1R74z" target="_blank" class="video-link">企业如何部署混合云</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">48-62</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解上云挑战和应对措施</td></tr>
+    <tr><td class="td-time">62-78</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①排列企业上云的步骤 ②情景分析题：一家医院要上云，核心病历系统和在线挂号系统分别该怎么部署？为什么？</td></tr>
+    <tr><td class="td-time">78-85</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1EE411A7C9/" target="_blank" class="video-link">企业上云指南</a>（B站，选迁移案例片段）</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾上云要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>写一段话分析"为什么有些企业选择混合云而不是全部上公有云"</div>
+</div>
+
+<!-- 课时24 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第24课时</span>云计算行业应用与第二单元复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解云计算在各行业的应用案例；复习第5-6章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=云计算在不同行业的典型应用；难点=综合运用安全知识分析实际场景</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第6章 P37-P48）</span></div>
+  <ul class="content-list">
+    <li>云计算+教育：在线教育平台、智慧校园、教育云</li>
+    <li>云计算+医疗：远程医疗、医疗影像云、电子病历</li>
+    <li>云计算+金融：金融云、风控大数据、移动支付</li>
+    <li>云计算+制造：工业互联网、智能制造</li>
+    <li>云计算+政务：政务云、城市大脑</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云计算在5个行业的典型应用案例</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">北京理工大学-虚拟化与云计算</a>（B站，选行业应用案例片段）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第二单元综合测试：</b>20道题（10选择+5判断+5填空），覆盖第5-6章全部知识点，限时20分钟</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错知识点</td></tr>
+    <tr><td class="td-time">70-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>学生在纸上绘制第5-6章知识体系思维导图</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第二单元总结，预告第三单元内容</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第7章计算机网络基础</div>
+</div>
+
+<!-- ===== 第三单元 课时25-36 ===== -->
+<div class="unit-header">第三单元（课时25-36）：计算机网络 + 数据库基础</div>
+<div class="unit-info">
+  覆盖章节：第7章 计算机网络（78页，6课时）+ 第8章 数据库基础（69页，6课时）<br>
+  教学目标：理解计算机网络体系结构和TCP/IP协议；掌握IP地址和子网概念；了解数据库基本概念和SQL语言<br>
+  教学方式：教师讲授 + B站视频播放 + 纸面练习活动（无上机）
+</div>
+
+<!-- 课时25 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第25课时</span>计算机网络概述</div>
+  <div class="obj-box"><b>教学目标：</b>了解计算机网络的概念和分类；理解OSI七层模型；认识网络在云计算中的基础作用</div>
+  <div class="key-box"><b>重点难点：</b>重点=OSI七层模型各层功能；难点=理解分层的设计思想</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P1-P13）</span></div>
+  <ul class="content-list">
+    <li>计算机网络定义：将多台计算机通过通信线路连接，实现资源共享和信息传递</li>
+    <li>网络分类：局域网(LAN)、城域网(MAN)、广域网(WAN)</li>
+    <li>OSI七层模型：物理层→数据链路层→网络层→传输层→会话层→表示层→应用层</li>
+    <li>分层思想：每层只负责特定功能，层与层之间通过接口通信</li>
+    <li>生活类比：寄快递——打包(应用层)→装箱(表示层)→贴标签(传输层)→分拣(网络层)→运输(物理层)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你手机上网要经过哪些步骤？引出网络分层</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解OSI七层模型，用"寄快递"类比每层功能</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1c4411d7jb" target="_blank" class="video-link">计算机网络微课堂（湖科大教书匠）</a>（B站，选OSI模型部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-62</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV19E411D78Q" target="_blank" class="video-link">王道考研-计算机网络</a>（B站，选分层结构部分）</td></tr>
+    <tr><td class="td-time">62-80</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填写七层模型表格（层名/功能/生活类比）②简答：为什么要分层？</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾OSI七层模型</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写OSI七层模型名称和各层功能；思考网络分层的好处</div>
+</div>
+
+<!-- 课时26 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第26课时</span>TCP/IP协议体系</div>
+  <div class="obj-box"><b>教学目标：</b>理解TCP/IP四层模型；了解各层主要协议；认识TCP/IP与OSI的对应关系</div>
+  <div class="key-box"><b>重点难点：</b>重点=TCP/IP四层模型和常见协议；难点=理解OSI与TCP/IP的映射关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P14-P26）</span></div>
+  <ul class="content-list">
+    <li>TCP/IP四层模型：网络接口层→网络层(IP)→传输层(TCP/UDP)→应用层(HTTP/FTP/DNS)</li>
+    <li>与OSI对应：应用层=上三层，传输层=传输层，网络层=网络层，网络接口层=下两层</li>
+    <li>常见协议：IP(网络层)、TCP/UDP(传输层)、HTTP/HTTPS/DNS/FTP/DHCP(应用层)</li>
+    <li>数据封装过程：数据→分段→数据报→帧→比特</li>
+    <li>生活类比：TCP/IP=实际使用的快递系统（简化版），OSI=理论模型（完整版）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>复习OSI七层，引出实际使用的TCP/IP四层</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解TCP/IP四层模型和各层协议，对比OSI映射</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Qt4y1e7ju" target="_blank" class="video-link">玩转TCP/IP协议</a>（B站，选TCP/IP概述部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解数据封装过程，用"俄罗斯套娃"类比</td></tr>
+    <tr><td class="td-time">65-80</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①画图：OSI七层 vs TCP/IP四层对应关系 ②填表：各层常见协议 ③画数据封装流程图</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾TCP/IP模型要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理TCP/IP各层协议表格；画出数据封装过程图</div>
+</div>
+
+<!-- 课时27 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第27课时</span>IP地址与子网掩码</div>
+  <div class="obj-box"><b>教学目标：</b>理解IP地址的概念和分类；掌握子网掩码的作用；了解IPv4与IPv6的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=IP地址分类和子网掩码概念；难点=理解子网划分的基本原理</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P27-P39）</span></div>
+  <ul class="content-list">
+    <li>IP地址：网络中设备的"门牌号"，32位二进制，用点分十进制表示（如192.168.1.1）</li>
+    <li>IP地址分类：A类(大型网络)、B类(中型)、C类(小型)、D类(组播)、E类(保留)</li>
+    <li>私有IP地址：10.x.x.x、172.16-31.x.x、192.168.x.x（内网使用）</li>
+    <li>子网掩码：区分IP地址中的网络部分和主机部分（如255.255.255.0）</li>
+    <li>IPv4 vs IPv6：IPv4=32位(已枯竭)，IPv6=128位(几乎无限)</li>
+    <li>生活类比：IP地址=门牌号(省市区街道)，子网掩码=告诉你要看到哪一级</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你手机的IP地址是多少？怎么看？引出IP地址</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解IP地址分类、私有IP、子网掩码，用门牌号类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1c4411d7jb" target="_blank" class="video-link">计算机网络微课堂-IP地址</a>（B站，选IP地址分类部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解IPv4枯竭和IPv6优势</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①判断给定IP地址属于哪类 ②给定IP和子网掩码，判断网络地址 ③填表：IPv4 vs IPv6对比</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾IP地址要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>练习5道IP地址分类判断题；查自己手机/电脑的IP地址</div>
+</div>
+
+<!-- 课时28 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第28课时</span>传输层协议：TCP与UDP</div>
+  <div class="obj-box"><b>教学目标：</b>理解TCP和UDP的区别；了解TCP三次握手过程；认识两种协议的适用场景</div>
+  <div class="key-box"><b>重点难点：</b>重点=TCP和UDP的特点对比；难点=理解TCP三次握手过程</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P40-P52）</span></div>
+  <ul class="content-list">
+    <li>TCP：面向连接、可靠传输、三次握手建立连接、四次挥手断开</li>
+    <li>UDP：无连接、不可靠、速度快、开销小</li>
+    <li>TCP三次握手：SYN→SYN+ACK→ACK（打电话类比：喂？→我听到了→好的我们开始聊）</li>
+    <li>TCP应用：网页浏览(HTTP)、文件传输(FTP)、电子邮件(SMTP)</li>
+    <li>UDP应用：视频直播、在线游戏、DNS查询</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：看直播为什么偶尔会卡？发文件为什么不能丢？引出TCP vs UDP</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解TCP和UDP特点，用"打电话"vs"发广播"类比</td></tr>
+    <tr><td class="td-time">28-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1c4411d7jb" target="_blank" class="video-link">计算机网络微课堂-TCP三次握手</a>（B站，选TCP部分，约15分钟）</td></tr>
+    <tr><td class="td-time">48-60</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解三次握手过程，画图演示</td></tr>
+    <tr><td class="td-time">60-78</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表对比TCP vs UDP（连接方式、可靠性、速度、应用场景）②画出三次握手流程图 ③判断题：视频直播用TCP（×）</td></tr>
+    <tr><td class="td-time">78-88</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Fy4y1Y7n6" target="_blank" class="video-link">网络协议入门到精通</a>（B站，选TCP/UDP对比片段）</td></tr>
+    <tr><td class="td-time">88-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾TCP/UDP要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画三次握手和四次挥手流程图；各举2个TCP和UDP的应用例子</div>
+</div>
+
+<!-- 课时29 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第29课时</span>应用层协议</div>
+  <div class="obj-box"><b>教学目标：</b>了解HTTP、DNS、FTP、DHCP等常见应用层协议；理解DNS域名解析过程</div>
+  <div class="key-box"><b>重点难点：</b>重点=HTTP和DNS的工作原理；难点=理解DNS域名解析的层次过程</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P53-P65）</span></div>
+  <ul class="content-list">
+    <li>HTTP：超文本传输协议，浏览器与服务器之间的通信协议（请求-响应模式）</li>
+    <li>DNS：域名系统，将域名(www.baidu.com)翻译成IP地址(14.215.177.39)</li>
+    <li>DNS解析过程：浏览器缓存→本地DNS→根DNS→顶级DNS→权威DNS</li>
+    <li>FTP：文件传输协议，用于上传下载文件</li>
+    <li>DHCP：动态主机配置协议，自动分配IP地址</li>
+    <li>生活类比：DNS=电话簿（名字→号码），DHCP=前台自动分配工位号</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：输入www.baidu.com后发生了什么？引出DNS</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解HTTP请求-响应模式和DNS解析过程，用"电话簿"类比DNS</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1c4411d7jb" target="_blank" class="video-link">计算机网络微课堂-DNS协议</a>（B站，选DNS部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-62</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解FTP和DHCP协议</td></tr>
+    <tr><td class="td-time">62-80</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①排列DNS解析步骤 ②填表：各协议功能（HTTP/DNS/FTP/DHCP）③简答：为什么要用域名而不是直接用IP？</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾应用层协议要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画出DNS域名解析的完整流程图；整理4个应用层协议的功能表</div>
+</div>
+
+<!-- 课时30 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第30课时</span>网络设备与第七章复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解交换机、路由器等网络设备；复习第7章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=交换机和路由器的区别；难点=综合运用网络知识分析实际场景</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第7章 P66-P78）</span></div>
+  <ul class="content-list">
+    <li>交换机：工作在数据链路层，连接同一局域网内的设备（用MAC地址转发）</li>
+    <li>路由器：工作在网络层，连接不同网络（用IP地址转发）</li>
+    <li>交换机 vs 路由器：交换机=同一楼层走廊，路由器=楼与楼之间的桥</li>
+    <li>其他设备：集线器(Hub-已淘汰)、网关、负载均衡器</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解交换机和路由器的功能区别，用"走廊vs桥梁"类比</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1iH4y1H7vp/" target="_blank" class="video-link">谢希仁计算机网络-网络设备</a>（B站，选路由器部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第7章综合测试：</b>20道题（10选择+5判断+5填空），覆盖OSI/TCP-IP/IP地址/TCP-UDP/应用层协议/网络设备</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第7章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第7章总结，预告第8章数据库</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第8章数据库基础概念</div>
+</div>
+
+<!-- 课时31 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第31课时</span>数据库基础概念</div>
+  <div class="obj-box"><b>教学目标：</b>理解数据库、数据库管理系统(DBMS)的概念；认识关系型和非关系型数据库的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=数据库和DBMS的概念；难点=理解关系型数据库的基本概念</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P1-P12）</span></div>
+  <ul class="content-list">
+    <li>数据库(DB)：有组织地存储数据的容器</li>
+    <li>数据库管理系统(DBMS)：管理数据库的软件，如MySQL、Oracle、SQL Server</li>
+    <li>关系型数据库：用表格存储数据，表与表之间有关系（MySQL、Oracle）</li>
+    <li>非关系型数据库(NoSQL)：用键值对/文档等方式存储（Redis、MongoDB）</li>
+    <li>数据库系统=DB+DBMS+应用程序+DBA（数据库管理员）</li>
+    <li>生活类比：数据库=文件柜，DBMS=文件柜管理员，表=文件夹，行=每份文件</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：学校怎么存储全班同学的成绩？引出数据库</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解数据库/DBMS概念，用"文件柜"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1DA411e7QU/" target="_blank" class="video-link">数据分析SQL零基础入门-关系型数据库基础</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解关系型vs非关系型数据库的区别</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：数据库相关概念（DB/DBMS/DBA/DBS含义）②对比关系型vs非关系型数据库 ③简答：为什么淘宝要用两种数据库？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾数据库基础概念</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理数据库术语表；举出3个生活中使用数据库的场景</div>
+</div>
+
+<!-- 课时32 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第32课时</span>关系型数据库与表结构</div>
+  <div class="obj-box"><b>教学目标：</b>理解表、字段、记录的概念；掌握主键、外键的作用；了解表之间的关系</div>
+  <div class="key-box"><b>重点难点：</b>重点=主键和外键的概念；难点=理解表与表之间的关联关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P13-P24）</span></div>
+  <ul class="content-list">
+    <li>表(Table)：由行和列组成的二维结构，存储一类数据</li>
+    <li>字段(Field/列)：表的列，描述数据的属性（如姓名、年龄）</li>
+    <li>记录(Record/行)：表的一行，表示一条具体数据</li>
+    <li>主键(Primary Key)：唯一标识每条记录的字段，不能重复、不能为空</li>
+    <li>外键(Foreign Key)：引用其他表主键的字段，建立表间关系</li>
+    <li>表间关系：一对一(1:1)、一对多(1:N)、多对多(M:N)</li>
+    <li>生活类比：学生表=花名册（学号=主键），选课表=选课单（学号=外键关联学生表）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>用Excel表格类比数据库表，引出表结构概念</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解表/字段/记录/主键/外键，用"花名册+选课单"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Vy4y1z7EX" target="_blank" class="video-link">老杜MySQL入门-表结构</a>（B站，选表和主键部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解表间关系（1:1/1:N/M:N），画图演示</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①设计一个学生表（字段名/类型/是否主键）②设计一个选课表并标出外键 ③判断表间关系类型</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾表结构概念</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>设计"图书借阅"场景的3张表（图书表/读者表/借阅表），标出主键和外键</div>
+</div>
+
+<!-- 课时33 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第33课时</span>SQL语言入门</div>
+  <div class="obj-box"><b>教学目标：</b>了解SQL语言的概念和分类；掌握基本的增删改查(CRUD)语句</div>
+  <div class="key-box"><b>重点难点：</b>重点=SELECT/INSERT/UPDATE/DELETE语句；难点=理解SQL语句的语法结构</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P25-P36）</span></div>
+  <ul class="content-list">
+    <li>SQL(结构化查询语言)：操作数据库的标准语言</li>
+    <li>SQL分类：DDL(数据定义)、DML(数据操作)、DQL(数据查询)、DCL(数据控制)</li>
+    <li>SELECT查询：SELECT 字段 FROM 表 WHERE 条件</li>
+    <li>INSERT插入：INSERT INTO 表(字段) VALUES(值)</li>
+    <li>UPDATE修改：UPDATE 表 SET 字段=值 WHERE 条件</li>
+    <li>DELETE删除：DELETE FROM 表 WHERE 条件</li>
+    <li>生活类比：SQL=跟数据库"说话"的语言，SELECT=帮我找、INSERT=帮我存、UPDATE=帮我改、DELETE=帮我删</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：如果你是数据库管理员，怎么"命令"数据库做事？引出SQL</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解SQL分类和CRUD基本语法，在PPT上展示代码示例</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1634y1R77q" target="_blank" class="video-link">从零开始学SQL（38分钟入门）</a>（B站，选前15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师在大屏幕上演示SQL语句执行效果（PPT截图或录屏）</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①根据给定学生表，写出查询所有男生的SQL ②写插入一条新记录的SQL ③写修改某同学成绩的SQL ④写删除某条记录的SQL</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾CRUD四条语句</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写CRUD四条SQL语句模板；练习5道SQL手写题</div>
+</div>
+
+<!-- 课时34 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第34课时</span>SQL查询进阶</div>
+  <div class="obj-box"><b>教学目标：</b>掌握WHERE条件查询、ORDER BY排序、GROUP BY分组；了解多表连接查询(JOIN)</div>
+  <div class="key-box"><b>重点难点：</b>重点=条件查询和排序；难点=理解GROUP BY分组和JOIN连接</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P37-P48）</span></div>
+  <ul class="content-list">
+    <li>WHERE条件：=、>、<、>=、<=、<>、AND、OR、LIKE、BETWEEN、IN</li>
+    <li>ORDER BY排序：ASC升序、DESC降序</li>
+    <li>GROUP BY分组：按字段分组，配合COUNT/SUM/AVG/MAX/MIN聚合函数</li>
+    <li>LIMIT分页：LIMIT n 显示前n条记录</li>
+    <li>JOIN连接：INNER JOIN(内连接)、LEFT JOIN(左连接)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>复习上节CRUD，提问：怎么只查成绩大于80分的？引出WHERE</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解WHERE/ORDER BY/GROUP BY/LIMIT语法和示例</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1fx411X7BD" target="_blank" class="video-link">MySQL基础入门-查询语句</a>（B站，选条件查询部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-62</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解JOIN连接查询，画图演示内连接和左连接的区别</td></tr>
+    <tr><td class="td-time">62-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①写出查询成绩60-80分之间学生的SQL ②写出按班级分组计算平均成绩的SQL ③写出按成绩降序排列的SQL ④写出连接学生表和选课表的SQL</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾查询进阶语法</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完成5道SQL查询手写练习题（含WHERE/ORDER BY/GROUP BY/JOIN各类型）</div>
+</div>
+
+<!-- 课时35 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第35课时</span>数据库设计与云数据库</div>
+  <div class="obj-box"><b>教学目标：</b>了解数据库设计的基本步骤和E-R图；认识云数据库的概念和优势</div>
+  <div class="key-box"><b>重点难点：</b>重点=E-R图基本概念和云数据库优势；难点=理解数据库设计规范化</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P49-P60）</span></div>
+  <ul class="content-list">
+    <li>数据库设计步骤：需求分析→概念设计(E-R图)→逻辑设计(表结构)→物理设计</li>
+    <li>E-R图：实体(Entity)、关系(Relationship)、属性(Attribute)</li>
+    <li>数据库三大范式：1NF(原子性)、2NF(完全依赖)、3NF(无传递依赖)</li>
+    <li>云数据库：部署在云端的数据库服务，如阿里云RDS、腾讯云CDB</li>
+    <li>云数据库优势：免运维、自动备份、弹性扩展、高可用</li>
+    <li>生活类比：云数据库=租公寓（拎包入住、物业负责维修），自建数据库=自建房（什么都要自己管）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：如果让你设计一个外卖平台的数据库，要存哪些表？引出数据库设计</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解E-R图和三大范式（简化版），用外卖平台举例</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1iq4y1u7vj" target="_blank" class="video-link">尚硅谷MySQL-数据库设计</a>（B站，选E-R图部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云数据库概念和优势，用"租公寓"类比</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①画一个简单的E-R图（学生-课程-教师）②填表：自建数据库vs云数据库对比 ③简答：云数据库为什么能"免运维"？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾数据库设计和云数据库要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>为"图书管理系统"画一个E-R图（包含图书、读者、借阅3个实体）</div>
+</div>
+
+<!-- 课时36 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第36课时</span>数据库安全与第三单元复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解数据库安全措施；复习第7-8章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=数据库安全基本措施；难点=综合运用网络和数据库知识</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第8章 P61-P69）</span></div>
+  <ul class="content-list">
+    <li>数据库安全威胁：SQL注入、未授权访问、数据泄露</li>
+    <li>安全措施：权限控制、数据加密、审计日志、定期备份</li>
+    <li>SQL注入原理：通过输入恶意SQL语句获取或破坏数据</li>
+    <li>防范SQL注入：参数化查询、输入验证、最小权限原则</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解数据库安全威胁和防范措施，用SQL注入举例</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Vy4y1z7EX" target="_blank" class="video-link">老杜MySQL-数据库安全</a>（B站，选安全部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第三单元综合测试：</b>20道题，覆盖第7-8章（网络+数据库），限时20分钟</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第7-8章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第三单元总结，预告第四单元虚拟化与Linux</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第9章虚拟化基础</div>
+</div>
+
+<!-- ===== 第四单元 课时37-48 ===== -->
+<div class="unit-header">第四单元（课时37-48）：虚拟化基础 + Linux基础</div>
+<div class="unit-info">
+  覆盖章节：第9章 虚拟化基础（95页，7课时）+ 第10章 Linux基础（77页，5课时）<br>
+  教学目标：理解虚拟化技术原理和类型；了解VMware/KVM/Docker等主流虚拟化技术；掌握Linux基本概念和常用命令<br>
+  教学方式：教师讲授 + B站视频播放 + 教师演示 + 纸面练习活动（无上机）
+</div>
+
+<!-- 课时37 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第37课时</span>虚拟化技术概述</div>
+  <div class="obj-box"><b>教学目标：</b>理解虚拟化的概念和核心思想；了解虚拟化的类型和优势；认识虚拟化与云计算的关系</div>
+  <div class="key-box"><b>重点难点：</b>重点=虚拟化的定义和核心优势；难点=理解"资源抽象"的概念</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P1-P14）</span></div>
+  <ul class="content-list">
+    <li>虚拟化定义：将物理资源（CPU/内存/硬盘/网络）抽象为虚拟资源，供多个虚拟机共享</li>
+    <li>虚拟化核心思想：一台物理机运行多个虚拟机，提高资源利用率</li>
+    <li>虚拟化类型：服务器虚拟化、桌面虚拟化、网络虚拟化、存储虚拟化</li>
+    <li>虚拟化优势：提高利用率、降低成本、快速部署、隔离隔离</li>
+    <li>虚拟化是云计算的技术基础：云=虚拟化+自动化+按需服务</li>
+    <li>生活类比：虚拟化=合租房（一套房子隔成多间，各自独立使用），物理机=独栋别墅（一人住一套，浪费空间）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：一台电脑能不能同时运行Windows和Linux？引出虚拟化</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟化定义、类型和优势，用"合租房"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1ix411f7zu/" target="_blank" class="video-link">KVM虚拟化介绍与演示</a>（B站，选前15分钟概念部分）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟化与云计算的关系</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：物理机 vs 虚拟机对比（利用率/成本/部署速度/隔离性）②简答：为什么说虚拟化是云计算的基础？ ③画图：一台物理机→Hypervisor→3个虚拟机</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾虚拟化概念要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理虚拟化定义、类型和优势笔记；画虚拟化架构示意图</div>
+</div>
+
+<!-- 课时38 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第38课时</span>虚拟化原理与Hypervisor</div>
+  <div class="obj-box"><b>教学目标：</b>理解Hypervisor的概念和分类；了解Type 1和Type 2的区别；认识虚拟机的组成</div>
+  <div class="key-box"><b>重点难点：</b>重点=Hypervisor两种类型的区别；难点=理解CPU/内存/IO虚拟化原理</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P15-P28）</span></div>
+  <ul class="content-list">
+    <li>Hypervisor（虚拟机监视器/VMM）：管理虚拟机的软件层</li>
+    <li>Type 1（裸金属）：直接运行在硬件上，如VMware ESXi、Hyper-V（性能好）</li>
+    <li>Type 2（宿主型）：运行在操作系统上，如VMware Workstation、VirtualBox（易用）</li>
+    <li>CPU虚拟化：时间片轮转，多个虚拟机共享物理CPU</li>
+    <li>内存虚拟化：虚拟机看到的是连续内存，实际映射到物理内存的不同区域</li>
+    <li>虚拟机组成：虚拟CPU、虚拟内存、虚拟磁盘、虚拟网卡</li>
+    <li>生活类比：Type 1=直接在地基上盖楼（效率高），Type 2=在已有楼上加层（方便但稍慢）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>复习上节虚拟化概念，提问：谁来管理这些虚拟机？引出Hypervisor</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Hypervisor两种类型，用"地基盖楼vs加层"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1S7411871J" target="_blank" class="video-link">KVM虚拟化技术-进阶到实战</a>（B站，选Hypervisor原理部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解CPU/内存/IO虚拟化原理（简化版）</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表对比Type 1 vs Type 2（运行位置/性能/典型产品/适用场景）②画虚拟机架构图 ③简答：为什么企业服务器多用Type 1？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Hypervisor要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理Hypervisor两种类型对比表；画Type 1和Type 2架构对比图</div>
+</div>
+
+<!-- 课时39 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第39课时</span>VMware虚拟化</div>
+  <div class="obj-box"><b>教学目标：</b>了解VMware产品系列；认识VMware Workstation和ESXi的区别；了解虚拟机的创建和管理</div>
+  <div class="key-box"><b>重点难点：</b>重点=VMware产品系列和用途；难点=理解vSphere虚拟化平台架构</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P29-P42）</span></div>
+  <ul class="content-list">
+    <li>VMware产品系列：Workstation(桌面)、ESXi(服务器)、vSphere(企业平台)</li>
+    <li>VMware Workstation：Type 2，运行在Windows/Linux上，适合个人学习和测试</li>
+    <li>VMware ESXi：Type 1，直接安装在服务器硬件上，企业级虚拟化</li>
+    <li>vSphere：ESXi + vCenter Server，集中管理多台ESXi主机</li>
+    <li>虚拟机操作：创建虚拟机、安装操作系统、快照、克隆</li>
+    <li>快照(Snapshot)：保存虚拟机当前状态，可随时回滚（像游戏存档）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你在电脑上用过虚拟机吗？引出VMware</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解VMware产品系列和区别</td></tr>
+    <tr><td class="td-time">28-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1bU411U7rp/" target="_blank" class="video-link">VMware虚拟化教程</a>（B站，选创建虚拟机部分，约15分钟）</td></tr>
+    <tr><td class="td-time">48-65</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师在大屏幕上演示：VMware Workstation创建虚拟机、做快照、克隆操作（录屏或PPT截图）</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：Workstation vs ESXi对比 ②排列创建虚拟机的步骤 ③简答：快照和克隆有什么区别？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾VMware要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理VMware产品对比表；描述创建虚拟机的步骤</div>
+</div>
+
+<!-- 课时40 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第40课时</span>KVM虚拟化</div>
+  <div class="obj-box"><b>教学目标：</b>了解KVM的概念和特点；认识KVM与QEMU的关系；了解KVM在云计算中的应用</div>
+  <div class="key-box"><b>重点难点：</b>重点=KVM的特点和在云计算中的地位；难点=理解KVM+QEMU的协作关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P43-P56）</span></div>
+  <ul class="content-list">
+    <li>KVM（Kernel-based Virtual Machine）：Linux内核内置的虚拟化模块，Type 1</li>
+    <li>KVM特点：开源免费、性能接近物理机、Linux内核集成</li>
+    <li>QEMU：模拟硬件设备，与KVM配合实现完整虚拟化</li>
+    <li>KVM + QEMU：KVM负责CPU/内存虚拟化，QEMU负责IO设备模拟</li>
+    <li>KVM在云计算中的地位：OpenStack默认虚拟化方案，阿里云/华为云底层使用KVM</li>
+    <li>管理工具：virsh命令行、virt-manager图形界面</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：阿里云的虚拟机用什么技术做的？引出KVM</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解KVM概念、特点、与QEMU的关系</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1ix411f7zu/" target="_blank" class="video-link">KVM虚拟化介绍与演示</a>（B站，选KVM架构部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解KVM在云计算中的应用（OpenStack默认方案）</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：VMware vs KVM对比（开源/费用/性能/适用场景）②简答：为什么OpenStack选择KVM？ ③画KVM+QEMU架构图</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾KVM要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理KVM与VMware对比表；简述KVM+QEMU的分工</div>
+</div>
+
+<!-- 课时41 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第41课时</span>容器技术Docker</div>
+  <div class="obj-box"><b>教学目标：</b>理解容器的概念和与虚拟机的区别；了解Docker的基本原理；认识容器在云计算中的应用</div>
+  <div class="key-box"><b>重点难点：</b>重点=容器vs虚拟机的区别；难点=理解容器"共享内核"的轻量级特性</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P57-P70）</span></div>
+  <ul class="content-list">
+    <li>容器：轻量级虚拟化技术，共享宿主机内核，不需要完整操作系统</li>
+    <li>容器 vs 虚拟机：虚拟机=每台带完整OS（重），容器=共享内核（轻，秒级启动）</li>
+    <li>Docker：最流行的容器引擎，镜像(Image)+容器(Container)+仓库(Registry)</li>
+    <li>Docker镜像：只读模板，类似"安装包"</li>
+    <li>Docker容器：镜像的运行实例，类似"运行中的程序"</li>
+    <li>Docker仓库：存放镜像的地方（Docker Hub=应用商店）</li>
+    <li>生活类比：虚拟机=每间房独立厨房卫生间（安全但浪费空间），容器=合租公共厨房（节省资源但需协调）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：虚拟机启动要几十秒，有没有更快的方式？引出容器</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解容器概念、Docker三要素，用"合租房"类比</td></tr>
+    <tr><td class="td-time">28-48</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV14s4y1i7Vf/" target="_blank" class="video-link">30分钟Docker入门教程</a>（B站，选前15分钟概念部分）</td></tr>
+    <tr><td class="td-time">48-62</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV11L411g7U1" target="_blank" class="video-link">Docker快速入门（1小时）</a>（B站，选前10分钟）</td></tr>
+    <tr><td class="td-time">62-80</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：虚拟机 vs 容器对比（启动速度/资源占用/隔离性/安全/适用场景）②画Docker三要素关系图 ③简答：为什么微服务要用容器？</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾容器技术要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理虚拟机vs容器对比表；用自己的话解释Docker镜像和容器的关系</div>
+</div>
+
+<!-- 课时42 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第42课时</span>虚拟化网络与存储</div>
+  <div class="obj-box"><b>教学目标：</b>了解虚拟化网络的基本概念；认识虚拟交换机和虚拟网卡；了解虚拟化存储技术</div>
+  <div class="key-box"><b>重点难点：</b>重点=虚拟网络和虚拟存储的基本概念；难点=理解虚拟交换机的工作原理</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P71-P84）</span></div>
+  <ul class="content-list">
+    <li>虚拟网络：虚拟机之间的网络通信，通过虚拟交换机连接</li>
+    <li>虚拟交换机(vSwitch)：软件实现的交换机，连接同一物理机上的虚拟机</li>
+    <li>虚拟网卡：虚拟机的网络接口，有独立MAC地址</li>
+    <li>网络模式：桥接模式(Bridge)、NAT模式、仅主机模式(Host-Only)</li>
+    <li>虚拟化存储：虚拟磁盘文件（VMDK、QCOW2格式）</li>
+    <li>存储类型：本地存储、共享存储(SAN/NAS)、分布式存储(Ceph)</li>
+    <li>生活类比：虚拟交换机=办公室内部分机网络，桥接=直拨外线，NAT=通过前台转接</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：虚拟机之间怎么互相通信？虚拟机的"硬盘"存在哪？</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟网络和三种网络模式，用"电话分机"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1NJ411K7pv" target="_blank" class="video-link">Linux运维+云计算-虚拟化网络</a>（B站，选网络部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟化存储和存储类型</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：三种网络模式对比 ②填表：本地存储vs共享存储vs分布式存储 ③简答：为什么需要共享存储？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾虚拟化网络和存储要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理三种网络模式对比表；画虚拟化网络架构图</div>
+</div>
+
+<!-- 课时43 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第43课时</span>虚拟化与云计算关系 + 第九章复习</div>
+  <div class="obj-box"><b>教学目标：</b>理解虚拟化在云计算中的核心地位；复习第9章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=虚拟化与云计算的关系；难点=综合运用虚拟化知识</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第9章 P85-P95）</span></div>
+  <ul class="content-list">
+    <li>虚拟化是云计算的技术基础：IaaS=虚拟化+自动化+计费</li>
+    <li>虚拟化提供资源池化，云计算提供按需服务</li>
+    <li>从虚拟化到云计算的演进：虚拟化→资源池化→云平台→云服务</li>
+    <li>主流虚拟化技术对比：VMware(商业)、KVM(开源)、Docker(容器)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟化与云计算的关系，画演进路线图</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">北京理工大学-虚拟化与云计算</a>（B站，选虚拟化章节，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第9章综合测试：</b>20道题，覆盖虚拟化概念/Hypervisor/VMware/KVM/Docker/虚拟网络与存储</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第9章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第9章总结，预告第10章Linux基础</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第10章Linux基础</div>
+</div>
+
+<!-- 课时44 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第44课时</span>Linux操作系统概述</div>
+  <div class="obj-box"><b>教学目标：</b>了解Linux的发展历史和特点；认识主流Linux发行版；理解Linux在云计算中的重要地位</div>
+  <div class="key-box"><b>重点难点：</b>重点=Linux的特点和主流发行版；难点=理解开源软件的概念</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第10章 P1-P15）</span></div>
+  <ul class="content-list">
+    <li>Linux发展史：1991年Linus Torvalds创建Linux内核，开源免费</li>
+    <li>Linux特点：开源、稳定、安全、免费、命令行强大</li>
+    <li>主流发行版：Ubuntu(易用)、CentOS/RHEL(服务器)、Debian(稳定)</li>
+    <li>Linux在云计算中的地位：90%的云服务器运行Linux，KVM/Docker/OpenStack都基于Linux</li>
+    <li>开源精神：源代码公开，任何人可以查看、修改、分发</li>
+    <li>生活类比：Windows=商业餐厅（付费、菜单固定），Linux=自助厨房（免费、自己定制）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你手机用的是什么系统？安卓其实是基于Linux的！引出Linux</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Linux历史、特点、发行版，用"自助厨房"类比开源</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Sv411r7vd" target="_blank" class="video-link">韩顺平一周学会Linux-基础介绍</a>（B站，选第1-2讲，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Linux在云计算中的地位</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：Windows vs Linux对比（开源/费用/稳定性/服务器市场/桌面市场）②填表：Ubuntu/CentOS/Debian特点 ③简答：为什么云服务器多用Linux？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Linux概述要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理Linux特点笔记；查资料了解Ubuntu和CentOS的区别</div>
+</div>
+
+<!-- 课时45 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第45课时</span>Linux文件系统与目录结构</div>
+  <div class="obj-box"><b>教学目标：</b>理解Linux文件系统层次结构；掌握常用目录的作用；了解Linux一切皆文件的理念</div>
+  <div class="key-box"><b>重点难点：</b>重点=Linux目录结构和各目录作用；难点=理解"一切皆文件"的设计理念</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第10章 P16-P31）</span></div>
+  <ul class="content-list">
+    <li>Linux文件系统层次结构（FHS）：根目录(/)开始的树形结构</li>
+    <li>重要目录：/home(用户主目录)、/etc(配置文件)、/var(日志数据)、/bin(命令)、/tmp(临时文件)</li>
+    <li>"一切皆文件"：设备是文件(/dev)、进程信息是文件(/proc)、网络也是文件</li>
+    <li>路径：绝对路径(从/开始)、相对路径(从当前目录开始)</li>
+    <li>生活类比：Linux目录=图书馆分类系统（每个区域放特定类型书），"一切皆文件"=用统一方式管理所有资源</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>对比Windows(C:\Users\...)和Linux(/home/...)的目录结构</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Linux目录结构，用"图书馆分类"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Sv411r7vd" target="_blank" class="video-link">韩顺平Linux-文件系统</a>（B站，选目录结构部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解"一切皆文件"理念和绝对/相对路径</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填写Linux目录表格（目录名/用途/类比）②判断绝对路径vs相对路径 ③简答：/etc和/home分别存什么？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Linux文件系统要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写10个Linux重要目录及其作用；练习绝对路径和相对路径的转换</div>
+</div>
+
+<!-- 课时46 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第46课时</span>Linux常用命令（一）</div>
+  <div class="obj-box"><b>教学目标：</b>掌握文件和目录操作命令；了解命令的基本格式</div>
+  <div class="key-box"><b>重点难点：</b>重点=ls/cd/pwd/mkdir/rm/cp/mv命令；难点=理解命令参数和选项的使用</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第10章 P32-P47）</span></div>
+  <ul class="content-list">
+    <li>命令格式：命令 [选项] [参数]，如 ls -l /home</li>
+    <li>目录操作：pwd(显示当前目录)、cd(切换目录)、ls(列出文件)、mkdir(创建目录)</li>
+    <li>文件操作：touch(创建文件)、cp(复制)、mv(移动/重命名)、rm(删除)</li>
+    <li>查看文件：cat(显示全部)、more/less(分页查看)、head/tail(查看头部/尾部)</li>
+    <li>常用选项：-l(详细列表)、-a(显示隐藏文件)、-r(递归)、-f(强制)</li>
+    <li>生活类比：命令=给管家的指令，选项=告诉管家怎么做，参数=告诉管家对谁做</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：Windows里你怎么新建文件夹？Linux里怎么做？引出命令行</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解命令格式和常用文件/目录命令</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Sv411r7vd" target="_blank" class="video-link">韩顺平Linux-常用命令</a>（B站，选文件操作命令，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师在大屏幕上演示Linux命令执行效果（录屏或虚拟机演示）</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①写出指定操作的命令（创建目录/删除文件/复制目录/查看文件内容）②判断命令选项的含义 ③写出从/home到/etc的命令</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Linux常用命令</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写10个文件/目录操作命令及功能；练习写出指定场景的命令</div>
+</div>
+
+<!-- 课时47 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第47课时</span>Linux常用命令（二）与用户管理</div>
+  <div class="obj-box"><b>教学目标：</b>掌握文件权限管理命令；了解用户和组管理；认识chmod和chown命令</div>
+  <div class="key-box"><b>重点难点：</b>重点=文件权限概念和chmod命令；难点=理解rwx权限和数字表示法</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第10章 P48-P62）</span></div>
+  <ul class="content-list">
+    <li>用户管理：useradd(添加用户)、passwd(设密码)、userdel(删除用户)</li>
+    <li>组管理：groupadd(创建组)、usermod(修改用户所属组)</li>
+    <li>文件权限：r(读=4)、w(写=2)、x(执行=1)</li>
+    <li>权限对象：所有者(u)、所属组(g)、其他人(o)、所有人(a)</li>
+    <li>chmod命令：chmod 755 file（数字法）、chmod u+x file（符号法）</li>
+    <li>chown命令：修改文件所有者和所属组</li>
+    <li>生活类比：权限=门禁卡权限，r=能看、w=能改、x=能进入</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：为什么有些文件你不能修改？引出权限概念</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解用户/组管理和文件权限rwx，用"门禁卡"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1Sv411r7vd" target="_blank" class="video-link">韩顺平Linux-用户权限管理</a>（B站，选权限管理部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解chmod数字法和符号法，大量举例</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①计算权限数字：rwx=7, r-x=5, r--=4 ②写出chmod命令实现指定权限 ③判断给定权限数字的含义 ④简答：为什么root用户可以操作所有文件？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾权限管理要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>练习10道权限数字计算题；默写chmod命令两种用法</div>
+</div>
+
+<!-- 课时48 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第48课时</span>Linux在云计算中的应用 + 第四单元复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解Linux在云计算中的实际应用；复习第9-10章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=Linux在云计算中的角色；难点=综合运用虚拟化和Linux知识</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第10章 P63-P77）</span></div>
+  <ul class="content-list">
+    <li>Linux在云计算中的角色：云服务器操作系统、容器宿主机、云平台管理节点</li>
+    <li>Linux + KVM = IaaS云平台基础</li>
+    <li>Linux + Docker = 容器云基础</li>
+    <li>Linux + OpenStack = 私有云平台</li>
+    <li>常用运维命令：ps(进程)、top(资源监控)、df(磁盘)、free(内存)、systemctl(服务管理)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Linux在云计算中的应用场景</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1pz4y1D73n" target="_blank" class="video-link">千锋Linux云计算基础</a>（B站，选云计算应用部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第四单元综合测试：</b>20道题，覆盖第9-10章（虚拟化+Linux），限时20分钟</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第9-10章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第四单元总结，预告第五单元Web服务与公有云</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第11章Web服务</div>
+</div>
+
+<!-- ===== 第五单元 课时49-60 ===== -->
+<div class="unit-header">第五单元（课时49-60）：Web服务 + 公有云平台</div>
+<div class="unit-info">
+  覆盖章节：第11章 Web服务（103页，6课时）+ 第12章 公有云平台（72页，6课时）<br>
+  教学目标：理解Web服务的工作原理和HTTP协议；了解Apache和Nginx服务器；认识主流公有云平台及其服务<br>
+  教学方式：教师讲授 + B站视频播放 + 教师演示 + 纸面练习活动（无上机）
+</div>
+
+<!-- 课时49 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第49课时</span>Web服务概述</div>
+  <div class="obj-box"><b>教学目标：</b>理解Web服务的基本概念；认识客户端-服务器模型；了解静态网页和动态网页的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=Web服务的工作原理；难点=理解客户端-服务器交互过程</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P1-P17）</span></div>
+  <ul class="content-list">
+    <li>Web服务：基于互联网的信息服务，通过浏览器访问</li>
+    <li>客户端-服务器模型：浏览器(客户端)发送请求→服务器处理→返回响应→浏览器显示</li>
+    <li>URL结构：协议(http)://域名/路径</li>
+    <li>静态网页：内容固定不变(HTML文件)，任何人看到的内容一样</li>
+    <li>动态网页：内容根据用户/数据动态生成(PHP/JSP/Python)，如淘宝首页</li>
+    <li>Web服务器软件：Apache、Nginx、IIS</li>
+    <li>生活类比：Web服务=去餐厅点餐，浏览器=顾客，服务器=厨房，HTTP=点餐用的语言</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：打开百度搜索时，背后发生了什么？引出Web服务</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Web服务原理、客户端-服务器模型，用"餐厅点餐"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1F54y1t7Dx" target="_blank" class="video-link">240分钟搞懂HTTP和HTTPS协议</a>（B站，选Web基础部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解静态网页vs动态网页的区别</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①画出Web服务请求-响应流程图 ②填表：静态网页vs动态网页对比 ③解析一个URL的各部分</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Web服务概念</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画Web请求-响应流程图；列举3个静态网页和3个动态网页的例子</div>
+</div>
+
+<!-- 课时50 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第50课时</span>HTTP协议详解</div>
+  <div class="obj-box"><b>教学目标：</b>理解HTTP请求和响应的结构；掌握HTTP方法和状态码；了解HTTP与HTTPS的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=HTTP请求/响应格式和常见状态码；难点=理解GET和POST的区别</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P18-P34）</span></div>
+  <ul class="content-list">
+    <li>HTTP请求：请求行(GET /index.html HTTP/1.1) + 请求头 + 请求体</li>
+    <li>HTTP方法：GET(获取数据)、POST(提交数据)、PUT(更新)、DELETE(删除)</li>
+    <li>GET vs POST：GET参数在URL中(可见/不安全/长度有限)，POST参数在请求体中(不可见/安全/无限制)</li>
+    <li>HTTP响应：状态行(HTTP/1.1 200 OK) + 响应头 + 响应体</li>
+    <li>状态码：200(成功)、301/302(重定向)、404(未找到)、500(服务器错误)</li>
+    <li>HTTP vs HTTPS：HTTP=明文传输(不安全)，HTTPS=加密传输(安全)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：网页打不开显示404是什么意思？引出HTTP状态码</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解HTTP请求/响应格式、方法和状态码</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1F54y1t7Dx" target="_blank" class="video-link">240分钟搞懂HTTP-请求响应</a>（B站，选HTTP请求部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解GET vs POST和HTTP vs HTTPS</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：GET vs POST对比 ②匹配状态码和含义(200/301/404/500) ③写出完整的HTTP请求格式 ④简答：为什么要用HTTPS？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾HTTP协议要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写5个常见HTTP状态码及含义；整理GET vs POST对比表</div>
+</div>
+
+<!-- 课时51 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第51课时</span>Web服务器Apache</div>
+  <div class="obj-box"><b>教学目标：</b>了解Apache服务器的特点和应用场景；认识Apache的基本配置；了解虚拟主机概念</div>
+  <div class="key-box"><b>重点难点：</b>重点=Apache的特点和基本概念；难点=理解虚拟主机的原理</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P35-P51）</span></div>
+  <ul class="content-list">
+    <li>Apache：全球使用最广泛的Web服务器软件之一，开源免费</li>
+    <li>Apache特点：稳定、模块化设计、跨平台、支持多种动态语言</li>
+    <li>安装与启动：yum install httpd / systemctl start httpd</li>
+    <li>配置文件：/etc/httpd/conf/httpd.conf</li>
+    <li>虚拟主机：一台服务器上运行多个网站（基于域名/端口/IP）</li>
+    <li>生活类比：Apache=餐厅大堂经理，处理顾客点单请求；虚拟主机=一个餐厅分多个区域接待不同客人</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：网站是怎么"放"到服务器上的？引出Web服务器</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Apache特点和基本配置</td></tr>
+    <tr><td class="td-time">28-45</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师演示：Apache安装和启动过程（录屏或PPT截图），展示访问效果</td></tr>
+    <tr><td class="td-time">45-60</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解虚拟主机概念，用"餐厅分区"类比</td></tr>
+    <tr><td class="td-time">60-78</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：Apache特点 ②排列Apache安装启动步骤 ③简答：虚拟主机有什么好处？ ④画虚拟主机原理图</td></tr>
+    <tr><td class="td-time">78-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Apache要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理Apache笔记；画虚拟主机工作原理图</div>
+</div>
+
+<!-- 课时52 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第52课时</span>Web服务器Nginx</div>
+  <div class="obj-box"><b>教学目标：</b>了解Nginx的特点和优势；认识反向代理和负载均衡的概念；对比Apache与Nginx</div>
+  <div class="key-box"><b>重点难点：</b>重点=Nginx特点和反向代理概念；难点=理解负载均衡的工作原理</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P52-P68）</span></div>
+  <ul class="content-list">
+    <li>Nginx：高性能Web服务器和反向代理服务器，开源免费</li>
+    <li>Nginx特点：高并发能力强、内存占用少、可做反向代理和负载均衡</li>
+    <li>正向代理：代理客户端（翻墙工具），客户端知道目标服务器</li>
+    <li>反向代理：代理服务器端（Nginx），客户端不知道真实服务器</li>
+    <li>负载均衡：将请求分发到多台服务器，避免单台过载</li>
+    <li>Apache vs Nginx：Apache=稳定/功能多/慢，Nginx=高并发/轻量/快</li>
+    <li>生活类比：正向代理=代购(你告诉代购买什么)，反向代理=10086客服(你打一个号，系统分配客服)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：双十一淘宝每秒百万请求，一台服务器扛得住吗？引出Nginx和负载均衡</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Nginx特点、反向代理和负载均衡，用"10086客服"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1yS4y1N76R/" target="_blank" class="video-link">尚硅谷Nginx教程</a>（B站，选Nginx概念部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-62</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1F5411J7vK" target="_blank" class="video-link">狂神说Nginx入门</a>（B站，选反向代理部分，约10分钟）</td></tr>
+    <tr><td class="td-time">62-80</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：Apache vs Nginx对比 ②画图：正向代理vs反向代理 ③画负载均衡架构图 ④简答：为什么大网站都用Nginx？</td></tr>
+    <tr><td class="td-time">80-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾Nginx要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理Apache vs Nginx对比表；画反向代理+负载均衡架构图</div>
+</div>
+
+<!-- 课时53 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第53课时</span>Web应用与动态网站</div>
+  <div class="obj-box"><b>教学目标：</b>了解动态网站的技术架构；认识LAMP/LNMP架构；了解常见Web开发语言</div>
+  <div class="key-box"><b>重点难点：</b>重点=LAMP/LNMP架构组成；难点=理解前后端分离的概念</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P69-P85）</span></div>
+  <ul class="content-list">
+    <li>动态网站架构：Web服务器 + 应用服务器 + 数据库</li>
+    <li>LAMP架构：Linux + Apache + MySQL + PHP（经典组合）</li>
+    <li>LNMP架构：Linux + Nginx + MySQL + PHP（高性能组合）</li>
+    <li>前端技术：HTML(结构) + CSS(样式) + JavaScript(交互)</li>
+    <li>后端技术：PHP、Python、Java、Node.js</li>
+    <li>前后端分离：前端独立部署，通过API调用后端服务</li>
+    <li>生活类比：LAMP=一家餐厅的完整团队（Linux=场地、Apache=大堂、MySQL=仓库、PHP=厨师）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：淘宝首页每个人看到的内容不一样，是怎么做到的？引出动态网站</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解LAMP/LNMP架构，用"餐厅团队"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1F54y1t7Dx" target="_blank" class="video-link">HTTP和HTTPS协议-Web架构</a>（B站，选Web架构部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解前端/后端技术和前后端分离</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：LAMP各组件含义 ②画LAMP架构图 ③填表：前端vs后端技术 ④简答：LAMP和LNMP的区别是什么？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾动态网站架构</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画LAMP和LNMP架构对比图；整理前端和后端技术表格</div>
+</div>
+
+<!-- 课时54 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第54课时</span>Web安全与CDN + 第十一章复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解常见Web安全威胁；认识CDN和负载均衡的作用；复习第11章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=CDN概念和Web安全基本知识；难点=综合运用Web服务知识</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第11章 P86-P103）</span></div>
+  <ul class="content-list">
+    <li>Web安全威胁：XSS(跨站脚本)、SQL注入、CSRF(跨站请求伪造)</li>
+    <li>Web安全防护：输入验证、WAF(Web应用防火墙)、HTTPS</li>
+    <li>CDN(内容分发网络)：将内容缓存到全国各节点，用户就近访问，加速访问</li>
+    <li>CDN生活类比：京东物流——商品提前放到各地仓库，用户下单从最近仓库发货</li>
+    <li>负载均衡：将流量分发到多台服务器，提高可用性</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解Web安全威胁和防护措施</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1ov41187bq" target="_blank" class="video-link">黑马程序员Nginx-CDN与负载均衡</a>（B站，选CDN部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第11章综合测试：</b>20道题，覆盖Web服务/HTTP/Apache/Nginx/LAMP/CDN/Web安全</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第11章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第11章总结，预告第12章公有云平台</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第12章公有云平台</div>
+</div>
+
+<!-- 课时55 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第55课时</span>公有云平台概述</div>
+  <div class="obj-box"><b>教学目标：</b>理解公有云的概念和特点；了解公有云的服务类型；认识公有云与私有云的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=公有云的特点和服务类型；难点=理解公有云/私有云/混合云的区别</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P1-P12）</span></div>
+  <ul class="content-list">
+    <li>公有云：云厂商建设和运营的云平台，多租户共享资源，按需付费</li>
+    <li>公有云特点：弹性扩展、按量付费、免运维、全球覆盖</li>
+    <li>服务类型：IaaS(基础设施)、PaaS(平台)、SaaS(软件)</li>
+    <li>IaaS示例：云服务器ECS/CVM；PaaS示例：云数据库RDS；SaaS示例：钉钉/企业微信</li>
+    <li>公有云 vs 私有云：公有云=租房(共享/便宜/快速)，私有云=自建房(独享/可控/昂贵)</li>
+    <li>混合云：公有云+私有云组合，兼顾灵活性和安全性</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：你用过的百度网盘、腾讯文档属于什么云？引出公有云</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解公有云概念、服务类型，用"租房vs自建房"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1EE411A7C9/" target="_blank" class="video-link">企业上云指南-云时代机遇与挑战</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解公有云/私有云/混合云的区别</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：IaaS/PaaS/SaaS对比 ②填表：公有云vs私有云vs混合云 ③判断题：钉钉属于SaaS（√）</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾公有云概念</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理三种云服务类型表格；各举2个IaaS/PaaS/SaaS的产品例子</div>
+</div>
+
+<!-- 课时56 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第56课时</span>阿里云实践</div>
+  <div class="obj-box"><b>教学目标：</b>了解阿里云主要产品和服务；认识ECS云服务器、RDS云数据库、OSS对象存储</div>
+  <div class="key-box"><b>重点难点：</b>重点=阿里云三大核心产品(ECS/RDS/OSS)；难点=理解云产品的配置和计费方式</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P13-P24）</span></div>
+  <ul class="content-list">
+    <li>阿里云：中国市场份额第一的云计算厂商</li>
+    <li>ECS(弹性计算服务)：云服务器，相当于租一台远程电脑</li>
+    <li>ECS配置选择：CPU核数、内存大小、磁盘容量、带宽</li>
+    <li>RDS(关系型数据库服务)：云数据库，免运维MySQL/PostgreSQL</li>
+    <li>OSS(对象存储服务)：存储图片/视频/文件，类似无限大网盘</li>
+    <li>计费方式：按量付费(用多少付多少)、包年包月(固定套餐)</li>
+    <li>生活类比：ECS=租电脑、RDS=雇数据库管家、OSS=租仓库</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：如果要做个网站，需要买什么云服务？引出阿里云产品</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解ECS/RDS/OSS三大产品，用"租电脑/雇管家/租仓库"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师演示：阿里云控制台界面（PPT截图），展示ECS创建流程</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解计费方式和配置选择建议</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：ECS/RDS/OSS功能对比 ②场景题：做一个图片分享网站需要哪些云服务？ ③计算题：按量付费vs包月哪个更便宜？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾阿里云产品要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理阿里云三大产品对比表；设计一个网站上云方案</div>
+</div>
+
+<!-- 课时57 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第57课时</span>腾讯云实践</div>
+  <div class="obj-box"><b>教学目标：</b>了解腾讯云主要产品；对比阿里云与腾讯云的差异；认识腾讯云在音视频领域的优势</div>
+  <div class="key-box"><b>重点难点：</b>重点=腾讯云产品特点；难点=理解不同云厂商的产品差异</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P25-P36）</span></div>
+  <ul class="content-list">
+    <li>腾讯云：腾讯旗下云平台，在音视频/游戏领域优势突出</li>
+    <li>CVM(云服务器)：对应阿里云ECS</li>
+    <li>COS(对象存储)：对应阿里云OSS</li>
+    <li>腾讯云特色：TRTC(实时音视频)、直播/点播服务、游戏云</li>
+    <li>阿里云 vs 腾讯云：阿里云=综合全面/生态完善，腾讯云=音视频/游戏优势/社交生态</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：腾讯会议背后的技术是什么？引出腾讯云</td></tr>
+    <tr><td class="td-time">10-28</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解腾讯云产品和特色优势</td></tr>
+    <tr><td class="td-time">28-48</td><td>演示</td><td class="td-type type-demo">教师演示</td><td>教师演示：腾讯云控制台界面（PPT截图），展示CVM创建流程</td></tr>
+    <tr><td class="td-time">48-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>对比阿里云与腾讯云的差异</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：阿里云 vs 腾讯云产品对应关系 ②场景题：做直播平台选哪个云？为什么？ ③简答：腾讯云的核心优势是什么？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾腾讯云要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理阿里云vs腾讯云对比表</div>
+</div>
+
+<!-- 课时58 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第58课时</span>AWS云服务</div>
+  <div class="obj-box"><b>教学目标：</b>了解AWS全球云服务；认识EC2/S3/RDS等核心服务；了解AWS与国内云的区别</div>
+  <div class="key-box"><b>重点难点：</b>重点=AWS核心服务和全球地位；难点=理解AWS与国内云的差异</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P37-P48）</span></div>
+  <ul class="content-list">
+    <li>AWS(Amazon Web Services)：全球市场份额第一的云计算平台</li>
+    <li>EC2(Elastic Compute Cloud)：弹性云服务器，对应ECS/CVM</li>
+    <li>S3(Simple Storage Service)：对象存储，对应OSS/COS</li>
+    <li>RDS(Relational Database Service)：云数据库</li>
+    <li>AWS特点：服务种类最多(200+)、全球覆盖最广、技术创新领先</li>
+    <li>AWS vs 国内云：AWS=全球领先/服务丰富/价格较高，国内云=本地化好/价格便宜/合规便利</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：全球最大的云计算公司是哪家？引出AWS</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解AWS核心服务和特点</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1y7411A76U/" target="_blank" class="video-link">业务迁移上云要点解读</a>（B站，选AWS部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>对比AWS与国内云厂商</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：AWS/阿里云/腾讯云产品对应关系 ②简答：为什么中国企业多选国内云而不选AWS？ ③场景题：做出海App选哪个云？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾AWS要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理三大云厂商(AWS/阿里云/腾讯云)产品对照表</div>
+</div>
+
+<!-- 课时59 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第59课时</span>云服务选型与对比</div>
+  <div class="obj-box"><b>教学目标：</b>了解云服务选型的考量因素；认识不同业务场景的选云建议；了解云迁移的基本流程</div>
+  <div class="key-box"><b>重点难点：</b>重点=云选型考量因素；难点=根据实际场景做出合理选择</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P49-P60）</span></div>
+  <ul class="content-list">
+    <li>选型考量：价格、性能、服务种类、技术支持、合规要求、地域覆盖</li>
+    <li>不同场景选云：政务=华为云、游戏=腾讯云、电商=阿里云、出海=AWS</li>
+    <li>云迁移流程：评估→规划→迁移→测试→优化</li>
+    <li>迁移策略：直接迁移(Lift & Shift)、重构迁移、混合过渡</li>
+    <li>厂商锁定风险：过于依赖一家云厂商，后续切换困难</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：如果你创业做App，选哪个云？引出选型问题</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解选型因素和不同场景的选云建议</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1f54y1R74z" target="_blank" class="video-link">企业如何部署混合云</a>（B站，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云迁移流程和厂商锁定风险</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：6个选型考量因素 ②5个场景选云题（政务/游戏/电商/出海/创业）③简答：什么是厂商锁定？如何避免？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾选型要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>为一个指定场景（如在线教育平台）写一份选云建议</div>
+</div>
+
+<!-- 课时60 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第60课时</span>公有云安全与合规 + 第五单元复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解公有云安全合规要求；复习第11-12章全部知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=云安全合规基本概念；难点=综合运用Web服务和公有云知识</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第12章 P61-P72）</span></div>
+  <ul class="content-list">
+    <li>云安全合规：等保2.0、数据安全法、个人信息保护法</li>
+    <li>数据安全：数据分类分级、数据加密、跨境数据流动限制</li>
+    <li>云安全最佳实践：最小权限原则、多因素认证、安全审计日志</li>
+    <li>灾备与高可用：多可用区部署、异地容灾、RPO/RTO概念</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解云安全合规和数据安全要求</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1yf4y1h7Pm" target="_blank" class="video-link">浅谈云计算安全</a>（B站，选合规部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第五单元综合测试：</b>20道题，覆盖第11-12章（Web服务+公有云），限时20分钟</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>思维导图：</b>绘制第11-12章知识体系思维导图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第五单元总结，预告第六单元私有云与期末复习</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善思维导图；预习第13章私有云平台</div>
+</div>
+
+<!-- ===== 第六单元 课时61-72 ===== -->
+<div class="unit-header">第六单元（课时61-72）：私有云平台 + 综合复习与期末</div>
+<div class="unit-info">
+  覆盖章节：第13章 私有云平台（40页，4课时）+ 综合复习与期末考试（8课时）<br>
+  教学目标：了解私有云和OpenStack的基本概念；全面复习13章知识；完成期末考试<br>
+  教学方式：教师讲授 + B站视频播放 + 纸面测试 + 综合复习
+</div>
+
+<!-- 课时61 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第61课时</span>私有云概述</div>
+  <div class="obj-box"><b>教学目标：</b>理解私有云的概念和特点；认识私有云与公有云的区别；了解私有云的适用场景</div>
+  <div class="key-box"><b>重点难点：</b>重点=私有云的特点和适用场景；难点=理解私有云vs公有云vs混合云的选择</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第13章 P1-P10）</span></div>
+  <ul class="content-list">
+    <li>私有云：企业自建或专享的云平台，资源独享，数据可控</li>
+    <li>私有云特点：数据安全可控、定制化强、初期投入大、运维需自建团队</li>
+    <li>私有云适用场景：政府/金融/军事等对数据安全要求极高的行业</li>
+    <li>公有云 vs 私有云：公有云=租房(便宜/快速/共享)，私有云=自建房(安全/可控/昂贵)</li>
+    <li>混合云：核心数据放私有云，弹性业务放公有云</li>
+    <li>私有云方案：商业方案(VMware vSphere)、开源方案(OpenStack)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：银行的核心数据敢放在公有云上吗？引出私有云</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解私有云概念、特点、适用场景，用"自建房"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">北京理工大学-虚拟化与云计算</a>（B站，选私有云部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>对比公有云/私有云/混合云，讲解选型建议</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：公有云vs私有云vs混合云对比 ②场景题：医院/游戏公司/军队分别选什么云？ ③简答：为什么政府多选私有云？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾私有云概念</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理三种云部署模式对比表；了解OpenStack是什么</div>
+</div>
+
+<!-- 课时62 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第62课时</span>OpenStack架构</div>
+  <div class="obj-box"><b>教学目标：</b>了解OpenStack的发展历史和定位；理解OpenStack的整体架构；认识OpenStack在私有云中的地位</div>
+  <div class="key-box"><b>重点难点：</b>重点=OpenStack的定位和架构概述；难点=理解OpenStack各组件的协作关系</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第13章 P11-P20）</span></div>
+  <ul class="content-list">
+    <li>OpenStack：开源的云计算管理平台，由NASA和Rackspace发起</li>
+    <li>OpenStack定位：管理数据中心的计算/存储/网络资源，构建IaaS私有云</li>
+    <li>OpenStack特点：开源免费、模块化、Python开发、社区活跃</li>
+    <li>整体架构：Dashboard(Web界面) + 各组件(API通信) + 底层资源(KVM/存储/网络)</li>
+    <li>OpenStack在私有云中的地位：最流行的开源私有云方案</li>
+    <li>生活类比：OpenStack=物业管理公司，管理整栋大楼(数据中心)的各种设施</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>提问：企业想建自己的私有云，用什么软件？引出OpenStack</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解OpenStack历史、定位和架构，用"物业公司"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1hd4y137vM/" target="_blank" class="video-link">OpenStack介绍</a>（B站，选概念介绍部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解OpenStack架构图和各组件位置</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：OpenStack特点 ②画OpenStack整体架构图 ③简答：OpenStack和VMware vSphere有什么区别？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾OpenStack架构要点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>画OpenStack架构图；整理OpenStack vs VMware对比</div>
+</div>
+
+<!-- 课时63 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第63课时</span>OpenStack核心组件</div>
+  <div class="obj-box"><b>教学目标：</b>了解OpenStack六大核心组件的功能；理解各组件之间的协作关系</div>
+  <div class="key-box"><b>重点难点：</b>重点=六大组件的名称和功能；难点=理解组件间的协作流程</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第13章 P21-P30）</span></div>
+  <ul class="content-list">
+    <li>Nova(计算)：管理虚拟机的创建/调度/销毁，调用KVM</li>
+    <li>Neutron(网络)：提供虚拟网络功能，相当于虚拟交换机</li>
+    <li>Cinder(块存储)：提供持久化存储，相当于虚拟硬盘</li>
+    <li>Glance(镜像)：存储和管理虚拟机镜像模板</li>
+    <li>Keystone(认证)：身份认证和授权，所有组件的"门卫"</li>
+    <li>Horizon(Dashboard)：Web管理界面，可视化操作</li>
+    <li>生活类比：Nova=客房管理、Neutron=网络布线、Cinder=仓库、Glance=模板间、Keystone=门卫、Horizon=前台</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-10</td><td>导入</td><td class="td-type type-teach">讲授</td><td>复习OpenStack架构，提问：OpenStack由哪些模块组成？</td></tr>
+    <tr><td class="td-time">10-30</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解六大组件功能，用"酒店管理"类比</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV13s411371G" target="_blank" class="video-link">云计算OpenStack全集</a>（B站，选组件介绍部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-65</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解组件协作流程：用户登录(Horizon)→认证(Keystone)→创建虚拟机(Nova)→选镜像(Glance)→分配网络(Neutron)→挂载存储(Cinder)</td></tr>
+    <tr><td class="td-time">65-82</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>纸面练习：</b>①填表：六大组件名称/功能/生活类比 ②排列创建虚拟机的组件调用顺序 ③简答：Keystone的作用是什么？</td></tr>
+    <tr><td class="td-time">82-90</td><td>小结</td><td class="td-type type-review">小结</td><td>回顾六大组件</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>默写六大组件名称和功能；画组件协作流程图</div>
+</div>
+
+<!-- 课时64 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第64课时</span>私有云部署与应用 + 第十三章复习</div>
+  <div class="obj-box"><b>教学目标：</b>了解私有云部署的基本流程；认识私有云在各行业的应用；复习第13章知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=私有云部署流程和应用场景；难点=综合理解云计算全貌</div>
+  <div class="section-label">内容要点 <span class="ppt-ref">（PPT: 第13章 P31-P40）</span></div>
+  <ul class="content-list">
+    <li>私有云部署流程：规划→硬件准备→安装OpenStack→配置组件→测试验收</li>
+    <li>私有云应用：政务云、金融云、企业内部云、科研云</li>
+    <li>私有云运维：监控告警、容量规划、安全加固、版本升级</li>
+    <li>云计算全貌回顾：IaaS(虚拟化+OpenStack)→PaaS(容器+K8s)→SaaS(应用)</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>讲解私有云部署流程和应用场景</td></tr>
+    <tr><td class="td-time">15-35</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1rA411b7Yp" target="_blank" class="video-link">OpenStack双节点搭建</a>（B站，选部署流程部分，约15分钟）</td></tr>
+    <tr><td class="td-time">35-55</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>第13章测试：</b>15道题，覆盖私有云/OpenStack架构/六大组件</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解测试答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>讲授</td><td class="td-type type-teach">讲授</td><td>回顾云计算全貌：从概念到技术到应用的全链路串讲</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>第13章总结，预告期末综合复习</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>整理第13章笔记；开始准备期末复习</div>
+</div>
+
+<!-- 课时65 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第65课时</span>综合复习一：云计算基础与安全（第1-6章）</div>
+  <div class="obj-box"><b>教学目标：</b>系统复习云计算概念、NIST定义、服务模型、部署模型、云安全、密码学、云市场等知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=NIST 3-5-4框架、加密体系、安全防护；难点=知识点串联和综合应用</div>
+  <div class="section-label">复习范围</div>
+  <ul class="content-list">
+    <li>第1章：云计算简介、NIST定义（3服务模型+5特征+4部署模型）</li>
+    <li>第2章：IaaS/PaaS/SaaS服务模型详解</li>
+    <li>第3章：公有云/私有云/混合云/社区云部署模型</li>
+    <li>第4章：云计算应用场景</li>
+    <li>第5章：CIA三要素、对称/非对称加密、哈希、数字签名、PKI/CA、SSL/TLS/HTTPS、防火墙/IDS/IPS</li>
+    <li>第6章：云计算市场格局、主流厂商、企业上云</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-20</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第1-3章核心知识点：NIST 3-5-4框架</td></tr>
+    <tr><td class="td-time">20-40</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第5章密码学和安全体系：加密→哈希→签名→证书→HTTPS</td></tr>
+    <tr><td class="td-time">40-55</td><td>活动</td><td class="td-type type-act">纸面测试</td><td><b>复习测试一：</b>30道选择/判断/填空题，覆盖第1-6章</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解答案，重点分析易错题</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td>学生整理第1-6章知识框架图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>布置复习重点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善第1-6章知识框架图；复习错题</div>
+</div>
+
+<!-- 课时66 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第66课时</span>综合复习二：网络与数据库（第7-8章）</div>
+  <div class="obj-box"><b>教学目标：</b>系统复习计算机网络和数据库基础知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=OSI/TCP-IP模型、IP地址、TCP/UDP、SQL基础；难点=综合运用</div>
+  <div class="section-label">复习范围</div>
+  <ul class="content-list">
+    <li>第7章：OSI七层模型、TCP/IP四层模型、IP地址分类、子网掩码、TCP/UDP、HTTP/DNS/FTP/DHCP、交换机/路由器</li>
+    <li>第8章：数据库/DBMS概念、关系型数据库、表/字段/记录/主键/外键、SQL(CRUD)、WHERE/ORDER BY/GROUP BY/JOIN、E-R图、云数据库</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-20</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第7章网络知识：OSI→TCP/IP→IP地址→TCP/UDP→应用层协议</td></tr>
+    <tr><td class="td-time">20-40</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第8章数据库知识：概念→表结构→SQL→查询→设计→云数据库</td></tr>
+    <tr><td class="td-time">40-55</td><td>活动</td><td class="td-type type-act">纸面测试</td><td><b>复习测试二：</b>30道题，覆盖第7-8章</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解答案，重点分析SQL题和网络题</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td>学生整理第7-8章知识框架图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>布置复习重点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善第7-8章知识框架图；复习错题</div>
+</div>
+
+<!-- 课时67 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第67课时</span>综合复习三：虚拟化与Linux（第9-10章）</div>
+  <div class="obj-box"><b>教学目标：</b>系统复习虚拟化技术和Linux基础知识点</div>
+  <div class="key-box"><b>重点难点：</b>重点=虚拟化原理、Hypervisor类型、Docker、Linux命令；难点=综合运用</div>
+  <div class="section-label">复习范围</div>
+  <ul class="content-list">
+    <li>第9章：虚拟化概念、Hypervisor(Type 1/Type 2)、VMware、KVM、Docker、虚拟网络与存储、虚拟化与云计算关系</li>
+    <li>第10章：Linux概述、文件系统目录结构、常用命令(文件/目录/权限)、用户管理、Linux在云计算中的应用</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-20</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第9章虚拟化知识：概念→Hypervisor→VMware→KVM→Docker→虚拟网络存储</td></tr>
+    <tr><td class="td-time">20-40</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第10章Linux知识：概述→目录结构→常用命令→权限管理→云计算应用</td></tr>
+    <tr><td class="td-time">40-55</td><td>活动</td><td class="td-type type-act">纸面测试</td><td><b>复习测试三：</b>30道题，覆盖第9-10章</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解答案，重点分析虚拟化和命令题</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td>学生整理第9-10章知识框架图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>布置复习重点</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完善第9-10章知识框架图；复习错题</div>
+</div>
+
+<!-- 课时68 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第68课时</span>综合复习四：Web服务与云平台（第11-13章）</div>
+  <div class="obj-box"><b>教学目标：</b>系统复习Web服务、公有云平台和私有云平台知识点；完成全书知识串联</div>
+  <div class="key-box"><b>重点难点：</b>重点=HTTP协议、Apache/Nginx、公有云产品、OpenStack；难点=全书知识综合串联</div>
+  <div class="section-label">复习范围</div>
+  <ul class="content-list">
+    <li>第11章：Web服务概述、HTTP协议(请求/响应/方法/状态码)、Apache、Nginx(反向代理/负载均衡)、LAMP/LNMP、CDN、Web安全</li>
+    <li>第12章：公有云概述、阿里云/腾讯云/AWS产品、云选型、云安全合规</li>
+    <li>第13章：私有云概述、OpenStack架构与组件、私有云部署</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-20</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第11章Web服务：HTTP→Apache→Nginx→LAMP→CDN→安全</td></tr>
+    <tr><td class="td-time">20-40</td><td>讲授</td><td class="td-type type-teach">串讲</td><td>串讲第12-13章云平台：公有云产品→选型→私有云→OpenStack</td></tr>
+    <tr><td class="td-time">40-55</td><td>活动</td><td class="td-type type-act">纸面测试</td><td><b>复习测试四：</b>30道题，覆盖第11-13章</td></tr>
+    <tr><td class="td-time">55-70</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解答案，分析易错点</td></tr>
+    <tr><td class="td-time">70-85</td><td>活动</td><td class="td-type type-act">纸面活动</td><td><b>全书知识串联图：</b>学生绘制13章知识关联图</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>强调复习重点，准备模拟考试</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>完成全书知识串联图；全面复习准备模拟考</div>
+</div>
+
+<!-- 课时69 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第69课时</span>模拟考试（上）</div>
+  <div class="obj-box"><b>教学目标：</b>通过模拟考试检验学习效果，发现薄弱环节</div>
+  <div class="key-box"><b>重点难点：</b>全面覆盖13章知识点的综合考核</div>
+  <div class="section-label">考试安排</div>
+  <ul class="content-list">
+    <li>模拟试卷A：50道选择题 + 20道判断题 + 10道填空题 + 5道简答题</li>
+    <li>覆盖第1-7章内容（云计算基础、安全、市场、网络）</li>
+    <li>考试时间：90分钟（闭卷）</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-05</td><td>准备</td><td class="td-type type-review">考务</td><td>宣读考试规则，发放试卷</td></tr>
+    <tr><td class="td-time">05-85</td><td>考试</td><td class="td-type type-act">纸面考试</td><td>模拟考试A卷（闭卷，80分钟）</td></tr>
+    <tr><td class="td-time">85-90</td><td>收卷</td><td class="td-type type-review">考务</td><td>收卷，预告下节课讲评</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>回顾考试中不确定的题目，查阅教材相关章节</div>
+</div>
+
+<!-- 课时70 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第70课时</span>模拟考试（下）与讲评</div>
+  <div class="obj-box"><b>教学目标：</b>完成模拟考试下半部分；讲解试卷答案，分析易错知识点</div>
+  <div class="key-box"><b>重点难点：</b>全面覆盖13章知识点的综合考核和讲评</div>
+  <div class="section-label">考试安排</div>
+  <ul class="content-list">
+    <li>模拟试卷B：50道选择题 + 20道判断题 + 10道填空题 + 5道简答题</li>
+    <li>覆盖第8-13章内容（数据库、虚拟化、Linux、Web服务、云平台）</li>
+    <li>考试时间：45分钟 + 45分钟讲评</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-05</td><td>准备</td><td class="td-type type-review">考务</td><td>宣读规则，发放试卷</td></tr>
+    <tr><td class="td-time">05-50</td><td>考试</td><td class="td-type type-act">纸面考试</td><td>模拟考试B卷（闭卷，45分钟）</td></tr>
+    <tr><td class="td-time">50-55</td><td>收卷</td><td class="td-type type-review">考务</td><td>收卷，短暂休息</td></tr>
+    <tr><td class="td-time">55-85</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解A卷+B卷答案，重点分析高频错题</td></tr>
+    <tr><td class="td-time">85-90</td><td>小结</td><td class="td-type type-review">小结</td><td>强调期末考试重点范围和注意事项</td></tr>
+  </table>
+  <div class="hw-box"><b>课后作业：</b>全面复习错题；准备期末考试</div>
+</div>
+
+<!-- 课时71 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第71课时</span>期末考试</div>
+  <div class="obj-box"><b>教学目标：</b>通过闭卷考试全面考核学生对云计算基础课程的掌握程度</div>
+  <div class="key-box"><b>重点难点：</b>全书13章综合考核</div>
+  <div class="section-label">考试安排</div>
+  <ul class="content-list">
+    <li>期末试卷：100道题（60选择+20判断+10填空+10简答），满分100分</li>
+    <li>覆盖全书第1-13章全部内容</li>
+    <li>考试时间：90分钟（闭卷）</li>
+    <li>考试形式：纸面笔试</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-05</td><td>准备</td><td class="td-type type-review">考务</td><td>宣读考试纪律，发放试卷</td></tr>
+    <tr><td class="td-time">05-85</td><td>考试</td><td class="td-type type-act">纸面考试</td><td>期末考试（闭卷，80分钟）</td></tr>
+    <tr><td class="td-time">85-90</td><td>收卷</td><td class="td-type type-review">考务</td><td>收卷，考试结束</td></tr>
+  </table>
+  <div class="hw-box"><b>考后说明：</b>下节课公布成绩并讲评试卷</div>
+</div>
+
+<!-- 课时72 -->
+<div class="lesson">
+  <div class="lesson-title"><span class="num">第72课时</span>试卷讲评与课程总结</div>
+  <div class="obj-box"><b>教学目标：</b>讲解期末试卷答案；分析全班考试情况；总结全课程学习成果</div>
+  <div class="key-box"><b>重点难点：</b>重点=易错题分析和课程总结</div>
+  <div class="section-label">课程总结</div>
+  <ul class="content-list">
+    <li>期末考试成绩分析：平均分、及格率、优秀率</li>
+    <li>高频错题讲解：分析错误原因，巩固薄弱知识点</li>
+    <li>课程总结：回顾13章知识体系，串联云计算全貌</li>
+    <li>学习建议：推荐后续学习方向（云计算运维、云安全、容器技术等）</li>
+    <li>课程寄语：云计算是未来IT的基础，鼓励持续学习</li>
+  </ul>
+  <table class="time-table">
+    <tr><th>时间</th><th>环节</th><th>类型</th><th>内容</th></tr>
+    <tr><td class="td-time">00-15</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>公布成绩概况，讲解选择题高频错题</td></tr>
+    <tr><td class="td-time">15-30</td><td>讲评</td><td class="td-type type-teach">讲评</td><td>讲解判断题、填空题、简答题</td></tr>
+    <tr><td class="td-time">30-50</td><td>视频</td><td class="td-type type-video">视频</td><td>播放：<a href="https://www.bilibili.com/video/BV1RJ411T7LD" target="_blank" class="video-link">虚拟化与云计算（总结篇）</a>（B站，选总结部分，约15分钟）</td></tr>
+    <tr><td class="td-time">50-70</td><td>总结</td><td class="td-type type-teach">总结</td><td>课程全貌回顾：概念→安全→网络→数据库→虚拟化→Linux→Web→云平台</td></tr>
+    <tr><td class="td-time">70-80</td><td>展望</td><td class="td-type type-teach">讲授</td><td>后续学习方向：云运维、云安全、容器/K8s、DevOps</td></tr>
+    <tr><td class="td-time">80-90</td><td>寄语</td><td class="td-type type-review">寄语</td><td>课程结束语，鼓励学生持续探索云计算领域</td></tr>
+  </table>
+  <div class="hw-box"><b>课程结束：</b>感谢同学们的学习！云计算之路才刚刚开始，保持好奇心，持续学习！</div>
+</div>
+
+<!-- 末尾说明 -->
+<div style="margin-top:40px; padding:20px; background:#f8f9fa; border-radius:6px; font-size:13px; color:#666;">
+  <p style="font-weight:bold; color:#1a5276; margin-bottom:10px;">教案使用说明</p>
+  <p>1. 本教案覆盖第13-72课时（共60课时），按12课时一个单元组织，共5个单元。</p>
+  <p>2. 每课时90分钟，采用"教师讲授+B站视频播放+纸面活动"模式，无上机环节。</p>
+  <p>3. 视频链接均为B站在线资源，需教室联网播放。建议教师课前试看并记录关键时间点。</p>
+  <p>4. 纸面活动包括：填表、画图、选择题、判断题、简答题、思维导图等，无需学生使用电子设备。</p>
+  <p>5. 教师演示环节：教师在大屏幕上操作，学生观看学习（如VMware操作、Linux命令、云控制台等）。</p>
+  <p>6. 每个单元结束有综合测试和思维导图，第六单元包含模拟考试和期末考试。</p>
+  <p>7. 教师可根据实际进度灵活调整视频播放时间和讲授内容。</p>
+</div>
+
+</div>
+</body>
+</html>

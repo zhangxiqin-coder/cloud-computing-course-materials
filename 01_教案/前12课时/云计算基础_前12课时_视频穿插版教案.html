@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云计算基础 - 前12课时视频穿插版教案</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #f5f5f5; color: #333; line-height: 1.8; padding: 20px;
+  }
+  .container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  h1 { font-size: 26px; color: #1a73e8; margin-bottom: 8px; border-bottom: 3px solid #1a73e8; padding-bottom: 12px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
+  h2 { font-size: 20px; color: #1a73e8; margin: 30px 0 15px; padding-left: 12px; border-left: 4px solid #1a73e8; }
+  h3 { font-size: 17px; color: #333; margin: 20px 0 10px; }
+  h4 { font-size: 15px; color: #555; margin: 12px 0 8px; }
+  p { margin-bottom: 10px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 13px; }
+  th { background: #1a73e8; color: #fff; padding: 10px 8px; text-align: left; font-weight: 500; }
+  td { border: 1px solid #e0e0e0; padding: 8px; vertical-align: top; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .lesson-card {
+    border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin: 15px 0;
+    background: #fff; page-break-inside: avoid;
+  }
+  .lesson-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    padding-bottom: 10px; border-bottom: 2px solid #e8f0fe;
+  }
+  .lesson-num {
+    background: #1a73e8; color: #fff; width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; flex-shrink: 0;
+  }
+  .lesson-title { font-size: 17px; font-weight: bold; color: #333; }
+  .lesson-meta { font-size: 12px; color: #888; }
+  .time-block {
+    display: flex; align-items: flex-start; gap: 8px; margin: 6px 0; padding: 8px 12px; border-radius: 6px; font-size: 13px;
+  }
+  .tb-teacher { background: #fff3e0; border-left: 3px solid #ff9800; }
+  .tb-video { background: #e8f5e9; border-left: 3px solid #4caf50; }
+  .tb-activity { background: #e3f2fd; border-left: 3px solid #2196f3; }
+  .tb-summary { background: #f3e5f5; border-left: 3px solid #9c27b0; }
+  .tb-time { font-weight: bold; color: #666; white-space: nowrap; min-width: 70px; }
+  .tb-label { font-weight: bold; white-space: nowrap; min-width: 55px; }
+  .tb-teacher .tb-label { color: #e65100; }
+  .tb-video .tb-label { color: #2e7d32; }
+  .tb-activity .tb-label { color: #1565c0; }
+  .tb-summary .tb-label { color: #6a1b9a; }
+  .video-link { color: #1a73e8; text-decoration: none; word-break: break-all; }
+  .video-link:hover { text-decoration: underline; }
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; margin: 2px;
+  }
+  .tag-bili { background: #fb7299; color: #fff; }
+  .tag-rymooc { background: #00bcd4; color: #fff; }
+  .tag-wps { background: #ff5722; color: #fff; }
+  .tag-other { background: #607d8b; color: #fff; }
+  .stats-box {
+    display: flex; gap: 15px; margin: 15px 0; flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1; min-width: 140px; background: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center;
+    border: 1px solid #e0e0e0;
+  }
+  .stat-num { font-size: 28px; font-weight: bold; color: #1a73e8; }
+  .stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+  .highlight-box {
+    background: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 15px; margin: 15px 0; font-size: 13px;
+  }
+  .highlight-box strong { color: #f57f17; }
+  .note-box {
+    background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 12px; margin: 10px 0; font-size: 13px;
+  }
+  .video-resource-table td:first-child { white-space: nowrap; }
+  .divider { height: 1px; background: #e0e0e0; margin: 30px 0; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .container { box-shadow: none; padding: 20px; }
+    .lesson-card { page-break-inside: avoid; border: 1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>云计算基础 — 前12课时「视频穿插版」教案</h1>
+<p class="subtitle">
+  教材：《云计算基础技术与应用(第2版)(微课版)》 易海博、池瑞楠 主编 | 人民邮电出版社<br>
+  ISBN 978-7-115-66457-0 &nbsp;|&nbsp; 适用对象：职高（中职） &nbsp;|&nbsp; 总课时：68（本文件覆盖前12课时）
+</p>
+
+<div class="stats-box">
+  <div class="stat-card">
+    <div class="stat-num">25<span style="font-size:14px">分钟</span></div>
+    <div class="stat-label">教师讲解（每课时）</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">25<span style="font-size:14px">分钟</span></div>
+    <div class="stat-label">视频播放（每课时）</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">30<span style="font-size:14px">分钟</span></div>
+    <div class="stat-label">互动+实操（每课时）</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">10<span style="font-size:14px">分钟</span></div>
+    <div class="stat-label">小结+作业（每课时）</div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <strong>设计思路：</strong>
+  你的核心诉求是"口才不好、少说几句、用视频撑满课堂"。这版教案的每90分钟课时被拆成4种环节：
+  <span style="color:#e65100;font-weight:bold">教师讲解（橙色）</span>只负责引入和串联，控制在20-25分钟；
+  <span style="color:#2e7d32;font-weight:bold">视频播放（绿色）</span>承担主要知识传递，20-30分钟；
+  <span style="color:#1565c0;font-weight:bold">互动实操（蓝色）</span>让学生动手或讨论，25-35分钟；
+  <span style="color:#6a1b9a;font-weight:bold">小结收尾（紫色）</span>5-10分钟。
+  你只需要在视频前后各说几句话过渡即可。
+</div>
+
+<!-- ========== 视频资源总表 ========== -->
+<h2>一、视频资源总表（按课时排列）</h2>
+<p>以下所有视频均为<b>免费观看</b>。B站视频建议提前下载或加入稍后再看列表，避免课堂网络卡顿。</p>
+
+<table class="video-resource-table">
+  <tr>
+    <th style="width:60px">课时</th>
+    <th>视频名称</th>
+    <th style="width:70px">时长</th>
+    <th style="width:80px">平台</th>
+    <th>链接</th>
+    <th>用途</th>
+  </tr>
+
+  <!-- 课时1 -->
+  <tr>
+    <td rowspan="3">1</td>
+    <td>什么是云计算?</td>
+    <td>~8min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1RF411C7qu" target="_blank">bilibili.com/video/BV1RF411C7qu</a></td>
+    <td>概念导入，动画风格通俗易懂</td>
+  </tr>
+  <tr>
+    <td>云计算到底是什么?</td>
+    <td>~5min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1yh41127T2" target="_blank">bilibili.com/video/BV1yh41127T2</a></td>
+    <td>科普短片，补充不同角度</td>
+  </tr>
+  <tr>
+    <td>课时1-课程介绍 / 课时2-云计算技术概述</td>
+    <td>~10min/节</td>
+    <td><span class="tag tag-rymooc">人邮慕课</span></td>
+    <td><a class="video-link" href="https://www.rymooc.com/course/show/1111" target="_blank">rymooc.com/course/show/1111</a></td>
+    <td>教材配套微课，前2节免费试看</td>
+  </tr>
+
+  <!-- 课时2 -->
+  <tr>
+    <td rowspan="3">2</td>
+    <td>云计算的发展与应用（鲜枣课堂）</td>
+    <td>~20min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1bt411u72Z" target="_blank">bilibili.com/video/BV1bt411u72Z</a></td>
+    <td>从大型机到云计算的完整演变史</td>
+  </tr>
+  <tr>
+    <td>云计算演变之路</td>
+    <td>~15min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1Uc411h7oX" target="_blank">bilibili.com/video/BV1Uc411h7oX</a></td>
+    <td>自建机房→托管→虚拟化→云，配图清晰</td>
+  </tr>
+  <tr>
+    <td>杨哥带你走进云计算的世界</td>
+    <td>~15min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1cE411W7Ls" target="_blank">bilibili.com/video/BV1cE411W7Ls</a></td>
+    <td>行业视角，讲为什么企业要上云</td>
+  </tr>
+
+  <!-- 课时3 -->
+  <tr>
+    <td rowspan="3">3</td>
+    <td>金山文档如何多人在线编辑</td>
+    <td>0:55</td>
+    <td><span class="tag tag-wps">WPS学堂</span></td>
+    <td><a class="video-link" href="https://wps.cn/learning/course/detail/id/14657" target="_blank">wps.cn/learning/course/detail/id/14657</a></td>
+    <td>实操前播放，学生照着做</td>
+  </tr>
+  <tr>
+    <td>金山文档多端协同工作</td>
+    <td>0:58</td>
+    <td><span class="tag tag-wps">WPS学堂</span></td>
+    <td><a class="video-link" href="https://wps.cn/learning/course/index/cg/423" target="_blank">wps.cn/learning（第5-3集）</a></td>
+    <td>展示手机/电脑同步编辑</td>
+  </tr>
+  <tr>
+    <td>如何使用WPS文字协作编辑模式</td>
+    <td>1:24</td>
+    <td><span class="tag tag-wps">WPS学堂</span></td>
+    <td><a class="video-link" href="https://wps.cn/learning/course/index/cg/423" target="_blank">wps.cn/learning（第5-11集）</a></td>
+    <td>文档协作编辑演示</td>
+  </tr>
+
+  <!-- 课时4 -->
+  <tr>
+    <td rowspan="2">4</td>
+    <td>什么是 IaaS、PaaS 和 SaaS（云计算科普101）</td>
+    <td>~53min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">space.bilibili.com/492609252（第01集）</a></td>
+    <td>讲解最系统的SaaS/PaaS/IaaS视频（可截取前20分钟播放）</td>
+  </tr>
+  <tr>
+    <td>用人话说IaaS、PaaS、SaaS都是什么意思</td>
+    <td>~5min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1hf4y1W7yT" target="_blank">bilibili.com/video/BV1hf4y1W7yT</a></td>
+    <td>超短视频，用"种水果"比喻，学生秒懂</td>
+  </tr>
+
+  <!-- 课时5 -->
+  <tr>
+    <td rowspan="2">5</td>
+    <td>什么是 IaaS、PaaS 和 SaaS（续，PaaS/IaaS部分）</td>
+    <td>~20min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">同上（截取后半段）</a></td>
+    <td>深入讲PaaS和IaaS的技术细节</td>
+  </tr>
+  <tr>
+    <td>云计算的三种服务模式（披萨类比）</td>
+    <td>~3min</td>
+    <td><span class="tag tag-other">其他</span></td>
+    <td><a class="video-link" href="https://monecole-myschool.gc.ca/video/cloud-potential/cloud-computing-service-models-eng.aspx" target="_blank">加拿大政府云科普视频（英文字幕）</a></td>
+    <td>Pizza as a Service 经典类比，画面直观无需听懂英文</td>
+  </tr>
+
+  <!-- 课时6 -->
+  <tr>
+    <td rowspan="2">6</td>
+    <td>gitee(码云)的注册和代码提交【手把手】</td>
+    <td>~15min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1hf4y1W7yT" target="_blank">bilibili.com/video/BV1hf4y1W7yT</a></td>
+    <td>实操前播放，学生跟着视频一步步做</td>
+  </tr>
+  <tr>
+    <td>使用gitee上传代码（最简单操作）</td>
+    <td>~8min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1Mh4y1Y73m" target="_blank">bilibili.com/video/BV1Mh4y1Y73m</a></td>
+    <td>更简洁的Gitee上传教程</td>
+  </tr>
+
+  <!-- 课时7 -->
+  <tr>
+    <td rowspan="2">7</td>
+    <td>阿里云超级数据中心</td>
+    <td>~5min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1kA411N7e5" target="_blank">bilibili.com/video/BV1kA411N7e5</a></td>
+    <td>展示真实公有云数据中心，震撼视觉</td>
+  </tr>
+  <tr>
+    <td>走进微软数据中心</td>
+    <td>~10min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1cW411t7dk" target="_blank">bilibili.com/video/BV1cW411t7dk</a></td>
+    <td>微软数据中心内部探秘</td>
+  </tr>
+
+  <!-- 课时8 -->
+  <tr>
+    <td rowspan="2">8</td>
+    <td>淄博燃气智慧云数据中心建设纪实</td>
+    <td>~5min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1F14y1677t" target="_blank">bilibili.com/video/BV1F14y1677t</a></td>
+    <td>企业私有云/行业云案例</td>
+  </tr>
+  <tr>
+    <td>Inside a Google Cloud TPU Data Center</td>
+    <td>~5min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV14u4y1C7TG" target="_blank">bilibili.com/video/BV14u4y1C7TG</a></td>
+    <td>Google数据中心，展示全球规模混合云</td>
+  </tr>
+
+  <!-- 课时9 -->
+  <tr>
+    <td rowspan="2">9</td>
+    <td>阿里云服务器ECS新手搭建网站（详细版）</td>
+    <td>~63min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/av928620141/" target="_blank">bilibili.com/video/av928620141</a></td>
+    <td>截取前15分钟：购买服务器+连接SSH部分</td>
+  </tr>
+  <tr>
+    <td>通俗易懂的网站上线部署发布教程（合集）</td>
+    <td>每集5-12min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV18a4y1W7e9" target="_blank">bilibili.com/video/BV18a4y1W7e9</a></td>
+    <td>选播第1-4集："网站如何打开""域名""买服务器"</td>
+  </tr>
+
+  <!-- 课时10 -->
+  <tr>
+    <td rowspan="2">10</td>
+    <td>虚拟化技术（云计算科普101 第03集）</td>
+    <td>~37min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">space.bilibili.com/492609252（第03集）</a></td>
+    <td>截取前15分钟：虚拟化基本原理</td>
+  </tr>
+  <tr>
+    <td>计算：CPU与GPU、云服务器（第04集）</td>
+    <td>~57min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">同上（第04集）</a></td>
+    <td>截取弹性扩容部分约10分钟</td>
+  </tr>
+
+  <!-- 课时11 -->
+  <tr>
+    <td rowspan="2">11</td>
+    <td>云计算演变之路（省钱/弹性部分）</td>
+    <td>~10min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1Uc411h7oX" target="_blank">bilibili.com/video/BV1Uc411h7oX</a></td>
+    <td>截取"使用云服务的优势"章节</td>
+  </tr>
+  <tr>
+    <td>B站毛剑谈云计算弹性伸缩</td>
+    <td>~8min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/read/cv19556899/" target="_blank">bilibili.com/read/cv19556899</a></td>
+    <td>B站真实案例：双11/直播弹性扩容</td>
+  </tr>
+
+  <!-- 课时12 -->
+  <tr>
+    <td rowspan="2">12</td>
+    <td>VMware虚拟机安装教程</td>
+    <td>~12min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV1N7wveKEmx" target="_blank">bilibili.com/video/BV1N7wveKEmx</a></td>
+    <td>实操前播放，学生照着安装VMware</td>
+  </tr>
+  <tr>
+    <td>VMware虚拟化入门到精通（截取入门段）</td>
+    <td>~15min</td>
+    <td><span class="tag tag-bili">B站</span></td>
+    <td><a class="video-link" href="https://www.bilibili.com/video/BV14a411w7D2" target="_blank">bilibili.com/video/BV14a411w7D2</a></td>
+    <td>截取"创建虚拟机"部分，学生跟着做</td>
+  </tr>
+</table>
+
+<div class="note-box">
+  <strong>提前准备提示：</strong><br>
+  1. 建议开课前一天，把要用到的B站视频用 <a href="https://www.bilibili.com" target="_blank">B站</a> 的"稍后再看"功能收藏好，课堂直接点开播放<br>
+  2. 如果学校网络不稳定，可以用 <a href="https://github.com/leiurayer/downkyi" target="_blank">downkyi</a> 等工具提前下载B站视频到本地<br>
+  3. 人邮慕课(rymooc)需注册免费账号，建议教师提前注册并测试能否正常播放<br>
+  4. 长视频不需要全部播放，教案里标注了截取的时间段
+</div>
+
+<div class="divider"></div>
+
+<!-- ========== 逐课时教案 ========== -->
+<h2>二、逐课时教案（视频穿插版）</h2>
+
+<!-- ============ 课时1 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">1</div>
+    <div>
+      <div class="lesson-title">第1章 云计算的简介（1）—— 什么是云计算</div>
+      <div class="lesson-meta">对应PPT：第1章 1-10页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>知道云计算的基本定义，能用自己的话说出"云"和"云计算"是什么；了解NIST定义的3-5-4框架。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-10'</span>
+    <span class="tb-label">教师引入</span>
+    <span>提问导入："你们手机照片存在哪？百度网盘用过吗？抖音视频谁在处理？" → 引出"这些都是云计算"。用2-3个生活例子让学生感受到"云"就在身边。（PPT 1-3页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">10-20'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1RF411C7qu" target="_blank">《什么是云计算?》</a>（约8分钟）→ 播完后再播 <a class="video-link" href="https://www.bilibili.com/video/BV1yh41127T2" target="_blank">《云计算到底是什么?》</a>（约5分钟），两个视频从不同角度讲解，学生更容易理解</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">20-30'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>结合视频内容，用PPT 4-8页串讲云计算定义。重点板书 NIST 定义的"3-5-4"框架（3种服务/5个特征/4种部署），告诉学生"记住3-5-4就记住了云计算全貌"。这段你只需要照着PPT念重点+板书框架图即可，不用展开讲。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">30-42'</span>
+    <span class="tb-label">播放视频</span>
+    <span>人邮慕课 <a class="video-link" href="https://www.rymooc.com/course/show/1111" target="_blank">课时2：云计算技术概述</a>（约10分钟，免费试看）→ 这是教材配套微课，和PPT完全对应，相当于"替你讲了一遍课"</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">42-65'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>"找云"游戏</b>：让学生分组，每组在手机/电脑上找出3个"用了云计算"的APP或网站，写在纸上。5分钟后各组汇报，教师只需在每组的答案上打勾或补充。（参考答案：微信、抖音、淘宝、百度网盘、腾讯文档、王者荣耀、12306等）→ 再让学生讨论："如果没有云，这些APP还能用吗？"</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">65-72'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>快速过PPT 9-10页，补充云计算的狭义/广义定义。一句话总结："云计算=通过网络按需使用计算资源，像用水用电一样。"</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">72-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>3道选择题（从教材配套题库选取，或自编）：①云计算的"云"指的是什么？②NIST定义中云计算有几个基本特征？③下列哪个不是云计算的服务模式？学生做→对答案→简单解释。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：云计算=网络+按需+资源池。作业：回家观察家里3个设备/服务用到了云计算，下节课分享。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约20分钟</strong>（引入10分+串讲7分+小结3分）。视频替你讲了23分钟，互动练习替你撑了33分钟。
+  </div>
+</div>
+
+<!-- ============ 课时2 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">2</div>
+    <div>
+      <div class="lesson-title">第1章 云计算的简介（2）—— 发展历史与5种计算模式</div>
+      <div class="lesson-meta">对应PPT：第1章 11-43页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>了解云计算的发展历程（大型机→PC→互联网→云）；知道分布式计算、并行计算等5种其他计算模式。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-5'</span>
+    <span class="tb-label">教师引入</span>
+    <span>承接上节课："上节课我们知道云是什么了，但云不是突然冒出来的。今天看看它是怎么一步步发展过来的。"（PPT 11页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">5-25'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1bt411u72Z" target="_blank">《云计算的发展与应用》（鲜枣课堂）</a>，截取前20分钟播放 → 这条视频完整讲了从大型机→分时系统→PC→互联网→网格计算→云计算的演变，比你自己讲生动得多</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">25-35'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 12-20页，画一条时间轴在黑板上：1960s大型机 → 1980s PC → 1990s互联网 → 2006年AWS诞生 → 2009年阿里云 → 今天。你只需要照着时间轴念，让学生抄笔记。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">35-50'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1Uc411h7oX" target="_blank">《云计算演变之路》</a>，截取"自建机房→托管机房→虚拟化→云计算"段落（约15分钟）→ 用真实机房照片讲解演变过程，学生看图就懂</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">50-70'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>5种计算模式速览</b>：PPT 21-43页有分布式计算、并行计算、效用计算、网格计算、边缘计算5种模式。不需要你详细讲，做法：<br>① 每种模式播放PPT对应的1-2页，你用1分钟念定义+举1个例子<br>② 让学生填写表格："模式名称 | 一句话解释 | 生活中的例子"<br>③ 分布式计算=蚂蚁搬大象；并行计算=多车道同时修路；效用计算=按流量计费的手机话费；网格计算=全球志愿者一起算数据；边缘计算=就近处理（如自动驾驶）</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">70-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>4道判断题/选择题，检测对发展历程和计算模式的理解。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：云计算不是新东西，是几十年技术积累的结果。作业：上网搜索"阿里云发展史"，写100字简述。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约22分钟</strong>。视频替你讲了35分钟，互动+练习撑了33分钟。
+  </div>
+</div>
+
+<!-- ============ 课时3 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">3</div>
+    <div>
+      <div class="lesson-title">第1章 云计算的简介（3）—— 实战：云端Office协作</div>
+      <div class="lesson-meta">对应PPT：第1章实战项目 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>通过金山文档/腾讯文档体验SaaS模式，感受"云端协作"的真实便利。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"上两节课我们学了理论，今天动手体验一下——你们平时写作业用Word存在自己电脑里，如果电脑坏了就没了。今天我们试试存在'云'上会怎样。"（PPT 实战项目页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-12'</span>
+    <span class="tb-label">播放视频</span>
+    <span>WPS学堂 <a class="video-link" href="https://wps.cn/learning/course/detail/id/14657" target="_blank">《金山文档如何多人在线编辑》</a>（55秒）+ <a class="video-link" href="https://wps.cn/learning/course/index/cg/423" target="_blank">《多端协同工作》</a>（58秒）→ 两个超短视频让学生快速看到效果</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">12-55'</span>
+    <span class="tb-label">动手实操</span>
+    <span><b>任务：3人一组完成一份云端协作文档</b><br>① 每组1人创建金山文档（或腾讯文档），输入标题"我们组的云计算初体验"<br>② 创建者把文档链接发给另外2人（微信/QQ均可）<br>③ 3人同时编辑：每人写一段"我觉得云计算是什么+我身边的云服务例子"<br>④ 体验实时看到对方打字的效果<br>⑤ 尝试用手机打开同一文档，体验多端同步<br>教师只需要巡场，遇到打不开链接的学生帮忙看看即可。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">55-72'</span>
+    <span class="tb-label">分享讨论</span>
+    <span>每组选1人展示本组文档内容。讨论问题：① 如果没有云，3个人怎么协作写一份文档？（传文件→改→传回→合并，非常痛苦）② 你们觉得云端协作最大的好处是什么？</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">72-80'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>一句话总结："你们刚才用的就是SaaS——软件即服务。不需要安装软件，打开浏览器就能用，数据自动保存在云端。下节课我们正式学SaaS。"</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">80-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：SaaS=浏览器打开就能用的软件。作业：用金山文档写一篇100字短文"我对云计算的第一印象"，分享链接给老师。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约15分钟</strong>。视频3分钟，实操+讨论撑了57分钟。这节课你几乎全程在巡场，说话最少。
+  </div>
+</div>
+
+<!-- ============ 课时4 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">4</div>
+    <div>
+      <div class="lesson-title">第2章 云计算的服务（1）—— SaaS 软件即服务</div>
+      <div class="lesson-meta">对应PPT：第2章 1-16页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解SaaS的定义、特点和典型应用；能列举生活中的SaaS产品。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>回顾上节课实操："你们上次用的金山文档就是SaaS。今天我们正式学云计算的3种服务模式中的第一种——SaaS。"板书 SaaS = Software as a Service = 软件即服务。（PPT 1-3页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-13'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1hf4y1W7yT" target="_blank">《用人话说IaaS、PaaS、SaaS都是什么意思》</a>（约5分钟）→ 用"种水果"比喻三种模式，超短超通俗，先让学生有个整体印象</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">13-33'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">云计算科普101 第01集《什么是IaaS、PaaS和SaaS》</a>，截取SaaS部分（约20分钟）→ 这个视频讲得最系统，SaaS部分有大量真实产品案例</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">33-45'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 4-16页，串讲SaaS的定义、特点（无需安装、按需付费、多设备同步、自动更新）、典型产品。用"住酒店"类比：拎包入住，什么都不用管。你只需要照PPT念+举几个例子（钉钉、企业微信、腾讯文档、飞书）。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">45-70'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>SaaS产品体验站</b>：在教室设3个"体验站"，学生轮流体验：<br>① <b>办公站</b>：打开腾讯文档，创建一个在线表格<br>② <b>设计站</b>：打开 Canva可画（在线设计工具），选一个模板修改<br>③ <b>笔记站</b>：打开有道云笔记/印象笔记网页版，写一段笔记<br>每站体验8分钟，让学生在表格上记录："产品名 | 功能 | 是否需要安装 | 数据存在哪"</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">70-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>3道题：① SaaS的中文全称是什么？② 下列哪个不是SaaS产品？（A.钉钉 B.腾讯文档 C.MySQL数据库 D.飞书）③ SaaS的3个特点？</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：SaaS=打开浏览器就能用的软件，像住酒店。作业：列出你手机里5个SaaS应用。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约20分钟</strong>。视频替你讲了25分钟，体验站活动撑了25分钟。
+  </div>
+</div>
+
+<!-- ============ 课时5 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">5</div>
+    <div>
+      <div class="lesson-title">第2章 云计算的服务（2）—— PaaS 与 IaaS</div>
+      <div class="lesson-meta">对应PPT：第2章 17-35页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解PaaS和IaaS的定义、区别和适用场景；掌握三种服务模式的关系。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-5'</span>
+    <span class="tb-label">教师引入</span>
+    <span>回顾："上节课学了SaaS——打开浏览器就能用的软件。但软件运行需要平台和基础设施，这就是PaaS和IaaS。"板书 PaaS和IaaS。（PPT 17页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">5-25'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">云计算科普101 第01集（续）</a>，播放PaaS和IaaS部分（约20分钟）→ 继续上节课的视频，讲PaaS和IaaS的技术细节和案例</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">25-38'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 18-30页，用"吃饭"类比串讲：<br>• SaaS = 去饭店吃（菜做好了直接吃）<br>• PaaS = 叫外卖（食材半成品，自己加热一下）<br>• IaaS = 自己买菜做饭（给你厨房和食材，自己弄）<br>• 本地部署 = 自己种菜做饭（从零开始）<br>这个类比学生一听就懂，你只需要画4个台阶图+念一遍即可。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">38-42'</span>
+    <span class="tb-label">播放视频</span>
+    <span>播放 Pizza as a Service 披萨类比视频（<a class="video-link" href="https://monecole-myschool.gc.ca/video/cloud-potential/cloud-computing-service-models-eng.aspx" target="_blank">加拿大政府云科普</a>，约3分钟）→ 画面直观，用披萨类比服务模式，虽然是英文但画面自解释，你提前准备好口述翻译要点即可</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">42-65'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>填表对比 + 案例分析</b>：<br>① 发一张表格，让学生填SaaS/PaaS/IaaS的对比（谁管理什么、典型产品、适用人群）<br>② 给3个场景，学生判断该用哪种服务模式：<br>• 场景A：小王想开网店卖衣服，需要个网站 → SaaS（用 Shopify/有赞）<br>• 场景B：公司开发团队要开发一个APP → PaaS（用微信小程序云开发）<br>• 场景C：企业要搭建自己的数据库服务器 → IaaS（用阿里云ECS）</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">65-75'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 31-35页，讲三种服务模式的关系（层级关系图）和衍生模式（DaaS等，一笔带过）。展示天翼云案例页面。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">75-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>4道选择题/连线题，检测三种模式的区分。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：SaaS用软件/PaaS开发软件/IaaS租服务器，从上到下自由度递增、麻烦程度也递增。作业：画一张三种模式关系图。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约23分钟</strong>。视频替你讲了25分钟，互动+练习撑了32分钟。
+  </div>
+</div>
+
+<!-- ============ 课时6 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">6</div>
+    <div>
+      <div class="lesson-title">第2章 云计算的服务（3）—— 实战：Gitee 代码仓库</div>
+      <div class="lesson-meta">对应PPT：第2章实战项目 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>体验PaaS平台的代码托管功能；注册Gitee账号，创建仓库并上传文件。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-5'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"PaaS不仅是开发平台，还包括代码托管。今天我们体验国内最大的代码托管平台——Gitee（码云）。程序员写完代码要存到云端仓库里，就像你们写作文要存在金山文档里一样。"</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">5-20'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1hf4y1W7yT" target="_blank">《gitee(码云)的注册和代码提交【手把手】》</a>（约15分钟）→ 完整演示注册→建仓库→上传文件全过程，学生可以先看一遍再跟着做</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">20-60'</span>
+    <span class="tb-label">动手实操</span>
+    <span><b>任务：注册Gitee并创建第一个代码仓库</b>（网页端操作，不用命令行）<br>① 打开 gitee.com，注册账号（可用手机号）<br>② 点击"新建仓库"，名称写"my-first-repo"<br>③ 仓库设为"开源"<br>④ 用网页端的"上传文件"功能，上传一个txt文件（内容写自我介绍）<br>⑤ 在仓库里新建一个README.md文件，写上"这是我的第一个云端代码仓库"<br>⑥ 截图仓库页面发给老师<br>教师只需巡场，帮注册有问题的学生看看。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">60-68'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1Mh4y1Y73m" target="_blank">《使用gitee上传代码（最简单操作）》</a>（约8分钟）→ 补充演示另一种上传方式，让没做完的学生跟着再做一遍</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">68-80'</span>
+    <span class="tb-label">互动讨论</span>
+    <span>讨论：① 为什么程序员要用代码仓库而不是存在自己电脑里？（版本管理+团队协作+不怕丢）② Gitee属于哪种云服务模式？（PaaS）③ 你觉得代码仓库和百度网盘有什么区别？</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">80-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：Gitee是PaaS，帮你管理代码。作业：在Gitee仓库里再上传2个文件，下节课检查。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约12分钟</strong>。视频23分钟，实操40分钟。这节课你基本在巡场，说话最少。
+  </div>
+</div>
+
+<!-- ============ 课时7 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">7</div>
+    <div>
+      <div class="lesson-title">第3章 云计算的部署（1）—— 公有云与社区云</div>
+      <div class="lesson-meta">对应PPT：第3章 1-20页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解公有云和社区云的概念、特点和应用场景。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"前两章我们学了云提供什么服务（SaaS/PaaS/IaaS），今天开始学云怎么部署。同样是云，可以建给所有人用，也可以只建给自己用。"板书4种部署模式名称。（PPT 1-3页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-18'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1kA411N7e5" target="_blank">《阿里云超级数据中心》</a>（约5分钟）→ 展示真实公有云数据中心的规模，让学生直观感受"云"的物理形态</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">18-28'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1cW411t7dk" target="_blank">《走进微软数据中心》</a>（约10分钟）→ 展示微软Azure数据中心的内部，进一步加深印象</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">28-42'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 4-20页，串讲公有云定义和特点。用"住酒店"类比：大家共用设施，按需付费，便宜方便。列举国内公有云厂商：阿里云、腾讯云、华为云、天翼云、百度智能云。社区云用"单位家属院"类比：几个有共同需求的组织共建共享（PPT社区云部分简单过2-3页即可）。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">42-65'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>公有云平台探索</b>：让学生打开手机或电脑浏览器，访问以下公有云官网（任选2个）：<br>• 阿里云 aliun.com<br>• 腾讯云 cloud.tencent.com<br>• 华为云 huaweicloud.com<br>在每个平台上找到：① 最便宜的云服务器多少钱/月 ② 有没有免费试用 ③ 平台提供哪些主要服务（计算/存储/数据库等）<br>把找到的信息填入表格，5分钟后分享。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">65-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>4道题：① 公有云的"公有"是什么意思？② 列举3个公有云厂商。③ 公有云和社区云的区别？④ 什么场景适合用社区云？</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：公有云=大家共用的云，便宜方便。作业：在阿里云官网注册账号（下节课要用）。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约22分钟</strong>。视频替你讲了20分钟，互动+练习撑了38分钟。
+  </div>
+</div>
+
+<!-- ============ 课时8 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">8</div>
+    <div>
+      <div class="lesson-title">第3章 云计算的部署（2）—— 私有云与混合云</div>
+      <div class="lesson-meta">对应PPT：第3章 21-45页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解私有云和混合云的概念、特点和应用场景；能对比4种部署模式的优缺点。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>回顾："上节课学了公有云——大家共用。但银行、政府、军队敢把数据放在所有人的云上吗？不敢。所以有了私有云。"板书私有云、混合云。（PPT 21页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-13'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1F14y1677t" target="_blank">《淄博燃气智慧云数据中心建设纪实》</a>（约5分钟）→ 企业自建私有云/行业云的真实案例，让学生看到"私有云长什么样"</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">13-18'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV14u4y1C7TG" target="_blank">《Inside a Google Cloud TPU Data Center》</a>（约5分钟）→ Google全球数据中心的规模，展示"混合云=私有云+公有云联动"的全球部署场景</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">18-35'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 22-40页，用住房类比串讲：<br>• 公有云 = 住酒店（共用、便宜、不私密）<br>• 私有云 = 住自家别墅（独享、安全、贵）<br>• 社区云 = 住单位家属院（几家共用）<br>• 混合云 = 别墅+酒店两头跑（核心数据放私有云，临时需求用公有云）<br>画一个2×2对比表格在黑板上，让学生抄。然后快速过PPT 41-45页的对比表。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">35-65'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>4种部署模式大比拼</b>：分4组，每组负责1种部署模式，完成以下任务：<br>① 定义（1句话）<br>② 优点（3条）<br>③ 缺点（2条）<br>④ 典型案例（2个）<br>⑤ 适合什么场景使用<br>每组准备5分钟，汇报3分钟。教师只需在汇报后点评1-2句即可。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">65-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>5道情景选择题：给5个企业场景（银行、创业公司、政府部门、跨国集团、学校），选最适合的部署模式并说明理由。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：4种部署模式=酒店/别墅/家属院/两头跑。作业：画4种模式对比图（含优缺点）。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约25分钟</strong>。视频10分钟，分组活动+练习撑了47分钟。
+  </div>
+</div>
+
+<!-- ============ 课时9 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">9</div>
+    <div>
+      <div class="lesson-title">第3章 云计算的部署（3）—— 实战：云服务器初体验</div>
+      <div class="lesson-meta">对应PPT：第3章实战项目 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>了解云服务器的基本概念；观看云服务器购买和连接的全过程。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"前面学了部署模式，今天看公有云最核心的产品——云服务器。我们来看一看怎么在阿里云上买一台服务器、连上去、装环境。"</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-23'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/av928620141/" target="_blank">《阿里云服务器ECS新手搭建网站（详细版）》</a>，截取前15分钟（购买服务器+连接SSH部分）→ 教师可暂停视频在关键步骤做简单说明</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">23-35'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV18a4y1W7e9" target="_blank">《通俗易懂的网站上线部署发布教程》</a>，选播第1-4集（网站如何打开/域名/买服务器，每集5-8分钟，选播2-3集）→ 用更通俗的方式补充讲解</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">35-60'</span>
+    <span class="tb-label">动手实操</span>
+    <span><b>任务：登录阿里云控制台，浏览云服务器产品</b>（如果上节课已注册）<br>① 登录阿里云控制台<br>② 找到"云服务器ECS"产品页<br>③ 点击"创建实例"，浏览各种配置选项（不需要真买）<br>④ 截图配置页面，记录：不同配置（CPU/内存）的价格差异<br>⑤ 找到"免费试用"入口，看看有没有学生免费额度<br>如果学生没注册成功，可以改为2人一组用教师的账号演示。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">60-75'</span>
+    <span class="tb-label">讨论总结</span>
+    <span>讨论：① 云服务器和你的电脑有什么区别？② 为什么企业要租云服务器而不是自己买？③ IaaS/PaaS/SaaS哪个包含了云服务器？（IaaS）</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">75-82'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>快速总结云服务器的核心概念：弹性（随时升降配）、按需付费、无需维护硬件。布置阶段小测预告。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：云服务器=租来的虚拟电脑，IaaS的核心产品。作业：复习第1-3章，下节课阶段测验。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约15分钟</strong>。视频27分钟，实操+讨论撑了43分钟。
+  </div>
+</div>
+
+<!-- ============ 课时10 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">10</div>
+    <div>
+      <div class="lesson-title">第4章 云计算的特点（1）—— 本质与三大特征</div>
+      <div class="lesson-meta">对应PPT：第4章 1-12页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解云计算的本质（弹性）；掌握按需自助服务、广泛网络访问、资源池化三个特征。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-8'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"前3章学了云是什么、提供什么服务、怎么部署。今天开始学云有什么特点。记住NIST定义的5个基本特征，今天先学前3个。"（PPT 1-3页）</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">8-23'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">云计算科普101 第03集《虚拟化技术》</a>，截取前15分钟 → 讲虚拟化如何实现资源池化，是理解"资源池化"特征的关键</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">23-40'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 4-12页，串讲云计算本质和前3个特征：<br>• 本质 = 弹性（能大能小、能伸能缩）<br>• 特征1：按需自助服务 = 自助餐厅，想拿什么自己拿<br>• 特征2：广泛网络访问 = 有网就能用，手机电脑都行<br>• 特征3：资源池化 = 所有人共用一个大池子，按需分配<br>每个特征配1个PPT页+1个生活类比，你照念即可。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">40-55'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://space.bilibili.com/492609252/" target="_blank">云计算科普101 第04集《计算：CPU与GPU、云服务器》</a>，截取弹性扩容部分约15分钟 → 展示云服务器如何自动扩容缩容，直观理解"弹性"</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">55-72'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>特征连连看</b>：给出6个生活场景，让学生判断对应哪个特征：<br>• 手机上也能用钉钉打卡 → 广泛网络访问<br>• 双11淘宝自动增加服务器 → 快速弹性（下节课学）<br>• 你不知道你的数据存在哪台服务器上 → 资源池化<br>• 在阿里云控制台自己点几下就能开通服务器 → 按需自助服务<br>• 用了多少流量收多少钱 → 可计量服务（下节课学）<br>• 双11过后服务器自动减少 → 快速弹性</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">72-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>3道题：① 云计算的本质是什么？② 资源池化的好处？③ 列举3个可以访问云的设备。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：本质=弹性，今天学了3个特征（自助/网络/池化），下节课学剩下2个。作业：用自己的话解释"资源池化"。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约25分钟</strong>。视频替你讲了30分钟，互动+练习撑了27分钟。
+  </div>
+</div>
+
+<!-- ============ 课时11 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">11</div>
+    <div>
+      <div class="lesson-title">第4章 云计算的特点（2）—— 快速弹性与可计量服务</div>
+      <div class="lesson-meta">对应PPT：第4章 13-28页 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>理解快速弹性和可计量服务两个特征；能举出弹性扩容的真实案例。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-5'</span>
+    <span class="tb-label">教师引入</span>
+    <span>回顾："上节课学了3个特征，今天学最后2个——快速弹性和可计量服务。这俩是云计算最'值钱'的特征。"</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">5-20'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1Uc411h7oX" target="_blank">《云计算演变之路》</a>，截取"使用云服务的优势"章节（约15分钟）→ 讲按需付费和弹性伸缩的好处</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">20-28'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/read/cv19556899/" target="_blank">《B站毛剑谈云计算弹性伸缩》</a>（约8分钟）→ 用B站自己的真实案例讲弹性扩容：双11、直播赛事等场景自动扩容</span>
+  </div>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">28-45'</span>
+    <span class="tb-label">教师串讲</span>
+    <span>配合PPT 13-28页，串讲：<br>• 特征4：快速弹性 = 像橡皮筋，能拉长能缩回。双11加服务器，过完节减回来<br>• 特征5：可计量服务 = 像水表电表，用多少算多少<br>• 弹性的本质 = 省钱（不用为峰值买单）<br>用"卖月饼"类比：平时需求少，中秋爆增。如果自建机房，得按中秋峰值买设备，平时闲置浪费。用云的话，中秋多租几台，过完就退。</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">45-68'</span>
+    <span class="tb-label">互动活动</span>
+    <span><b>5个特征总复习</b>：<br>① 发一张NIST 5特征表格，让学生填写完整（特征名+定义+1个例子）<br>② 小组讨论：如果你开一家奶茶店，5个特征分别对应什么？<br>• 按需自助 = 顾客自己点单<br>• 广泛网络 = 可以手机下单<br>• 资源池化 = 多个店共用一个中央厨房<br>• 快速弹性 = 寒暑假少做、节假日多做<br>• 可计量 = 按杯收费<br>③ 让每组想一个自己的类比（饭店/理发店/快递站等），把5个特征套进去</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">68-82'</span>
+    <span class="tb-label">随堂练习</span>
+    <span>5道题：5个特征各出1题，检测理解程度。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">82-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：5个特征记住了，NIST的3-5-4框架就全了。作业：用自己生活中的例子解释5个特征，写在作业本上。预告下节课阶段测验+VMware实操。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约22分钟</strong>。视频替你讲了23分钟，互动+练习撑了37分钟。
+  </div>
+</div>
+
+<!-- ============ 课时12 ============ -->
+<div class="lesson-card">
+  <div class="lesson-header">
+    <div class="lesson-num">12</div>
+    <div>
+      <div class="lesson-title">第4章 云计算的特点（3）—— 实战：VMware虚拟机 + 阶段测验</div>
+      <div class="lesson-meta">对应PPT：第4章实战项目 | 90分钟</div>
+    </div>
+  </div>
+
+  <h4>教学目标</h4>
+  <p>安装VMware并创建一台虚拟机；通过阶段测验检验第1-4章学习成果。</p>
+
+  <h4>课堂流程</h4>
+  <div class="time-block tb-teacher">
+    <span class="tb-time">0-5'</span>
+    <span class="tb-label">教师引入</span>
+    <span>"前11节课我们学了云计算的认知部分。今天做两件事：一是装个虚拟机体验'虚拟化'（就是资源池化的技术基础），二是做个小测验检验这3周的学习。"</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">5-17'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV1N7wveKEmx" target="_blank">《VMware虚拟机安装教程》</a>（约12分钟）→ 完整演示下载安装VMware Workstation的过程，学生跟着做</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">17-45'</span>
+    <span class="tb-label">动手实操</span>
+    <span><b>任务：安装VMware并创建一台空白虚拟机</b><br>① 下载VMware Workstation（教师提前下载好安装包放到共享文件夹）<br>② 安装VMware（一路下一步）<br>③ 点击"创建新的虚拟机"→选"典型"<br>④ 选择"稍后安装操作系统"（本课不装系统）<br>⑤ 选择Linux/Windows（看后续课程需要）<br>⑥ 设置虚拟机名称和保存位置<br>⑦ 分配磁盘大小（20GB）<br>⑧ 分配内存（2GB）<br>⑨ 完成创建，截图虚拟机界面发给老师<br>教师只需巡场，帮安装失败的学生看看。</span>
+  </div>
+  <div class="time-block tb-video">
+    <span class="tb-time">45-55'</span>
+    <span class="tb-label">播放视频</span>
+    <span>B站 <a class="video-link" href="https://www.bilibili.com/video/BV14a411w7D2" target="_blank">《VMware虚拟化入门到精通》</a>，截取入门段约10分钟 → 补充虚拟化的基本概念，帮做完的学生加深理解</span>
+  </div>
+  <div class="time-block tb-activity">
+    <span class="tb-time">55-80'</span>
+    <span class="tb-label">阶段测验</span>
+    <span><b>第1-4章阶段测验</b>（25分钟）<br>15道题：5道选择+5道判断+5道填空/简答<br>覆盖范围：<br>• 云计算定义、NIST 3-5-4框架<br>• SaaS/PaaS/IaaS的区别和案例<br>• 公有云/私有云/社区云/混合云的对比<br>• 5个基本特征<br>• 发展历程关键节点<br>建议从教材配套题库选题，或参考教案里的随堂练习题改编。</span>
+  </div>
+  <div class="time-block tb-summary">
+    <span class="tb-time">80-90'</span>
+    <span class="tb-label">小结作业</span>
+    <span>小结：前12课时完成了"认知入门"单元，NIST 3-5-4框架全部学完。VMware虚拟机创建好了，下节课开始学第5章云计算安全。作业：预习第5章第1节。</span>
+  </div>
+
+  <div class="note-box">
+    <strong>你这节课实际开口时间：约10分钟</strong>。视频22分钟，实操28分钟，测验25分钟。说话最少、学生最忙的一节课。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ========== 使用建议 ========== -->
+<h2>三、给你的额外建议</h2>
+
+<div class="highlight-box">
+  <strong>1. 关于视频播放的实操技巧</strong>
+  <ul style="margin-top:8px; padding-left:20px; font-size:13px;">
+    <li><b>提前下载</b>：B站视频用"稍后再看"收藏，或用下载工具存本地。课堂网络可能卡，本地播放最保险。</li>
+    <li><b>暂停讲解</b>：长视频不用一口气放完，在关键概念处暂停5秒，问一句"刚才说的XXX是什么意思？"，不需要展开讲，让学生保持注意力就行。</li>
+    <li><b>2倍速播放</b>：如果觉得某个视频太长，可以在B站开1.5倍速或2倍速，语速快但内容不丢。</li>
+    <li><b>字幕</b>：B站大部分视频有AI字幕，如果视频有口音，开字幕让学生看着字听。</li>
+  </ul>
+</div>
+
+<div class="highlight-box">
+  <strong>2. 关于"少说话"的过渡话术</strong>
+  <p style="margin-top:8px;">每段视频播放前后，你只需要说这几句话：</p>
+  <ul style="padding-left:20px; font-size:13px;">
+    <li><b>播前</b>（10秒）："接下来看个视频，注意听里面的XXX概念，看完我要问你们。"</li>
+    <li><b>播后</b>（30秒）："视频里提到了XXX，对吧？这就是我们PPT第X页讲的内容。"然后翻到对应PPT页，念一下标题和要点，接着进入活动环节。</li>
+    <li><b>活动前</b>（10秒）："现在大家来做一个小练习，要求是……给你们X分钟，开始。"</li>
+  </ul>
+  <p style="margin-top:8px;">整套话术每节课用不到5分钟，剩下的交给视频和活动。</p>
+</div>
+
+<div class="highlight-box">
+  <strong>3. 如果视频打不开的应急方案</strong>
+  <ul style="margin-top:8px; padding-left:20px; font-size:13px;">
+    <li><b>B站打不开</b>：用教材配套的人邮慕课(rymooc.com)视频替代，内容完全对应PPT。</li>
+    <li><b>网络全断</b>：翻到PPT，让学生自己读PPT上的文字内容（人邮的PPT每页都有详细文字），然后做随堂练习题。</li>
+    <li><b>视频内容太难</b>：直接跳过，进入互动活动环节，用生活类比口头解释即可。</li>
+  </ul>
+</div>
+
+<div class="highlight-box">
+  <strong>4. 12课时教师开口时间统计</strong>
+  <table style="margin-top:10px;">
+    <tr><th>课时</th><th>教师开口</th><th>视频时长</th><th>活动时长</th><th>开口占比</th></tr>
+    <tr><td>1</td><td>20min</td><td>23min</td><td>33min</td><td>22%</td></tr>
+    <tr><td>2</td><td>22min</td><td>35min</td><td>33min</td><td>24%</td></tr>
+    <tr><td>3</td><td>15min</td><td>3min</td><td>57min</td><td>17%</td></tr>
+    <tr><td>4</td><td>20min</td><td>25min</td><td>25min</td><td>22%</td></tr>
+    <tr><td>5</td><td>23min</td><td>25min</td><td>32min</td><td>26%</td></tr>
+    <tr><td>6</td><td>12min</td><td>23min</td><td>40min</td><td>13%</td></tr>
+    <tr><td>7</td><td>22min</td><td>20min</td><td>38min</td><td>24%</td></tr>
+    <tr><td>8</td><td>25min</td><td>10min</td><td>47min</td><td>28%</td></tr>
+    <tr><td>9</td><td>15min</td><td>27min</td><td>43min</td><td>17%</td></tr>
+    <tr><td>10</td><td>25min</td><td>30min</td><td>27min</td><td>28%</td></tr>
+    <tr><td>11</td><td>22min</td><td>23min</td><td>37min</td><td>24%</td></tr>
+    <tr><td>12</td><td>10min</td><td>22min</td><td>53min</td><td>11%</td></tr>
+    <tr style="background:#e8f5e9; font-weight:bold;"><td>平均</td><td>19min</td><td>22min</td><td>39min</td><td>21%</td></tr>
+  </table>
+  <p style="margin-top:8px;">也就是说，每90分钟课时，你平均只需要说19分钟，视频替你说22分钟，学生活动撑39分钟。</p>
+</div>
+
+</div>
+</body>
+</html>

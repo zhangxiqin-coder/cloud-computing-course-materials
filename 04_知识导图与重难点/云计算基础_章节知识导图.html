@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>云计算基础 · 章节知识导图（思维导图）</title>
+<style>
+  body{font-family:"Microsoft YaHei",sans-serif;background:#f5f6fa;margin:0;padding:24px;color:#2c2c2c;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  h1{text-align:center;color:#0d47a1;}
+  .sub{text-align:center;color:#666;font-size:14px;margin-bottom:8px;}
+  .card{background:#fff;border-radius:10px;padding:20px 26px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .card h2{margin:0 0 4px;color:#1a73e8;font-size:19px;}
+  .analogy{display:inline-block;background:#fff3e0;color:#e65100;border-radius:4px;padding:2px 10px;font-size:12.5px;margin-bottom:10px;}
+  /* tree */
+  .tree{display:flex;justify-content:center;}
+  .node{border-radius:8px;padding:8px 14px;color:#fff;font-size:14px;font-weight:bold;text-align:center;min-width:90px;}
+  .n-blue{background:#1a73e8;} .n-dark{background:#0d47a1;} .n-green{background:#43a047;}
+  .n-orange{background:#fb8c00;} .n-purple{background:#8e24aa;} .n-teal{background:#00897b;}
+  .n-red{background:#e53935;} .n-gray{background:#607d8b;}
+  .branch{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px;}
+  .leaf{border:1.5px solid #cdd6e0;border-radius:8px;padding:8px 12px;font-size:13px;min-width:120px;background:#f8fafc;}
+  .leaf b{color:#0d47a1;}
+  .center{display:flex;justify-content:center;margin:6px 0;}
+  .down{text-align:center;color:#bbb;font-size:18px;line-height:6px;margin:0;}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px;}
+  th,td{border:1px solid #dde3ec;padding:7px 9px;text-align:left;}
+  th{background:#e3f2fd;color:#0d47a1;}
+  .note{color:#888;font-size:12.5px;margin-top:6px;}
+  @media print{.card{box-shadow:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>《云计算基础》章节知识导图</h1>
+<div class="sub">用“生活类比”把抽象概念串成一张网 · 教师串讲 / 学生复习都能用</div>
+
+<!-- 1. 课程总地图 -->
+<div class="card">
+  <h2>① 课程总地图：6 单元 13 章</h2>
+  <span class="analogy">类比：一本书分 6 篇，每篇几章</span>
+  <div class="branch">
+    <div class="leaf"><b>第一单元</b><br>第1–4章<br>概念·服务·部署</div>
+    <div class="leaf"><b>第二单元</b><br>第5–6章<br>安全·市场</div>
+    <div class="leaf"><b>第三单元</b><br>第7–8章<br>网络·数据库</div>
+    <div class="leaf"><b>第四单元</b><br>第9–10章<br>虚拟化·Linux</div>
+    <div class="leaf"><b>第五单元</b><br>第11–12章<br>Web·公有云</div>
+    <div class="leaf"><b>第六单元</b><br>第13章+复习<br>私有云·期末</div>
+  </div>
+  <div class="note">一句话主线：先懂“云是什么”(1单元)，再学“怎么保障安全、怎么连、怎么存”(2–3单元)，然后看“底层怎么虚拟出来、怎么用 Linux 管”(4单元)，最后学“怎么搭网站、用公有云/私有云跑起来”(5–6单元)。</div>
+</div>
+
+<!-- 2. NIST 3-5-4 -->
+<div class="card">
+  <h2>② NIST 定义：3-5-4 框架</h2>
+  <span class="analogy">类比：点一杯奶茶 = 选品类(3) + 必含配料(5) + 堂食/外带/拼单(4)</span>
+  <div class="center"><div class="node n-dark">NIST 云计算定义</div></div>
+  <div class="down">▼</div>
+  <div class="branch">
+    <div class="leaf"><b>3 种服务模型</b><br>IaaS 基础设施即服务<br>PaaS 平台即服务<br>SaaS 软件即服务</div>
+    <div class="leaf"><b>5 个基本特征</b><br>按需自助<br>泛在网络访问<br>资源池化<br>快速弹性<br>可计量服务</div>
+    <div class="leaf"><b>4 种部署模型</b><br>公有云<br>私有云<br>社区云<br>混合云</div>
+  </div>
+  <div class="note">考试高频：3=服务、5=特征、4=部署，别记反。</div>
+</div>
+
+<!-- 3. 服务模型 IaaS/PaaS/SaaS -->
+<div class="card">
+  <h2>③ 三种服务模型：租房子类比</h2>
+  <span class="analogy">类比：毛坯房 / 精装房 / 酒店</span>
+  <table>
+    <tr><th>模型</th><th>你得到什么</th><th>你负责</th><th>厂商负责</th><th>生活类比</th><th>例子</th></tr>
+    <tr><td><b>IaaS</b></td><td>虚拟机(CPU/内存/硬盘)</td><td>系统、软件、数据、安全配置</td><td>物理机、网络、虚拟化</td><td>租毛坯房，自己装修</td><td>阿里云 ECS</td></tr>
+    <tr><td><b>PaaS</b></td><td>开发运行平台</td><td>代码、数据</td><td>系统、运行环境、扩容</td><td>租带厨房的房，只管做菜</td><td>小程序云开发</td></tr>
+    <tr><td><b>SaaS</b></td><td>现成软件</td><td>只用</td><td>一切(系统/数据/运维)</td><td>住酒店，啥都配好</td><td>在线网盘/Office</td></tr>
+  </table>
+  <div class="note">记忆口诀：I 管最多、S 管最少；越往 S，用户越省心、越不能自己改底层。</div>
+</div>
+
+<!-- 4. 部署模型 -->
+<div class="card">
+  <h2>④ 四种部署模型</h2>
+  <span class="analogy">类比：公共公园 / 自家院子 / 小区会所 / 公园+院子组合</span>
+  <div class="branch">
+    <div class="leaf"><b>公有云</b><br>厂商建、公众用<br>例：阿里云、AWS</div>
+    <div class="leaf"><b>私有云</b><br>企业自建自用<br>例：学校内部云</div>
+    <div class="leaf"><b>社区云</b><br>同行业共用<br>例：政务云、医疗云</div>
+    <div class="leaf"><b>混合云</b><br>公有+私有组合<br>敏感数据留私有</div>
+  </div>
+</div>
+
+<!-- 5. 安全 -->
+<div class="card">
+  <h2>⑤ 云安全：CIA + 责任共担</h2>
+  <span class="analogy">类比：租房——房东管房、租客管锁</span>
+  <div class="center"><div class="node n-red">信息安全 CIA</div></div>
+  <div class="down">▼</div>
+  <div class="branch">
+    <div class="leaf"><b>C 机密性</b><br>不被未授权看到<br>手段：加密</div>
+    <div class="leaf"><b>I 完整性</b><br>不被篡改<br>手段：哈希</div>
+    <div class="leaf"><b>A 可用性</b><br>随时能用<br>手段：防 DDoS</div>
+  </div>
+  <div class="down">＋</div>
+  <div class="center"><div class="node n-orange">责任共担模型</div></div>
+  <div class="branch">
+    <div class="leaf"><b>云厂商负责</b><br>物理机房<br>网络/虚拟化层<br>平台安全</div>
+    <div class="leaf"><b>用户负责</b><br>自己的数据<br>账号密码<br>应用与配置</div>
+  </div>
+  <div class="note">技术三件套：加密(防偷看) / 哈希(防篡改) / 数字签名(防抵赖+验身份)。</div>
+</div>
+
+<!-- 6. 技术栈 -->
+<div class="card">
+  <h2>⑥ 技术栈串联：一个网站怎么跑在云上</h2>
+  <span class="analogy">类比：开店——租店面(虚拟化)→装修通水电(网络/Linux)→挂招牌接客(Web)→上平台(公有云)</span>
+  <div class="center"><div class="node n-teal">用户浏览器</div></div>
+  <div class="down">▼ 经 DNS 解析 + HTTP/HTTPS</div>
+  <div class="branch">
+    <div class="leaf"><b>网络层</b><br>IP / DNS / 路由器<br>负载均衡 / CDN</div>
+    <div class="leaf"><b>虚拟化层</b><br>Hypervisor<br>虚拟机 / 快照</div>
+    <div class="leaf"><b>系统层</b><br>Linux 命令<br>权限 / 文件系统</div>
+    <div class="leaf"><b>应用层</b><br>Web 服务器(Nginx)<br>数据库(SQL)</div>
+  </div>
+  <div class="down">▼ 部署在</div>
+  <div class="center"><div class="node n-purple">公有云：ECS + 对象存储 + VPC + 弹性伸缩</div></div>
+  <div class="note">私有云（第13章）= 把上面这套搬回自己机房自己管。</div>
+</div>
+
+</div>
+</body>
+</html>

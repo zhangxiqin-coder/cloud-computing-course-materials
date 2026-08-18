@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云计算基础 前12课时 课堂习题答案与解析</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f5f5f5; color: #333; line-height: 1.8; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  h1 { font-size: 26px; color: #1a73e8; margin-bottom: 8px; border-bottom: 3px solid #1a73e8; padding-bottom: 12px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
+  h2 { font-size: 20px; color: #1a73e8; margin: 30px 0 15px; padding-left: 12px; border-left: 4px solid #1a73e8; }
+  h2.ch2 { color: #4caf50; border-left-color: #4caf50; }
+  h2.ch3 { color: #ff9800; border-left-color: #ff9800; }
+  h2.ch4 { color: #9c27b0; border-left-color: #9c27b0; }
+  h3 { font-size: 16px; color: #333; margin: 20px 0 10px; background: #f8f9fa; padding: 8px 12px; border-radius: 4px; }
+  .q-item { margin: 10px 0; padding: 10px 15px; border: 1px solid #e0e0e0; border-radius: 6px; }
+  .q-item:hover { background: #f8f9fa; }
+  .q-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .q-num { background: #1a73e8; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+  .q-type { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: bold; }
+  .type-select { background: #e3f2fd; color: #1565c0; }
+  .type-true { background: #fff3e0; color: #e65100; }
+  .type-fill { background: #e8f5e9; color: #2e7d32; }
+  .q-text { font-size: 13px; margin-bottom: 4px; padding-left: 32px; }
+  .q-options { font-size: 12px; color: #666; padding-left: 32px; margin-bottom: 4px; }
+  .q-answer { font-size: 13px; padding: 4px 10px; background: #fffde7; border: 1px solid #fff59d; border-radius: 4px; margin-left: 32px; margin-bottom: 4px; display: inline-block; }
+  .q-answer strong { color: #f57f17; }
+  .q-explain { font-size: 12px; color: #555; padding: 4px 10px; background: #f1f8e9; border-radius: 4px; margin-left: 32px; }
+  .q-explain::before { content: "解析："; font-weight: bold; color: #4caf50; }
+  .answer-summary { margin: 20px 0; }
+  .summary-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .summary-table th { background: #1a73e8; color: #fff; padding: 8px; text-align: center; }
+  .summary-table td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: center; }
+  .summary-table tr:nth-child(even) { background: #f8f9fa; }
+  .summary-table .ans { font-weight: bold; color: #1a73e8; }
+  .page-break { page-break-before: always; }
+  @media print { .container { box-shadow: none; } .q-item { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>云计算基础 前12课时 课堂习题 - 答案与解析</h1>
+<p class="subtitle">教材：云计算基础技术与应用(第2版)(微课版) | 易海博 池瑞楠 主编 | 人民邮电出版社<br>
+配套文档：《云计算基础_前12课时课堂习题.pptx》| 共12课时 x 12题 = 144题</p>
+
+<h3>快速答案总表</h3>
+<div class="answer-summary">
+<table class="summary-table">
+<tr><th>课时</th><th>课题</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr>
+<tr><td>1</td><td style="text-align:left;font-size:12px;">什么是云计算</td><td class="ans">C</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">服务</td><td class="ans">网络</td></tr>
+<tr><td>2</td><td style="text-align:left;font-size:12px;">发展历史与5种计算模式</td><td class="ans">D</td><td class="ans">D</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">个人电脑</td><td class="ans">网格</td></tr>
+<tr><td>3</td><td style="text-align:left;font-size:12px;">演示课：云端Office协作体验</td><td class="ans">B</td><td class="ans">B</td><td class="ans">C</td><td class="ans">C</td><td class="ans">A</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">Software</td><td class="ans">云</td></tr>
+<tr><td>4</td><td style="text-align:left;font-size:12px;">SaaS 软件即服务</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">B</td><td class="ans">SaaS</td><td class="ans">Software</td></tr>
+<tr><td>5</td><td style="text-align:left;font-size:12px;">PaaS 与 IaaS</td><td class="ans">C</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">B</td><td class="ans">Infrast..</td><td class="ans">Platform</td></tr>
+<tr><td>6</td><td style="text-align:left;font-size:12px;">演示课：Gitee代码托管体验</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">GitHub</td><td class="ans">版本</td></tr>
+<tr><td>7</td><td style="text-align:left;font-size:12px;">公有云与社区云</td><td class="ans">B</td><td class="ans">B</td><td class="ans">D</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">社区云</td><td class="ans">公有</td></tr>
+<tr><td>8</td><td style="text-align:left;font-size:12px;">私有云与混合云</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">C</td><td class="ans">C</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">私有</td><td class="ans">混合</td></tr>
+<tr><td>9</td><td style="text-align:left;font-size:12px;">演示课：云服务器初体验</td><td class="ans">C</td><td class="ans">B</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">B</td><td class="ans">SSH</td><td class="ans">Compute</td></tr>
+<tr><td>10</td><td style="text-align:left;font-size:12px;">本质与三大特征</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">C</td><td class="ans">A</td><td class="ans">A</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">资源池化</td><td class="ans">弹性</td></tr>
+<tr><td>11</td><td style="text-align:left;font-size:12px;">快速弹性与可计量服务</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">省钱</td><td class="ans">可计量</td></tr>
+<tr><td>12</td><td style="text-align:left;font-size:12px;">演示课：VMware + 阶段测验</td><td class="ans">B</td><td class="ans">B</td><td class="ans">C</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">B</td><td class="ans">A</td><td class="ans">A</td><td class="ans">服务 / 部署</td><td class="ans">虚拟</td></tr>
+</table>
+</div>
+<h2 class="ch1">课时1：什么是云计算</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第1章 云计算的简介</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不属于NIST定义的云计算基本特征？</div>
+  <div class="q-options">A. 按需自助服务 &nbsp; B. 资源池化 &nbsp; C. 固定硬件配置 &nbsp; D. 快速弹性</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">NIST定义的5个特征中没有"固定硬件配置"，云计算的资源是动态分配的。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"云计算"概念被广泛提出是在哪一年？</div>
+  <div class="q-options">A. 1995年 &nbsp; B. 2006年 &nbsp; C. 2010年 &nbsp; D. 2015年</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">2006年亚马逊推出EC2服务，谷歌CEO施密特首次公开使用"Cloud Computing"一词。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">NIST是哪个机构的缩写？</div>
+  <div class="q-options">A. 美国国家标准与技术研究院 &nbsp; B. 国际标准化组织 &nbsp; C. 欧洲电信标准协会 &nbsp; D. 中国信息通信研究院</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">NIST全称National Institute of Standards and Technology，是美国国家标准与技术研究院。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于云计算的应用？</div>
+  <div class="q-options">A. 用U盘拷文件 &nbsp; B. 用百度网盘存照片 &nbsp; C. 用本地计算器算数 &nbsp; D. 用打印机打印</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">百度网盘是云端存储服务，数据存在云服务器上，属于云计算应用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">NIST云计算定义发布在哪个文件中？</div>
+  <div class="q-options">A. SP 800-145 &nbsp; B. SP 800-53 &nbsp; C. ISO 27001 &nbsp; D. GB/T 31168</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">NIST SP 800-145（2011年9月发布）是云计算定义的标准文献。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">关于云计算，以下说法正确的是？</div>
+  <div class="q-options">A. 云计算就是网盘 &nbsp; B. 云计算只能用电脑访问 &nbsp; C. 云计算通过互联网提供资源 &nbsp; D. 云计算必须自己买服务器</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">云计算通过互联网（网络）提供计算资源，网盘只是其中一种应用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云计算就是网盘，主要用来存文件。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">网盘只是云计算的一种应用（SaaS），云计算涵盖IaaS/PaaS/SaaS三大服务模式。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">NIST是美国国家标准与技术研究院的缩写。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">NIST全称National Institute of Standards and Technology，其SP 800-145文件定义了云计算。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云计算的资源是可以按需获取和释放的。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">NIST定义的核心：云计算资源能够被快速分配和释放，只需最少的管理精力。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">使用云计算服务必须自己购买物理服务器。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">云计算用户租用云服务商的资源，不需要自己购买物理服务器。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST云计算定义的核心框架是"3-__-4"，其中"3"代表三个____模型。</div>
+  <div class="q-answer"><strong>答案：服务</strong></div>
+  <div class="q-explain">3-5-4 = 3个服务模型(SaaS/PaaS/IaaS) + 5个基本特征 + 4个部署模型。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST定义中，云计算是一种模型，允许通过____访问共享的计算资源池。</div>
+  <div class="q-answer"><strong>答案：网络</strong></div>
+  <div class="q-explain">NIST定义强调"on-demand network access"（按需网络访问），网络是云计算的基础。</div>
+</div>
+<h2 class="ch1">课时2：发展历史与5种计算模式</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第1章 云计算的简介</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是云计算演进的阶段？</div>
+  <div class="q-options">A. 大型机时代 &nbsp; B. 个人电脑时代 &nbsp; C. 互联网时代 &nbsp; D. 量子计算时代</div>
+  <div class="q-answer"><strong>答案：D</strong></div>
+  <div class="q-explain">云计算演进路径：大型机->个人电脑->互联网->云计算，量子计算不属于此演进链。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"多台计算机协同完成一个大型任务"描述的是哪种计算模式？</div>
+  <div class="q-options">A. 分布式计算 &nbsp; B. 并行计算 &nbsp; C. 网格计算 &nbsp; D. 以上都是</div>
+  <div class="q-answer"><strong>答案：D</strong></div>
+  <div class="q-explain">分布式、并行、网格计算都强调多机协同，它们都是云计算的技术前身。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">大型机时代的计算模式特点是？</div>
+  <div class="q-options">A. 高度分散 &nbsp; B. 集中计算、终端只负责输入输出 &nbsp; C. 每人一台独立电脑 &nbsp; D. 通过互联网访问</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">大型机时代是集中式计算，主机负责所有计算，终端（哑终端）只负责输入和显示。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个技术是云计算的直接前身？</div>
+  <div class="q-options">A. 虚拟化技术 &nbsp; B. 人工智能 &nbsp; C. 区块链 &nbsp; D. 量子通信</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">虚拟化技术实现了资源池化，是云计算IaaS层的核心技术基础。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">效用计算（Utility Computing）的核心理念是？</div>
+  <div class="q-options">A. 计算资源像水电一样按需使用和计费 &nbsp; B. 计算机只能用来算效用 &nbsp; C. 免费提供计算资源 &nbsp; D. 只用一台超级计算机</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">效用计算提出"计算即公用事业"，像用水用电一样按量付费，这直接影响了云计算的计费模式。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪种计算模式强调跨组织、跨地域共享算力？</div>
+  <div class="q-options">A. 分布式计算 &nbsp; B. 网格计算 &nbsp; C. 并行计算 &nbsp; D. 集中式计算</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">网格计算强调跨组织、跨地域共享计算资源，常用于科研领域（如SETI@home）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云计算是从分布式计算、网格计算等技术发展而来的。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">云计算整合了分布式计算、网格计算、虚拟化等技术，是它们的商业化和产品化。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">网格计算和云计算是完全相同的东西。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">网格计算偏科研、强调跨组织共享算力；云计算偏商业、强调按需服务和计费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">个人电脑时代的特征是计算能力从集中走向分散。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">个人电脑时代，每台PC都有独立的计算能力，从大型机的集中模式走向分散模式。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">虚拟化技术可以在一台物理机上运行多个操作系统。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">虚拟化技术通过Hypervisor在一台物理机上虚拟出多个独立的虚拟机，每个可以运行不同操作系统。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">云计算发展的三个阶段：大型机 -> ____ -> 云计算。</div>
+  <div class="q-answer"><strong>答案：个人电脑</strong></div>
+  <div class="q-explain">大型机（集中）->个人电脑（分散）->云计算（集中+弹性），呈螺旋式上升。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">云计算整合了分布式计算、____计算和虚拟化等技术。</div>
+  <div class="q-answer"><strong>答案：网格</strong></div>
+  <div class="q-explain">云计算是分布式计算、网格计算、虚拟化等技术的商业化和产品化。</div>
+</div>
+<h2 class="ch1">课时3：演示课：云端Office协作体验</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第1章 云计算的简介</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于SaaS（软件即服务）产品？</div>
+  <div class="q-options">A. 阿里云ECS &nbsp; B. 腾讯文档 &nbsp; C. VMware Workstation &nbsp; D. CentOS Linux</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">腾讯文档是直接在浏览器中使用的在线文档工具，免安装、按需使用，属于SaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">在线文档协作的核心优势是什么？</div>
+  <div class="q-options">A. 文件容量更大 &nbsp; B. 多人同时在线编辑 &nbsp; C. 只能在手机上用 &nbsp; D. 必须安装专用软件</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">多人实时协作是在线文档区别于传统Office的最大优势。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是在线文档的优势？</div>
+  <div class="q-options">A. 多人实时协作 &nbsp; B. 自动保存到云端 &nbsp; C. 必须安装大型软件 &nbsp; D. 多设备同步</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">在线文档无需安装大型软件，浏览器直接打开即可使用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">金山文档和腾讯文档属于哪种云服务模式？</div>
+  <div class="q-options">A. IaaS &nbsp; B. PaaS &nbsp; C. SaaS &nbsp; D. 都不是</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">用户直接使用云端软件，无需管理底层服务器和平台，属于SaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">传统Office软件（如Word 2019安装版）和在线文档的主要区别是？</div>
+  <div class="q-options">A. 传统软件需要安装，在线文档浏览器直接用 &nbsp; B. 传统软件功能更强 &nbsp; C. 在线文档不能编辑 &nbsp; D. 传统软件免费</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">传统Office需本地安装，在线文档通过浏览器使用，这是SaaS与传统软件的核心区别。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">在线文档中"历史版本"功能的作用是？</div>
+  <div class="q-options">A. 让文档看起来更老 &nbsp; B. 查看和恢复之前的编辑记录 &nbsp; C. 删除所有内容 &nbsp; D. 加密文档</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">在线文档自动保存每次修改的历史版本，可以随时查看和回退到任意版本。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">金山文档和腾讯文档都需要安装客户端才能使用。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">两者都支持浏览器直接打开使用，无需安装客户端。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">使用在线文档时，文件数据存储在本地电脑硬盘上。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">在线文档的数据存储在云端服务器上，所以才能多端同步、多人协作。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">在线文档支持多人同时编辑同一个表格的不同区域。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">在线文档支持多人实时协作，每个人编辑的位置会以不同颜色标注，互不冲突。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">断网后在线文档中的所有内容都会丢失。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">数据存在云端，断网只是暂时无法编辑，恢复网络后内容仍然完好。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">SaaS的全称是____即服务（填英文）。</div>
+  <div class="q-answer"><strong>答案：Software</strong></div>
+  <div class="q-explain">SaaS = Software as a Service（软件即服务），用户直接使用云端软件。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">在线文档的多人协作功能依赖____端存储和同步技术。</div>
+  <div class="q-answer"><strong>答案：云</strong></div>
+  <div class="q-explain">多人协作依赖云端服务器实时同步各用户的编辑操作。</div>
+</div>
+<h2 class="ch2">课时4：SaaS 软件即服务</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第2章 云计算的服务</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是SaaS的特点？</div>
+  <div class="q-options">A. 免安装，浏览器直接用 &nbsp; B. 用户无需维护服务器 &nbsp; C. 需要自己购买和管理硬件 &nbsp; D. 按需付费</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">SaaS用户不需要购买和管理硬件，这些都由云服务商负责。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于SaaS产品？</div>
+  <div class="q-options">A. Windows 10 操作系统 &nbsp; B. Office 365 在线办公 &nbsp; C. VMware Workstation 虚拟机 &nbsp; D. MySQL 数据库</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">Office 365是微软提供的在线办公套件，通过浏览器使用、按月/年订阅付费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不属于SaaS产品？</div>
+  <div class="q-options">A. 钉钉 &nbsp; B. 企业微信 &nbsp; C. 阿里云ECS云服务器 &nbsp; D. 飞书</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">阿里云ECS提供的是虚拟服务器（基础设施），属于IaaS，不是SaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">SaaS模式下，软件的升级和维护由谁负责？</div>
+  <div class="q-options">A. 用户自己 &nbsp; B. 云服务商 &nbsp; C. 硬件厂商 &nbsp; D. 网络运营商</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">SaaS模式下，软件的维护、升级、安全补丁都由服务商在云端完成。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">SaaS的典型付费方式是？</div>
+  <div class="q-options">A. 一次性买断 &nbsp; B. 按月/年订阅 &nbsp; C. 按CPU核数付费 &nbsp; D. 完全免费</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">SaaS通常采用订阅制（按月或按年付费），用户按需选择套餐。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"去饭店吃饭，菜做好直接吃"类比的是哪种云服务？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 本地部署</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">SaaS就像去饭店吃饭，一切准备好，你直接享用成品。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">SaaS用户不需要关心软件的维护和升级。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">SaaS模式下，软件的维护、升级、安全补丁都由服务商在云端完成。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">钉钉属于SaaS产品。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">钉钉是阿里提供的在线办公协同平台，用户通过APP/网页使用，属于SaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">SaaS用户可以自由修改软件的底层代码和架构。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">SaaS用户只能使用服务商提供的功能，不能修改底层代码。自由度最低。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">使用SaaS软件需要自己配置数据库和服务器环境。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">SaaS用户无需配置任何底层环境，开通账号即可使用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">在SaaS、PaaS、IaaS三种模式中，用户自由度最低的是____。</div>
+  <div class="q-answer"><strong>答案：SaaS</strong></div>
+  <div class="q-explain">自由度：IaaS > PaaS > SaaS。SaaS最省心但自由度最低。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">SaaS的英文全称是____ as a Service。</div>
+  <div class="q-answer"><strong>答案：Software</strong></div>
+  <div class="q-explain">SaaS = Software as a Service（软件即服务）。</div>
+</div>
+<h2 class="ch2">课时5：PaaS 与 IaaS</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第2章 云计算的服务</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"自己买菜做饭"（给你厨房和食材）类比的是哪种云服务？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 都不是</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">IaaS提供基础设施（服务器/存储/网络），相当于给你厨房和食材，你自己做。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于IaaS产品？</div>
+  <div class="q-options">A. 钉钉 &nbsp; B. Gitee代码托管 &nbsp; C. 阿里云ECS云服务器 &nbsp; D. 微信小程序</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">阿里云ECS提供虚拟服务器，用户可以在上面安装操作系统和软件，属于IaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">PaaS主要面向哪类用户？</div>
+  <div class="q-options">A. 普通办公人员 &nbsp; B. 软件开发者 &nbsp; C. 硬件维修人员 &nbsp; D. 网络工程师</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">PaaS提供开发平台（运行环境/数据库/中间件），开发者只需关注写代码。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于PaaS产品？</div>
+  <div class="q-options">A. 阿里云ECS &nbsp; B. 腾讯文档 &nbsp; C. 微信小程序云开发 &nbsp; D. Windows 10</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">微信小程序云开发提供开发环境和数据库，开发者只需写代码部署，属于PaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"叫外卖半成品，自己加热就能吃"类比的是？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 本地部署</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">PaaS提供了平台和工具（半成品），开发者在此基础上开发应用（加热即食）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">三种服务模式中，用户自由度最高的是？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 一样高</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">自由度：IaaS > PaaS > SaaS。IaaS用户可以自由选择操作系统和软件。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">PaaS主要面向的是软件开发者。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">PaaS提供开发平台，开发者只需关注写代码，不用管服务器配置。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">使用IaaS时，用户需要自己安装操作系统。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">IaaS只提供虚拟硬件，用户需要自行选择和安装操作系统。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">SaaS、PaaS、IaaS三层之间是互相独立、没有关系的。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">三者是层级关系：PaaS建立在IaaS之上，SaaS建立在PaaS之上。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">IaaS用户需要自己管理物理服务器的硬件故障。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">物理硬件由云服务商管理，IaaS用户只管虚拟机层面以上的内容。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">IaaS的全称是____即服务（填英文）。</div>
+  <div class="q-answer"><strong>答案：Infrastructure</strong></div>
+  <div class="q-explain">IaaS = Infrastructure as a Service（基础设施即服务）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">PaaS的全称是____即服务（填英文）。</div>
+  <div class="q-answer"><strong>答案：Platform</strong></div>
+  <div class="q-explain">PaaS = Platform as a Service（平台即服务）。</div>
+</div>
+<h2 class="ch2">课时6：演示课：Gitee代码托管体验</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第2章 云计算的服务</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">Gitee属于哪种云服务模式？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 都不是</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">Gitee提供代码托管和开发协作平台，开发者在其上管理代码，属于PaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">代码托管平台的主要功能是什么？</div>
+  <div class="q-options">A. 存储照片和视频 &nbsp; B. 管理和分享代码，记录修改历史 &nbsp; C. 在线看视频 &nbsp; D. 即时聊天通讯</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">代码托管平台核心功能：代码存储、版本管理、分支管理、团队协作。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个是国外的代码托管平台？</div>
+  <div class="q-options">A. Gitee（码云） &nbsp; B. GitHub &nbsp; C. 钉钉 &nbsp; D. 飞书</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">GitHub是全球最大的代码托管平台（美国），Gitee是国内对应的平台。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">Git是什么？</div>
+  <div class="q-options">A. 一个代码托管网站 &nbsp; B. 一个版本控制工具 &nbsp; C. 一种编程语言 &nbsp; D. 一种操作系统</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">Git是版本控制软件（工具），Gitee/GitHub是基于Git的代码托管平台（服务）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">代码托管平台上的"仓库"（Repository）是指？</div>
+  <div class="q-options">A. 存放货物的仓库 &nbsp; B. 存放和管理一个项目代码的空间 &nbsp; C. 服务器的机柜 &nbsp; D. 数据库的表</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">仓库是代码托管平台的基本单位，每个项目对应一个仓库，包含全部代码和历史记录。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">代码托管平台的"提交"（Commit）功能是？</div>
+  <div class="q-options">A. 提交作业 &nbsp; B. 保存代码的一次修改记录 &nbsp; C. 删除代码 &nbsp; D. 编译代码</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">每次Commit记录代码的修改内容、时间和修改者，形成版本历史。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">Git和Gitee是同一个东西。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">Git是版本控制工具（软件），Gitee是基于Git的代码托管平台（网站）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">代码托管平台可以记录代码的每一次修改历史。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">版本控制的核心就是记录每次提交，可以随时回退到任意历史版本。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">Gitee上的代码仓库只能设置为公开，不能设为私有。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">Gitee支持公开和私有仓库，私有仓库只有授权成员才能访问。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">多人协作时，代码托管平台可以帮助合并不同人的代码修改。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">通过分支（Branch）和合并请求（Pull/Merge Request）实现多人协作。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">Gitee被称为中国版的____（填一个国外代码托管平台名称）。</div>
+  <div class="q-answer"><strong>答案：GitHub</strong></div>
+  <div class="q-explain">Gitee（码云）和GitHub都是基于Git的代码托管平台。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">Git是一个____控制工具（填三个字）。</div>
+  <div class="q-answer"><strong>答案：版本</strong></div>
+  <div class="q-explain">Git是目前最流行的分布式版本控制系统。</div>
+</div>
+<h2 class="ch3">课时7：公有云与社区云</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第3章 云计算的部署</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个属于公有云？</div>
+  <div class="q-options">A. 学校内部机房搭建的云 &nbsp; B. 阿里云 &nbsp; C. 银行自建的私有数据中心 &nbsp; D. 军队专用云平台</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">阿里云面向公众开放，任何人都可以注册使用，是典型的公有云。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">公有云的最大特点是？</div>
+  <div class="q-options">A. 只对特定组织开放 &nbsp; B. 对公众开放，按需使用 &nbsp; C. 完全免费 &nbsp; D. 不需要网络</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">公有云由云服务商建设运营，对公众开放，用户按需注册使用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是国内公有云服务商？</div>
+  <div class="q-options">A. 阿里云 &nbsp; B. 腾讯云 &nbsp; C. 华为云 &nbsp; D. Oracle Cloud</div>
+  <div class="q-answer"><strong>答案：D</strong></div>
+  <div class="q-explain">Oracle Cloud（甲骨文云）是美国公司，不属于国内公有云服务商。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">社区云的典型用户是？</div>
+  <div class="q-options">A. 个人用户 &nbsp; B. 有共同需求的多个组织 &nbsp; C. 单一企业 &nbsp; D. 所有人</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">社区云服务于有共同需求的多个组织（如多家医院共享的医疗云）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个场景适合使用社区云？</div>
+  <div class="q-options">A. 个人存照片 &nbsp; B. 多家医院共享电子病历系统 &nbsp; C. 银行核心交易 &nbsp; D. 个人博客</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">多家医院有共同的医疗数据共享需求，社区云正适合这种跨组织协作场景。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">公有云用户的数据安全性靠什么保障？</div>
+  <div class="q-options">A. 物理隔离 &nbsp; B. 虚拟化和逻辑隔离技术 &nbsp; C. 用户自己加密 &nbsp; D. 不需要保障</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">公有云通过虚拟化和逻辑隔离技术确保不同用户之间的数据互不可见。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">社区云是多个有共同需求的组织共享使用的云。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">社区云服务于有共同需求的多个组织（如医疗云、教育云）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">公有云上所有用户的数据都能互相看到。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">通过虚拟化和隔离技术，每个用户的数据是相互隔离的，互不可见。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">公有云的优点包括成本低、无需维护硬件、弹性伸缩。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">公有云由服务商统一维护，用户共享资源，成本最低，弹性最好。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">社区云和公有云是一回事。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">社区云只对特定群体开放，公有云对所有人开放。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST定义的4种部署模型是：公有云、私有云、____和混合云。</div>
+  <div class="q-answer"><strong>答案：社区云</strong></div>
+  <div class="q-explain">4种部署模型：Public/Private/Community/Hybrid Cloud。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">阿里云、腾讯云、华为云都属于____云。</div>
+  <div class="q-answer"><strong>答案：公有</strong></div>
+  <div class="q-explain">面向公众开放的云平台属于公有云。</div>
+</div>
+<h2 class="ch3">课时8：私有云与混合云</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第3章 云计算的部署</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个场景最适合使用私有云？</div>
+  <div class="q-options">A. 个人博客网站 &nbsp; B. 银行核心交易系统 &nbsp; C. 免费在线翻译工具 &nbsp; D. 公开视频分享网站</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">银行对数据安全和合规性要求极高，需要完全掌控基础设施，私有云最合适。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">混合云是指什么？</div>
+  <div class="q-options">A. 只使用公有云 &nbsp; B. 只使用私有云 &nbsp; C. 公有云和私有云的组合使用 &nbsp; D. 完全不使用云</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">混合云结合公有云的弹性和私有云的安全性。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个是混合云的典型应用场景？</div>
+  <div class="q-options">A. 个人存照片 &nbsp; B. 电商平时用私有云，双11用公有云扩容 &nbsp; C. 只用一台服务器 &nbsp; D. 完全不用网络</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">核心数据放私有云保安全，突发流量用公有云保弹性，这是混合云的经典场景。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">私有云的部署方式包括？</div>
+  <div class="q-options">A. 只能在企业自己的机房 &nbsp; B. 只能托管在第三方机房 &nbsp; C. 可自建也可托管 &nbsp; D. 必须用公有云厂商的私有云方案</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">私有云可以在企业自有机房部署，也可以托管在第三方数据中心。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是私有云的优势？</div>
+  <div class="q-options">A. 数据完全可控 &nbsp; B. 满足合规要求 &nbsp; C. 建设成本低 &nbsp; D. 安全性可定制</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">私有云需要自购硬件、自建团队，建设成本通常高于公有云。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">混合云解决了什么问题？</div>
+  <div class="q-options">A. 网速太慢 &nbsp; B. 公有云不够安全和私有云不够弹性的矛盾 &nbsp; C. 服务器太贵 &nbsp; D. 软件不好用</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">混合云兼顾安全（私有云）和弹性（公有云），解决两者的矛盾。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">私有云一定比公有云更安全。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">安全性取决于实施水平。公有云大厂的安全投入远超普通企业自建私有云。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">学校机房搭建的、仅供校内使用的云平台属于私有云。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">仅供单一组织内部使用的云是私有云。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">混合云可以兼顾数据安全性和业务灵活性。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">混合云将敏感数据放私有云保安全，弹性业务放公有云保灵活。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">私有云的使用成本通常低于公有云。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">私有云需要自购硬件和运维团队，初始成本高；公有云按需付费，门槛低。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">学校机房搭建的、仅供校内使用的云平台属于____云。</div>
+  <div class="q-answer"><strong>答案：私有</strong></div>
+  <div class="q-explain">仅供单一组织内部使用的云是私有云。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">____云结合了公有云的弹性和私有云的安全性。</div>
+  <div class="q-answer"><strong>答案：混合</strong></div>
+  <div class="q-explain">混合云 = 公有云 + 私有云的组合。</div>
+</div>
+<h2 class="ch3">课时9：演示课：云服务器初体验</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第3章 云计算的部署</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">阿里云ECS属于哪种云服务模式？</div>
+  <div class="q-options">A. SaaS &nbsp; B. PaaS &nbsp; C. IaaS &nbsp; D. 都不是</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">ECS（Elastic Compute Service）提供虚拟服务器，属于IaaS。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">购买Linux云服务器后，通常用什么方式远程连接？</div>
+  <div class="q-options">A. 微信视频通话 &nbsp; B. SSH（安全Shell） &nbsp; C. 蓝牙连接 &nbsp; D. 用U盘拷贝文件</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">SSH是远程管理Linux服务器的标准协议。Windows服务器一般用远程桌面(RDP)。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">云服务器的"弹性"体现在？</div>
+  <div class="q-options">A. 服务器可以弯曲 &nbsp; B. 可以随时升级或降低配置 &nbsp; C. 服务器可以移动 &nbsp; D. 服务器是软的</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">弹性指资源可以随时扩容（升级配置）和缩容（降配省钱）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个是云服务器的计费方式？</div>
+  <div class="q-options">A. 只能按年付费 &nbsp; B. 按量付费和包年包月 &nbsp; C. 完全免费 &nbsp; D. 按点击次数付费</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">云服务器支持按量付费（按小时）和包年包月两种模式。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">部署网站到云服务器的一般步骤是？</div>
+  <div class="q-options">A. 买服务器->装环境->传网页->外网访问 &nbsp; B. 买服务器->传网页->装环境->外网访问 &nbsp; C. 传网页->买服务器->装环境->外网访问 &nbsp; D. 装环境->传网页->买服务器->外网访问</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">正确顺序：购买服务器->连接SSH->安装Web环境->上传网页文件->配置外网访问。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">云服务器选择操作系统时，建站常用的是？</div>
+  <div class="q-options">A. 只能用Linux &nbsp; B. 只能用Windows &nbsp; C. Linux或Windows均可 &nbsp; D. 不需要操作系统</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">Linux（如CentOS/Ubuntu）和Windows Server都可以建站，Linux更常用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云服务器可以根据需要随时升级CPU和内存配置。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">云服务器支持弹性升降配，这是云计算的核心优势。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云服务器通常按使用时长（如按小时/按月）计费。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">体现了云计算的可计量服务特征。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云服务器购买后不能更换操作系统。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">云服务器支持更换操作系统（需重装系统），但原有数据会丢失。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">云服务器的数据会自动备份，不需要手动操作。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">云服务器默认不自动备份，需要手动创建快照或配置自动备份策略。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">部署网站到云服务器的步骤：买服务器 -> 连____ -> 装环境 -> 传网页 -> 外网访问。</div>
+  <div class="q-answer"><strong>答案：SSH</strong></div>
+  <div class="q-explain">通过SSH远程连接Linux服务器进行操作。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">阿里云ECS的全称是Elastic ____ Service。</div>
+  <div class="q-answer"><strong>答案：Compute</strong></div>
+  <div class="q-explain">ECS = Elastic Compute Service（弹性计算服务）。</div>
+</div>
+<h2 class="ch4">课时10：本质与三大特征</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第4章 云计算的特点</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">云计算的本质是什么？</div>
+  <div class="q-options">A. 存储 &nbsp; B. 弹性 &nbsp; C. 网络 &nbsp; D. 虚拟化</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">云计算的本质是"弹性"--资源能大能小、能伸能缩。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"有网就能用，手机电脑平板都行"描述的是哪个特征？</div>
+  <div class="q-options">A. 按需自助服务 &nbsp; B. 广泛网络访问 &nbsp; C. 资源池化 &nbsp; D. 快速弹性</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">广泛网络访问指通过各种网络和终端设备随时随地访问云资源。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"用户自己点几下就能开通服务器，不用找客服"描述的是？</div>
+  <div class="q-options">A. 按需自助服务 &nbsp; B. 广泛网络访问 &nbsp; C. 资源池化 &nbsp; D. 可计量服务</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">按需自助服务指用户能自行获取资源，不需人工干预。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"你不知道数据存在哪台服务器上，但能正常访问"体现了？</div>
+  <div class="q-options">A. 按需自助服务 &nbsp; B. 广泛网络访问 &nbsp; C. 资源池化 &nbsp; D. 快速弹性</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">资源池化通过虚拟化将物理资源统一管理，用户不关心具体物理位置。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">虚拟化技术与资源池化的关系是？</div>
+  <div class="q-options">A. 虚拟化实现了资源池化 &nbsp; B. 资源池化实现了虚拟化 &nbsp; C. 两者无关 &nbsp; D. 两者完全相同</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">虚拟化技术将物理资源抽象为虚拟资源池，实现资源的动态分配。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个是"按需自助服务"的生活类比？</div>
+  <div class="q-options">A. 自助餐厅，想拿什么自己拿 &nbsp; B. 去饭店点菜 &nbsp; C. 叫外卖 &nbsp; D. 自己做饭</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">按需自助服务就像自助餐厅，用户自行获取所需资源。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">资源池化意味着多个用户共享同一组物理资源。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">资源池化通过虚拟化技术将物理资源池化，多用户共享，互不影响。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">按需自助服务需要联系客服人工审批才能获取资源。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">按需自助服务的核心就是用户可以自行获取资源，无需人工干预。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">广泛网络访问意味着只要有网络，任何设备都能访问云服务。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">广泛网络访问支持各种终端（手机、电脑、平板）通过网络访问。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">资源池化后，不同用户的数据可能会混淆。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">虽然共享物理资源，但通过隔离技术，每个用户的数据完全独立、互不可见。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST定义的5个基本特征是：按需自助服务、广泛网络访问、____、快速弹性、可计量服务。</div>
+  <div class="q-answer"><strong>答案：资源池化</strong></div>
+  <div class="q-explain">5个特征：On-demand self-service、Broad network access、Resource pooling、Rapid elasticity、Measured service。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">云计算的本质是____（能大能小、能伸能缩）。</div>
+  <div class="q-answer"><strong>答案：弹性</strong></div>
+  <div class="q-explain">弹性是云计算最核心的本质特征。</div>
+</div>
+<h2 class="ch4">课时11：快速弹性与可计量服务</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第4章 云计算的特点</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"双11淘宝自动增加服务器应对流量高峰"体现了哪个特征？</div>
+  <div class="q-options">A. 资源池化 &nbsp; B. 快速弹性 &nbsp; C. 可计量服务 &nbsp; D. 广泛网络访问</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">快速弹性指资源可以快速扩容和缩容。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">"用了多少CPU、多少流量就收多少钱"体现了哪个特征？</div>
+  <div class="q-options">A. 按需自助服务 &nbsp; B. 快速弹性 &nbsp; C. 可计量服务 &nbsp; D. 资源池化</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">可计量服务指资源使用量可以被监控、统计和计费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个是快速弹性的生活类比？</div>
+  <div class="q-options">A. 水表电表 &nbsp; B. 弹性腰带 &nbsp; C. 自助餐厅 &nbsp; D. 酒店住宿</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">弹性腰带能大能小，就像云资源能扩能缩。水表电表类比的是可计量服务。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">可计量服务的生活类比是？</div>
+  <div class="q-options">A. 弹性腰带 &nbsp; B. 水表电表（用多少算多少） &nbsp; C. 自助餐厅 &nbsp; D. 住酒店</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">水表电表按实际用量计费，就像云计算按资源使用量计费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">传统自建机房与云计算在成本上的主要区别是？</div>
+  <div class="q-options">A. 自建机房按峰值采购，平时浪费；云计算按需付费 &nbsp; B. 自建机房更便宜 &nbsp; C. 云计算更贵 &nbsp; D. 两者成本相同</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">自建机房要按最高需求采购设备，平时大量闲置；云计算用多少付多少。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个场景体现了快速弹性？</div>
+  <div class="q-options">A. 手机上用钉钉 &nbsp; B. 直播平台高峰期自动扩容、结束后自动缩容 &nbsp; C. 云盘存照片 &nbsp; D. 在线文档协作</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">直播高峰期自动增加服务器、结束后自动释放，是快速弹性的典型场景。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">快速弹性意味着资源既可以快速扩容，也可以快速缩容。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">弹性是双向的：需求增加时扩容，需求减少时缩容。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">可计量服务就是按固定月费收费，不管用不用都收一样的钱。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">可计量服务是按实际使用量计费，不是固定月费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">弹性的好处是可以省钱，不用为峰值买单。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">传统自建机房按峰值采购浪费大；用云可以平时少租、高峰多租、过完就退。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">可计量服务意味着用户可以查看自己的资源使用明细。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">可计量服务提供资源使用监控和报告，用户可以在控制台查看用量和费用明细。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">弹性的好处是____（不用为峰值买单，按实际使用量付费）。</div>
+  <div class="q-answer"><strong>答案：省钱</strong></div>
+  <div class="q-explain">弹性扩缩容避免了为峰值采购设备的浪费。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST 5个特征中，"用多少算多少"对应的是____服务。</div>
+  <div class="q-answer"><strong>答案：可计量</strong></div>
+  <div class="q-explain">可计量服务(Measured Service)按实际使用量监控和计费。</div>
+</div>
+<h2 class="ch4">课时12：演示课：VMware + 阶段测验</h2>
+<p style="color:#888;font-size:13px;margin-bottom:10px;">第4章 云计算的特点</p>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">1</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">VMware Workstation的主要功能是什么？</div>
+  <div class="q-options">A. 杀毒防毒 &nbsp; B. 在一台电脑上创建和运行多个虚拟机 &nbsp; C. 浏览网页 &nbsp; D. 视频剪辑</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">VMware Workstation是桌面级虚拟化软件，可以在一台物理机上虚拟出多台虚拟机。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">2</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">虚拟化技术与云计算的关系是？</div>
+  <div class="q-options">A. 毫无关系 &nbsp; B. 虚拟化是云计算的核心基础技术之一 &nbsp; C. 完全相同的东西 &nbsp; D. 互相替代的关系</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">虚拟化技术实现了资源池化，是云计算IaaS层的核心技术基础。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">3</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">以下哪个不是虚拟化的优势？</div>
+  <div class="q-options">A. 提高资源利用率 &nbsp; B. 降低硬件成本 &nbsp; C. 降低软件性能 &nbsp; D. 方便备份和迁移</div>
+  <div class="q-answer"><strong>答案：C</strong></div>
+  <div class="q-explain">虚拟化会带来轻微性能损耗，但不会"降低软件性能"，优势远大于劣势。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">4</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">虚拟机和物理机的区别是？</div>
+  <div class="q-options">A. 虚拟机没有CPU &nbsp; B. 虚拟机的资源是从物理机虚拟出来的 &nbsp; C. 虚拟机不能运行操作系统 &nbsp; D. 虚拟机没有硬盘</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">虚拟机的CPU/内存/硬盘等都是从物理机通过虚拟化技术分配出来的。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">5</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">VMware创建虚拟机时需要指定什么？</div>
+  <div class="q-options">A. CPU核数、内存大小、硬盘容量 &nbsp; B. 显示器品牌 &nbsp; C. 键盘颜色 &nbsp; D. 鼠标型号</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">创建虚拟机需要配置CPU、内存、硬盘等硬件参数，以及选择操作系统。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">6</span><span class="q-type type-select">[选择]</span></div>
+  <div class="q-text">NIST 3-5-4框架中，"3"对应教材哪几章？</div>
+  <div class="q-options">A. 第1-3章 &nbsp; B. 第2章 &nbsp; C. 第4章 &nbsp; D. 第5章</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">"3"是3个服务模型(SaaS/PaaS/IaaS)，对应第2章"云计算的服务"。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">7</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">一台物理计算机可以虚拟出多台独立的虚拟机。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">通过虚拟化软件，一台物理机的资源可以被分割成多个虚拟机独立使用。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">8</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">虚拟机创建完成后就不能再修改配置了。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：B</strong></div>
+  <div class="q-explain">虚拟机的CPU、内存、硬盘等配置都可以随时修改（关机后调整）。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">9</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">虚拟机可以像物理机一样安装操作系统和应用软件。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">虚拟机是完整的计算机系统，可以安装操作系统和各种软件。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">10</span><span class="q-type type-true">[判断]</span></div>
+  <div class="q-text">NIST 3-5-4框架的"4"对应教材第3章。</div>
+  <div class="q-options">A. 正确 &nbsp; B. 错误</div>
+  <div class="q-answer"><strong>答案：A</strong></div>
+  <div class="q-explain">"4"是4个部署模型，对应第3章"云计算的部署"。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">11</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">NIST 3-5-4框架：3个____模型、5个基本特征、4个____模型。</div>
+  <div class="q-answer"><strong>答案：服务 / 部署</strong></div>
+  <div class="q-explain">3个服务模型 + 5个特征 + 4个部署模型。</div>
+</div>
+<div class="q-item">
+  <div class="q-header"><span class="q-num">12</span><span class="q-type type-fill">[填空]</span></div>
+  <div class="q-text">VMware是一种____化软件（填两个字）。</div>
+  <div class="q-answer"><strong>答案：虚拟</strong></div>
+  <div class="q-explain">VMware是虚拟化软件，通过Hypervisor在一台物理机上运行多个虚拟机。</div>
+</div>
+
+</div>
+</body>
+</html>
