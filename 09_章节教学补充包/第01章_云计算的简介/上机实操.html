@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 1 章 · 云计算的简介 腾讯文档课堂实操</title>
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  .game { border:1px solid #FFCC80; border-radius:8px; padding:14px 18px; margin:14px 0; background:#FFF8F0; }
+  .game .gt { font-size:15px; font-weight:bold; color:#E65100; margin-bottom:4px; }
+  .game .gg { background:#FFE0B2; border-radius:5px; padding:6px 11px; font-size:13px; margin-bottom:8px; }
+  .game .row { margin:5px 0; font-size:13.5px; }
+  .game .row b { color:#BF360C; }
+  .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
+         padding-left:10px; border-left:4px solid #1565C0; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 1 章 · 云计算的简介</div><div class="ti">腾讯文档课堂实操</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">腾讯文档课堂实操（基础操作 + 创意玩法，一节课闭环）</div>
+<div class="lg"><b>目标：</b>练熟腾讯文档的核心操作（共享、同时编辑、历史版本、评论、权限），并借游戏把"云协作"讲活。建议前 10 分钟做基础操作，后 35 分钟挑 2–3 个玩法边玩边讲。</div>
+
+<div class="gtx">▌ 基础操作（必做，约 10 分钟）</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 <a href="https://docs.qq.com">https://docs.qq.com</a>，用 QQ 或微信扫码登录。</li>
+<li class="step">点「新建 → 文档」，输入「云计算第一课」。</li>
+<li class="step">点右上「分享」→获取链接，权限设为「所有人可编辑」，把链接发给同桌。</li>
+<li class="step">两人同时编辑，观察对方<b>彩色光标</b>和右上角「已保存」提示。</li>
+<li class="step">一人故意删掉一段，另一人用菜单里的<b>历史版本</b>恢复。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>看到同桌的光标在动</li>
+<li>全程没按过 Ctrl+S</li>
+<li>亲手用历史版本成功回退一次</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>有人登不上就两人共用一台；也可老师建文档、全班共享一个链接。</div>
+
+<div class="gtx">▌ 课堂创意玩法（任选 2–3 个，约 35 分钟）</div>
+<p class="src">下面 4 个游戏都跑在腾讯文档里，零额外素材，每人一台机即可。每个游戏对应一个云知识点，边玩边讲，比单纯演示记得牢。</p>
+
+<div class="game">
+<div class="gt">玩法①　版本回溯「侦探破案」　→　教：历史版本 / 数据可恢复</div>
+<div class="gg"><b>课前准备：</b>老师建一份「所有人可编辑」的共享文档，偷偷删掉或改乱一段（例如把"云计算的 5 个特征"改成错的）。</div>
+<div class="row"><b>分组：</b>4 人一组。</div>
+<div class="row"><b>规则：</b>上课宣布"文档被黑客篡改了！"各组用菜单里的<b>历史版本</b>找出"谁在几点改了什么"，并把正确版本还原回来。</div>
+<div class="row"><b>胜负：</b>最先还原且能说清篡改点的组 +1 分。</div>
+<div class="row"><b>教师话术：</b>"看，云文档和本地 Word 不一样——它记得每一次改动。这就是'留痕 + 可恢复'，对应云计算里'数据不丢'这件事。"</div>
+</div>
+
+<div class="game">
+<div class="gt">玩法②　权限角色扮演：老板 / 员工 / 访客　→　教：共享权限 / 访问控制（给第 5 章安全铺路）</div>
+<div class="gg"><b>分组：</b>4 人一组。1 人建文档当"老板"（管理员），其余 3 人分别设为「可编辑 / 可评论 / 仅查看」。</div>
+<div class="row"><b>规则：</b>老板发一条"机密通知"，让"仅查看"的同学试着修改——改不动；再让"可编辑"的同学改——能改。</div>
+<div class="row"><b>胜负：</b>能正确说出"为什么仅查看的人改不动、可编辑的人能改"的组过关。</div>
+<div class="row"><b>教师话术：</b>"云上'谁能看、谁能改'就是访问控制，这正是第 5 章'云计算安全'要讲的核心。"</div>
+</div>
+
+<div class="game">
+<div class="gt">玩法③　评论 @「找茬」游戏　→　教：评论 / 协作沟通</div>
+<div class="gg"><b>课前：</b>老师在共享文档里埋 3 个错误（例如"云计算就是把文件存 U 盘""SaaS 是硬件服务"）。</div>
+<div class="row"><b>分组：</b>2 人一组，用<b>评论</b>功能在错误处标出，并 <b>@</b> 老师。</div>
+<div class="row"><b>胜负：</b>最先找全 3 处且评论准确的组获胜。</div>
+<div class="row"><b>教师话术：</b>"评论 + @ 就是云协作里的'对话'，不用把文件传来传去，谁改的、谁说的，全留着。"</div>
+</div>
+
+<div class="game">
+<div class="gt">玩法④　实时协作「填词接龙」计时赛　→　教：多人同改不冲突</div>
+<div class="gg"><b>全班：</b>进同一份在线表格，主题"我们班的云计算词典"。</div>
+<div class="row"><b>规则：</b>每人负责一个词条（IaaS / PaaS / SaaS…用一句话 + 一个比喻写进去）。大屏投影文档，所有人同时打字。</div>
+<div class="row"><b>胜负：</b>3 分钟内写满指定词条数、且无重复覆盖的组胜。</div>
+<div class="row"><b>教师话术：</b>"看，十几个人同时往一个表格里写，谁也没覆盖谁——这就是云的'并发协作'。"</div>
+</div>
+</div>
+</div>
+<div class="foot">第 1 章 · 云计算的简介</div>
+</div>
+</body>
+</html>

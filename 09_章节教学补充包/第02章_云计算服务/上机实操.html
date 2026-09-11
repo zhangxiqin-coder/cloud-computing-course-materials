@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 2 章 · 云计算服务 Gitee 代码仓库课堂实操</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
+         padding-left:10px; border-left:4px solid #1565C0; }
+  .cmd { background:#1e2b3a; color:#e6edf3; border-radius:6px; padding:11px 14px;
+         font-family:Consolas,monospace; font-size:13px; line-height:1.65;
+         white-space:pre-wrap; word-break:break-all; margin:8px 0; }
+  .cmd b { color:#7ee787; }
+  .cmd .c { color:#8b949e; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 2 章 · 云计算服务</div><div class="ti">Gitee 代码仓库课堂实操</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网；电脑若已预装 Git 则走命令行（init / add / commit / push / clone / pull），未装 Git 则改用 Gitee 网页版「上传文件」完成等价操作。</p>
+<div class="box warn"><b>机房纪律：</b>① 不自行安装软件；Git 已预装就用命令，没装就走网页版；② 只在 Gitee 练习，<b>绝不</b>点任何付费按钮；③ 下课前退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">Gitee 云端代码仓库（对应教材实战项目 · 全程用 Git 命令）</div>
+<div class="lg"><b>目标：</b>用 Git 把本地文件 <b>推（push）</b>到 Gitee、再从 Gitee <b>拉（pull / clone）</b>回本地，体会「开发者视角的云服务」，并分清 push / pull / clone 各自做什么。</div>
+
+<div class="gtx">▌ 第一步：在 Gitee 建仓库（网页，1 分钟）</div>
+<ol>
+<li class="step">打开 <a href="https://gitee.com">https://gitee.com</a>，用手机号或邮箱注册并登录。</li>
+<li class="step">点右上「+ → 新建仓库」，名称填 <code>cloud-02</code>，<b>不要</b>勾选「初始化 README」（方便本地推送），私有或公开均可。</li>
+<li class="step">建好后复制仓库地址（页面上 HTTPS 那一栏）。</li>
+</ol>
+
+<div class="gtx">▌ 第二步：本地初始化，第一次 push（上传到云）</div>
+<b>在机房电脑的命令提示符 / 终端依次输入：</b>
+<div class="cmd">mkdir cloud-02 &amp;&amp; cd cloud-02
+git init
+git config user.name  "你的名字"
+git config user.email "你@gitee.com"
+echo 云计算第2章实验 &gt; readme.txt
+git add readme.txt
+git commit -m "第一次提交"
+git remote add origin https://gitee.com/你的名/cloud-02.git
+git push -u origin master</div>
+<div class="box tip"><b>预期：</b>刷新生效后，Gitee 网页仓库里出现 <code>readme.txt</code>，提交记录 +1。</div>
+
+<div class="gtx">▌ 第三步：修改文件，再 push 一次（更新云端）</div>
+<div class="cmd">echo 新增一行内容 &gt;&gt; readme.txt
+git status            <span class="c"># 看到 readme.txt 被修改（红色）</span>
+git add .
+git commit -m "第二次提交"
+git push</div>
+<div class="box tip"><b>预期：</b>提交记录变成 2 条，云端文件内容同步更新。</div>
+
+<div class="gtx">▌ 第四步：换台电脑 / 新文件夹，clone 拉取（整仓库下载）</div>
+<div class="cmd">cd ..
+git clone https://gitee.com/你的名/cloud-02.git cloud-02-copy
+cd cloud-02-copy
+type readme.txt      <span class="c"># Linux / Mac 用：cat readme.txt</span></div>
+<div class="box tip"><b>预期：</b>新文件夹里出现和云端一模一样的 readme.txt——这就是「从云上整仓库下载」。</div>
+
+<div class="gtx">▌ 第五步：团队协作，pull 拿回别人的改动（同步）</div>
+<div class="cmd">cd cloud-02-copy
+echo 同学加的内容 &gt;&gt; readme.txt
+git add . &amp;&amp; git commit -m "同学修改" &amp;&amp; git push
+cd ../cloud-02
+git pull            <span class="c"># 把云端同学的新改动拉回本地</span></div>
+<div class="box tip"><b>预期：</b>原文件夹的 readme.txt 也多出那一行——push 与 pull 合起来就是多人协作的「上传 + 同步」。</div>
+
+<b>验收清单：</b>
+<ul class="chk">
+<li>Gitee 仓库创建成功</li>
+<li>本地 <code>git push</code> 成功，提交记录 ≥ 2 条</li>
+<li><code>git clone</code> 能把仓库整份拉到本地新文件夹</li>
+<li><code>git pull</code> 能把云端新改动同步回本地</li>
+<li>能说清：push＝上传、pull＝下载同步、clone＝整仓库下载、commit＝本地存档</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>① 收不到验证码，先用老师准备的公共账号参观，重点看「提交记录」页；② 机房若没装 Git，改用 Gitee 网页「上传文件」按钮完成「推」，用「Web IDE」查看文件——命令能跑就尽量跑，更能体会开发者视角，对应 IaaS / PaaS 之外的「代码托管 SaaS」。</div>
+</div>
+</div>
+<div class="foot">第 2 章 · 云计算服务</div>
+</div>
+</body>
+</html>

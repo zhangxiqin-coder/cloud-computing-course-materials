@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5 章 · 云计算安全 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 5 章 · 云计算安全</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 5 章 5.10 思考与练习（教材 p.72）</b>，共 10 题，均为简答题，答案为教材参考答案。</p>
+<p class="src">配套《随堂练习.html》　｜　共 10 题</p>
+<h3>一、简答题</h3>
+<div class="q"><div class="qt">1. 简述云计算需要考虑的安全问题。</div><div class="ans"><b>答案：使用云计算服务的个人或企业都会关心数据的安全问题，其次是云计算服务的稳定性，要保证服务稳定运行，需要保证网络、设备、机房等的安全。考虑到服务提供方工作人员可能会有误操作，保证相关人员的培训与规范操作也是不可缺少的一环。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">2. 在复杂网络环境下，保护网络安全的主要措施是什么？</div><div class="ans"><b>答案：云计算依赖网络，需要从多方面考虑：防火墙能阻止大部分侵害；制定详细的网络平台安全策略；使用日志记录网络上的一举一动，出问题时可依靠日志研判；保护网络设备，培训工作人员的安全意识和操作规范，应对物理设备损坏或故障。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">3. 信息安全的定义是什么？</div><div class="ans"><b>答案：信息安全，ISO（国际标准化组织）的定义为：为数据处理系统建立和采用的技术、管理上的安全保护，为的是保护计算机硬件、软件、数据不因偶然和恶意的原因而遭到破坏、更改和泄露。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">4. 对称密码的特点是什么？</div><div class="ans"><b>答案：对称密码的特点在于加密速度快，计算量小，对于大量数据的加密操作效率更高。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">5. 公钥密码主要用于解决什么问题？</div><div class="ans"><b>答案：对称加密的密钥有泄露风险，且随着数据交流次数增加，密钥数量也增加，管理负担加大。公钥密码解决了这两个问题：收发双方只有公钥和私钥两把钥匙，只有公钥暴露在网络上，私钥保留在自己手上，使用对方的公钥加密即可。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">6. PKI 是由哪些部分组成的？</div><div class="ans"><b>答案：一个典型的 PKI 系统包括 PKI 策略、软硬件系统、证书机构 CA、注册机构 RA、证书发布系统和 PKI 应用等。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">7. 互联网的身份与访问管理主要通过什么机制实现？</div><div class="ans"><b>答案：互联网上有专门提供身份与访问管理的服务提供商，针对不同场景有不同解决方案，如 IBM 和微软都提供身份与访问管理服务。IBM 的访问管理解决方案使用了单点登录和基于风险的多因子认证机制。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">8. CA 的作用是什么？</div><div class="ans"><b>答案：CA 机构是负责发放和管理数字证书的权威机构，并作为电子商务交易中受信任的第三方，承担公钥体系中公钥合法性检验的责任。任何人都可以得到 CA 的证书（含公钥），用以验证它所签发的证书。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">9. 对称密码主要有哪些算法？</div><div class="ans"><b>答案：对称加密的算法主要有 DES、3DES、AES 等。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">10. 数字签名的作用是什么？</div><div class="ans"><b>答案：数字签名可以用来验证收发双方数据的完整性，发送方可以在发送的内容中加上数字签名，用来证明信息的来源。</b></div><div class="exp">教材参考答案。</div></div>
+</div>
+</div>
+<div class="foot">第 5 章 · 云计算安全</div>
+</body>
+</html>

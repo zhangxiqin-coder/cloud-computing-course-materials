@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 3 章 · 云计算的部署 CloudSim 仿真平台部署实战</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
+         padding-left:10px; border-left:4px solid #1565C0; }
+  .cmd { background:#1e2b3a; color:#e6edf3; border-radius:6px; padding:11px 14px;
+         font-family:Consolas,monospace; font-size:13px; line-height:1.65;
+         white-space:pre-wrap; word-break:break-all; margin:8px 0; }
+  .cmd b { color:#7ee787; }
+  .cmd .c { color:#8b949e; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 3 章 · 云计算的部署</div><div class="ti">CloudSim 仿真平台部署实战</div></div>
+<div class="bd">
+<p class="src">对应教材实战项目：部署 CloudSim 平台。CloudSim 是用 Java 编写的云计算仿真平台，可在本机模拟数据中心、虚拟机与任务的调度过程，是理解「云计算部署」最直观的动手实验。</p>
+
+<div class="box warn"><b>机房前提：</b>本章实战<b>需要安装软件</b>——JDK 8 与 Eclipse。请机房课前放开这两项的安装权限。<b>若机房仍禁止安装</b>，请改用下方「图文走查版」：老师按步骤现场演示，学生对照截图跟流程、记录关键输出，不真装环境。</div>
+
+<div class="lab">
+<div class="lt">CloudSim 3.0.3 部署实战（教材默认版本，免 Maven，最稳）</div>
+<div class="lg"><b>目标：</b>在本机成功部署 CloudSim 3.0.3，并运行自带示例 <code>CloudSimExample1</code>，控制台出现 <code>Simulation completed!</code> 即算过关。</div>
+
+<div class="gtx">▌ 第一步：安装并配置 JDK 8</div>
+<ol>
+<li class="step">下载 JDK 8（建议 AdoptOpenJDK / Oracle JDK 8），一路默认安装到 <code>C:\Program Files\Java\jdk1.8.0_xx</code>。</li>
+<li class="step">配置环境变量（此电脑 → 属性 → 高级系统设置 → 环境变量）：
+  <ul>
+    <li><b>JAVA_HOME</b> = JDK 安装目录（如 <code>C:\Program Files\Java\jdk1.8.0_221</code>）</li>
+    <li><b>CLASSPATH</b> = <code>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</code>（注意最前面的 <code>.;</code>）</li>
+    <li><b>Path</b> 追加 <code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</code></li>
+  </ul>
+</li>
+<li class="step">验证：打开 <code>cmd</code> 输入 <code>java -version</code> 与 <code>javac -version</code>，均显示 <code>1.8.x</code> 即成功。</li>
+</ol>
+<div class="box tip"><b>预期：</b>两条命令都能正常输出版本号，说明 JDK 与编译环境就绪。</div>
+
+<div class="gtx">▌ 第二步：下载并解压 CloudSim 与依赖包</div>
+<ol>
+<li class="step">下载 <b>CloudSim 3.0.3</b>（官网 cloudsim.org 或 GitHub releases），得到 <code>cloudsim-3.0.3.zip</code>。</li>
+<li class="step">额外下载 Apache <b>commons-math3</b>（CloudSim 3.x 必需的数学库）的 jar 包，如 <code>commons-math3-3.6.1.jar</code>。</li>
+<li class="step">全部解压到同一文件夹（如 <code>D:\CloudSim</code>），确保能看到 <code>bin / docs / examples / jars / sources</code> 等目录。</li>
+</ol>
+<div class="box tip"><b>预期：</b>解压目录结构完整；commons-math3 的 jar 单独放在手边，第三步要加入构建路径。</div>
+
+<div class="gtx">▌ 第三步：用 Eclipse 导入并运行示例</div>
+<ol>
+<li class="step">打开 Eclipse → <code>File → New → Java Project</code>，项目名填 <code>CloudSim</code>；取消勾选 <code>Use default location</code>，Browse 指向刚解压的 CloudSim 目录，Next。</li>
+<li class="step">切到 <code>Libraries</code> 选项卡：若列表中没有 <code>commons-math3-3.x.jar</code>，点 <code>Add External JARs</code> 把它加进来，Finish。</li>
+<li class="step">在 Project Explorer 展开 <code>examples → org.cloudbus.cloudsim.examples</code>，双击打开 <code>CloudSimExample1.java</code>。</li>
+<li class="step">右键 <code>Run As → Java Application</code>（或按 <code>Ctrl+F11</code>）。</li>
+</ol>
+<div class="box tip"><b>预期：</b>控制台滚动输出仿真信息，最后出现 <code>Simulation completed!</code> 与 <code>CloudSimExample1 finished!</code>，并列出各云任务（Cloudlet）的执行结果——部署成功。</div>
+
+<b>验收清单：</b>
+<ul class="chk">
+<li><code>java -version</code> 与 <code>javac -version</code> 均显示 1.8.x</li>
+<li>CloudSim 3.0.3 解压完整，commons-math3 jar 已加入构建路径（Libraries）</li>
+<li>成功运行 CloudSimExample1，控制台出现 <code>Simulation completed!</code></li>
+<li>能说出 CloudSim 在模拟什么（数据中心 / 虚拟机 / 任务调度的资源分配）</li>
+</ul>
+
+<div class="box warn"><b>常见问题与救场：</b>
+<ul>
+<li><b>JDK 版本不匹配：</b>CloudSim 3.0.3 必须用 <b>JDK 8</b>；JDK 11+ 容易报类找不到。想用 CloudSim 4.0 才需 Maven，新手先别碰。</li>
+<li><b>Eclipse 报找不到包：</b>九成是 commons-math3 没加进 Libraries，回去 Add External JARs 补上。</li>
+<li><b>机房禁装：</b>改用独立文件 <code>上机实操_图文走查版.html</code>——老师按上面三步演示，学生把每一步的截图和关键输出抄进实验报告，照样算完成本章实战。</li>
+</ul>
+</div>
+
+<div class="box tip"><b>进阶（学有余力）：</b>把 <code>CloudSimExample1</code> 里的虚拟机数量、任务长度改一改再跑，观察控制台输出的执行时间变化——这就是「部署方式 / 资源配置」对性能的影响的直观体现，正好呼应本章「云计算的部署」主题。</div>
+</div>
+</div>
+<div class="foot">第 3 章 · 云计算的部署</div>
+</div>
+</body>
+</html>

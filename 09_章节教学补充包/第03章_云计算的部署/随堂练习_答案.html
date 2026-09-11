@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 3 章 · 云计算的部署 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 3 章 · 云计算的部署</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 3 章 3.5 思考与练习（教材 p.49，按课本原样录入）</b>，共 15 题：判断 1 + 单选 5 + 简答 9。简答题为参考答案；判断 / 单选答案依据教材内容整理，请以官方答案为准。</p>
+<p class="src">配套《随堂练习.html》　｜　共 15 题</p>
+<h3>一、判断题</h3>
+<div class="q"><div class="qt">1. 对于云计算，可以简单地理解为其是由于资源的闲置而产生的。</div><div class="ans"><b>答案：正确</b></div><div class="exp">教材观点：正是对闲置资源的再利用（网格计算、效用计算的思路）催生了云计算。</div></div>
+<h3>二、单项选择题</h3>
+<div class="q"><div class="qt">1. （　　）是私有云计算基础架构的基石。</div><div class="ans"><b>答案：A</b></div><div class="exp">私有云靠虚拟化把自有硬件切成可灵活分配的虚拟资源。</div></div>
+<div class="q"><div class="qt">2. 不属于云计算缺点的是（　　）。</div><div class="ans"><b>答案：C</b></div><div class="exp">云计算恰恰能提供较可靠、安全的数据存储，C 不是它的缺点。</div></div>
+<div class="q"><div class="qt">3. （　　）是公有云计算基础架构的基石。</div><div class="ans"><b>答案：B</b></div><div class="exp">公有云靠分布式技术把海量廉价机器组织成统一的资源池。</div></div>
+<div class="q"><div class="qt">4. 2008 年，（　　）在我国建立云计算中心。</div><div class="ans"><b>答案：A</b></div><div class="exp">2008 年 IBM 在无锡太湖新城科教产业园建立了我国的云计算中心。</div></div>
+<div class="q"><div class="qt">5. 公有云管理面向的是（　　）监控和管理。</div><div class="ans"><b>答案：D</b></div><div class="exp">公有云面向广大用户，通过浏览器即可访问控制台进行监控和管理，属于 B/S（浏览器 / 服务器）架构；私有云企业内部管理多用 C/S 架构。</div></div>
+<h3>三、简答题</h3>
+<div class="q"><div class="qt">1. 简述云计算的主要部署方式。</div><div class="ans"><b>答案：云计算主要有四种部署方式，分别是公有云、私有云、混合云和社区云。公有云指的是广大用户从资源池中按需租用资源，以满足自己的需求；私有云是一些大型企业自己架构、自给自足的部署方式；混合云是公有云与私有云的结合；社区云是面向特定行业 / 群体定制化的云。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">2. 简述私有云和公有云的区别。</div><div class="ans"><b>答案：私有云不再和所有用户共享资源池，而是隔离出自用的空间资源，很好地满足大企业的安全运维管理，底层资源的使用权和所有权都属于客户。公有云是大家共享资源池，底层资源的所有权属于服务商，使用权属于客户。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">3. 简述混合云的特点。</div><div class="ans"><b>答案：混合云可以把高安全的数据私有化，不那么重要的部分公有化，既满足安全需要，又节约成本。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">4. 简述社区云的特点。</div><div class="ans"><b>答案：社区云建立在一个特定的小组里多个目标相似的公司之间，他们共享一套基础设施，成本由成员共同承担。社区云的成员都可以登入云中获取信息和使用应用程序。</b></div><div class="exp">教材参考答案。</div></div>
+<div class="q"><div class="qt">5. 在哪些业务场景下，公有云是更合适的选择？哪些场景下，私有云更具优势？</div><div class="ans"><b>答案：开放题，要点参考。适合公有云：中小企业和初创公司（不想自建机房）、业务量波动大的场景（如电商大促需要临时扩容）、需要快速上线的项目（官网、App 后端、测试环境）、数据不敏感且对成本敏感的业务。私有云更具优势：金融、政府、医疗等对数据安全与合规要求高的行业；核心业务系统；数据按规定不能出内网的场景；有较强 IT 运维能力、机器规模大的大型企业。</b></div><div class="exp">参考答案，言之成理即可。</div></div>
+<div class="q"><div class="qt">6. 社区云如何帮助行业内的组织实现资源共享和协作？</div><div class="ans"><b>答案：开放题，要点参考：① 多个目标相似的组织（如多所高校、多家医院、同一产业链的企业）共建共享一套云基础设施，成本共同承担，单个组织的投入大大降低；② 成员都能登入云中获取信息、使用应用程序，实现数据互通与业务协同；③ 由行业联盟或第三方按行业标准统一建设与运维，天然满足行业合规要求；④ 便于在成员间沉淀共享数据与服务，形成行业级协作平台。</b></div><div class="exp">参考答案，言之成理即可。</div></div>
+<div class="q"><div class="qt">7. 如何有效地整合公有云和私有云的资源？</div><div class="ans"><b>答案：开放题，要点参考（即混合云的关键做法）：① 用统一的云管理平台统一监控、统一运维，实现单点登录与统一身份认证；② 通过 VPN 或专线打通网络，让两边内网互联；③ 数据分层放置——敏感数据放私有云、一般业务放公有云，并做好数据同步与备份；④ 应用弹性调度，平时跑在私有云，高峰期自动扩展到公有云（云爆发）；⑤ 安全策略与管理制度统一，明确双方责任边界。</b></div><div class="exp">参考答案，言之成理即可。</div></div>
+<div class="q"><div class="qt">8. 云计算服务提供商和用户在保障云计算服务安全性与合规性方面各自应承担哪些责任？</div><div class="ans"><b>答案：开放题，要点参考（责任共担模型）：服务商负责「云本身」的安全——物理机房与设备、基础网络、虚拟化层、底层平台的安全防护，并通过等级保护、ISO 27001 等认证。用户负责「云上」的安全——操作系统与应用的配置加固、账号与权限管理、数据加密与备份、访问控制。双方共同承担：制定应急预案并定期演练、日志审计、合规检查与风险通报。</b></div><div class="exp">参考答案，言之成理即可。</div></div>
+<div class="q"><div class="qt">9. 怎样更好地利用云计算技术推动各行各业发展和创新？</div><div class="ans"><b>答案：开放题，要点参考：① 降低数字化门槛——中小企业不必自建机房，按需上云即可获得与大企业同等水平的 IT 能力；② 推动产业互联网——制造、医疗、教育、金融等行业上云，实现数据驱动的业务升级；③ 与大数据、人工智能、物联网结合，催生智能制造、智慧城市、在线教育等新业态；④ 云端协作平台让跨地域团队高效协同，加速创新；⑤ 政务上云带动数字政府与民生服务；⑥ 同步培养云计算人才，形成良性产业生态。</b></div><div class="exp">参考答案，言之成理即可。</div></div>
+</div>
+</div>
+<div class="foot">第 3 章 · 云计算的部署</div>
+</body>
+</html>

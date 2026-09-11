@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 章 · 云计算的特点 云计算特点体验课堂实操</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
+         padding-left:10px; border-left:4px solid #1565C0; }
+  .cmd { background:#1e2b3a; color:#e6edf3; border-radius:6px; padding:11px 14px;
+         font-family:Consolas,monospace; font-size:13px; line-height:1.65;
+         white-space:pre-wrap; word-break:break-all; margin:8px 0; }
+  .cmd b { color:#7ee787; }
+  .cmd .c { color:#8b949e; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 4 章 · 云计算的特点</div><div class="ti">云计算特点体验课堂实操</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件。本章用两个体验把抽象的「特点」变具体：网页里跑一台电脑（资源池化 / 一机变多机）、改配置看价格（按需按量 / 可计量）。</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">体验云计算的五大特点（对应教材实战项目）</div>
+<div class="lg"><b>目标：</b>在浏览器里亲手跑起一台 Linux「电脑」，开两个标签页就是两台——体会<b>资源池化、虚拟化、一机变多机</b>；再用价格计算器看配置变价格变，体会<b>按需自助、按量付费、可计量</b>。</div>
+
+<div class="gtx">▌ 第一步：网页里跑起一台 Linux（不用装任何虚拟机软件）</div>
+<ol>
+<li class="step">打开 <a href="https://bellard.org/jslinux/">https://bellard.org/jslinux/</a>，等 30–60 秒出现命令行（这是纯网页模拟的一台电脑）。</li>
+<li class="step">依次执行下面三条命令，观察输出：</li>
+</ol>
+<div class="cmd">uname -a              <span class="c"># 看内核 / 系统信息</span>
+ls /                 <span class="c"># 看根目录有哪些文件夹</span>
+cat /proc/cpuinfo | head   <span class="c"># 看这颗「虚拟 CPU」</span></div>
+<div class="box tip"><b>预期：</b>命令行正常返回——你并没装虚拟机，却跑起了一台「电脑」，这就是资源虚拟化。</div>
+
+<div class="gtx">▌ 第二步：开两个标签页＝两台电脑（一机变多机）</div>
+<ol>
+<li class="step">再开一个浏览器标签页，重新打开上面的网址。</li>
+<li class="step">现在你同时拥有「两台电脑」，在两边各执行一条命令。</li>
+<li class="step">讨论：<b>你没买第二台机器，为什么能同时跑两台？这对应云计算哪个特点？</b></li>
+</ol>
+<div class="box tip"><b>预期：</b>能说出「同一份硬件资源被池化后，按需切出多台虚拟机」，对应资源池化 + 快速弹性。</div>
+
+<div class="gtx">▌ 第三步：改配置看价格，体会「按需按量、用多少算多少」</div>
+<ol>
+<li class="step">打开 <a href="https://www.aliyun.com/price/product">https://www.aliyun.com/price/product</a>，选云服务器 ECS。</li>
+<li class="step">其他选项不变，只用三档配置各记一次价格：<b>1核2G / 4核8G / 8核16G</b>。</li>
+<li class="step">把三个数字连成线看，再点「按量付费」与「包年包月」对比，说说各自适合什么业务。</li>
+</ol>
+<div class="box tip"><b>预期：</b>建立「配置越大钱越多、用多久算多久」的直觉，对应按需自助服务 + 可计量服务。</div>
+
+<b>验收清单：</b>
+<ul class="chk">
+<li>网页里出现命令行，三条命令都执行过</li>
+<li>同时开过 2 个标签页（两台「电脑」）</li>
+<li>记下 3 档配置的价格</li>
+<li>能说清：资源池化 / 虚拟化 / 按需按量 / 可计量 各对应刚才哪个操作</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>① jslinux 加载慢，第一次先在教师机跑一遍确认机房网络扛得住；② 教材原实验要装 VMware，机房不可安装，故改为网页方案，原理完全相同；③ 价格记不准没关系，重点是「配置越大钱越多」的直觉。</div>
+</div>
+</div>
+<div class="foot">第 4 章 · 云计算的特点</div>
+</div>
+</body>
+</html>

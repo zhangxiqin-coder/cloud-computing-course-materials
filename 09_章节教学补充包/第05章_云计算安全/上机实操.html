@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5 章 · 云计算安全 云安全实战课堂实操</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
+         padding-left:10px; border-left:4px solid #1565C0; }
+  .cmd { background:#1e2b3a; color:#e6edf3; border-radius:6px; padding:11px 14px;
+         font-family:Consolas,monospace; font-size:13px; line-height:1.65;
+         white-space:pre-wrap; word-break:break-all; margin:8px 0; }
+  .cmd b { color:#7ee787; }
+  .cmd .c { color:#8b949e; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 5 章 · 云计算安全</div><div class="ti">云安全实战课堂实操</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具。本章三个短活动串起安全三大基石：加密、完整性、身份认证。</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">云安全三连击（对应教材实战项目）</div>
+<div class="lg"><b>目标：</b>亲手做一次加解密（密钥概念）、看一次哈希「雪崩效应」（完整性）、查一次网站证书（身份认证），把安全从概念变成看得见、摸得着的东西。</div>
+
+<div class="gtx">▌ 第一击：凯撒密码——最古老的加密（密钥概念）</div>
+<ol>
+<li class="step">约定规则：每个字母<b>向后移 3 位</b>（A→D、B→E、…、X→A），这个「3」就是密钥。</li>
+<li class="step">把 <code>HELLO</code> 加密，写出结果 <code>KHOOR</code>。</li>
+<li class="step">同桌互相出一个单词（4–6 个字母），对方加密后再由你解密。</li>
+<li class="step">讨论：<b>如果不知道「3」这个数字，能解开吗？最多试几次？</b></li>
+</ol>
+<div class="box tip"><b>预期：</b>能说出「后移 3 位」就是密钥，且最多试 25 次就能破解——理解「密钥」与「弱加密」。</div>
+
+<div class="gtx">▌ 第二击：在线 MD5——改一个字符结果全变（完整性校验）</div>
+<ol>
+<li class="step">打开 <a href="https://emn178.github.io/online-tools/md5.html">https://emn178.github.io/online-tools/md5.html</a>。</li>
+<li class="step">输入 <code>cloud</code>，记下它的 MD5 值。</li>
+<li class="step">只改一个字符，输入 <code>clouds</code>，对比两个 MD5 值——<b>完全不一样</b>。</li>
+<li class="step">再输入 <code>cloud</code> 确认结果不变，体会「同样输入必然同样输出，但无法反推原文」。</li>
+</ol>
+<div class="box tip"><b>预期：</b>亲眼看到哈希的「雪崩效应」与不可逆，理解完整性校验的原理。</div>
+
+<div class="gtx">▌ 第三击：查看网站的 HTTPS 证书（身份认证 / 加密通信）</div>
+<ol>
+<li class="step">用浏览器打开 <a href="https://www.qq.com">https://www.qq.com</a>（注意是 https）。</li>
+<li class="step">点地址栏左侧的<b>锁形图标</b> → 查看证书（连接是安全的 → 证书有效）。</li>
+<li class="step">找三项并记下来：<b>颁发者（CA）是谁 / 有效期到哪天 / 用的是什么加密算法</b>。</li>
+<li class="step">再打开一个 http://（非 https）的网站，对比地址栏提示有何不同。</li>
+</ol>
+<div class="box tip"><b>预期：</b>亲眼看到数字证书和 CA，把 PKI 从名词变成看得见的东西。</div>
+
+<b>验收清单：</b>
+<ul class="chk">
+<li>亲手加密过 2 个以上单词，能说出「后移 3 位」就是密钥</li>
+<li>算出过 2 个以上的 MD5 值，亲眼看到改一个字符结果全变</li>
+<li>找到证书的颁发者 CA 并记下有效期</li>
+<li>能说清 https 与 http 地址栏提示的区别</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>① 凯撒密码不必纠结算法强度，重点在「密钥」二字；② MD5 工具若打不开，机房本机可用命令提示符输入 <code>certutil -hashfile 文件名 MD5</code> 替代；③ 证书菜单位置各浏览器略有差别，找不到就访问 <code>chrome://settings/security</code> 查看。</div>
+</div>
+</div>
+<div class="foot">第 5 章 · 云计算安全</div>
+</div>
+</body>
+</html>
