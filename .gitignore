@@ -9,3 +9,10 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# 4) 本地工具链 / 依赖缓存（yt-dlp、ffmpeg 等隔离安装，不入 Git）
+99_脚本源码/bin/
+99_脚本源码/pylibs/
+
+# 5) 备份目录
+*_bak_*/
