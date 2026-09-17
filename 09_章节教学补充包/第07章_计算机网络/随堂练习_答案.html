@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 7 章 · 计算机网络 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 7 章 · 计算机网络</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 7 章 7.8 思考与练习（教材 p.105）</b>，共 15 题：单选 10 题 + 简答 5 题。单选答案依据教材内容整理，请以官方答案为准。</p>
+<p class="src">配套《随堂练习.html》　｜　共 15 题</p>
+<h3>一、单项选择题</h3>
+<div class="q"><div class="qt">1. IP 地址 200.64.32.65 的主机号是（　）。</div><div class="ans"><b>答案：D</b></div><div class="exp">200 开头为 C 类地址，默认子网掩码 255.255.255.0，网络号是 200.64.32，主机号是 65。</div></div>
+<div class="q"><div class="qt">2. 在 TCP/IP 中，TCP 工作在（　）。</div><div class="ans"><b>答案：B</b></div><div class="exp">TCP（传输控制协议）与 UDP 一样，都工作在 TCP/IP 模型的传输层。</div></div>
+<div class="q"><div class="qt">3. 计算机网络建立的主要目的是实现计算机资源共享，计算机资源主要指（　）。</div><div class="ans"><b>答案：C</b></div><div class="exp">计算机资源包括硬件资源、软件资源和数据资源三大部分。</div></div>
+<div class="q"><div class="qt">4. 在 TCP 三次握手过程中，正确的步骤顺序是（　）。</div><div class="ans"><b>答案：B</b></div><div class="exp">三次握手的标准流程：SYN → SYN-ACK → ACK，目的是同步初始序号并确认收发能力。</div></div>
+<div class="q"><div class="qt">5. 下列关于 UDP 和 TCP 的叙述中，不正确的是（　）。</div><div class="ans"><b>答案：C</b></div><div class="exp">TCP 的核心价值正是可靠传输，并提供流量控制与拥塞控制；C 与事实相反。</div></div>
+<div class="q"><div class="qt">6. Internet 最早起源于（　）。</div><div class="ans"><b>答案：A</b></div><div class="exp">Internet 的前身是美国国防部高级研究计划局建立的 ARPANET。</div></div>
+<div class="q"><div class="qt">7. 以下 IP 地址中，属于 B 类地址的是（　）。</div><div class="ans"><b>答案：C</b></div><div class="exp">B 类地址第一个字节范围是 128–191，只有 131.107.2.89 符合。</div></div>
+<div class="q"><div class="qt">8. 关于 IP 提供的服务，下列说法正确的是（　）。</div><div class="ans"><b>答案：A</b></div><div class="exp">IP 层只负责尽力而为的分组转发，不保证可靠、不保证顺序，可靠性由 TCP 等上层协议实现。</div></div>
+<div class="q"><div class="qt">9. 企业 Intranet 要与 Internet 互联，必需的互联设备是（　）。</div><div class="ans"><b>答案：D</b></div><div class="exp">不同网络之间的互联需要三层路由设备，即路由器。</div></div>
+<div class="q"><div class="qt">10. 在 TCP/IP 中，UDP 工作在（　）。</div><div class="ans"><b>答案：B</b></div><div class="exp">UDP 与 TCP 同处传输层，只是它无连接、不保证可靠。</div></div>
+<h3>二、简答题</h3>
+<div class="q"><div class="qt">1. TCP 和 UDP 在网络通信中各自扮演什么角色？</div><div class="ans"><b>答案：TCP 是面向连接的传输层协议，提供可靠、按序、流量可控、拥塞可控的字节流传输，适合文件传输、网页浏览、邮件等对可靠性要求高的场景。UDP 是无连接的传输层协议，不保证可靠、不保证顺序，但开销小、时延低、传输效率高，适合视频直播、在线游戏、DNS 查询等对实时性要求高、可容忍少量丢包的场景。</b></div><div class="exp">从「连接方式、可靠性、传输效率、适用场景」四个维度对比。</div></div>
+<div class="q"><div class="qt">2. 为什么需要三次握手和四次挥手的过程来确保数据传输的可靠性？</div><div class="ans"><b>答案：三次握手用于建立连接：第一次客户端发 SYN，让服务器知道客户端请求建立连接并告知初始序号；第二次服务器回 SYN-ACK，告知自己的初始序号并确认收到客户端请求；第三次客户端回 ACK，确认收到服务器响应。这样双方都能确认收发能力正常且初始序号同步，防止历史重复连接。四次挥手用于释放连接：TCP 是全双工的，每一方向对方发送完数据后都要单独发 FIN 并等待 ACK，因此需要四次报文才能彻底关闭两个方向的通道，避免数据丢失。</b></div><div class="exp">重点讲清「全双工」导致关闭需要四次，以及「同步初始序号 + 防止历史连接」是三次握手的目的。</div></div>
+<div class="q"><div class="qt">3. 拥塞控制和流量控制这两种控制机制在网络通信中分别起到什么作用？</div><div class="ans"><b>答案：流量控制是端到端的控制机制：接收方根据自己缓存大小告诉发送方还能接收多少数据，防止发送方过快导致接收方缓存溢出，典型实现是滑动窗口。拥塞控制是面向整个网络的控制机制：发送方根据网络拥塞程度（如丢包、时延增大）动态调整发送速率，防止过多数据注入网络造成路由器队列溢出、全网性能下降，典型实现包括慢启动、拥塞避免、快重传、快恢复。</b></div><div class="exp">用一句话区分：流量控制是「别让接收方撑死」，拥塞控制是「别让网络堵死」。</div></div>
+<div class="q"><div class="qt">4. TCP/IP 在安全性方面存在哪些潜在的问题？</div><div class="ans"><b>答案：① 数据在传输过程中可能被窃听：TCP/IP 本身不加密，数据以明文或可被截获的方式经过多个中间节点。② 数据可能被篡改：缺乏内置完整性校验时，中间人可修改报文内容。③ 身份认证不足：早期协议缺乏对通信双方身份的强认证，容易出现伪装、欺骗（如 IP 欺骗、ARP 欺骗）。④ 协议本身漏洞：如 SYN Flood 攻击利用三次握手消耗服务器资源，ACK 欺骗、序列号猜测可导致连接劫持。⑤ 应用层安全问题：协议栈下层不替应用层解决所有安全问题，应用层需额外做加密、认证、访问控制。</b></div><div class="exp">从「窃听、篡改、身份认证、协议漏洞、应用层责任」五个角度组织答案。</div></div>
+<div class="q"><div class="qt">5. 分析 IPv6 相对于 IPv4 的主要改进，并讨论 IPv6 在推广过程中遇到的挑战和可能的解决方案。</div><div class="ans"><b>答案：主要改进：① 地址空间极大扩展，由 32 位增至 128 位，从根本上解决地址枯竭。② 报文首部简化，固定 40 字节基本首部，路由转发效率更高。③ 内置安全性，IPsec 成为标准组成部分，支持端到端加密和认证。④ 支持无状态自动配置与即插即用，终端接入更便捷。⑤ 支持移动性，节点在不同网络间移动时保持连接。推广挑战：① IPv4 设备存量巨大，全网升级成本高。② NAT 技术缓解了 IPv4 地址短缺，降低了部分场景的升级动力。③ 网络运营商、应用开发商、终端用户协调困难。④ 部分老旧应用和设备不兼容 IPv6。解决方案：双栈部署（IPv4/IPv6 同时运行）、隧道技术（在 IPv4 网络中封装 IPv6 报文）、政府与行业推动、逐步替换老旧设备、培养网络人才。</b></div><div class="exp">改进要突出「地址空间、首部简化、安全、自动配置、移动性」；挑战要答出「存量设备、NAT 惯性、协调困难、兼容性」。</div></div>
+</div>
+</div>
+<div class="foot">第 7 章 · 计算机网络</div>
+</body>
+</html>

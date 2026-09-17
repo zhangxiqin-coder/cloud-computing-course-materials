@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 8 章 · 数据库 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 8 章 · 数据库</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：在线 SQL 体验（替代本机安装数据库）</div>
+<div class="lg"><b>目标：</b>在不安装任何软件的情况下，体验 SQL 查询、插入、更新、删除。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开在线 SQL 练习网站 <a href="https://sqlzoo.net/">https://sqlzoo.net/</a>（或 <a href="https://sqliteonline.com/">https://sqliteonline.com/</a>）。</li>
+<li class="step">选择 SELECT 基础练习，执行 <code>SELECT * FROM xxx LIMIT 5;</code> 查看数据。</li>
+<li class="step">尝试 WHERE 条件查询和 ORDER BY 排序。</li>
+<li class="step">用 <code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code> 各完成一次操作，观察数据变化。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>成功执行 SELECT 查询</li>
+<li>用过 WHERE 和 ORDER BY</li>
+<li>完成增删改各一次</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>sqlzoo 页面是英文，重点看 SQL 代码；若打不开可换 sqliteonline。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：用在线工具画 E-R 图（概念模型）</div>
+<div class="lg"><b>目标：</b>理解实体、属性、联系，设计一个简单的数据库概念模型。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开在线流程图工具 <a href="https://processon.com/">https://processon.com/</a>（或腾讯文档的插入图形功能）。</li>
+<li class="step">设计一个小场景：<b>学生选课系统</b>。</li>
+<li class="step">画出实体：学生、课程；属性：学号、姓名、课程号、课程名；联系：选课（多对多）。</li>
+<li class="step">用矩形表示实体，椭圆表示属性，菱形表示联系。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>画出至少 2 个实体</li>
+<li>标出关键属性</li>
+<li>正确表达学生与课程的多对多联系</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>工具只是载体，重点是 E-R 三要素画对。</div>
+</div>
+<div class="lab">
+<div class="lt">实验三：数据库完整性约束在线体验</div>
+<div class="lg"><b>目标：</b>通过在线数据库工具观察主键、唯一约束的作用。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 <a href="https://sqliteonline.com/">https://sqliteonline.com/</a>。</li>
+<li class="step">建表并指定主键：<code>CREATE TABLE t(id INTEGER PRIMARY KEY, name TEXT);</code></li>
+<li class="step">插入两条相同 id 的记录，观察是否报错（应报主键重复）。</li>
+<li class="step">再插入一条 id 为空/NULL 的记录，观察是否报错。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>成功建表</li>
+<li>主键重复时报错</li>
+<li>理解主键不能为空/不能重复</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>不同在线工具错误提示不同，重点是理解约束效果。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 8 章 · 数据库</div>
+</body>
+</html>

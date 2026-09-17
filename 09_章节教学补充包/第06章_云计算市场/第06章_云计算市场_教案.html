@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6章 云计算市场 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第6章 云计算市场 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解云计算市场的变革逻辑：企业从「买设备、养机房」转向「买服务、按需取用」，IT 支出从固定资产变为运营费用。</li>
+    <li>了解国内外主流云计算服务提供商及其定位（Amazon、Rackspace、Salesforce、微软、VMware 等国际厂商，阿里云、腾讯云、华为云、百度智能云等国内厂商）。</li>
+    <li>以百度智能云为例，看懂云服务商如何按 SaaS / PaaS / IaaS 三层组织自己的产品和服务。</li>
+    <li>第 3 课时完成一次「云计算行业调研报告」实战，第 4 课时独立完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>云计算市场变革的本质：从卖设备到卖服务、从 CAPEX 到 OPEX。</li>
+    <li>国内外主流云厂商及其典型定位。</li>
+    <li>用 SaaS / PaaS / IaaS 三层框架看懂一个云厂商的产品地图（以百度智能云为例）。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>「市场变革」背后的商业逻辑（为何企业愿意把机房搬上云）较抽象。</li>
+    <li>众多厂商与产品容易记混，尤其是同一厂商横跨 SaaS / PaaS / IaaS 多层。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>自己买发电机 vs 用电网</b>」比喻市场变革——过去企业自建机房（买设备），现在像用电一样买云服务（买服务）。</li>
+    <li>用「<b>盖楼 / 租写字楼 / 住酒店</b>」比喻 IaaS / PaaS / SaaS 三层递进的掌控度差异，落到百度智能云的具体产品上。</li>
+    <li>让学生动手画「某厂商产品地图」，在实战中把厂商与分层对应起来，比死记硬背有效。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">课前缓存的云厂商介绍短视频（B站搜「云计算 市场 科普」）</span>
+    <span class="lab">各云厂商官网首页截图（阿里云 / 腾讯云 / 华为云 / 百度智能云）打印或投影</span>
+    <span class="lab">黑板 +「SaaS / PaaS / IaaS 三层框架」图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算市场变革 + 中国和全球的云计算（1 课时）<br>
+    2、 讲课：云计算服务提供商 + 百度云计算服务和产品（SaaS / PaaS / IaaS）（1 课时）<br>
+    3、 实战：云计算行业调研报告（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 6 章「思考与练习」原题，教师投影题目或印发，学生纸上作答）。<br>
+    2、 画出一张「某云厂商（自选）产品地图」，标注它提供了哪些 SaaS / PaaS / IaaS 产品。<br>
+    3、 整理第 3 课时调研报告的 1 个核心结论。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云计算市场变革 + 国内外云计算</div><div class="pm">教材原版 PPT 第6章 4–9 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「学校机房过去要自己买服务器、雇人运维，现在可以怎么办？」引出「市场变革」。</td></tr>
+      <tr><td>视频</td><td><b>播放：</b>课前缓存的「云计算 市场 科普」短视频（5–8 分钟）。播前问「视频里企业把什么搬上了云」，播后请 2 人回答。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算市场变革——企业从自建机房（买设备、CAPEX 固定资产投资）转向购买云服务（按需取用、OPEX 运营支出）；讲中国和全球云计算的发展现状与规模。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「买服务比买设备更划算」的生活例子（打车 vs 买车、租云盘 vs 买硬盘），教师归类到黑板。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结市场变革本质；预告下节课看具体厂商与产品分层。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：云服务提供商 + 百度云产品分层</div><div class="pm">教材原版 PPT 第6章 10–45 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>投影各云厂商首页截图，问「这些名字你听过几个？它们卖的到底是什么？」</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>过一遍主流厂商与定位——国际：Amazon（AWS）、Rackspace、Salesforce、Terremark、Joyent、思杰、Bluelock、微软、VMware；国内：阿里云、腾讯云、京东云、百度智能云、华为云、AWS 中国。强调各厂商横跨多层。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>以百度智能云为例，按 SaaS / PaaS / IaaS 三层拆解其产品（如 SaaS：简单消息服务 / 安全服务；PaaS：关系数据库服务 / 云服务器；IaaS：物理服务器 / 云磁盘）。用「盖楼 / 租写字楼 / 住酒店」比喻三层掌控度差异。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「SaaS / PaaS / IaaS 三层框架」画在黑板，请学生口头把刚才提到的厂商产品逐一归层，点破易错点（同一厂商跨多层、别只记名字不记层）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结「看云厂商要带三层眼镜」；点明下节课学生自己调研一个厂商。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：云计算行业调研报告</div><div class="pm">教材原版 PPT 第6章 46–47 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——任选一个云厂商（建议国内厂商便于访问），上网查它的主打产品，按 SaaS / PaaS / IaaS 三层整理成一张「产品地图」，形成一份 1 页调研报告。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分组或独立完成）：</b><br>① 打开所选厂商官网，浏览其产品列表；<br>② 将产品按 SaaS / PaaS / IaaS 分类填入表格；<br>③ 写出 1 句核心结论（如「该厂商 IaaS 最全、SaaS 偏少」）；<br>④ 提交 1 页报告（可写在作业本或在线文档）。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型问题（如分不清某产品属于哪层），投屏演示归类思路；提醒「只看不买、不填任何付款信息」。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示产品地图，点出「用三层框架看厂商，世界一下子清晰了」。要求每人留 1 条核心结论进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">课本第6章「思考与练习」原题（教师投影 / 印发）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成课本第 6 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在市场变革本质、厂商分层归类）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点，让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 41 人（1 人事假）。课时 1–2 市场变革「买服务 vs 买设备」与三层框架达成度较好，发电机 / 电网比喻接受快；厂商产品跨多层归类仍是难点，需在调研实战后二次回扣。课时 3 调研报告多数完成所选厂商产品地图，个别对 PaaS 判断不准，已现场纠正。课时 4 随堂练习市场变革类题正确率约 80%，厂商归类题失分较多，已重讲。下次：产品地图模板提前发，课堂多留归类练习时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

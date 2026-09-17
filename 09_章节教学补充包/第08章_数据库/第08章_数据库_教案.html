@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8章 数据库 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第8章 数据库 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解云计算与数据库的关系——几乎所有云服务背后都跑着数据库，云数据库是云的核心组件之一。</li>
+    <li>掌握关系型数据库的核心概念：数据库准则、ACID 原则、SQL 语言；了解非关系型数据库及其适用场景。</li>
+    <li>认识主流数据库产品（SQL Server、Oracle、MySQL、CouchDB、Redis、MongoDB）与「数据中心」的概念。</li>
+    <li>第 3 课时完成 MySQL 的安装与简单使用实战，第 4 课时独立完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>关系型数据库的核心：表 / 行 / 列、数据库准则、ACID 原则。</li>
+    <li>SQL 语言的基本作用（建表、查询、增删改）。</li>
+    <li>关系型与非关系型数据库的区别与各自适用场景。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>ACID 四个特性（原子性 / 一致性 / 隔离性 / 持久性）概念抽象，难记难懂。</li>
+    <li>关系型与非关系型「何时该用哪个」的判断易错。</li>
+    <li>SQL 语句结构对零基础学生偏陌生。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>银行转账</b>」讲 ACID——要么全成功、要么全回滚（原子性），账不会平白出错（一致性），多人同时操作互不干扰（隔离性），提交后不会丢（持久性）。</li>
+    <li>用「<b>Excel 表格 vs 便签墙</b>」比喻关系型（规整表格、强结构）与非关系型（灵活键值 / 文档，适合海量半结构数据）。</li>
+    <li>第 3 课时用 MySQL 实操跑几条最基础的 SQL，把抽象语句变成「立刻看到结果」，降低陌生感。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">MySQL 安装包（教师分发，或机房用在线 SQL 练习环境替代）</span>
+    <span class="lab">黑板 +「关系型 vs 非关系型」对比表 +「ACID」四格图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算和数据库 + 关系型数据库（准则 / ACID / SQL）（1 课时）<br>
+    2、 讲课：非关系型数据库 + 数据库产品 + 数据中心（1 课时）<br>
+    3、 实战：MySQL 的安装和使用（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 8 章「思考与练习」原题，教师投影题目或印发，学生纸上作答）。<br>
+    2、 用一句话说明 ACID 中你印象最深的一个特性，并配一个生活例子。<br>
+    3、 整理第 3 课时用过的 2 条 SQL 语句（如建表、查询）。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云与数据库 + 关系型数据库</div><div class="pm">教材原版 PPT 第8章 4–32 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「你刷的短视频、存的聊天记录，存在哪？谁在管这些数据？」引出「云背后是数据库」。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算和数据库的关系；讲关系型数据库概念（表 / 行 / 列、主键），数据库准则（如实体完整性、参照完整性等），以及 ACID 四原则（原子性、一致性、隔离性、持久性）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲 SQL 语言——用类英语的语句做建表、查询、增删改；给出 2–3 条最基础示例（<code>CREATE TABLE</code> / <code>SELECT</code>）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「绝不能出错的数据场景」（转账、成绩、库存），教师用「银行转账」案例把 ACID 四格图填在黑板。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结关系型数据库与 ACID；预告下节课讲非关系型与产品，之后亲手装 MySQL。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：非关系型数据库 + 产品 + 数据中心</div><div class="pm">教材原版 PPT 第8章 33–65 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「所有数据都适合塞进整齐的表格吗？朋友圈的图文、购物车算不算？」铺垫非关系型。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲非关系型数据库（键值 / 文档 / 列族 / 图），强调它灵活、适合海量半结构数据；对比关系型与非关系型的取舍。过一遍主流产品：关系型（SQL Server、Oracle、MySQL），非关系型（CouchDB、Redis、MongoDB）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲「数据中心」——集中存放大量服务器与数据库的物理场所，是云的硬件底座。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「关系型 vs 非关系型」对比表画在黑板，请学生口头补全（结构、扩展、典型产品、适用场景），点破易错点（别把 Redis 当关系型）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结「选库看场景」；点明下节课动手装 MySQL 跑 SQL。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：MySQL 的安装和使用</div><div class="pm">教材原版 PPT 第8章 66–68 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——安装 MySQL，用几条最基础的 SQL 建一张表、插入并查询数据，把课堂讲的 SQL 变成「立刻看到结果」。安装包由教师分发；若机位不可安装，改用在线 SQL 练习环境（如 SQLite 在线版）完成等价操作。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分步完成）：</b><br>① 安装 MySQL（或打开在线 SQL 环境）；<br>② 用 <code>CREATE TABLE</code> 建一张简单表（如 student：id、name）；<br>③ 用 <code>INSERT</code> 插入 2–3 条数据；<br>④ 用 <code>SELECT</code> 查询，确认结果正确。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型问题（如安装失败、SQL 语法报错），投屏演示；不可装机的机位统一改用在线环境，保证人人有操作体验。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示查询结果与所用 SQL，点出「你刚才写的就是云数据库每天都在跑的语言」。要求每人记 2 条 SQL 进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">课本第8章「思考与练习」原题（教师投影 / 印发）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成课本第 8 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在 ACID 概念、关系型 vs 非关系型）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点，让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 42 人。课时 1–2 云与数据库关系、关系型概念达成度较好，银行转账讲 ACID 接受快；非关系型适用场景、ACID 四特性仍是难点。课时 3 MySQL 实战多数完成建表 + 查询（约 4 组无安装权限改用在线 SQL 环境），「亲手跑 SQL」对降陌生感效果好。课时 4 随堂练习 ACID 类题正确率约 77%，关系型 vs 非关系型归类失分较多，已现场重讲。下次：ACID 四格图、SQL 示例提前发，课堂多留实操时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

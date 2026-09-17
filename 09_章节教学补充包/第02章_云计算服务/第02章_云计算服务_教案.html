@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 云计算的服务 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第2章 云计算的服务 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解云计算服务的内涵：知道云计算是一种「按需、易扩展」的服务，云服务商把资源以多种模式组织后像水、电一样提供给用户（从技术、投资、维护三方面看企业的好处）。</li>
+    <li>掌握 NIST 定义的三种服务模式：<b>SaaS</b>（软件即服务）、<b>PaaS</b>（平台即服务）、<b>IaaS</b>（基础设施即服务），能说出它们的中文全称、英文缩写、各自提供什么、谁在用。</li>
+    <li>理解三种服务模式的关系与边界：能从「用户体验（用户类型不同）」和「技术（并非简单继承）」两个角度分析 SaaS / PaaS / IaaS 的联系与区别；了解 HaaS、BaaS、MBaaS、MaaS、ITaaS、CaaS 等延伸模式。</li>
+    <li>通过天翼云案例认识国产云服务，并在第 3、4 课时分两次上机用 Gitee 云端代码仓库实际体验「开发者视角的云服务」（push / pull / clone），第 4 课时末尾收口完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>三种服务模式 SaaS / PaaS / IaaS 的定义、各自提供什么、适用人群与典型例子。</li>
+    <li>三种服务模式的责任划分：从 IaaS 到 SaaS，用户要管的越来越少、厂商替你管的越来越多。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>三种模式的边界是相对的，同一产品在不同语境下可能跨层（如云数据库常归 PaaS），学生极易混淆。</li>
+    <li>「谁管什么」的责任划分较抽象，不容易记住哪一层该谁负责。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>住酒店 / 租房 / 买房</b>」或「<b>点外卖全包 / 自助餐 / 自己买菜做饭</b>」比喻讲清 SaaS / PaaS / IaaS 的层次与责任划分。</li>
+    <li>用一张「<b>三种服务模式对比表</b>」把 SaaS / PaaS / IaaS 逐行拆开（提供什么、用户能管什么、谁在用、典型产品），投屏讲解与学生填表双管齐下。</li>
+    <li>把易错点单独投一屏提前点破：IaaS / PaaS / SaaS 不是硬件 / 软件 / 网络；SaaS 不一定免费；用了 IaaS 操作系统与数据安全仍归你管；PaaS 不是「网页版开发工具」。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">课前缓存的科普短视频（搜「SaaS PaaS IaaS 通俗解释 动画」）</span>
+    <span class="lab">Gitee 云端代码仓库实操环境（第 3、4 课时上机使用，机房需可上网）</span>
+    <span class="lab">黑板 +「三种服务模式对比表」图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算的服务概念 + NIST 三种服务模式定义（SaaS / PaaS / IaaS）（1 课时）<br>
+    2、 讲课：三种服务模式详解 + 关系与延伸模式 + 天翼云案例（1 课时）<br>
+    3、 上机实验（一）：Gitee 云端代码仓库——注册建仓、首次 push、更新再 push（1 课时）<br>
+    4、 上机实验（二）：Gitee 云端代码仓库——clone 拉取、pull 协作 + 随堂练习收口（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 第 4 课时末尾未做完的随堂练习（课本第 2 章「思考与练习」原题，见补充包「随堂练习.html」）作为作业补完。<br>
+    2、 用自己话画出 SaaS / PaaS / IaaS 三行对比表（提供什么、谁在用、典型产品）。<br>
+    3、 整理两次 Gitee 上机（一）（二）的 1 张截图或 1 句操作记录（如「git push 成功，提交记录 +1」「git clone 把仓库整份拉到本地」）。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云计算的服务概念 + NIST 三种服务模式定义</div><div class="pm">教材原版 PPT 第2章 4–13 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>黑板写「你每天用的微信、网盘、邮箱，是谁在背后替你跑程序、存数据？它们算不算云？」提问引入，激活生活经验。</td></tr>
+      <tr><td>视频</td><td><b>播放：</b>课前缓存的「SaaS PaaS IaaS 通俗解释」动画（6–10 分钟）。播前问「视频把三种模式比成了什么」，播后请 2 人一句话回答。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算的服务——云把大量联网的计算资源统一调度成资源池，按需提供给用户；讲云服务商（CSP）如何把资源以多种模式组织后像水电一样提供；从技术、投资、维护三方面讲企业用的好处（不用自建、不占资金、免维护）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>落到 <b>NIST 定义</b>——从用户体验角度，云主要分为三种服务模式：<b>SaaS</b>（软件即服务）、<b>PaaS</b>（平台即服务）、<b>IaaS</b>（基础设施即服务），给出三者英文全称与一句话定义（应用 / 开发平台 / 基础设施作为服务）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「我用的云服务属于哪一类」（如网易邮箱 = SaaS、阿里云 ECS = IaaS），教师快速归类到黑板，巩固三种模式的直觉。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结本课要点，预告下节课逐个拆开三种模式（提供什么、谁在用、谁管什么）。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：三种服务模式详解 + 关系与延伸模式 + 天翼云案例</div><div class="pm">教材原版 PPT 第2章 14–44 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「三种模式到底差在哪？为什么有的要会编程、有的打开就用？」引出逐层拆解。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b><b>SaaS</b>——厂商把软件放云上，用户打开即用，不用装、不用维护；主要功能（随时随地访问、公开协议、安全、多租户等）；例：腾讯文档、钉钉、网易邮箱。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b><b>PaaS</b>——把开发 / 运行平台当服务，用户只管写自己的程序；面向开发者；例 Google App Engine；与 SaaS 区别（用户能否管底层平台）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b><b>IaaS</b>——提供服务器 / 存储 / 网络等基础设施，用户自己装系统和软件；面向系统管理员；例 阿里云 ECS、Amazon EC2。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「三种服务模式对比表」画在黑板上（提供什么、用户能管什么、谁在用、典型例子），逐行请学生口头补全，重点纠正 IaaS / PaaS / SaaS 不是硬件 / 软件 / 网络。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>三种模式的关系——用户体验角度（用户类型不同，彼此独立）；技术角度（并非简单继承，SaaS 可基于 PaaS 或直接建于 IaaS，PaaS 可建于 IaaS 或物理资源）。介绍延伸模式 HaaS / BaaS / MBaaS / MaaS / ITaaS / CaaS。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>天翼云案例——中国电信的云计算体系（IaaS / PaaS / SaaS 等平台），看国产云如何把三种模式落地。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>点出易错点（SaaS 不一定免费、IaaS 下安全仍归你管、PaaS 非「网页版开发工具」），小结本课。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 上机(一) -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">上机实验（一）：Gitee 注册建仓 + push 上传</div><div class="pm">教材原版 PPT 第2章 45–48 页 ｜ 衔接补充包「上机实操.html」步骤一~三 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明本节目标——先建立对 Git「上传到云」的肌肉记忆：注册 Gitee、建仓库、把本地文件 push 上去。强调 push＝上传，是开发者视角云服务最核心的一步。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（完成「上机实操.html」步骤一~三）：</b><br>① 注册 / 登录 Gitee，新建仓库 cloud-02；<br>② 本地 git init，配置 user.name / user.email，写 readme.txt 后第一次 push；<br>③ 修改文件、再次 push，观察提交记录 +1。<br>（机房若未装 Git，改用 Gitee 网页「上传文件」完成等价操作）</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型卡点（push 失败、未配 user.name / user.email、仓库名拼错），投屏演示 1–2 个高频问题。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 人展示 Gitee 网页上的提交记录，确认「文件已上云、记录 +1」。要求每人留 1 张截图或 1 句记录（如「git push 成功，提交记录 +1」）。预告下节学 clone / pull 协作。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 上机(二)+随堂练习收口 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">上机实验（二）：Gitee clone 拉取 + pull 协作，随堂练习收口</div><div class="pm">教材原版 PPT 第2章 45–48 页 ｜ 衔接补充包「上机实操.html」步骤四~五 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明本节目标——学会把云上的仓库整份拉回本地（clone）、并把别人的改动同步回来（pull），体会多人协作；最后 10–15 分钟收口随堂练习。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（完成「上机实操.html」步骤四~五）：</b><br>④ 换文件夹 git clone，把仓库整份拉到本地新目录；<br>⑤ 在副本里加一行、push，回原目录 git pull 把改动同步回来。<br>（机房若未装 Git，改用 Gitee 网页「Web IDE / 上传文件」完成等价操作）</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型卡点（clone 地址复制错、pull 冲突），投屏演示 1–2 个高频问题；逐项核对验收清单（建仓 / push≥2 / clone / pull）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示「原目录文件被 pull 同步」的效果，点出「这就是 IaaS / PaaS 之外的『代码托管 SaaS』，开发者视角的云」。<b>随后投影补充包「随堂练习.html」课本原题，学生纸上作答约 10–15 分钟；错误率高的题当场点讲，未做完的题作为作业补完。</b></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 40 人（2 人病假）。课时 1–2 概念与三种服务模式定义达成度较好，住酒店/自助餐类比学生接受快；「谁管什么」的责任划分仍是难点，SaaS/PaaS/IaaS 跨层混淆（如云数据库归哪层）需下次补对比练习。课时 3–4 Gitee 上机（一）首次 push 多数跑通、（二）clone / pull 协作完成，个别账号收不到验证码改用老师公共账号参观提交记录页。课时 4 末尾随堂练习三种模式区分类题正确率约 80%，已现场重讲。下次：三种服务模式对比表提前发，课堂多留填表时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第12章 公有云平台 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第12章 公有云平台 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解公有云的概念，认识它是我们最常接触的云形态（如腾讯云、阿里云）。</li>
+    <li>掌握公有云的核心组件：云服务器、负载均衡、云存储、云数据库，及其各自作用。</li>
+    <li>第 3 课时在腾讯云上体验使用 Linux 操作系统（基于网页控制台，不安装软件、不涉及付费），第 4 课时独立完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>公有云的概念与典型产品（腾讯云 / 阿里云等）。</li>
+    <li>云服务器、负载均衡、云存储、云数据库的概念与区别。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>云服务器、云存储、云数据库三者都是「云上的某样东西」，概念边界易混。</li>
+    <li>负载均衡的作用（把流量分给多台服务器）较抽象。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>小区配套</b>」比喻——云服务器是「房子」、云存储是「储物间」、云数据库是「档案室」、负载均衡是「门口分流的保安」，各管一摊。</li>
+    <li>用「<b>银行多个窗口</b>」比喻负载均衡——把排队的客户（请求）分给多个柜员（服务器），谁都不闲着。</li>
+    <li>第 3 课时直接打开腾讯云控制台，把抽象组件变成屏幕上的真实产品，强化认知。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">腾讯云控制台（浏览器访问，教师演示账号 / 学生观察，严格「只看不买、不点付款」）</span>
+    <span class="lab">黑板 +「云服务器 / 云存储 / 云数据库 / 负载均衡」四宫格图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：公有云 + 云服务器（1 课时）<br>
+    2、 讲课：负载均衡 + 云存储 + 云数据库（1 课时）<br>
+    3、 实战：在腾讯云上使用 Linux 操作系统（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 12 章「思考与练习」原题，教师投影题目或印发，学生纸上作答）。<br>
+    2、 用一句话分别说明云服务器、云存储、云数据库各是什么，并各配一个生活类比。<br>
+    3、 整理第 3 课时在腾讯云控制台看到的 1 个产品名称及其作用。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：公有云 + 云服务器</div><div class="pm">教材原版 PPT 第12章 4–19 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「你用的网盘、视频、小程序，背后是不是都有『云』？这些云是谁家的？」引出公有云。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲公有云的概念（面向公众开放、按需付费的云）与典型厂商；重点讲云服务器（ECS）——云上的「一台电脑」，可随时开 / 关 / 升降配置，回扣第 10 章 Linux。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个用过的公有云服务（网盘、云文档、云游戏），教师归类到黑板「公有云产品地图」。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结公有云与云服务器；预告下节课讲负载均衡 / 云存储 / 云数据库，之后上腾讯云实操。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：负载均衡 + 云存储 + 云数据库</div><div class="pm">教材原版 PPT 第12章 20–68 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「双十一那么多人都抢，一个网站怎么扛住？数据又存在哪？」铺垫负载均衡与存储 / 数据库。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲负载均衡（把流量分给多台服务器、提升可用性与并发）；讲云存储（分层结构、类型、功能——云上的「储物间」）；讲云数据库（优点：弹性、免运维；缺点：锁定、持续付费——回扣第 8 章）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「云服务器 / 云存储 / 云数据库 / 负载均衡」四宫格画在黑板，请学生口头补全每格作用，点破易错点（三者都是云资源但用途不同、负载均衡不是存储）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结「四大件撑起公有云」；点明下节课上腾讯云看真实产品。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：在腾讯云上使用 Linux 操作系统</div><div class="pm">教材原版 PPT 第12章 69–71 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——通过浏览器登录腾讯云控制台，认识云服务器产品并查看 / 体验其上的 Linux 操作系统，把「云服务器 = 云上电脑」从名词变成屏幕上的真实操作。严格纪律：仅观察 / 轻量体验，绝不点击任何付款、不绑定任何支付信息；无账号的机位由教师统一演示，学生记录。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分步完成）：</b><br>① 浏览器登录腾讯云控制台，找到「云服务器 CVM」产品页；<br>② 查看一台示例云服务器的配置（CPU / 内存 / 地域 / 镜像）；<br>③ 进入其控制台，确认运行的是 Linux（回扣第 10 章）；<br>④ 观察「开关机 / 重置密码」等入口，理解云的弹性与按需。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，强调「只看不买」纪律；收集典型问题（如控制台找不到入口），投屏演示；无账号机位统一看教师机操作。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组说出看到的产品名与作用，点出「你刚在网页上操作的，就是真实公有云的一台云服务器」。要求每人记 1 个产品名进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">课本第12章「思考与练习」原题（教师投影 / 印发）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成课本第 12 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在四大件区分、负载均衡作用）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点，让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 42 人。课时 1–2 公有云概念、四大件达成度较好，小区配套比喻接受快；云服务器 / 云存储 / 云数据库边界、负载均衡作用仍是难点。课时 3 腾讯云实操多数看到 CVM 产品页与 Linux（约 6 组用教师演示账号观察），「网页上操作真实云服务器」体感强。课时 4 随堂练习四大件类题正确率约 79%，负载均衡题失分较多，已现场重讲。下次：四宫格图提前发，实操前再强调「只看不买」纪律与退出登录。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

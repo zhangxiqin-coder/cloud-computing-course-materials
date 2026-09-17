@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1章 云计算的简介 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第1章 云计算的简介 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解云计算的基本概念：从厂商、用户、抽象三个角度认识云，掌握 NIST 对云计算的正式定义（按需使用、按量付费、便捷的网络访问、可配置的资源池）。</li>
+    <li>理解云计算的内涵：认识「云」即互联网的比喻，理解虚拟化是云计算的重要基础。</li>
+    <li>了解云计算的发展历史：能用时间线说出关键节点——2006 年 Amazon 推出弹性计算云、Google 提出「云计算」概念、IBM 建云计算中心、2010 年 OpenStack、2013 年云服务入华。</li>
+    <li>了解其他计算模式（并行 / 分布式 / 集群 / 网格 / 效用计算）的概念及其与云计算的关系和区别；能使用腾讯文档完成一次云 Office 协作热身、并在 LabEx 平台注册账号完成一次浏览器内的免费云实验（第 3 课时），独立完成本章随堂练习（第 4 课时）。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>云计算的概念与 NIST 定义。</li>
+    <li>五种其他计算模式（并行 / 分布式 / 集群 / 网格 / 效用）的概念及其与云计算的区别。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>并行 / 分布式 / 集群 / 网格 四种计算极易混淆，区别点难记。</li>
+    <li>「虚拟化」「云即互联网」的内涵较抽象，不容易建立直觉。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>自来水厂</b>」比喻讲概念——算力像水，集中建厂、管网到户、按量计费。</li>
+    <li>用一张「<b>五种计算对比表</b>」把并行 / 分布式 / 集群 / 网格 / 效用逐个拆开（关键特征、与云的关系），投屏讲解与学生填表双管齐下。</li>
+    <li>用「<b>一台变多台逻辑机</b>」通俗讲虚拟化；用「<b>云 = 互联网 + 计算</b>」讲清内涵。</li>
+    <li>把易错点单独投一屏提前点破：云 ≠ 网盘；并行与分布式（是否共享内存）、集群（同构局域网）与网格（异构跨组织）的区别。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">课前缓存的科普动画（B站/抖音搜「什么是云计算 动画讲解」）</span>
+    <span class="lab">腾讯文档协作链接（第 3 课时热身）</span>
+    <span class="lab">LabEx 免费实验平台 https://labex.io/zh/free-labs（第 3 课时实战）</span>
+    <span class="lab">黑板 +「五种计算对比表」图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算的概念 + 内涵 + 发展历史（1 课时）<br>
+    2、 讲课：其他计算模式（并行 / 分布式 / 集群 / 网格 / 效用）及其与云计算的区别（1 课时）<br>
+    3、 实战：云 Office 热身（腾讯文档）+ 注册 LabEx 并完成一次免费云实验（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 1 章「思考与练习」原题，见补充包「随堂练习.html」）。<br>
+    2、 用自己的话写出 NIST 云计算定义的核心要点（按需、按量、网络、资源池）。<br>
+    3、 整理本章笔记，含第 3 课时云 Office 协作 + LabEx 云实验各 1 张截图或 1 句操作记录。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云计算的概念 + 内涵 + 发展历史</div><div class="pm">教材原版 PPT 第1章 1–16 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>黑板写「你手机里的照片存在哪？微信消息存在哪？它们在『云端』吗？」提问引入，激活生活经验。</td></tr>
+      <tr><td>视频</td><td><b>播放：</b>课前缓存的「什么是云计算 动画讲解」（6–10 分钟）。播前问「视频把云比成了什么」，播后请 2 人一句话回答。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算概念——厂商角度（资源在服务器集群）、用户角度（按需租用）、抽象角度（商业计算模型），最后落到 <b>NIST 正式定义</b>（按需使用、按量付费、便捷的网络访问、可配置的资源池）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「我生活中用到的云服务___」（如网盘、在线文档、视频网站），教师快速归类到黑板，巩固「资源集中在远端、按需取用」的直觉。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲内涵——「云」是互联网的比喻，云计算即「互联网 + 计算」；讲虚拟化：一台计算机虚拟为多台逻辑机，是云计算的重要基础，服务商借此把资源变成可自由调度的资源池。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲发展历史，黑板拉时间轴：2006 Amazon 弹性计算云 → 2006.8 Google 提出「云计算」概念 → 2007.10 Google 与 IBM 高校计划 → 2008.2 IBM 无锡云计算中心 → 2010.7 OpenStack → 2013.12 IBM / Amazon 云服务入华。点出趋势：算力越来越集中、使用越来越方便、成本越来越低。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结本课要点。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：其他计算模式（并行 / 分布式 / 集群 / 网格 / 效用）及其与云计算的区别</div><div class="pm">教材原版 PPT 第1章 17–39 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「在云计算之前，人们怎么算大任务？」引出五种其他计算模式。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>并行计算——同时使用多种资源、把任务拆成多部分同时算；与云关系：云计算源于并行计算。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>分布式计算——多台计算机分算、结果合并，任务包相互独立；与并行区别：是否共享内存；与云关系：云计算在分布式基础上发展起来。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>集群计算——多台计算机组成单一高可用系统，通常同构、局域网连接；与云异同：连接方式有相同，组织方式（同构 vs 不要求同构）和用途不同。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>网格计算——利用互联网把广泛分布的异构资源连成逻辑整体、像一台超级计算机；与云异同：云侧重互联网资源整合，网格侧重不同组织间算力连接。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>效用计算——按实际占用资源计费、把计算包装成服务；与云关系：云计算采用效用计算的商业模式，可说是这些计算的科学概念的商业实现。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「五种计算 vs 云计算」对比表画在黑板上（关键特征一句话、与云的关系），逐行请学生口头补全，重点纠正并行/分布式、集群/网格的混淆点。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结五种计算与云的关系；点出易错点（云 ≠ 网盘、并行 vs 分布式、集群同构 vs 网格异构）。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：云 Office 热身 + 注册 LabEx 并完成免费云实验</div><div class="pm">腾讯文档（热身）｜ LabEx https://labex.io/zh/free-labs（实战）｜ 衔接补充包「上机实操.html」｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战两段——先用云 Office 体验「资源在远端、多人实时协作」，再注册 LabEx 进入真实云端实验环境动手做一遍，体会「算力在远端、打开网页就能用」的云计算真实形态。两段均免费、无需安装软件。</td></tr>
+      <tr><td>热身·云 Office</td><td><span class="pc">电脑</span><b>学生（约 10 分钟）：</b><br>① 注册 / 登录腾讯文档；<br>② 新建文档并编辑；<br>③ 邀请同桌共同编辑，体验实时协作。<br>目标：感受「云服务 = 资源在远端、多人同时用」。</td></tr>
+      <tr><td>注册</td><td><span class="pc">电脑</span><b>学生：</b>打开 https://labex.io/zh/free-labs → 注册 / 登录（支持邮箱）→ 进入免费实验列表。提示：免费账号每天最多启动 3 次实验，一次做完即可，不必反复重启。</td></tr>
+      <tr><td>选实验</td><td><span class="pc">电脑</span><b>学生：</b>选择一个<b>入门 / 初学者</b>标注的实验（推荐「Linux 免费实验」或「Shell 免费实验」里的 Hello 类入门实验），点击开始。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分步完成）：</b><br>① 等待浏览器内实验环境启动（Ubuntu 终端）；<br>② 按左侧实验指导逐步执行命令 / 操作；<br>③ 完成实验目标（如输出 Hello、列出目录、建一个文件等）；<br>④ 截图保存实验完成画面。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，重点帮助卡在「腾讯文档分享按钮 / LabEx 环境启动慢 / 命令敲错」的学生，各投屏演示 1 个流程。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 人展示 LabEx 截图并一句话说「我刚才在云端的电脑上做了什么」。点出「云 Office 和 LabEx 都是云计算——你用的不是自己电脑，是远端的服务器」。要求每人留云 Office + LabEx 各 1 张截图或 1 句操作记录进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">用补充包「随堂练习.html」（课本原题）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成补充包「随堂练习.html」中的课本第 1 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在并行 vs 分布式、集群 vs 网格、云 = 网盘等）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点（参考补充包「随堂练习_答案.html」），让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。无单元测验。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 40 人（2 人病假）。课时 1–2 概念、内涵与发展历史达成度较好，自来水厂类比学生接受快；「其他计算」五种模式区分仍是难点，并行/分布式、集群/网格易混，需下次补对比练习。课时 3 云 Office 热身（约 10 分钟）+ LabEx 注册免费实验，云 Office 协作 95% 完成、LabEx 入门实验 90% 完成环境启动，个别账号注册/邮件验证慢。课时 4 随堂练习判断/单选正确率约 82%，并行与分布式区别类题失分多，已现场重讲。下次：五种计算对比表提前发，课堂多留填表时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

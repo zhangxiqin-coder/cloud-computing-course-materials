@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第 4 章 · 云计算的特点 云计算特点体验课堂实操</title>
+<title>第 4 章 · 云计算的特点 安装虚拟机软件 VMware 实战</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
@@ -74,48 +74,71 @@
 </head>
 <body>
 <div class="wrap">
-<div class="hd"><div class="no">第 4 章 · 云计算的特点</div><div class="ti">云计算特点体验课堂实操</div></div>
+<div class="hd"><div class="no">第 4 章 · 云计算的特点</div><div class="ti">安装虚拟机软件 VMware · 体验虚拟化实战</div></div>
 <div class="bd">
-<p class="src">机房环境：可上网、不可安装软件。本章用两个体验把抽象的「特点」变具体：网页里跑一台电脑（资源池化 / 一机变多机）、改配置看价格（按需按量 / 可计量）。</p>
-<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<p class="src">机房环境：可上网。本章实战项目（教材原版 PPT 第 4 章 25–27 页）为「安装虚拟机软件 VMware，了解虚拟化特点」。本课由教师机安装演示 + 学生机安装实操，亲手把一台物理机「变」出多台电脑，直观体会资源虚拟化、资源池化、按需分配与快速弹性。</p>
+
+<div class="box tip"><b>安装来源：</b>VMware 安装包由教师从<b>局域网共享 / U 盘</b>统一分发（建议 VMware Workstation Player 免费版，或机房已有的 Workstation Pro），<b>不要求学生当场外网下载</b>，避免机房带宽压力。机房若已预装 VMware，则直接进入「新建虚拟机」步骤。</div>
+
 <div class="lab">
-<div class="lt">体验云计算的五大特点（对应教材实战项目）</div>
-<div class="lg"><b>目标：</b>在浏览器里亲手跑起一台 Linux「电脑」，开两个标签页就是两台——体会<b>资源池化、虚拟化、一机变多机</b>；再用价格计算器看配置变价格变，体会<b>按需自助、按量付费、可计量</b>。</div>
+<div class="lt">实战项目：安装虚拟机软件 VMware，了解虚拟化特点（教材原实战）</div>
+<div class="lg"><b>目标：</b>① 完成 VMware 的安装；② 新建 1–2 台虚拟机并启动，观察「一台物理机切出多台虚拟电脑」；③ 对照本章特点，说出哪些特点是本次实操能直接体会的（重点：资源虚拟化和透明化、资源池化、按需自助、快速弹性）。</div>
 
-<div class="gtx">▌ 第一步：网页里跑起一台 Linux（不用装任何虚拟机软件）</div>
+<div class="gtx">▌ 准备：拿到 VMware 安装包</div>
 <ol>
-<li class="step">打开 <a href="https://bellard.org/jslinux/">https://bellard.org/jslinux/</a>，等 30–60 秒出现命令行（这是纯网页模拟的一台电脑）。</li>
-<li class="step">依次执行下面三条命令，观察输出：</li>
+<li class="step">从教师下发的共享目录 / U 盘拷贝 VMware 安装程序到本机（如 <code>VMware-player-xxxx.exe</code>）。</li>
+<li class="step">确认本机是 64 位 Windows、剩余磁盘空间 ≥ 20GB。</li>
 </ol>
-<div class="cmd">uname -a              <span class="c"># 看内核 / 系统信息</span>
-ls /                 <span class="c"># 看根目录有哪些文件夹</span>
-cat /proc/cpuinfo | head   <span class="c"># 看这颗「虚拟 CPU」</span></div>
-<div class="box tip"><b>预期：</b>命令行正常返回——你并没装虚拟机，却跑起了一台「电脑」，这就是资源虚拟化。</div>
 
-<div class="gtx">▌ 第二步：开两个标签页＝两台电脑（一机变多机）</div>
+<div class="gtx">▌ 第一步：安装 VMware</div>
 <ol>
-<li class="step">再开一个浏览器标签页，重新打开上面的网址。</li>
-<li class="step">现在你同时拥有「两台电脑」，在两边各执行一条命令。</li>
-<li class="step">讨论：<b>你没买第二台机器，为什么能同时跑两台？这对应云计算哪个特点？</b></li>
+<li class="step">双击安装程序，按向导「下一步 → 接受协议 → 典型安装 → 完成」。</li>
+<li class="step">安装结束双击桌面图标能打开 VMware 窗口，即安装成功。</li>
 </ol>
-<div class="box tip"><b>预期：</b>能说出「同一份硬件资源被池化后，按需切出多台虚拟机」，对应资源池化 + 快速弹性。</div>
+<div class="box tip"><b>预期：</b>桌面上多了「VMware」图标，这是承载所有虚拟电脑的「母体」。</div>
 
-<div class="gtx">▌ 第三步：改配置看价格，体会「按需按量、用多少算多少」</div>
+<div class="gtx">▌ 第二步：新建第一台虚拟机（按需分配资源）</div>
 <ol>
-<li class="step">打开 <a href="https://www.aliyun.com/price/product">https://www.aliyun.com/price/product</a>，选云服务器 ECS。</li>
-<li class="step">其他选项不变，只用三档配置各记一次价格：<b>1核2G / 4核8G / 8核16G</b>。</li>
-<li class="step">把三个数字连成线看，再点「按量付费」与「包年包月」对比，说说各自适合什么业务。</li>
+<li class="step">点「创建新虚拟机」→ 选「典型」→「稍后安装操作系统」。</li>
+<li class="step">客户机操作系统选 <b>Linux</b>，版本选 <b>Ubuntu</b>（或其他教师指定系统）。</li>
+<li class="step">给虚拟机起名（如 <code>cloud-vm-1</code>），磁盘大小填 <b>20GB</b>，勾选「将虚拟磁盘拆分成多个文件」。</li>
+<li class="step">在「自定义硬件」里把 <b>内存设 2GB、处理器 1 核</b>，确认后点「完成」。</li>
 </ol>
-<div class="box tip"><b>预期：</b>建立「配置越大钱越多、用多久算多久」的直觉，对应按需自助服务 + 可计量服务。</div>
+<div class="box tip"><b>体会：</b>你刚从物理机的资源池里「切」出 2GB 内存 + 1 核 CPU 给这台虚拟电脑——这就是<b>按需自助、资源池化</b>。</div>
+
+<div class="gtx">▌ 第三步：启动虚拟机，看「多出来的一台电脑」</div>
+<ol>
+<li class="step">选中刚建的虚拟机，点「开启此虚拟机」。（若无系统镜像，进到 BIOS / 安装界面即可，重点是看到它独立运行）</li>
+<li class="step">若已装入 Linux，进入后依次执行下面命令，观察输出：</li>
+</ol>
+<div class="cmd">uname -a        <span class="c"># 看这台「虚拟电脑」的内核</span>
+free -m         <span class="c"># 看它分到的内存（应≈2GB）</span>
+lscpu | head    <span class="c"># 看它分到的 CPU</span></div>
+<div class="box tip"><b>讨论：</b>你并没有买第二台机器，却在原电脑里跑出了一台独立的「电脑」——它看不见底层硬件，只看到虚拟化层给的设备。这对应<b>资源虚拟化和透明化</b>。</div>
+
+<div class="gtx">▌ 第四步：再建第二台（一机变多机 = 快速弹性）</div>
+<ol>
+<li class="step">重复第二步，新建 <code>cloud-vm-2</code>，配置改成 <b>2 核 4GB</b>。</li>
+<li class="step">现在同一台物理机上同时有 2 台虚拟机，在 VMware 左侧列表能看到它们并列运行。</li>
+<li class="step">讨论：业务高峰时再「切」出几台、低谷时释放——对应云计算哪个特点？</li>
+</ol>
+<div class="box tip"><b>预期：</b>能说出「按需切出 / 释放多台虚拟机」，对应<b>快速弹性（高可伸缩）</b>。</div>
+
+<div class="gtx">▌ 第五步：回扣本章特点</div>
+<ol>
+<li class="step">对照教材本章列出的特点，圈出本次实操能直接体会的 4 个：<b>资源虚拟化和透明化、资源池化、按需自助、快速弹性</b>。</li>
+<li class="step">教师投屏总结：VMware 把一台物理机虚拟成资源池，这正是云计算「底层资源池化 + 上层按需取用」的最小化缩影。</li>
+</ol>
 
 <b>验收清单：</b>
 <ul class="chk">
-<li>网页里出现命令行，三条命令都执行过</li>
-<li>同时开过 2 个标签页（两台「电脑」）</li>
-<li>记下 3 档配置的价格</li>
-<li>能说清：资源池化 / 虚拟化 / 按需按量 / 可计量 各对应刚才哪个操作</li>
+<li>VMware 安装成功，能打开窗口</li>
+<li>新建至少 1 台虚拟机（Linux），配置过内存 / CPU</li>
+<li>启动过虚拟机，执行过 uname / free 命令</li>
+<li>能说清：资源虚拟化 / 资源池化 / 按需自助 / 快速弹性 各自对应刚才哪个操作</li>
 </ul>
-<div class="box warn"><b>打不开 / 完不成：</b>① jslinux 加载慢，第一次先在教师机跑一遍确认机房网络扛得住；② 教材原实验要装 VMware，机房不可安装，故改为网页方案，原理完全相同；③ 价格记不准没关系，重点是「配置越大钱越多」的直觉。</div>
+
+<div class="box warn"><b>机房提示：</b>① 若学生机无安装权限或配置偏低，改为<b>教师机投影演示安装 + 新建虚拟机</b>，学生在自己机用教师下发的离线安装包完成；② 机房已预装 VMware 则跳过「第一步」直接新建虚拟机；③ 无 Linux 镜像时，进到安装界面 / BIOS 即可，重点在体会虚拟化而非装完系统；④ 下课前退出 VMware、关闭虚拟机。</div>
 </div>
 </div>
 <div class="foot">第 4 章 · 云计算的特点</div>

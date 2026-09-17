@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13章 私有云平台 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第13章 私有云平台 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解私有云的概念及其与公有云的区别——私有云是「自己家用的云」，安全可控但成本高。</li>
+    <li>认识 OpenStack 这一主流开源私有云平台的定位、发展历程与整体架构。</li>
+    <li>了解 OpenStack 的核心服务组件（Nova / Glance / Swift / Keystone / Horizon / Neutron / Cinder）及其职责。</li>
+    <li>第 3 课时完成一次「云平台调研报告」实战，第 4 课时独立完成本章随堂练习，为本课程收官。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>私有云的概念，与公有云的核心区别（归属、安全、成本）。</li>
+    <li>OpenStack 的定位与整体架构。</li>
+    <li>核心服务组件及其职责（计算 Nova、镜像 Glance、对象存储 Swift、认证 Keystone、界面 Horizon、网络 Neutron、块存储 Cinder）。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>OpenStack 组件多、名称怪（全是神话 / 星座命名），难记难对应。</li>
+    <li>各组件职责边界易混，尤其 Swift（对象存储）与 Cinder（块存储）的区别。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>自家发电机 vs 用电网</b>」比喻私有云 vs 公有云——私有云自己建自己管（安全可控、贵），公有云买服务（省心、弹性）。</li>
+    <li>把 OpenStack 组件做成一张「角色对照表」：Nova=计算厂长、Glance=装系统镜像库、Swift=大仓库、Keystone=门禁、Horizon=控制台、Neutron=网络、Cinder=硬盘，用拟人化角色帮助记忆。</li>
+    <li>第 3 课时让学生自己查 OpenStack 资料做报告，在主动探索中把组件名与职责绑定。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">OpenStack 架构图（官方组件关系图打印或投影）</span>
+    <span class="lab">黑板 +「OpenStack 七大组件角色对照表」</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：私有云概念 + OpenStack 概述（1 课时）<br>
+    2、 讲课：OpenStack 架构和服务组件（1 课时）<br>
+    3、 实战：云平台调研报告（OpenStack）（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 13 章「思考与练习」原题，教师投影题目或印发，学生纸上作答）。<br>
+    2、 用一句话说明私有云与公有云的核心区别，并各配一个生活类比。<br>
+    3、 整理第 3 课时调研报告中记下的 3 个 OpenStack 组件名及其职责。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：私有云概念 + OpenStack 概述</div><div class="pm">教材原版 PPT 第13章 4–9 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>回扣第 12 章——「公有云是租用别人的云，那银行、政府为什么不敢把数据放别人的云上？」引出私有云。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲私有云概念（专供一个组织内部使用、自建自管）及与公有云的核心区别（归属、安全可控、成本高）；讲 OpenStack 作为主流开源私有云平台的定位与发展历程。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「对私密 / 安全特别敏感的场景」（银行、医院、军工），教师归类到黑板「适合私有云」，点明其价值。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结私有云与 OpenStack 定位；预告下节课拆解 OpenStack 的七大组件。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：OpenStack 架构和服务组件</div><div class="pm">教材原版 PPT 第13章 10–37 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>投影 OpenStack 架构图，问「这一堆名字（Nova、Glance…）各是干嘛的？」</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>逐个讲核心组件——Nova（计算）、Glance（镜像）、Swift（对象存储）、Keystone（认证）、Horizon（Web 界面）、Neutron（网络）、Cinder（块存储），强调 Swift 与 Cinder 区别（对象存储 vs 块存储）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「OpenStack 七大组件角色对照表」画在黑板（Nova=计算厂长、Glance=镜像库、Swift=大仓库、Keystone=门禁、Horizon=控制台、Neutron=网络、Cinder=硬盘），请学生口头把组件对号入座，点破易错点（Swift≠Cinder）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结「OpenStack 就是一堆各司其职的云积木」；点明下节课学生自己调研它。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：云平台调研报告（OpenStack）</div><div class="pm">教材原版 PPT 第13章 38–39 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——上网查 OpenStack 的官方资料或科普文章，整理出「它是什么、由哪些核心组件构成、各组件干嘛」，形成一份 1 页调研报告，把课堂的组件名与职责绑定到真实资料上。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分组或独立完成）：</b><br>① 访问 OpenStack 官网或可信科普页，浏览其架构与组件；<br>② 对照黑板角色表，把 7 个组件逐一填进报告（名称 + 一句话职责）；<br>③ 写出 1 句核心结论（如「OpenStack 是开源私有云操作系统，靠多个组件拼出一台云」）；<br>④ 提交 1 页报告（写在作业本或在线文档）。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型问题（如分不清 Swift / Cinder），投屏演示归类；提醒「只看资料、不注册任何云账号」。完成后引导回顾：本课程从云概念一路走到私有云，画一张「全书知识地图」收尾。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示报告中的组件表，点出「你已能用行话描述一个真实云平台」。要求每人记 3 个组件名进笔记，并预告第 4 课时为课程收官练习。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况（课程收官）</div><div class="pm">课本第13章「思考与练习」原题（教师投影 / 印发）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成课本第 13 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在私有云 vs 公有云、OpenStack 组件职责）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点，让学生对照订正；顺势回扣全书主线（概念→服务→部署→特点→安全→市场→网络→数据库→虚拟化→Linux→Web→公有云→私有云）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>用「全书知识地图」做课程总结；未做完的题作为作业补完，为本课程画上句号。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 42 人。课时 1–2 私有云概念、OpenStack 定位达成度较好，发电机 / 电网比喻接受快；七大组件名称与职责、Swift vs Cinder 仍是难点。课时 3 调研报告多数完成组件对照表（个别对 Swift / Cinder 仍混淆，已现场纠正）。课时 4 随堂练习作为课程收官，私有云类题正确率约 80%，组件职责题失分较多，已重讲并回扣全书知识地图。下次：组件角色对照表提前发，课程收官可加 10 分钟「全书串讲」。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

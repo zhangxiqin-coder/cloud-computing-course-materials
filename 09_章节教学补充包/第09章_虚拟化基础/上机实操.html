@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 9 章 · 虚拟化基础 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 9 章 · 虚拟化基础</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：网页里跑 Linux 虚拟机（体验服务器虚拟化）</div>
+<div class="lg"><b>目标：</b>不安装任何软件，在浏览器里体验「一台物理机变多台虚拟机」。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 <a href="https://bellard.org/jslinux/">https://bellard.org/jslinux/</a>。</li>
+<li class="step">等待 30–60 秒，命令行出现后执行 <code>uname -a</code>。</li>
+<li class="step">再开一个浏览器标签页，再打开一次，同时运行两台「虚拟机」。</li>
+<li class="step">讨论：你的电脑没有安装虚拟机软件，为什么能跑起一个完整的 Linux？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>网页中出现 Linux 命令行</li>
+<li>执行过 uname -a</li>
+<li>同时打开过 2 个标签页</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>这是浏览器模拟的 Linux，原理与真实虚拟化相同，只是运行在 JS 层。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：虚拟化产品市场调研</div>
+<div class="lg"><b>目标：</b>认识主流虚拟化产品，理解服务器/桌面/个人三个层级。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 VMware 中国官网 <a href="https://www.vmware.com/cn.html">https://www.vmware.com/cn.html</a>，看 vSphere/ESXi 产品。</li>
+<li class="step">打开 VirtualBox 官网 <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>，看个人免费虚拟化。</li>
+<li class="step">用搜索引擎查「华为 FusionSphere」或「Citrix 桌面虚拟化」，填表：产品名 / 类型 / 收费方式 / 典型用户。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>看过 VMware 和 VirtualBox 两款产品</li>
+<li>至少再查一款国产或桌面虚拟化产品</li>
+<li>表格填完 3 行</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只看官网介绍，不下载安装。</div>
+</div>
+<div class="lab">
+<div class="lt">实验三：虚拟化收益计算小练习</div>
+<div class="lg"><b>目标：</b>用量化方式理解虚拟化如何节省物理空间和成本。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">假设一家企业原来有 20 台物理服务器，每台占地 2U、功耗 300W。</li>
+<li class="step">引入虚拟化后，按 5:1 整合，只需要 4 台物理机承载同样业务。</li>
+<li class="step">计算：① 机柜空间从 40U 降到 8U；② 功耗从 6000W 降到 1200W。</li>
+<li class="step">讨论：除了空间和电费，虚拟化还可能在哪些方面降低成本？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>算出新旧物理机数量</li>
+<li>算出节省的机柜空间和功耗</li>
+<li>能说出至少 2 个其他收益</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>数字是估算，重点是理解整合比例带来的收益。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 9 章 · 虚拟化基础</div>
+</body>
+</html>

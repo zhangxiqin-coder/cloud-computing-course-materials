@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章 云计算安全 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第5章 云计算安全 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>认识云计算面临的安全威胁，理解「云计算和信息安全」的关系——上云后数据离开本地，安全成为生命线。</li>
+    <li>理解密码学基础：密码技术与密码学的概念、对称密码与非对称密码的区别、常见密码算法（DES / AES / RSA / 椭圆曲线 / 多变量公钥）。</li>
+    <li>理解公钥基础设施（PKI）与身份和访问管理（IAM）的作用，掌握哈希（Hash）的不可逆与「雪崩效应」。</li>
+    <li>第 3 课时通过「云安全三连击」亲手体验加密（密钥概念）、完整性校验（MD5）、身份认证（HTTPS 证书），第 4 课时独立完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>密码技术与密码学的概念，区分加密（保密）、哈希（完整性）、证书（身份）三类安全基石。</li>
+    <li>对称密码与非对称密码的核心区别——密钥是否公开、各自适合什么场景。</li>
+    <li>哈希的不可逆与「改一个字符结果全变」；PKI / 数字证书如何支撑身份认证。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>对称密码与非对称密码容易混淆：谁用一把钥匙、谁用一对钥匙、为什么需要非对称。</li>
+    <li>哈希「不可逆」与「雪崩效应」较抽象，学生易误以为能从 MD5 反推原文。</li>
+    <li>PKI 信任链（CA → 证书 → 浏览器信任）概念链条长。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>同一把锁 vs 一把公开锁 + 一把私有钥匙</b>」比喻对称（一把密钥）与非对称（公钥加密、私钥解密）。</li>
+    <li>用「<b>录指纹</b>」比喻哈希——指纹固定且唯一，但绝不可能从指纹反推出整个人；用改一个字母 MD5 全变的现象讲「雪崩效应」。</li>
+    <li>把「加密 / 完整性 / 身份认证」三件事做成一张对照表，逐列请学生口头补全，提前点破易错点。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">在线工具：在线 MD5 计算页（如 emn178.github.io/online-tools）、证书查看演示页</span>
+    <span class="lab">黑板 +「加密 / 完整性 / 身份认证」三列对照表</span>
+    <span class="lab">凯撒密码练习纸（A→D 后移 3 位）</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算和信息安全 + 密码技术和密码学 + 对称密码和公钥密码（1 课时）<br>
+    2、 讲课：密码算法（DES / AES / RSA / 椭圆曲线 / 多变量公钥）+ 公钥基础设施和身份访问管理（PKI / IAM）+ 哈希（1 课时）<br>
+    3、 实战：云安全三连击——凯撒密码、在线 MD5、查看 HTTPS 证书（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 5 章「思考与练习」原题，见补充包「随堂练习.html」）。<br>
+    2、 用一句话分别说明「加密、哈希、证书」各自解决什么安全问题，并各举一个生活例子。<br>
+    3、 整理第 3 课时「云安全三连击」的 1 条操作记录（如「改一个字母，MD5 值从 xx 变成 yy」）。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云安全概述 + 密码学基础</div><div class="pm">教材原版 PPT 第5章 4–25 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「你的照片存在云盘，不在自己电脑里，谁保证别人看不到、改不了？」引出「上云后安全是生命线」。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算和信息安全的关系——数据离开本地、集中到云端，面临窃取、篡改、抵赖等新威胁；安全目标可归为保密、完整、可用、可认证。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲密码技术和密码学概念——密码学是研究加密、解密、认证的学科；再讲对称密码（加解密用同一把密钥，快但密钥分发难）与非对称密码（一对密钥，公钥加密、私钥解密，解决分发问题）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「需要保密 / 需要确认身份」的日常生活场景（寄信封口、门禁卡、签名），教师快速归类到黑板「保密 / 完整 / 认证」三列。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结三类安全基石；预告下节课讲具体算法与 PKI / 哈希，之后亲手做一次「云安全三连击」。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：密码算法 + PKI/IAM + 哈希</div><div class="pm">教材原版 PPT 第5章 26–57 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>讲解</td><td><b>教师：</b>按表格过一遍算法——对称：DES（56 位，已不安全）、AES（主流）；非对称：RSA、椭圆曲线（ECC，短密钥高强度）、多变量公钥。强调「没有绝对安全，只有够用」。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲公钥基础设施（PKI）与身份和访问管理（IAM）——PKI 由 CA（证书颁发机构）、证书、密钥组成，解决「你怎么证明你是你」；IAM 解决「你能访问哪些资源」。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲哈希（Hash）——把任意长度输入变成固定长度摘要，不可逆、且「改一个字符结果全变」（雪崩效应）。用「录指纹」比喻：固定唯一但不可反推。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「加密 / 完整性 / 身份认证」对照表画在黑板，逐行请学生口头补全（对称 vs 非对称、哈希 vs 加密、PKI 解决什么），同步点破易错点（哈希不可逆、非对称慢但解决分发）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话串起三类安全基石；点明下节课用网页工具亲手体验，把名词变成操作。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：云安全三连击（加密 · 完整性 · 身份认证）</div><div class="pm">教材原版 PPT 第5章 58–63 页 ｜ 衔接补充包「上机实操.html」｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——亲手做一次加解密（密钥概念）、看一次哈希雪崩（完整性）、查一次网站证书（身份认证），把安全从概念变成看得见、摸得着的东西。全程基于网页 / 在线工具，不安装任何软件。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分步完成，详细见补充包「上机实操.html」）：</b><br>① 凯撒密码：约定字母后移 3 位（A→D），把 HELLO 加密成 KHOOR，同桌互出单词加解密——理解「3 就是密钥」；<br>② 在线 MD5：输入 cloud 记下值，改一个字符成 clouds 对比——结果完全不同（雪崩效应），再输入 cloud 确认值不变（不可逆）；<br>③ 查看 HTTPS 证书：打开 https 网站，点地址栏锁形图标看证书，记下颁发者 CA / 有效期 / 加密算法，再对比一个 http 网站地址栏提示。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型问题（如 MD5 工具打不开、证书菜单位置不同），投屏演示处理：MD5 可用命令提示符 <code>certutil -hashfile 文件名 MD5</code> 替代；证书可在浏览器设置的安全页查看。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示「改一个字符 MD5 前后对比」，点出「加密保保密、哈希保完整、证书保身份」三者缺一不可。要求每人留 1 条操作记录进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">用补充包「随堂练习.html」（课本原题）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成补充包「随堂练习.html」中的课本第 5 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在对称 / 非对称区分、哈希性质、PKI 作用）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点（参考补充包「随堂练习_答案.html」），让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 40 人（2 人病假）。课时 1–2 云安全三类基石与对称 / 非对称区别达成度较好，「锁与钥匙」比喻学生接受快；哈希不可逆、PKI 信任链仍是难点，需在实操后二次回扣。课时 3 云安全三连击多数完成凯撒 + MD5，个别证书菜单位置找不到改用教师机演示。课时 4 随堂练习对称 / 非对称类题正确率约 78%，哈希性质失分较多，已现场重讲。下次：三类安全对照表提前发，课堂多留填表时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>

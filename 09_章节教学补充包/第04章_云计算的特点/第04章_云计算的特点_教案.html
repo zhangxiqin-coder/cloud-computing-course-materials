@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 云计算的特点 · 教案（学院格式）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f5f5f5; color:#222; line-height:1.8; padding:18px; font-size:14px; }
+  .wrap { max-width:960px; margin:0 auto; background:#fff; padding:36px 40px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  h1 { font-size:24px; text-align:center; color:#1a73e8; margin-bottom:4px; }
+  .meta { text-align:center; color:#888; font-size:12px; margin-bottom:22px; }
+  .sec { margin:18px 0; page-break-inside:avoid; }
+  .sec > .h { font-size:17px; font-weight:bold; color:#1a73e8; border-left:4px solid #1a73e8; padding-left:10px; margin-bottom:8px; }
+  .sec ol, .sec ul { margin:6px 0 6px 24px; }
+  .sec li { margin:5px 0; }
+  .lab { background:#e8f0fe; border-radius:6px; padding:6px 12px; display:inline-block; font-size:13px; color:#1565c0; margin:4px 6px 4px 0; }
+  .proc { border:1px solid #e0e0e0; border-radius:8px; padding:14px 16px; margin:12px 0; page-break-inside:avoid; }
+  .ph { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .pn { background:#1a73e8; color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; }
+  .pt { font-size:15px; font-weight:bold; }
+  .pm { font-size:12px; color:#888; }
+  table.st { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  table.st th { background:#1a73e8; color:#fff; padding:7px 8px; text-align:left; width:64px; font-weight:500; }
+  table.st td { border:1px solid #e0e0e0; padding:7px 9px; vertical-align:top; }
+  .pc { display:inline-block; background:#1565c0; color:#fff; font-size:11px; padding:1px 6px; border-radius:4px; margin-right:4px; }
+  .sign { display:flex; gap:30px; flex-wrap:wrap; margin-top:6px; }
+  .sign div { font-size:14px; }
+  .foot { font-size:12px; color:#999; margin-top:22px; border-top:1px solid #eee; padding-top:10px; }
+  @media print { body{background:#fff;padding:0;} .wrap{box-shadow:none;padding:18px;} .sec,.proc{page-break-inside:avoid;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>第4章 云计算的特点 · 教案</h1>
+<p class="meta">教材：《云计算基础技术与应用(第2版)(微课版)》ISBN 978-7-115-66457-0</p>
+
+<!-- 一 -->
+<div class="sec">
+  <div class="h">一、教学目的</div>
+  <ol>
+    <li>理解云计算的本质：用户不必知道服务器在哪里、内部如何运作，就能通过互联网透明地使用各种资源。</li>
+    <li>掌握云计算的 8 大特点：超大规模、高可靠和容灾能力、廉价和性价比高、按需服务按量计费、资源利用率高、资源虚拟化和透明化、高可伸缩和高扩展性、支持异构基础资源。</li>
+    <li>区分两类计费模式（后付费 / 预付费）及其适合的业务，并了解「节能」是云计算重大问题之一。</li>
+    <li>第 3 课时用 VMware 亲手安装虚拟机、体验虚拟化（教材实战项目），第 4 课时独立完成本章随堂练习。</li>
+  </ol>
+</div>
+
+<!-- 二 -->
+<div class="sec">
+  <div class="h">二、重点、难点及处理方法</div>
+  <p><b>教学重点：</b></p>
+  <ol>
+    <li>云计算的本质（透明使用、不必关心底层）。</li>
+    <li>云计算的 8 大特点，特别是资源虚拟化和透明化、按需服务按量计费、资源利用率高。</li>
+    <li>两类计费模式（后付费 vs 预付费）的区别与适用场景。</li>
+  </ol>
+  <p><b>教学难点：</b></p>
+  <ol>
+    <li>「资源虚拟化和透明化」最抽象——资源被抽象成逻辑资源，用户看不到也无需关心物理位置。</li>
+    <li>高可伸缩性（Scale up / Scale out）与高扩展性容易混为一谈。</li>
+  </ol>
+  <p><b>处理方法：</b></p>
+  <ul>
+    <li>用「<b>自来水厂 / 电网</b>」比喻讲本质——资源集中建设、管网到户、按需取用、看不见内部运作。</li>
+    <li>用「<b>一台物理机变多台虚拟机</b>」的 VMware 实战（第 3 课时），把抽象的虚拟化变具体、可触摸。</li>
+    <li>用「<b>点外卖 vs 办月卡</b>」比喻后付费（先用后付、适合波动业务）与预付费（包年包月、适合稳定业务）。</li>
+    <li>把 5 条易错点单独投一屏提前点破：互联网 ≠ 云、云不擅长紧耦合科学计算、私有化 ≠ 云特点、节能是问题不是优势、后付费与预付费混淆。</li>
+  </ul>
+</div>
+
+<!-- 三 -->
+<div class="sec">
+  <div class="h">三、教具</div>
+  <p>
+    <span class="lab">机房电脑 + 多媒体投影</span>
+    <span class="lab">课前缓存的科普动画（B站 / 抖音搜「云计算 特点 动画讲解」）</span>
+    <span class="lab">VMware 安装包（教师从局域网 / U盘分发，仅第 3 课时实战使用）</span>
+    <span class="lab">黑板 +「云计算 8 大特点对比表」图</span>
+  </p>
+</div>
+
+<!-- 四 -->
+<div class="sec">
+  <div class="h">四、课时分配</div>
+  <p>
+    1、 讲课：云计算的本质 + 特点（上）：超大规模、高可靠和容灾能力、廉价和性价比高、按需服务按量计费（1 课时）<br>
+    2、 讲课：特点（下）：资源利用率高、资源虚拟化和透明化、高可伸缩和高扩展性、支持异构基础资源 + 两类计费模式与节能（1 课时）<br>
+    3、 实战：安装虚拟机软件 VMware，体验虚拟化（1 课时）<br>
+    4、 随堂练习 + 讲解练习情况（1 课时）
+  </p>
+</div>
+
+<!-- 五 -->
+<div class="sec">
+  <div class="h">五、作业</div>
+  <p>
+    1、 完成随堂练习中当场未做完的题目（课本第 4 章「思考与练习」原题，见补充包「随堂练习.html」）。<br>
+    2、 用自己的话写出云计算 8 大特点中的任意 4 个，并为每个配一句生活类比。<br>
+    3、 整理第 3 课时 VMware 实战的 1 张截图或 1 句操作记录（如「装好 VMware，建了一台 2G 内存的 Linux 虚拟机」）。
+  </p>
+</div>
+
+<!-- 六 -->
+<div class="sec">
+  <div class="h">六、教学过程</div>
+
+  <!-- 课时1 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">1</div><div><div class="pt">讲课：云计算的本质 + 特点（上）</div><div class="pm">教材原版 PPT 第4章 4–14 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「你点外卖、看视频、存照片，背后那些服务器你在哪见过吗？它们对你来说是透明的吗？」引出「本质」。</td></tr>
+      <tr><td>视频</td><td><b>播放：</b>课前缓存的「云计算 特点 动画讲解」（6–10 分钟）。播前问「视频把云比成了什么」，播后请 2 人一句话回答。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲云计算的本质——用户不必知道服务器在哪、内部怎么运作，就能通过互联网透明使用资源；用「自来水厂 / 电网」比喻（集中建厂、管网到户、按需取用、看不见内部）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲特点（上）4 个——超大规模（Google 上百万台、Amazon/IBM 几十万台服务器）；高可靠和容灾能力（数据多副本、多数据中心异地备份）；廉价和性价比高（廉价甚至过时机器组成集群）；按需服务按量计费（即付即用，像水电煤气那样按实际用量付费）。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>全班口头接龙，每人说一个「按量付费」的生活例子（水、电、燃气、打车），教师快速归类到黑板，巩固「用多少算多少」的直觉。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>小结本课要点；预告下节课讲完剩余 4 个特点后会亲手装虚拟机体会虚拟化。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时2 讲课 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">2</div><div><div class="pt">讲课：特点（下）+ 两类计费模式与节能</div><div class="pm">教材原版 PPT 第4章 15–24 页 ｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>引入</td><td><b>教师：</b>提问「第一台虚拟机是怎么来的？为什么一台电脑能同时跑多台？」铺垫「虚拟化」与「资源利用率」。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲特点（下）4 个——资源利用率高（池化削峰填谷，云利用率可达 80%，传统仅 10%–15%）；资源虚拟化和透明化（用户只看到虚拟设备，底层无限大且透明）；高可伸缩和高扩展性（动态增删节点不影响业务，资源可流转）；支持异构基础资源（兼容不同软硬件，同一平台支撑多种应用）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>讲两类计费模式——后付费（按需使用、先用后付，适合波动 / 阶段性业务）与预付费（包年包月 / 资源包，适合稳定业务）；用「点外卖 vs 办月卡」比喻。补充：超大型数据中心电费占比最高，「节能」是云计算的重大问题而非天然优势。</td></tr>
+      <tr><td>互动</td><td><b>师生：</b>教师把「云计算 8 大特点对比表」画在黑板（每条一句话 + 一句生活类比），逐行请学生口头补全；同步把 5 条易错点逐条点破（互联网 ≠ 云、云不擅长紧耦合科学计算、私有化 ≠ 云特点、节能是问题、后 / 预付费混淆）。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>一句话总结 8 大特点；点明下节课用 VMware 亲手把一台物理机变多台，把「虚拟化」「资源池化」从名词变成体验。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时3 实战 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">3</div><div><div class="pt">实战：安装虚拟机软件 VMware，体验虚拟化</div><div class="pm">教材原版 PPT 第4章 25–27 页 ｜ 衔接补充包「上机实操.html」｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>布置</td><td><b>教师：</b>说明实战目标——安装 VMware，新建虚拟机，亲手把一台物理机「变」出多台电脑，体会资源虚拟化、资源池化、按需分配、快速弹性。安装包由教师从局域网 / U 盘统一分发，不要求学生外网下载。</td></tr>
+      <tr><td>实操</td><td><span class="pc">电脑</span><b>学生（分步完成，详细见补充包「上机实操.html」）：</b><br>① 从教师分发处拷贝 VMware 安装包并安装；<br>② 新建第一台虚拟机（Linux / Ubuntu，2GB 内存 1 核），体会按需分配；<br>③ 启动虚拟机，执行 <code>uname -a</code> / <code>free -m</code> 看「多出来的一台电脑」，体会资源虚拟化与透明化；<br>④ 再建第二台（2 核 4GB），体会一机变多机 = 快速弹性；<br>⑤ 回扣本章 4 个特点（虚拟化 / 池化 / 按需 / 弹性）。</td></tr>
+      <tr><td>巡堂</td><td><b>教师：</b>走动答疑，收集典型问题（如无安装权限、无 Linux 镜像），投屏演示处理：无权限则教师机投影演示 + 学生用离线包完成；无机镜像则进到 BIOS / 安装界面即可，重点在体会虚拟化。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>请 1–2 组展示虚拟机列表，点出「VMware 把一台物理机虚拟成资源池，正是云计算『底层池化 + 上层按需取用』的最小化缩影」。要求每人留 1 张截图或 1 句操作记录进笔记。</td></tr>
+    </table>
+  </div>
+
+  <!-- 课时4 随堂练习+讲解 -->
+  <div class="proc">
+    <div class="ph"><div class="pn">4</div><div><div class="pt">随堂练习 + 讲解练习情况</div><div class="pm">用补充包「随堂练习.html」（课本原题）｜ 90 分钟</div></div></div>
+    <table class="st">
+      <tr><th>环节</th><th>教学活动</th></tr>
+      <tr><td>练习</td><td><b>学生：</b>完成补充包「随堂练习.html」中的课本第 4 章「思考与练习」原题（教师投影题目或印发，学生作答于作业本）。教师计时，约 35–40 分钟独立完成。</td></tr>
+      <tr><td>收看</td><td><b>教师：</b>巡堂收看完成情况，标记错误率高的题目（通常集中在 8 大特点区分、后 / 预付费归类、易错点相关题）。</td></tr>
+      <tr><td>讲解</td><td><b>教师：</b>挑选错误率最高的 6–8 题重点讲解，公布答案要点（参考补充包「随堂练习_答案.html」），让学生对照订正。</td></tr>
+      <tr><td>收口</td><td><b>教师：</b>回扣本章易错点做总结；未做完的题作为作业补完。</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 七 -->
+<div class="sec">
+  <div class="h">七、课后小结</div>
+  <div class="sign">
+    <div>人工智能241班：应到 42 人，实到 40 人（2 人病假）。课时 1–2 本质与 8 大特点达成度较好，自来水厂 / 电网类比学生接受快；「资源虚拟化和透明化」「高可伸缩 vs 高扩展」仍是难点，需在 VMware 实操后二次回扣。课时 3 VMware 实战多数完成安装 + 建 1 台虚拟机，个别无安装权限改用教师机投影演示。课时 4 随堂练习特点区分类题正确率约 80%，后 / 预付费归类失分较多，已现场重讲。下次：8 大特点对比表提前发，课堂多留填表与实操时间。</div>
+  </div>
+  <p class="foot">（按实际授课班级填写：到课情况、目标达成度、随堂练习正确率、易错点是否讲透、下次调整建议）</p>
+</div>
+
+</div>
+</body>
+</html>
