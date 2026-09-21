@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 12 章 · 公有云平台 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 12 章 · 公有云平台</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 12 章 思考与练习（教材 p.200）</b>，共 15 题，均为简答题。第 2–5、7–10 题答案依据教材第 2 版习题答案文档（66457）整理；第 1、6 题教材答案标「略」，本参考答案为依据本章 PPT 与正文整理；第 11–15 题教材答案文档未收录，为依据本章 PPT 与正文整理。</p>
+<p class="src">配套《随堂练习.html》　｜　共 15 题</p>
+<h3>一、简答题</h3>
+<div class="q"><div class="qt">1. 谈谈你对云服务器特点的理解。</div><div class="ans"><b>答案：云服务器（如阿里云 ECS、腾讯云 CVM、AWS EC2）的特点可概括为：① 稳定——底层多副本、故障自动迁移；② 安全——提供安全组、防火墙、快照等；③ 弹性——按需扩缩容、按需付费，最重要的是「弹性伸缩」；④ 高性能——基于虚拟化资源池，可灵活选配 CPU/内存/带宽；⑤ 免运维/快速交付——分钟级创建、不用买硬件。相比传统物理服务器，它把「买硬件」变成「租资源」。</b></div><div class="exp">教材答案标「略」，以下为依据本章 PPT 与正文整理：稳定/安全/弹性/高性能/免运维五点，弹性伸缩是核心。</div></div>
+<div class="q"><div class="qt">2. 主流云服务器有哪些?</div><div class="ans"><b>答案：阿里云、亚马逊云、华为云、腾讯云等。</b></div><div class="exp">答出国内外主流厂商即可，可补充 AWS、Azure、Google Cloud。</div></div>
+<div class="q"><div class="qt">3. 弹性伸缩的应用场景主要有哪些?</div><div class="ans"><b>答案：弹性伸缩主要应用于流量波动较大，定期或不定期流量突增等场景。</b></div><div class="exp">主线：流量波动大、定期/不定期突增（如秒杀、直播、月初报表）。</div></div>
+<div class="q"><div class="qt">4. 负载均衡是怎么实现的?</div><div class="ans"><b>答案：负载均衡就是将负载（工作任务）进行平衡、分摊到多个操作单元上运行，例如 FTP 服务器、Web 服务器、企业核心应用服务器等，从而协同完成工作任务。负载均衡有软硬件之分：软件方案是在一台或多台服务器的操作系统上安装附加软件实现；硬件方案是在服务器和外部网络间安装负载均衡设备（即负载均衡器）。此外还有本地与全局负载均衡。</b></div><div class="exp">主线：任务分摊到多单元 + 软件/硬件两种实现 + 本地/全局。</div></div>
+<div class="q"><div class="qt">5. 谈谈云存储与其他存储方式的区别。</div><div class="ans"><b>答案：云存储相较于传统存储方式，可扩展性强、灵活性高、节点增加更简便、可容纳更多元数据、没有破坏性数据迁移、灾难恢复成本低，并且支持多租户。</b></div><div class="exp">对比传统存储，强调：易扩展、灵活、多租户、低灾难恢复成本、无破坏性迁移。</div></div>
+<div class="q"><div class="qt">6. 云存储有哪些形式?</div><div class="ans"><b>答案：云存储按对外提供的访问方式通常分为三种形式：① 块存储（如 EBS/EVS），像硬盘一样可格式化、挂载；② 对象存储（如 OSS/S3），以对象+唯一地址存放、用 API 访问；③ 文件存储，带目录层级、支持共享访问。此外按部署/供应关系还可分为私有云存储、公共云存储、混合云存储。</b></div><div class="exp">教材答案标「略」，以下为依据本章 PPT 与正文整理：块/对象/文件三种 + 私有/公共/混合三种视角。</div></div>
+<div class="q"><div class="qt">7. 块存储产品有哪些?</div><div class="ans"><b>答案：阿里云的 ECS 中可以选用阿里云提供的块存储产品，亚马逊有 EBS 块存储服务，华为有 EVS 块存储服务。</b></div><div class="exp">答出阿里云(块存储)/AWS(EBS)/华为(EVS) 即可。</div></div>
+<div class="q"><div class="qt">8. 对象存储的特点是什么?</div><div class="ans"><b>答案：① 数据作为单独的对象进行存储；② 数据并不放置在目录层次结构中，而是存在于平面地址空间内；③ 应用通过唯一地址（对象 ID 或唯一标识符）来识别每个单独的数据对象；④ 专为使用 API 在应用级别（而非用户级别）进行访问而设计。</b></div><div class="exp">四特点：独立对象 / 平面地址空间(无目录层级) / 唯一地址识别 / API 级访问。</div></div>
+<div class="q"><div class="qt">9. 谈谈云数据库与分布式数据库的区别。</div><div class="ans"><b>答案：云数据库是云端上的数据库，可能不是分布状态的；而分布式数据库是在不同地点的许多计算机通过网络互相连接，共同组成一个完整的、全局的逻辑上集中、物理上分布的大型数据库。</b></div><div class="exp">云数据库强调「在云端」，分布式数据库强调「物理分散、逻辑集中」，二者侧重不同、不等价。</div></div>
+<div class="q"><div class="qt">10. 谈谈关系型数据库和非关系型数据库的主要区别。</div><div class="ans"><b>答案：关系型数据库和非关系型数据库主要区别在于成本、查询速率、存储格式、可扩展性、数据一致性和事务处理。</b></div><div class="exp">六个维度：成本/查询速率/存储格式/可扩展/一致性/事务，答出要点即可。</div></div>
+<div class="q"><div class="qt">11. 什么是公有云？它有什么特点？</div><div class="ans"><b>答案：公有云是由第三方云服务提供商拥有和运营、通过互联网向广大公众或大型群体开放的云。特点：① 基础设施位于第三方数据中心，用户无需自建；② 多租户共享、资源同构，性价比高；③ 按需自助、按量付费，免运维；④ 服务和环境通常标准化、大众化。与私有云相比，它不独占、不针对单一企业内部。</b></div><div class="exp">主线：第三方运营 + 对外开放 + 多租户共享 + 按需付费。</div></div>
+<div class="q"><div class="qt">12. 什么是 VPS？它与云服务器有什么关系？</div><div class="ans"><b>答案：VPS（虚拟专用服务器）是用虚拟软件（如 Virtuozzo、VMware）在一台物理服务器上虚拟出多个相互隔离的「类独立服务器」部分，每个部分可独立运行操作系统。云服务器在技术上借鉴了 VPS 的虚拟化思路，但更进一步：云服务器运行在大规模资源池之上，支持弹性伸缩、高可用与故障迁移，健壮性远强于单台物理机上的 VPS。可理解为「VPS 是单机虚拟化，云服务器是池化 + 弹性」。</b></div><div class="exp">VPS=单机虚拟化出的独立部分；云服务器=池化+弹性，建立在 VPS 思路之上。</div></div>
+<div class="q"><div class="qt">13. 负载均衡有哪些算法或类型？</div><div class="ans"><b>答案：按策略分：① 静态负载均衡算法（如轮询、加权轮询、随机），事先固定规则、不感知节点实时状态；② 动态负载均衡算法（如最小连接、最快响应），根据节点当前负载/响应动态分配。按实现分：软件负载均衡（在服务器操作系统上装附加软件）与硬件负载均衡（在服务器与外部网络间放专用负载均衡设备）；以及本地负载均衡与全局负载均衡（跨地域）。核心是「健康检查 + 流量分发 + 自动隔离异常节点」。</b></div><div class="exp">静态(轮询/随机) vs 动态(最小连接)；软件 vs 硬件；本地 vs 全局。</div></div>
+<div class="q"><div class="qt">14. 云存储系统一般如何分层？各层职责是什么？</div><div class="ans"><b>答案：云存储系统常采用分层结构，从逻辑上分为四层：① 设备层——底层的物理存储设备（硬盘、磁盘阵列等）；② 存储层——把设备虚拟/整合成统一存储资源池；③ 管理层——负责元数据管理、调度、容灾、安全等；④ 接口层——对外提供访问接口（API/协议），供应用读写数据。四层由下到上从「硬件」到「对外服务」。</b></div><div class="exp">设备→存储→管理→接口，四层职责由下往上记。</div></div>
+<div class="q"><div class="qt">15. 什么是分布式数据库？它和云数据库有什么联系？</div><div class="ans"><b>答案：分布式数据库是计算机网络环境中各场地/节点上数据库的「逻辑集合」：物理上分散在不同地点，逻辑上是一个集中、统一的数据库，通过网络互联协同。它与云数据库的联系在于：云数据库常借助分布式技术实现海量数据与高可用（很多云数据库本身就是分布式的），但二者不等价——云数据库强调「部署在云上」，分布式数据库强调「数据物理分散、逻辑集中」，一个云数据库可以是集中式也可以是分布式。</b></div><div class="exp">分布式=物理分散逻辑集中；云数据库可基于分布式技术，但侧重不同。</div></div>
+</div>
+</div>
+<div class="foot">第 12 章 · 公有云平台</div>
+</body>
+</html>

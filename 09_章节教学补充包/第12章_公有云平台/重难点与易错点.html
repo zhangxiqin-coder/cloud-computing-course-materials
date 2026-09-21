@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 12 章 · 公有云平台 重难点与易错点</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 12 章 · 公有云平台</div><div class="ti">重难点与易错点</div></div>
+<div class="bd">
+<p class="src">对应 教材 PPT：12.公有云平台.pptx（72 页）｜ 课本 12 思考与练习 p.200</p>
+<h3>一、本章重点（必须掌握）</h3>
+<div class="key">
+<div class="item"><div class="t"><span class="tag k">重点1</span></div>公有云概念：由第三方提供商拥有和运营、面向公众或大型群体开放使用的云，基础设施位于第三方数据中心，用户按需租用、环境同构、免运维。</div>
+<div class="item"><div class="t"><span class="tag k">重点2</span></div>云服务器（ECS/CVM）：基于虚拟化（类似 VPS）把计算资源池化，特点为稳定、安全、弹性、高性能；<b>最重要能力是「弹性伸缩」</b>——按负载自动增减资源。</div>
+<div class="item"><div class="t"><span class="tag k">重点3</span></div>负载均衡：把工作任务分摊到多台服务器协同完成，消除单点故障、提高并发能力；分软件（附加软件）与硬件（负载均衡器）两种，含本地/全局负载均衡。</div>
+<div class="item"><div class="t"><span class="tag k">重点4</span></div>云存储：通过集群/分布式文件系统把大量存储设备整合成统一资源池，可扩展性强、支持多租户；从逻辑上分设备层/存储层/管理层/接口层四层；形式含块存储、对象存储、文件存储。</div>
+<div class="item"><div class="t"><span class="tag k">重点5</span></div>云数据库与分布式数据库：云数据库是部署在云端的数据库（未必分布式）；分布式数据库是物理分散、逻辑集中、通过网络互联的数据库；关系型与非关系型主要在成本、查询速率、存储格式、可扩展、一致性、事务上区别。</div>
+</div>
+<h3>二、本章难点（讲慢一点、配比喻）</h3>
+<div class="hard">
+<div class="item"><div class="t"><span class="tag h">难点1</span></div>弹性伸缩 vs 负载均衡常被混：弹性伸缩解决「资源多少」（纵向/横向扩缩），负载均衡解决「任务分给谁」（流量分发），二者配合才能扛高并发。</div>
+<div class="item"><div class="t"><span class="tag h">难点2</span></div>块存储 / 对象存储 / 文件存储三者区别：块=像硬盘可格式化挂载（如 EBS/EVS），对象=平面地址空间、用 API 访问（如 OSS/S3），文件=目录层级共享，适用场景不同。</div>
+<div class="item"><div class="t"><span class="tag h">难点3</span></div>云数据库 vs 分布式数据库：云数据库强调「部署位置在云」，分布式数据库强调「数据物理分散、逻辑集中」，一个云数据库可以是集中式也可以是分布式。</div>
+</div>
+<h3>三、易错点（学生常错，务必提前点破）</h3>
+<div class="trap">
+<div class="item"><div class="t"><span class="tag p">易错1</span></div>以为公有云「什么都管」——用户仍需负责自身数据、账号安全与部分配置，云只提供共享基础设施。</div>
+<div class="item"><div class="t"><span class="tag p">易错2</span></div>把 VPS 等同于云服务器——VPS 是单台物理机虚拟化出的部分，云服务器是资源池化、可弹性伸缩，健壮性更强。</div>
+<div class="item"><div class="t"><span class="tag p">易错3</span></div>以为负载均衡只是「多台服务器」——核心是「健康检查 + 自动隔离异常节点 + 流量分发」，否则单点仍在。</div>
+<div class="item"><div class="t"><span class="tag p">易错4</span></div>混淆云存储四层（设备/存储/管理/接口）——常把「管理层」和「接口层」职责搞反，接口层对外提供访问、管理层做调度与元数据。</div>
+<div class="item"><div class="t"><span class="tag p">易错5</span></div>把关系型与非关系型数据库对立——选型看一致性、事务、扩展性需求，很多系统二者配合使用。</div>
+</div>
+<div class="box tip"><b>教师提示：</b>建议把「易错点」单独投一屏，讲完知识点后立刻点破，比事后订正有效得多。</div>
+</div>
+</div>
+<div class="foot">第 12 章 · 公有云平台</div>
+</body>
+</html>

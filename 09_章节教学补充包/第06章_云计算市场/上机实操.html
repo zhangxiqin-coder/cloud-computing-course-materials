@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 章 · 云计算市场 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 6 章 · 云计算市场</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：云计算行业调研报告（浏览器 + 腾讯文档）</div>
+<div class="lg"><b>目标：</b>按教材要求，独立完成一份结构完整的云计算行业调研报告，练「查资料 → 分析 → 成文」。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">确定一个调研题目（如「国内主流云厂商对比」「某行业的用云现状」），写在文档开头。</li>
+<li class="step">打开浏览器，查 2–3 个可靠来源（云厂商官网、行业报告、权威媒体），摘录关键数据。</li>
+<li class="step">按「背景 → 现状与数据 → 厂商 / 产品对比 → 分析与结论 → 建议」列提纲（对应教材的写作要求）。</li>
+<li class="step">用腾讯文档成文：要求<b>内容全面、结构严谨、数据翔实</b>，定量数据与定性分析结合。</li>
+<li class="step">给出自己的结论与建议，并注明资料来源。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>有明确的调研题目与提纲</li>
+<li>至少有 2 个可靠来源并标注</li>
+<li>有数据、有自己的分析和结论</li>
+<li>篇幅不少于 500 字</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>报告必须有「自己的分析和结论」，不能只堆资料；找不到数据时可用厂商官网公开信息。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：主流云厂商「三层服务」对照表</div>
+<div class="lg"><b>目标：</b>用一个表格把「厂商 × IaaS/PaaS/SaaS」理清楚，把服务模型和真实产品对应起来。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">在文档里建一个 4 列的表：厂商 / IaaS / PaaS / SaaS。</li>
+<li class="step">填入阿里云、腾讯云、华为云、百度智能云（或 AWS / Azure）各层的代表产品。</li>
+<li class="step">每格至少写 1 个产品名，并用一句话说明它是干什么的。</li>
+<li class="step">组内互相检查：有没有把同一层的产品放错位置。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>表格里有 4 家以上厂商</li>
+<li>每层至少 1 个产品并说明用途</li>
+<li>能与同学说清 IaaS / PaaS / SaaS 的分层依据</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>常见错误：把「对象存储」当成 PaaS；记住分层看的是「提供了什么」而不是「叫什么名字」。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 6 章 · 云计算市场</div>
+</body>
+</html>

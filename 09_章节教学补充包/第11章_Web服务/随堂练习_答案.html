@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 11 章 · Web服务 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 11 章 · Web服务</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 11 章 思考与练习（教材 p.177）</b>，共 15 题，均为简答题。第 1–9 题答案依据教材第 2 版习题答案文档（66457）整理；第 10 题教材答案标「略」，本参考答案为依据本章 PPT 与正文整理；第 11–15 题教材答案文档未收录，为依据本章 PPT 与正文整理的参考答案。</p>
+<p class="src">配套《随堂练习.html》　｜　共 15 题</p>
+<h3>一、简答题</h3>
+<div class="q"><div class="qt">1. C/S模式的优点和缺点分别是什么?</div><div class="ans"><b>答案：优点是安全性高、速度快、处理信息能力强。缺点是安全性低、只适用于局域网、开发工作量大。</b></div><div class="exp">注意：教材答案在「缺点」中也写了「安全性低」，与「优点」中的「安全性高」看似矛盾——课堂可引导学生讨论：C/S 的「安全性高」指数据集中、权限可控；若客户端管理不善也可能成为短板，属表述角度不同。主线：优点(安全/快/处理强) ↔ 缺点(局限局域网/开发量大)。</div></div>
+<div class="q"><div class="qt">2. B/S 模式与C/S模式相比，优势是什么?</div><div class="ans"><b>答案：在电脑可上网的前提下，可以在任何操作系统上使用，并且不需要安装专门的软件、开发工作量小、跨平台性好。</b></div><div class="exp">主线：浏览器即可用 + 免装客户端 + 跨平台 + 开发量小。</div></div>
+<div class="q"><div class="qt">3. HTTPS 协议比HTTP更安全，体现在哪些地方?</div><div class="ans"><b>答案：HTTPS 协议会在客户端验证数字证书，在 SSL 加密隧道中协商对称加密算法密钥、hash 密钥，并且网页是以加密方式传输的。</b></div><div class="exp">三条：验证证书 → 协商加密密钥 → 内容加密传输。</div></div>
+<div class="q"><div class="qt">4. Web 服务质量一般包括哪些内容?</div><div class="ans"><b>答案：一般包括可用性、吞吐量、时延、时延变化和丢包。可用性是当用户需要时网络即能工作的时间百分比，是设备可靠性和网络存活性结合的结果；吞吐量是在一定时间段内对网上流量（或带宽）的度量；时延指一项服务从网络入口到出口的平均经过时间；时延变化是指同一业务流中不同分组所呈现的时延不同。</b></div><div class="exp">五指标：可用性、吞吐量、时延、时延变化、丢包，各用一句话解释。</div></div>
+<div class="q"><div class="qt">5. URL由哪些部分组成?</div><div class="ans"><b>答案：URL 由三部分组成：资源类型、存放资源的主机域名、资源文件名。也可认为由 4 部分组成：协议、主机、端口、路径。通用格式为 protocol://hostname[:port]/path/[;parameters][?query]#fragment。</b></div><div class="exp">两说并存：3 部分(资源类型/主机域名/文件名) 或 4 部分(协议/主机/端口/路径)，再补充完整格式串。</div></div>
+<div class="q"><div class="qt">6. 常说的三层架构指的是什么?</div><div class="ans"><b>答案：三层模型通常指的是 UI、BLL 和 DAL 三层模型。UI（界面层）与用户交互，接收输入并显示处理后的数据；BLL（业务逻辑层）是 UI 与 DAL 之间的桥梁，实现验证、计算、业务规则等逻辑；DAL（数据访问层）与数据库打交道，实现数据的增、删、改、查，把数据提交给业务层、把业务层处理的数据保存回数据库。</b></div><div class="exp">三层：UI(界面) / BLL(业务逻辑) / DAL(数据访问)，讲清各自职责与上下衔接。</div></div>
+<div class="q"><div class="qt">7. 简述主要的Web开发语言的优劣。</div><div class="ans"><b>答案：目前常用的 Web 开发语言有 Python、PHP、Java 等。Python 结构清晰、有大型标准库，可减少开发周期；PHP 可嵌入 HTML、可与 Web 框架结合、也能用命令行执行甚至做图形应用；Java 可在服务器端运行脚本，在页面发给浏览器前生成动态网页内容。三者各有适用场景，没有绝对优劣。</b></div><div class="exp">分语言谈：Python(标准库/清晰) / PHP(嵌入HTML/灵活) / Java(服务端动态)，结论看场景。</div></div>
+<div class="q"><div class="qt">8. HTML5 语言的优点是什么?</div><div class="ans"><b>答案：HTML5 可以跨平台使用、支持网页自适应设计、提供更好的用户体验、包含更多多媒体元素、很好地替代 Flash。其不足在于安全问题（如被利用 WebSocket 窃取信息）、不同平台性能有差异、浏览器兼容性仍是问题。</b></div><div class="exp">优点答出跨平台/自适应/多媒体/替代Flash；同时点出安全与兼容性短板。</div></div>
+<div class="q"><div class="qt">9. Web开发常用的数据库有哪些?</div><div class="ans"><b>答案：Web 常用的数据库有 MySQL、SQL Server 等。</b></div><div class="exp">答出关系型代表 MySQL、SQL Server 即可，可补充 PostgreSQL、Oracle。</div></div>
+<div class="q"><div class="qt">10. Web服务开发选用的服务器有哪些?</div><div class="ans"><b>答案：常见的 Web 服务开发选用服务器有：Apache HTTP Server（最主流的开源 Web 服务器）、Nginx（高性能、常作反向代理）、Microsoft IIS（Windows 平台）、Tomcat（主要运行 Java Servlet/JSP），以及云上的各类 Web 托管服务。选择时通常结合开发语言（PHP 多用 Apache/Nginx，Java 多用 Tomcat）与性能、运维需求。</b></div><div class="exp">教材答案标「略」，以下为依据本章 PPT 与正文整理：Apache/Nginx/IIS/Tomcat 四类，按语言与场景选。</div></div>
+<div class="q"><div class="qt">11. 什么是 Web？它在云计算中扮演什么角色？</div><div class="ans"><b>答案：Web（万维网）是基于超文本（Hypertext）的信息系统，由 Web 服务器、浏览器客户端和 HTTP 协议共同构成，使用户能通过浏览器访问互联网上的超文本、超媒体资源。在云计算中，Web 技术通常被用作云计算服务的「实现介质」和「管理接口」——用户通过浏览器（B/S 形态）使用云控制台、管理云资源，云计算的很多服务也都以 Web API / Web 页面的形式交付。</b></div><div class="exp">主线：Web=服务器+浏览器+HTTP → 云计算用 Web 做介质与管理接口（教材强调 Web 是云服务的实现介质和管理接口）。</div></div>
+<div class="q"><div class="qt">12. 什么是超文本和超媒体？</div><div class="ans"><b>答案：超文本是用超链接把分散的信息单元连接起来的文本，用户点击链接即可跳转到相关内容，打破了传统线性阅读。超媒体是超文本的扩展，除文字外还包含图像、音频、视频等多媒体信息，通过超链接组织成非线性网络。两者都是 Web 信息组织的基础。</b></div><div class="exp">超文本=带链接的文本；超媒体=带链接的多媒体，是 Web 信息组织基础。</div></div>
+<div class="q"><div class="qt">13. 静态网页和动态网页有什么区别？CGI、PHP、ASP、JSP、Servlet 各自起什么作用？</div><div class="ans"><b>答案：静态网页的内容是预先写好的 HTML 文件，服务器直接把文件发给浏览器，内容固定；动态网页的内容由服务器端的程序在用户请求时实时生成（如根据数据库查询结果拼出页面）。CGI 是最早让服务器动态生成页面的技术；PHP 可嵌入 HTML、与 Web 框架配合；ASP/ASP.NET 是微软的服务端技术；JSP/Servlet 是 Java 的服务端技术，在页面发给浏览器前由服务器生成动态内容；脚本程序则用于增强页面交互、生成动态内容。</b></div><div class="exp">静态=文件即内容；动态=程序运行时生成；CGI/PHP/ASP/JSP 都是服务端动态技术，各自语言生态不同。</div></div>
+<div class="q"><div class="qt">14. 什么是 Web 服务？它与一般的 Web 页面有何不同？</div><div class="ans"><b>答案：Web 服务（Web Service）是一种跨平台、跨语言的软件系统，通过标准的 Web 协议（如 HTTP）和格式（如 XML/JSON）在网络上暴露可调用的功能接口，供不同系统之间互操作，而不只是给人看的页面。它与一般 Web 页面的区别在于：Web 页面主要面向「人」浏览，Web 服务主要面向「程序」调用，是云计算中系统集成的常用手段。</b></div><div class="exp">Web 服务=给程序调用的接口；Web 页面=给人看的界面，二者面向对象不同。</div></div>
+<div class="q"><div class="qt">15. 什么是 SLA？SLA 与 QoS 有什么关系？</div><div class="ans"><b>答案：SLA（服务水平协议）是服务商与用户之间就服务的性能、可靠性等达成的「双方认可的协定/合同」，约定了可用性、响应时间等承诺指标。QoS（服务质量）则是用来实现和度量这些承诺的「技术机制/安全手段」，如解决网络延迟、阻塞等问题。二者关系：SLA 是「承诺（协议）」，QoS 是「实现承诺的技术保障」，SLA 靠 QoS 来落地。</b></div><div class="exp">SLA=协议/承诺，QoS=实现承诺的技术机制，二者是「约定」与「落地手段」的关系。</div></div>
+</div>
+</div>
+<div class="foot">第 11 章 · Web服务</div>
+</body>
+</html>

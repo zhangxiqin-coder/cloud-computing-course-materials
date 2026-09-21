@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 10 章 · Linux基础 重难点与易错点</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 10 章 · Linux基础</div><div class="ti">重难点与易错点</div></div>
+<div class="bd">
+<p class="src">对应 教材 PPT：10.Linux基础.pptx（77 页）｜ 课本 10.10 思考与练习 p.157–158</p>
+<h3>一、本章重点（必须掌握）</h3>
+<div class="key">
+<div class="item"><div class="t"><span class="tag k">重点1</span></div>UNIX 与 Linux：UNIX 最早由 Ken Thompson、Dennis Ritchie 等于 1969 年在 AT&amp;T 贝尔实验室开发，只有符合单一 UNIX 规范的系统才能叫 UNIX，否则称为类 UNIX；<b>Linux 是一套免费使用、自由传播的类 UNIX 操作系统</b>，基于 POSIX 和 UNIX，是多用户、多任务、支持多线程和多 CPU 的操作系统。</div>
+<div class="item"><div class="t"><span class="tag k">重点2</span></div>Linux 的两条基本思想：<b>一切都是文件</b>；每个软件都有确定的用途。它的特性还包括完全免费、完全兼容 POSIX 1.0 标准、多用户多任务、字符界面与图形界面（X-Window）并存、支持多种硬件平台。</div>
+<div class="item"><div class="t"><span class="tag k">重点3</span></div>Linux 文件类型：纯文本文件（ASCII）、二进制文件、数据格式文件、目录、连接文件、设备与设备文件（块设备 / 字符设备）、套接字（sockets）、管道（FIFO）。</div>
+<div class="item"><div class="t"><span class="tag k">重点4</span></div>Linux 文件结构是树状目录：/ 根目录、/bin 常用命令、/sbin 系统管理命令、/etc 配置文件、/dev 设备文件、/proc 内存中的系统信息、/var 变动数据与日志、/usr 占用空间最大、/home 普通用户主目录、/lib 共享库、/opt、/mnt、/media、/srv。</div>
+<div class="item"><div class="t"><span class="tag k">重点5</span></div>FTP 服务与 DNS：FTP 采用客户 / 服务器结构，命令端口 21、数据端口 20，分主动 PORT 与被动 PASV 两种模式，还有不要求注册的匿名 FTP、基于 UDP 的 TFTP；DNS 是 Internet 上把域名和 IP 地址相互映射的分布式数据库，主机名到 IP 有静态映射与动态映射两种方式，解析时通常先查静态、再走动态。</div>
+</div>
+<h3>二、本章难点（讲慢一点、配比喻）</h3>
+<div class="hard">
+<div class="item"><div class="t"><span class="tag h">难点1</span></div>文件目录职责最容易混：配置文件在 /etc、内存中的系统信息在 /proc、日志与变动数据在 /var、共享库在 /lib、额外工具在 /usr、用户主目录在 /home，需要成组对比讲。</div>
+<div class="item"><div class="t"><span class="tag h">难点2</span></div>FTP 主动模式（PORT）与被动模式（PASV）要讲清「两条连接」：21 端口走命令，数据走 20 端口（主动）或服务器高端口（被动），这也解释了为什么防火墙后面的客户端常常连不上。</div>
+<div class="item"><div class="t"><span class="tag h">难点3</span></div>静态映射与动态映射的区别：静态是每台设备各自维护、只供本机使用的映射表；动态是专门的 DNS 服务器统一维护、全网查询。为什么「先静态、再动态」也要点明。</div>
+</div>
+<h3>三、易错点（学生常错，务必提前点破）</h3>
+<div class="trap">
+<div class="item"><div class="t"><span class="tag p">易错1</span></div>把 Linux 当成免费的 Windows——Linux 的核心是「一切都是文件」，配置靠文本文件，而不是注册表。</div>
+<div class="item"><div class="t"><span class="tag p">易错2</span></div>以为 /proc 下是真实文件——它是内存中由系统产生的虚拟信息，重启即变（对应课本第 6 题）。</div>
+<div class="item"><div class="t"><span class="tag p">易错3</span></div>混淆 ls 的参数：-a 显示全部文件（含 . 开头的隐藏文件），-l 是长格式（权限、属主、大小、时间），-d 只显示目录本身。</div>
+<div class="item"><div class="t"><span class="tag p">易错4</span></div>以为 FTP 只用一个端口——命令走 21，数据走 20 或高端口；TFTP 更是基于 UDP。</div>
+<div class="item"><div class="t"><span class="tag p">易错5</span></div>把「改 hosts 文件」当成解决一切解析问题——hosts 只是静态映射，上网主要靠 DNS 动态映射。</div>
+</div>
+<div class="box tip"><b>教师提示：</b>建议把「易错点」单独投一屏，讲完知识点后立刻点破，比事后订正有效得多。</div>
+</div>
+</div>
+<div class="foot">第 10 章 · Linux基础</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 11 章 · Web服务 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 11 章 · Web服务</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：用 XAMPP 在 Windows 本机搭一个网站（对应教材实战 PHP+MySQL+Apache）</div>
+<div class="lg"><b>目标：</b>在本机 Windows 上启动 Web 服务器与数据库，亲手访问一个动态页面，理解 Apache + PHP + MySQL 这套经典 Web 技术栈。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 XAMPP 控制面板，依次点击 Apache 与 MySQL 的 Start，等状态变绿。</li>
+<li class="step">浏览器访问 <code>http://localhost</code>（或 <code>http://127.0.0.1</code>），看到 XAMPP 欢迎页即成功。</li>
+<li class="step">进入 XAMPP 安装目录的 <code>htdocs</code> 文件夹，新建 <code>hello.php</code>，写入一段 PHP 代码输出「Hello Cloud」。</li>
+<li class="step">浏览器访问 <code>http://localhost/hello.php</code>，看到输出；再访问 <code>http://localhost/phpmyadmin</code> 看 MySQL 管理界面。</li>
+<li class="step">讨论：你在浏览器地址栏敲的 <code>localhost</code> 是怎么被 Apache 接住并返回页面的？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>Apache 与 MySQL 都启动过</li>
+<li>访问过 localhost 欢迎页</li>
+<li>自己写过并运行过一个 .php 文件</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>XAMPP 默认端口 80，若被占用先关掉占用程序；实验结束点 Stop 释放端口。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：浏览器开发者工具拆解一次 HTTP 请求与 URL 组成</div>
+<div class="lg"><b>目标：</b>用浏览器自带的开发者工具，亲眼看到一次网页请求背后发生了什么，并拆开一个完整 URL。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">按 F12 打开开发者工具，切到 Network（网络）面板。</li>
+<li class="step">在地址栏访问一个网站（如学校官网），观察 Network 里出现的请求：请求行、状态码、响应头。</li>
+<li class="step">点开其中一条请求，看 Request URL，把它按「协议 / 主机 / 端口 / 路径 / 查询」拆开写在纸上。</li>
+<li class="step">把该网站地址改成 <code>https://</code> 再访问一次，对比 HTTP 与 HTTPS 在 Network 里的差异（是否有证书、是否加密）。</li>
+<li class="step">截图保存一次完整请求的头部信息。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>用过 F12 的 Network 面板</li>
+<li>能拆出一个 URL 的各组成部分</li>
+<li>能说出 HTTP 与 HTTPS 在请求上的区别</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只看请求与响应头，不下载、不安装任何插件。</div>
+</div>
+<div class="lab">
+<div class="lt">实验三：三层架构与 SLA/QoS 对照小练习</div>
+<div class="lg"><b>目标：</b>把抽象的三层架构和容易混的 SLA/QoS 用一张对照表固定下来。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">在纸上画三层架构图，标注 UI / BLL / DAL 三层，并在每层旁写一句职责。</li>
+<li class="step">对照教材，举一个「用户登录」例子，分别说出三层各自做了什么。</li>
+<li class="step">再画一张 SLA 与 QoS 对照表：左列写 SLA（协议/承诺），右列写 QoS（技术机制），各写 3 条。</li>
+<li class="step">两人一组互相口述：为什么说「SLA 是承诺、QoS 是实现承诺的手段」？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>画出三层架构并标注职责</li>
+<li>画出 SLA/QoS 对照表</li>
+<li>能口述二者关系</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>本实验为纸上/讨论练习，不操作电脑。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 11 章 · Web服务</div>
+</body>
+</html>

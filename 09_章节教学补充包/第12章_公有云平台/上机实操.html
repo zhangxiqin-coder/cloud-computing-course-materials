@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 12 章 · 公有云平台 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 12 章 · 公有云平台</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：三大公有云官网产品对比（阿里云 ECS / 腾讯云 CVM / 华为云 ECS）</div>
+<div class="lg"><b>目标：</b>在浏览器里逛主流公有云官网，认识云服务器产品，理解「买硬件」变成「租资源」。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开阿里云 <a href="https://www.aliyun.com/product/ecs">ECS 产品页</a>、腾讯云 CVM、华为云 ECS 三个官网产品页。</li>
+<li class="step">各看一遍「规格 / 价格 / 特点」，填一张对比表：厂商 / 产品名 / 计费方式 / 典型规格 / 一句话特点。</li>
+<li class="step">重点找「弹性伸缩」「负载均衡」这两个功能在哪一页、怎么描述。</li>
+<li class="step">讨论：三家都强调「弹性」，这和教材说的云服务器特点是否一致？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>看过至少 3 家云服务器产品页</li>
+<li>对比表填完 3 行</li>
+<li>能指出弹性伸缩/负载均衡在哪</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只看官网介绍，不注册、不下单、不填真实信息。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：浏览器里走一遍云服务器创建流程（不下单，可用免费试用额度）</div>
+<div class="lg"><b>目标：</b>理解云服务器的「创建—网络—登录方式」配置，体会控制台即 B/S 形态的管理接口。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">进入任意一家云控制台的「创建实例」流程页（不实际下单）。</li>
+<li class="step">依次看：选地域/可用区、选规格、选镜像（系统盘）、配置网络与安全组、设置登录方式（密钥/密码）。</li>
+<li class="step">找到「弹性伸缩」和「负载均衡」的配置入口截图保存。</li>
+<li class="step">若学校有免费试用额度，可在教师指导下实开一台最小规格实例，ssh 登录看一眼后立刻释放。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>走过创建实例的配置步骤</li>
+<li>截图保存弹性伸缩/负载均衡入口</li>
+<li>能说出登录方式有哪几种</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>严禁实际下单付费；如有试用额度，演示结束立即释放实例。</div>
+</div>
+<div class="lab">
+<div class="lt">实验三：对象存储 vs 块存储 对照（云控制台产品介绍）</div>
+<div class="lg"><b>目标：</b>把最易混的两种云存储形式用对照表钉死。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">在云官网看对象存储（如 OSS/S3）与块存储（如 EBS/EVS）的产品介绍页。</li>
+<li class="step">填对照表：存储形式 / 访问方式 / 能否格式化挂载 / 典型场景（各 3 条）。</li>
+<li class="step">讨论：为什么「系统盘」要用块存储，而「图片/视频资源」更适合对象存储？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>看过两种存储的产品介绍</li>
+<li>对照表填完</li>
+<li>能说出二者适用场景差异</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只看介绍，不创建存储桶、不产生费用。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 12 章 · 公有云平台</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 13 章 · 私有云平台 上机实操指导</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 13 章 · 私有云平台</div><div class="ti">上机实操指导</div></div>
+<div class="bd">
+<p class="src">机房环境：可上网、不可安装软件，全部实操基于网页 / 在线工具 / 系统自带命令</p>
+<div class="box warn"><b>机房纪律：</b>① 一律不安装任何软件，网站要求下载客户端时点「网页版」；② 涉及云厂商页面<b>只看不买</b>，绝不点付款；③ 下课前必须退出登录，浏览器问「是否保存密码」一律选「从不」。</div>
+<div class="lab">
+<div class="lt">实验一：OpenStack 组件架构图标注（浏览器看官网架构图）</div>
+<div class="lg"><b>目标：</b>把最易混的九大组件用一张标注图固定下来，分清「计算/网络/存储/镜像/认证/界面」。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">打开 OpenStack 官网 <a href="https://www.openstack.org/software/">架构介绍页</a>，找到组件架构图。</li>
+<li class="step">在纸上重画简化架构图，标注 Nova/Neutron/Swift/Cinder/Glance/Keystone/Horizon 六个核心组件，每个旁边写一句职责。</li>
+<li class="step">用不同颜色区分：计算类、存储类、网络类、管理类。</li>
+<li class="step">互相口述：用户通过什么入口管理云？认证由谁做？虚拟机由谁管？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>重画并标注架构图</li>
+<li>六大组件职责写全</li>
+<li>能口述入口/认证/计算归属</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只看官网图，不下载安装 OpenStack。</div>
+</div>
+<div class="lab">
+<div class="lt">实验二：私有云 vs 公有云 对比调研（搜索引擎查企业案例）</div>
+<div class="lg"><b>目标：</b>通过真实案例理解两类云的取舍，巩固本章核心区别。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">用搜索引擎查「企业私有云 案例」或「金融 私有云」，找 2–3 个真实落地案例。</li>
+<li class="step">填对比表：云类型 / 选用企业 / 选用原因 / 典型收益（各 3 行）。</li>
+<li class="step">讨论：为什么银行/政务多用私有云，而初创公司多用公有云？</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>查到 2–3 个真实案例</li>
+<li>对比表填完</li>
+<li>能说出两类云选型逻辑</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>只用搜索引擎公开信息，不点击不明下载。</div>
+</div>
+<div class="lab">
+<div class="lt">实验三：撰写一份「开源云平台调研报告」（Word / 腾讯文档）</div>
+<div class="lg"><b>目标：</b>综合运用本章知识，产出一份可提交的调研报告，对应教材实战项目。</div>
+<b>操作步骤：</b>
+<ol>
+<li class="step">新建一份文档，标题「开源云平台调研报告」。</li>
+<li class="step">第一部分：OpenStack 简介（定位、九大组件、发展背景）。</li>
+<li class="step">第二部分：对比 OpenStack 与 Eucalyptus / CloudStack（组件、特点、适用场景）。</li>
+<li class="step">第三部分：结论——什么企业适合用开源私有云，注意事项是什么。</li>
+<li class="step">排版后保存，作为本章实战作业提交。</li>
+</ol>
+<b>验收清单：</b>
+<ul class="chk">
+<li>报告含三部分结构</li>
+<li>对比了至少 2 个开源平台</li>
+<li>给出明确选型结论</li>
+</ul>
+<div class="box warn"><b>打不开 / 完不成：</b>报告用学校允许的文档工具完成，注意引用来源。</div>
+</div>
+</div>
+</div>
+<div class="foot">第 13 章 · 私有云平台</div>
+</body>
+</html>

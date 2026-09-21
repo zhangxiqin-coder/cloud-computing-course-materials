@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 章 · 云计算市场 重难点与易错点</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 6 章 · 云计算市场</div><div class="ti">重难点与易错点</div></div>
+<div class="bd">
+<p class="src">对应 教材 PPT：6.云计算市场.pptx｜课本 6.7 思考与练习 p.84–85</p>
+<h3>一、本章重点（必须掌握）</h3>
+<div class="key">
+<div class="item"><div class="t"><span class="tag k">重点1</span></div>云计算带来的市场变革：IT 从「一次性买断硬件 / 软件许可」转向「按需租用服务」，企业由重资产投入变成按量付费的运营支出，这是云计算商业模式的根本变化。</div>
+<div class="item"><div class="t"><span class="tag k">重点2</span></div>3 种服务模型对应市场分层：<b>IaaS</b> 提供基础设施（EC2、ECS），<b>PaaS</b> 提供开发运行平台（Google App Engine、Salesforce Force.com），<b>SaaS</b> 直接提供软件（钉钉、Office 365）；大型厂商往往三层通吃。</div>
+<div class="item"><div class="t"><span class="tag k">重点3</span></div>国际主流厂商：<b>AWS</b>（2006 年推出，最早、份额第一）、Microsoft Azure（2008 年推出，原名 Windows Azure）、Google Cloud；国内代表：<b>阿里云</b>（2009 年成立，国内第一）、腾讯云、华为云、百度智能云。</div>
+<div class="item"><div class="t"><span class="tag k">重点4</span></div>百度云按 IaaS / PaaS / SaaS 三层展开：天算（IaaS）、天像·天工·天智（PaaS，含大数据与 AI）、天穹（SaaS），体现「云 + 大数据 + AI」三位一体战略。</div>
+<div class="item"><div class="t"><span class="tag k">重点5</span></div>云计算行业调研报告的基本要求：编写者要有独立策划，做到内容全面、结构严谨、数据翔实，定量与定性分析结合，成果应具有行业决策参考价值。</div>
+</div>
+<h3>二、本章难点（讲慢一点、配比喻）</h3>
+<div class="hard">
+<div class="item"><div class="t"><span class="tag h">难点1</span></div>「市场变革」的实质：不是技术变了，而是<b>交付与收费方式变了</b>——从买断到订阅、从重资产到按量付费。要讲清「企业为什么愿意把机房交给云」。</div>
+<div class="item"><div class="t"><span class="tag h">难点2</span></div>厂商差异的辨析：阿里云（电商基因、IaaS 强）、腾讯云（社交 / 游戏 / 音视频）、华为云（政企、软硬一体）、百度智能云（AI / 大数据）——不是谁强谁弱，而是<b>各自主场不同</b>。</div>
+</div>
+<h3>三、易错点（学生常错，务必提前点破）</h3>
+<div class="trap">
+<div class="item"><div class="t"><span class="tag p">易错1</span></div>把「云厂商」和「云服务模型」混为一谈——同一家厂商可以同时提供 IaaS / PaaS / SaaS（如阿里云既有 ECS 又有钉钉）。</div>
+<div class="item"><div class="t"><span class="tag p">易错2</span></div>以为「云计算就是把电脑搬到网上」——它的核心是<b>资源池化 + 按需计费</b>，不只是换了个位置。</div>
+<div class="item"><div class="t"><span class="tag p">易错3</span></div>把 Amazon S3（对象存储）误当成 PaaS——S3 属于基础设施层的存储服务，不是平台服务。</div>
+<div class="item"><div class="t"><span class="tag p">易错4</span></div>把 Altera、Xilinx 这类芯片 / FPGA 厂商误认为云服务商——它们不是 PaaS 提供商。</div>
+<div class="item"><div class="t"><span class="tag p">易错5</span></div>写调研报告只堆资料、没有自己的分析和结论——教材明确要求「独立策划、有决策参考价值」，不能只做搬运。</div>
+</div>
+<div class="box tip"><b>教师提示：</b>建议把「易错点」单独投一屏，讲完知识点后立刻点破，比事后订正有效得多。</div>
+</div>
+</div>
+<div class="foot">第 6 章 · 云计算市场</div>
+</body>
+</html>

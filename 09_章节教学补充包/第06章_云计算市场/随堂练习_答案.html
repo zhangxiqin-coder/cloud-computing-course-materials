@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 章 · 云计算市场 随堂练习答案与解析</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
+         line-height:1.75; padding:22px; font-size:14px; }
+  .wrap { max-width:900px; margin:0 auto; background:#fff; border-radius:10px;
+          box-shadow:0 2px 12px rgba(0,0,0,.08); overflow:hidden; }
+  .hd { background:#1565C0; color:#fff; padding:16px 34px; }
+  .hd .no { font-size:12.5px; opacity:.88; letter-spacing:1px; }
+  .hd .ti { font-size:22px; font-weight:bold; }
+  .bd { padding:26px 34px 32px; }
+  h3 { font-size:16px; color:#1565C0; margin:22px 0 10px; padding-left:10px;
+       border-left:4px solid #1565C0; }
+  h3:first-child { margin-top:0; }
+  .item { border:1px solid #e3e8ef; border-radius:6px; padding:11px 15px; margin:9px 0;
+          background:#fbfcfe; }
+  .item .t { font-weight:bold; margin-bottom:3px; }
+  .key .item { background:#EAF3FB; border-color:#BBD9F2; }
+  .key .item .t { color:#0D47A1; }
+  .hard .item { background:#F3EDFB; border-color:#D6C7EE; }
+  .hard .item .t { color:#5E35B1; }
+  .trap .item { background:#FDECEA; border-color:#F3C4BE; }
+  .trap .item .t { color:#B3261E; }
+  .tag { display:inline-block; font-size:11.5px; padding:1px 8px; border-radius:10px;
+         margin-right:6px; vertical-align:2px; color:#fff; }
+  .tag.k { background:#1565C0; }
+  .tag.h { background:#5E35B1; }
+  .tag.p { background:#B3261E; }
+  ol,ul { margin:6px 0 6px 22px; }
+  li { margin:6px 0; }
+  .q { border:1px solid #e3e8ef; border-radius:6px; padding:12px 15px; margin:10px 0; }
+  .q .qt { font-weight:500; margin-bottom:5px; }
+  .q .op { color:#444; font-size:13.5px; margin-left:6px; }
+  .ans { background:#FFF8E1; border:1px solid #FFE082; border-radius:5px;
+         padding:6px 12px; margin-top:7px; display:inline-block; font-size:13.5px; }
+  .ans b { color:#E65100; }
+  .exp { color:#4a4a4a; font-size:13px; margin-top:4px; }
+  .exp::before { content:"\89e3\6790\ff1a"; font-weight:bold; color:#2E7D32; }
+  .lab { border:1px solid #C8E6C9; border-radius:8px; padding:16px 20px; margin:14px 0;
+         background:#FBFFFB; }
+  .lab .lt { font-size:15.5px; font-weight:bold; color:#2E7D32; margin-bottom:6px; }
+  .lab .lg { background:#E8F5E9; border-radius:5px; padding:7px 12px; font-size:13.5px;
+             margin-bottom:9px; }
+  .step { margin:4px 0; }
+  code { background:#f2f4f7; padding:1px 6px; border-radius:3px;
+         font-family:Consolas,monospace; color:#C62828; }
+  a { color:#1565C0; word-break:break-all; }
+  .chk li { list-style:none; margin-left:-16px; }
+  .chk li::before { content:"\25a1 "; font-size:16px; }
+  .box { border-radius:6px; padding:10px 14px; font-size:13.5px; margin:10px 0; }
+  .box.warn { background:#FFF3E0; border-left:4px solid #EF6C00; }
+  .box.tip { background:#E8F5E9; border-left:4px solid #2E7D32; }
+  .foot { text-align:center; color:#999; font-size:12px; padding:14px 0 4px; }
+  .src { color:#777; font-size:12.5px; margin-bottom:8px; }
+  @media print {
+    body { background:#fff; padding:0; font-size:11pt; }
+    .wrap { box-shadow:none; border-radius:0; }
+    a { text-decoration:none; color:#000; }
+    .lab, .q, .item { page-break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hd"><div class="no">第 6 章 · 云计算市场</div><div class="ti">随堂练习答案与解析</div></div>
+<div class="bd">
+<p class="src"><b>题目来源：课本第 6 章 6.7 思考与练习（教材 p.84–85）</b>，共 15 题：单项选择题 3 题 + 简答题 12 题。第 1–4 题为教材参考答案（第 1–3 题为教材标注的正确选项）；第 5–15 题教材答案标注「略」或未收录，为依据本章 PPT 与正文整理的参考答案。</p>
+<p class="src">配套《随堂练习.html》　｜　共 15 题</p>
+<h3>一、单项选择题</h3>
+<div class="q"><div class="qt">1. （　　）在许多情况下，能够达到 99.999% 的可用性。</div><div class="ans"><b>答案：A</b></div><div class="exp">教材参考答案为 A。虚拟化把物理资源抽象成资源池，配合在线迁移、快照与故障自动重启，可在许多情况下达到 99.999%（五个九）的高可用性。B 分布式 / C 并行计算 / D 集群 强调的都是「多机协同」，注意与「高可用」的区别。</div></div>
+<div class="q"><div class="qt">2. 下列选项不属于 AWS 提供的服务的是（　　）。</div><div class="ans"><b>答案：D</b></div><div class="exp">EC2（弹性计算）、S3（对象存储）、SQS（消息队列）都是 AWS 的核心服务；.NET 是微软的技术，不属于 AWS。</div></div>
+<div class="q"><div class="qt">3. PaaS 把开发环境或者运行平台也作为一种服务提供给用户，用户可以把自已的应用放在服务提供商的基础设施中运行，（　　）等公司提供这种形式的服务。</div><div class="ans"><b>答案：D</b></div><div class="exp">Salesforce（Force.com 平台）是典型的 PaaS 提供商，Google App Engine、Microsoft Azure 也提供 PaaS。Altera、Xilinx 是芯片 / FPGA 厂商，不是云服务商。</div></div>
+<h3>二、简答题</h3>
+<div class="q"><div class="qt">1. 对比阿里云与 AWS，简述两者的优缺点。</div><div class="ans"><b>答案：对于在中国使用云服务而言，阿里云有本土优势。亚马逊作为国外企业，进入中国后有一定的水土不服，但作为行业巨头，服务质量值得期待。价格方面，亚马逊 AWS 宣布入华后，阿里云的全线产品下降 30%；云计算相比传统 IT 最大的优势在于成本，以最基础的云主机对比，阿里云在价格上具有绝对优势。稳定性方面，阿里云服务于几十万电商、企业 ERP、中小金融、网游厂商和移动 App 用户，每年「双十一」都要经受惊人的峰值流量考验，目前没有太大故障；而亚马逊 AWS 曾在美国市场遭受至少三次数据中心故障，一旦发生波及范围巨大。</b></div><div class="exp">教材参考答案。抓「本土化 / 价格成本 / 稳定性与故障记录」三条对比线，最后给出自己的判断。</div></div>
+<div class="q"><div class="qt">2. 简述微软 2008 年推出的云操作系统与其最近推出的云操作系统的区别。</div><div class="ans"><b>答案：微软 2008 年 10 月推出的云计算操作系统是 Windows Azure，当时定位为「Windows 的云端延伸」，主要提供 PaaS 能力（.NET 运行环境、云端存储、SQL Azure 数据库），且只面向 Windows / .NET 生态。此后它更名为 Microsoft Azure，定位转向「云优先、开放」，从单一 PaaS 扩展为 IaaS + PaaS + SaaS 全覆盖的综合公有云（虚拟机、存储、网络、容器、AI 服务等），并全面支持 Linux 与开源技术。区别的核心是：从「只做 Windows 上的 PaaS」变成「开放的全栈云平台」。</b></div><div class="exp">2008 年那款叫 Windows Azure，今天叫 Microsoft Azure。要点：定位从「PaaS + Windows 专属」走向「IaaS/PaaS/SaaS 全栈 + 开放」。</div></div>
+<div class="q"><div class="qt">3. 选择 1~2 个当前主流的云平台，简述这些云平台提供的服务内容。</div><div class="ans"><b>答案：以阿里云和 AWS 为例。阿里云：IaaS 层提供 ECS 云服务器、云盘、VPC 网络、SLB 负载均衡；PaaS 层提供 RDS 云数据库、OSS 对象存储、容器服务、大数据与 AI 平台；SaaS 层如钉钉。AWS：计算（EC2）、对象存储（S3）、数据库（RDS）、消息队列（SQS）、无服务器（Lambda）、内容分发（CloudFront）等。归纳要点：云平台的服务都可以按「IaaS 提供基础设施、PaaS 提供开发运行平台、SaaS 直接提供软件」三层来理解。</b></div><div class="exp">不要罗列一堆产品，先给「IaaS/PaaS/SaaS 三层」框架，再各举 1–2 个产品，层次清楚即可。</div></div>
+<div class="q"><div class="qt">4. 针对一个云计算的安全隐患，简述消除这个安全隐患的方法。</div><div class="ans"><b>答案：以一个常见隐患「数据在传输和存储过程中被窃听或泄露」为例。①传输安全：全站启用 HTTPS/TLS，数据加密后再传输，防止中途被窃听、篡改。②存储安全：敏感数据加密存储，密钥交给 KMS / HSM 统一管理，做到「密文存储、密钥不出硬件」。③访问控制：用 IAM 按最小权限原则分配权限，开启多因子认证（MFA），只有授权的人才能访问。④审计与备份：开启操作日志便于追溯，重要数据做多副本 / 异地备份，遭到破坏时可快速恢复。⑤管理层面：定期做安全评估与漏洞修补，规范人员操作与权限回收。</b></div><div class="exp">答题模板「传输加密 → 存储加密 → 访问控制 → 审计备份 → 管理规范」，五步一条龙，任何隐患都能套。</div></div>
+<div class="q"><div class="qt">5. 简述国内外云计算的发展状况。</div><div class="ans"><b>答案：国外：美国起步最早，2006 年 Amazon 推出 AWS 后云计算进入商业化，随后 Microsoft Azure、Google Cloud 相继推出，美国拥有全球最大的云计算服务企业和市场（约占全球 60%），欧洲约占 24.7%，日本约占 10%。国内：2009 年阿里云成立，随后腾讯云、华为云、百度智能云等相继进入；政策层面云计算被列入「十二五」发展规划，无锡、北京、上海、杭州、深圳成为首批云计算试点城市；近年来国内市场规模快速增长，政务云、行业云与 AI 算力需求推动云计算在各行业普及。</b></div><div class="exp">要点：美国起步早、份额最大；国内起步稍晚但增长快、有政策推动与试点城市；厂商上国外看 AWS / Azure / Google，国内看阿里 / 腾讯 / 华为 / 百度。</div></div>
+<div class="q"><div class="qt">6. 国内云计算方向的企业提供的服务都有哪些差异？</div><div class="ans"><b>答案：各家服务各有侧重：阿里云以电商和企业服务起家，IaaS 与云原生、大数据能力强，产品线最全；腾讯云在社交、游戏、音视频、直播等场景有优势，与微信 / QQ 生态结合紧密；华为云依托自研芯片与硬件能力，在政企、运营商、制造等行业的混合云和专用云上占有优势；百度智能云以 AI、大数据和搜索技术见长，在智能云、自动驾驶等方向突出。总体差异在于各自的技术积累、主攻行业和生态不同。</b></div><div class="exp">答题落到「基因不同 → 主攻领域不同」：阿里（电商 / 企业）、腾讯（社交 / 游戏 / 音视频）、华为（政企 / 软硬一体）、百度（AI / 大数据）。</div></div>
+<div class="q"><div class="qt">7. 目前用得比较多的云计算产品有哪些？</div><div class="ans"><b>答案：常用产品大致分几类：①计算类（阿里云 ECS、AWS EC2、云容器服务）；②存储类（对象存储 OSS / S3、云盘、云备份）；③数据库类（云数据库 RDS、NoSQL、数据仓库）；④网络与 CDN（负载均衡 SLB、内容分发 CDN、VPC）；⑤平台与中间件（消息队列、大数据平台、AI 平台）；⑥SaaS 类软件（钉钉、企业微信、Office 365 等）。普通用户最常接触的是网盘、在线文档、在线视频这类 SaaS。</b></div><div class="exp">按「计算 / 存储 / 数据库 / 网络 / 平台 / SaaS」分类各举例子，比零散列举更得分。</div></div>
+<div class="q"><div class="qt">8. 在云计算市场中，各大云计算服务提供商如何制定竞争策略？</div><div class="ans"><b>答案：主要策略有：①价格策略——降价促销、按量付费与新用户优惠，用规模摊薄成本后打价格战；②技术差异化——自研芯片（如阿里倚天、华为鲲鹏）、自研操作系统和数据库，用性能与成本拉开差距；③生态与开发者策略——开源、开发者社区、认证培训、云市场，把开发者留住；④行业深耕——针对政务、金融、医疗、制造等行业提供一站式解决方案；⑤服务与合规——用 SLA 承诺、安全合规资质、数据本地化打消客户顾虑；⑥区域与本土化——在各地建数据中心、贴近客户、遵守当地法规。</b></div><div class="exp">四条主线「价格 / 技术 / 生态 / 行业」，再加「服务与合规、本土化」两点即可。</div></div>
+<div class="q"><div class="qt">9. 请调研百度智能云、阿里云、腾讯云、华为云等主要云计算服务提供商，并比较它们的差异。</div><div class="ans"><b>答案：①阿里云——2009 年成立，国内市场份额第一，优势是 IaaS 完整、电商与中台经验、云原生与 AI 能力，代表产品 ECS、RDS、OSS；②腾讯云——依托社交与游戏生态，音视频、直播、游戏云能力突出，代表产品 CVM、云直播、TDSQL；③华为云——软硬一体，政企与运营商市场强，自研鲲鹏芯片与 GaussDB 数据库，混合云与行业解决方案见长；④百度智能云——以 AI 和大数据为核心，在智能云、自动驾驶、知识图谱等方向突出。差异小结：阿里、腾讯偏互联网与企业通用，华为偏政企与硬件自主，百度偏 AI 能力输出；选型时应按行业需求与技术栈匹配，而不是简单比「谁更强」。</b></div><div class="exp">本题要求「调研 + 对比」，建议做成表格：厂商 / 成立时间 / 优势领域 / 代表产品，最后写一句自己的结论。</div></div>
+<div class="q"><div class="qt">10. 目前有哪些新兴技术或功能正在成为云计算产品的标配或趋势？</div><div class="ans"><b>答案：①容器与 Kubernetes，成为应用部署的事实标准；②Serverless（无服务器），进一步降低运维负担、按调用计费；③AI 与大模型即服务（MaaS），把大模型能力变成云上的标准服务；④边缘计算，把算力下沉到离用户更近的地方，配合 5G 降低时延；⑤混合云与多云管理，企业同时使用多家云、统一纳管；⑥云原生与低代码开发，提升交付效率；⑦安全即服务与零信任，安全能力云化；⑧绿色低碳数据中心，用液冷、可再生能源降低能耗。</b></div><div class="exp">抓大方向：容器化 / Serverless / AI 大模型 / 边缘计算 / 混合多云 / 云原生 / 安全 / 绿色，能说清 3–4 个即可。</div></div>
+<div class="q"><div class="qt">11. 云计算服务提供商需要满足哪些要求才能被认为其能够确保用户的数据安全？</div><div class="ans"><b>答案：①合规与资质——通过等保、ISO 27001、SOC 等安全认证，满足行业和地区的监管要求；②加密能力——传输加密（HTTPS/TLS）与存储加密，密钥由 KMS / HSM 统一管理；③访问控制——完善的 IAM、多因子认证和最小权限原则；④多租户隔离——在虚拟机、存储、网络层面做好租户隔离，防止互相越权访问；⑤审计与监控——完整的操作日志、异常告警和可追溯能力；⑥备份与容灾——多副本、异地备份、容灾演练，保证数据不丢、业务可恢复；⑦数据主权与本地化——数据存放地符合当地法律，明确用户对数据的控制权；⑧管理层面——规范内部人员操作，定期做安全评估与漏洞修补。</b></div><div class="exp">套「合规 / 加密 / 访问控制 / 隔离 / 审计 / 备份 / 数据主权 / 管理」八条，技术与管理两个维度都覆盖。</div></div>
+<div class="q"><div class="qt">12. 云计算在哪些特定行业中具有特别的应用价值？这些行业为什么需要云计算？</div><div class="ans"><b>答案：①电商——大促时流量暴涨，需要弹性伸缩支撑峰值（如「双十一」）；②金融——需要高可靠、高合规的算力与海量风控数据处理；③医疗——海量影像资料的存储与 AI 辅助诊断需要大算力与弹性存储；④教育——在线教学、资源共享和考试系统需要云平台的并发支撑；⑤制造——工业互联网、设备联网和数据分析推动企业上云；⑥政务——政务云实现数据共享、业务协同，提升办事效率；⑦游戏与音视频——高并发在线、弹性扩容；⑧人工智能——大模型训练与推理对算力需求极大，必须依托云。共性原因：这些行业普遍存在「数据量大、业务波动大、算力需求高、希望降低自建成本」的特点，而云计算恰好能提供弹性、按需和低成本的能力。</b></div><div class="exp">先举 3–4 个行业各自的原因，最后归纳共性——「数据量大 + 波动大 + 算力需求高 + 想省钱」，正好对应云计算的弹性与按需付费。</div></div>
+</div>
+</div>
+<div class="foot">第 6 章 · 云计算市场</div>
+</body>
+</html>
