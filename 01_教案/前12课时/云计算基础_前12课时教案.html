@@ -95,7 +95,7 @@
   <tr><td class="ch">6</td><td>第2章 下</td><td>服务模式衍生 + 天翼云案例 + 实战：Gitee代码仓库</td><td>理论+实战</td><td>P36-P48</td></tr>
   <tr><td class="ch">7</td><td>第3章 上</td><td>公有云与社区云</td><td>理论</td><td>P1-P20</td></tr>
   <tr><td class="ch">8</td><td>第3章 中</td><td>私有云与混合云</td><td>理论</td><td>P21-P34</td></tr>
-  <tr><td class="ch">9</td><td>第3章 下</td><td>四种部署方式对比 + 实战：部署CloudSim平台</td><td>理论+实战</td><td>P35-P45</td></tr>
+  <tr><td class="ch">9</td><td>第3章 下</td><td>四种部署方式对比 + 实战：云控制台部署模型实操</td><td>理论+实战</td><td>P35-P45</td></tr>
   <tr><td class="ch">10</td><td>第4章 上</td><td>云计算的本质与超大规模、高可靠、高性价比</td><td>理论</td><td>P1-P12</td></tr>
   <tr><td class="ch">11</td><td>第4章 中</td><td>按需计费、资源利用率、虚拟化透明化、高扩展性、异构支持</td><td>理论</td><td>P13-P24</td></tr>
   <tr><td class="ch">12</td><td>第4章 下</td><td>实战：安装VMware虚拟机 + 第一阶段小结与测验</td><td>实战+考核</td><td>P25-P28</td></tr>
@@ -617,7 +617,7 @@
   <div class="lesson-header l3">
     <div class="lesson-num">9</div>
     <div>
-      <div class="lesson-title">四种部署方式对比 + 实战：部署CloudSim平台</div>
+      <div class="lesson-title">四种部署方式对比 + 实战：云控制台部署模型实操</div>
       <div class="lesson-meta">第3章 云计算的部署（下） ｜ 对应PPT：P35-P45 ｜ 类型：理论+实战课</div>
     </div>
   </div>
@@ -627,25 +627,25 @@
       <div class="field-content">
         <ul>
           <li><strong>知识目标：</strong>综合对比四种部署方式的联系和区别；理解四种方式长期共存、互补的关系</li>
-          <li><strong>能力目标：</strong>完成CloudSim云计算平台的部署，体验云平台仿真</li>
+          <li><strong>能力目标：</strong>在公有云控制台开通一个免费资源并归类部署模型，理解责任共担</li>
           <li><strong>素养目标：</strong>建立"没有最好的云，只有最合适的云"的认知</li>
         </ul>
       </div>
     </div>
     <div class="field">
       <div class="field-label focus">教学重点</div>
-      <div class="field-content">四种部署方式对比表；CloudSim平台部署流程</div>
+      <div class="field-content">四种部署方式对比表；公有云控制台资源开通与部署模型归类</div>
     </div>
     <div class="field">
       <div class="field-label diff">教学难点</div>
-      <div class="field-content">CloudSim部署涉及JDK安装、环境变量配置、Eclipse导入项目，对零基础学生有门槛</div>
+      <div class="field-content">控制台操作与实名认证门槛；四种部署模型（公有/私有/混合/社区）容易混淆</div>
     </div>
     <div class="field">
       <div class="field-label content">内容要点</div>
       <div class="field-content">
         <ul>
           <li><strong>四种部署方式对比（PPT P35-P41）：</strong>①私有云安全性好（适合关键业务/大型企业）②公有云更符合规模经济效益（成本优势，安全问题逐步解决）③社区云降低运营和开发成本（成员共担）④混合云集成双重优势（安全+经济）⑤四种方式长期共存、优势互补</li>
-          <li><strong>实战项目（PPT P42-P45）：</strong>部署CloudSim云计算平台——安装JDK→配置环境变量→安装Eclipse→导入CloudSim项目</li>
+          <li><strong>实战项目（PPT P42-P45）：</strong>云控制台部署模型实操——登录控制台→开通OSS存储桶/试用ECS→识别部署模型→填责任共担表（教材原 CloudSim 实战的替代方案，因本班未学 Java 且机房走 Windows+浏览器）</li>
         </ul>
       </div>
     </div>
@@ -654,9 +654,9 @@
       <table class="process-table">
         <tr><th>环节</th><th style="width:60px">时长</th><th>教师活动</th><th>学生活动</th></tr>
         <tr><td class="time">对比</td><td>20min</td><td>带领学生一起完成四种部署方式对比表（部署方式/资源属性/安全性/成本/适用场景/典型代表）。强调第5点：四种方式不是谁取代谁，而是长期共存互补（PPT P35-P41）</td><td>抄对比表</td></tr>
-        <tr><td class="time">实战准备</td><td>10min</td><td>介绍CloudSim：一个云计算仿真工具，可以在电脑上模拟云平台的资源调度。讲解部署流程：JDK→环境变量→Eclipse→导入项目</td><td>听讲</td></tr>
-        <tr><td class="time">实战</td><td>50min</td><td><strong>实战项目：部署CloudSim云计算平台</strong><br>① 教师演示安装JDK（已预装可跳过），讲解JAVA_HOME配置（10min）<br>② 学生配置环境变量，验证java -version（10min）<br>③ 打开Eclipse（已预装），导入CloudSim项目（15min）<br>④ 运行示例程序，观察仿真输出结果（10min）<br>⑤ 教师讲解输出含义：云平台如何分配虚拟机资源（5min）<br>注：如环境预装有困难，可教师演示为主，学生观察</td><td>动手操作/观察</td></tr>
-        <tr><td class="time">小结</td><td>10min</td><td>第3章总结：四种部署方式+CloudSim实战。布置作业和阶段预告</td><td>记笔记</td></tr>
+        <tr><td class="time">实战准备</td><td>10min</td><td>介绍云控制台：一个自助管理云资源的网页后台（如阿里云/腾讯云）。讲解实战流程：登录→开通免费资源→识别部署模型→填责任共担表</td><td>听讲</td></tr>
+        <tr><td class="time">实战</td><td>50min</td><td><strong>实战项目：云控制台部署模型实操</strong><br>① 教师用演示账号登录控制台，学生观察产品分类与地域（10min）<br>② 开通一个免费资源——对象存储 OSS 存储桶（命名/地域/权限私有→上传文件→改公共读）（15min）<br>③ 识别它属于「公有云」部署；在控制台找责任共担项，讨论厂商 vs 用户（15min）<br>④ 用「班级相册/选课系统」场景对比 公有云/私有云/混合云，填对比表并归类练习（10min）<br>注：学生自行操作需提前实名；如实名/注册受限，改用图文走查版（教师演示+记录）</td><td>动手操作/观察</td></tr>
+        <tr><td class="time">小结</td><td>10min</td><td>第3章总结：四种部署方式+云控制台部署模型实战。布置作业和阶段预告</td><td>记笔记</td></tr>
       </table>
     </div>
     <div class="field">
@@ -668,7 +668,7 @@
         </ul>
       </div>
     </div>
-    <div class="note"><b>实战降维提示：</b>CloudSim部署对职高学生有一定难度（涉及Java环境）。建议教师提前在机房所有电脑上预装好JDK和Eclipse，课上学生只需配置环境变量+导入项目即可。如条件实在不足，可改为教师完整演示+录屏发给学生课后参考。核心目标是让学生"看到"云平台仿真效果，不必苛求每人独立完成全部步骤。</div>
+    <div class="note"><b>实战降维提示：</b>本章实战已去掉原教材的 CloudSim（需 Java 环境，本班未学），改为<b>云控制台真操</b>：在公有云控制台开通一个免费资源并归类部署模型。控制台需注册+实名（绑手机号），建议教师用统一演示账号操作、学生观察跟练；学有余力且已实名者自行注册「免费试用」。安全红线：只用免费额度/按量试用，不下单、不绑卡、不付费，下课退出登录。如实名/注册受限，直接用图文走查版（教师演示+学生记录）同样算完成。</div>
   </div>
 </div>
 

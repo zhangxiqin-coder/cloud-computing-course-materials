@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第 3 章 · 云计算的部署 CloudSim 仿真平台部署实战</title>
+<title>第 3 章 · 云计算的部署 — 云部署模型实战（控制台参观 + 资源开通 + 模型归类）</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#222;
@@ -59,6 +59,9 @@
   .src { color:#777; font-size:12.5px; margin-bottom:8px; }
   .gtx { font-size:15px; font-weight:bold; color:#1565C0; margin:16px 0 8px;
          padding-left:10px; border-left:4px solid #1565C0; }
+  table.cmp { border-collapse:collapse; width:100%; margin:8px 0; font-size:13px; }
+  table.cmp th, table.cmp td { border:1px solid #cfd8e3; padding:6px 9px; text-align:left; vertical-align:top; }
+  table.cmp th { background:#E8F1FB; color:#0D47A1; }
   .cmd { background:#1e2b3a; color:#e6edf3; border-radius:6px; padding:11px 14px;
          font-family:Consolas,monospace; font-size:13px; line-height:1.65;
          white-space:pre-wrap; word-break:break-all; margin:8px 0; }
@@ -68,70 +71,94 @@
     body { background:#fff; padding:0; font-size:11pt; }
     .wrap { box-shadow:none; border-radius:0; }
     a { text-decoration:none; color:#000; }
-    .lab, .q, .item { page-break-inside:avoid; }
+    .lab, .q, .item, table.cmp { page-break-inside:avoid; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="hd"><div class="no">第 3 章 · 云计算的部署</div><div class="ti">CloudSim 仿真平台部署实战</div></div>
+<div class="hd"><div class="no">第 3 章 · 云计算的部署</div><div class="ti">云部署模型实战（控制台参观 + 资源开通 + 模型归类）</div></div>
 <div class="bd">
-<p class="src">对应教材实战项目：部署 CloudSim 平台。CloudSim 是用 Java 编写的云计算仿真平台，可在本机模拟数据中心、虚拟机与任务的调度过程，是理解「云计算部署」最直观的动手实验。</p>
+<p class="src">对应教材实战项目「部署 CloudSim 平台」的<b>替代方案</b>。本班未学 Java，且机房统一走 Windows + 浏览器（实战全 Windows 完成、Linux 类改阿里云演示），故本章实战改为：在公有云控制台<b>真实开通一个免费资源</b>，并围绕「部署模型（公有 / 私有 / 混合 / 社区云）+ 责任共担」做归类与设计。零 Java、零安装，只需浏览器联网。</p>
 
-<div class="box warn"><b>机房前提：</b>本章实战<b>需要安装软件</b>——JDK 8 与 Eclipse。请机房课前放开这两项的安装权限。<b>若机房仍禁止安装</b>，请改用下方「图文走查版」：老师按步骤现场演示，学生对照截图跟流程、记录关键输出，不真装环境。</div>
+<div class="box warn"><b>机房前提：</b>本章实战只需 <b>浏览器 + 联网</b>，不装任何软件、不碰 Java。
+<b>账号与实名：</b>阿里云 / 腾讯云控制台需注册账号，部分资源开通要做<b>实名认证（绑手机号）</b>。建议<b>教师用统一演示账号现场操作</b>，学生观察跟练；学有余力且已实名的学生可自行注册「免费试用」资源。
+<b>安全红线：</b>只用 <b>免费额度 / 按量试用</b>，<b>不下单、不绑卡、不付费</b>；弹「保存密码」一律选「从不」；下课<b>必须退出登录</b>。</div>
 
 <div class="lab">
-<div class="lt">CloudSim 3.0.3 部署实战（教材默认版本，免 Maven，最稳）</div>
-<div class="lg"><b>目标：</b>在本机成功部署 CloudSim 3.0.3，并运行自带示例 <code>CloudSimExample1</code>，控制台出现 <code>Simulation completed!</code> 即算过关。</div>
+<div class="lt">云部署模型实战（控制台参观 + 资源开通 + 模型归类）</div>
+<div class="lg"><b>目标：</b>① 在公有云控制台真实开通一个免费资源（OSS 存储桶 / 或试用 ECS），体验「公有云」自助开通；② 识别它属于哪种部署模型；③ 用同一场景对比 公有云 / 私有云 / 混合云 三种部署方式，并填「责任共担」分工表。</div>
 
-<div class="gtx">▌ 第一步：安装并配置 JDK 8</div>
+<div class="gtx">▌ 第一步：控制台参观 + 登录（教师演示为主）</div>
 <ol>
-<li class="step">下载 JDK 8（建议 AdoptOpenJDK / Oracle JDK 8），一路默认安装到 <code>C:\Program Files\Java\jdk1.8.0_xx</code>。</li>
-<li class="step">配置环境变量（此电脑 → 属性 → 高级系统设置 → 环境变量）：
-  <ul>
-    <li><b>JAVA_HOME</b> = JDK 安装目录（如 <code>C:\Program Files\Java\jdk1.8.0_221</code>）</li>
-    <li><b>CLASSPATH</b> = <code>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</code>（注意最前面的 <code>.;</code>）</li>
-    <li><b>Path</b> 追加 <code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</code></li>
-  </ul>
-</li>
-<li class="step">验证：打开 <code>cmd</code> 输入 <code>java -version</code> 与 <code>javac -version</code>，均显示 <code>1.8.x</code> 即成功。</li>
+<li class="step">打开 阿里云控制台 <code>https://home.console.aliyun.com</code>（或腾讯云 <code>https://console.cloud.tencent.com</code>），教师用演示账号登录；学生观察首页的<b>产品分类</b>（计算 / 存储 / 网络 / 数据库…）。</li>
+<li class="step">认识「<b>地域与可用区</b>」「<b>产品导航</b>」：云资源分布在哪、用户如何<b>自助开通</b>——这正是公有云「按需自助服务」特征的体现。</li>
+<li class="step">学生若自行操作：先用手机号注册并完成实名认证（约 2 分钟），再进入控制台。</li>
 </ol>
-<div class="box tip"><b>预期：</b>两条命令都能正常输出版本号，说明 JDK 与编译环境就绪。</div>
+<div class="box tip"><b>预期：</b>能说清「控制台 = 自助管理云资源的网页后台」，并理解它对应的就是公有云的「按需自助服务」特征。</div>
 
-<div class="gtx">▌ 第二步：下载并解压 CloudSim 与依赖包</div>
+<div class="gtx">▌ 第二步：开通一个免费资源——对象存储 OSS 存储桶（最稳、零费用）</div>
 <ol>
-<li class="step">下载 <b>CloudSim 3.0.3</b>（官网 cloudsim.org 或 GitHub releases），得到 <code>cloudsim-3.0.3.zip</code>。</li>
-<li class="step">额外下载 Apache <b>commons-math3</b>（CloudSim 3.x 必需的数学库）的 jar 包，如 <code>commons-math3-3.6.1.jar</code>。</li>
-<li class="step">全部解压到同一文件夹（如 <code>D:\CloudSim</code>），确保能看到 <code>bin / docs / examples / jars / sources</code> 等目录。</li>
+<li class="step">控制台 → 产品与服务 → 对象存储 OSS → <b>创建 Bucket</b>。</li>
+<li class="step">填 Bucket 名称（全局唯一，如 <code>class-photo-你的学号</code>）、<b>地域</b>（选离学校近的）、<b>读写权限</b>先选「私有」。</li>
+<li class="step">进入 Bucket → <b>上传一个文件</b>（如一张班级照片），上传成功后截图：能看到文件 URL 与存储类型。</li>
+<li class="step">把读写权限改成「<b>公共读</b>」再截图对比，理解「权限配置」属于用户责任。</li>
 </ol>
-<div class="box tip"><b>预期：</b>解压目录结构完整；commons-math3 的 jar 单独放在手边，第三步要加入构建路径。</div>
+<div class="box tip"><b>预期：</b>成功创建并上传，控制台显示文件管理与 URL——这就是你亲手开通的「公有云存储资源」。</div>
 
-<div class="gtx">▌ 第三步：用 Eclipse 导入并运行示例</div>
+<div class="gtx">▌ 备选第二步：试用一台云服务器 ECS（想体验「计算」资源时）</div>
 <ol>
-<li class="step">打开 Eclipse → <code>File → New → Java Project</code>，项目名填 <code>CloudSim</code>；取消勾选 <code>Use default location</code>，Browse 指向刚解压的 CloudSim 目录，Next。</li>
-<li class="step">切到 <code>Libraries</code> 选项卡：若列表中没有 <code>commons-math3-3.x.jar</code>，点 <code>Add External JARs</code> 把它加进来，Finish。</li>
-<li class="step">在 Project Explorer 展开 <code>examples → org.cloudbus.cloudsim.examples</code>，双击打开 <code>CloudSimExample1.java</code>。</li>
-<li class="step">右键 <code>Run As → Java Application</code>（或按 <code>Ctrl+F11</code>）。</li>
+<li class="step">控制台 → 云服务器 ECS → 实例 → 创建实例，选「<b>免费试用 / 按量付费</b>」、最小规格（1 核 1G）、公共镜像（如 Alibaba Cloud Linux）。</li>
+<li class="step">不买数据盘、不购带宽包，确认金额为 0 或按量极低再创建；创建后可在「远程连接」里用 Workbench 登录看一眼命令行。</li>
+<li class="step">切记：试用完在教师指导下<b>释放实例</b>，避免产生费用。</li>
 </ol>
-<div class="box tip"><b>预期：</b>控制台滚动输出仿真信息，最后出现 <code>Simulation completed!</code> 与 <code>CloudSimExample1 finished!</code>，并列出各云任务（Cloudlet）的执行结果——部署成功。</div>
+
+<div class="gtx">▌ 第三步：责任共担识别（本章核心）</div>
+<p>在控制台里找这些项，讨论「归云厂商」还是「归用户」，填分工表：</p>
+<table class="cmp">
+<tr><th>项目</th><th>负责方</th></tr>
+<tr><td>物理机房 / 网络设备</td><td>云厂商</td></tr>
+<tr><td>虚拟化层 / 云产品自身漏洞修复</td><td>云厂商</td></tr>
+<tr><td>操作系统补丁 / 应用安全</td><td>用户</td></tr>
+<tr><td>账号密码 / 访问密钥(AK) 保管</td><td>用户</td></tr>
+<tr><td>数据加密 / 备份策略</td><td>用户（可借助厂商工具）</td></tr>
+</table>
+<div class="box tip">记口诀——「<b>云厂商管下层（基础设施），用户管上层（数据与应用）</b>」，这就是责任共担模型。</div>
+
+<div class="gtx">▌ 第四步：部署模型归类与设计（本章重点）</div>
+<p>场景：给「班级相册 / 选课系统」分别用三种方式部署，填对比表：</p>
+<table class="cmp">
+<tr><th>部署方式</th><th>怎么部署</th><th>成本</th><th>安全可控</th><th>适用</th></tr>
+<tr><td>公有云</td><td>全部用阿里云 OSS + ECS</td><td>低（按量）</td><td>中（依赖厂商）</td><td>快速上线、弹性</td></tr>
+<tr><td>私有云</td><td>学校自己机房服务器</td><td>高（一次性）</td><td>高</td><td>数据敏感、合规</td></tr>
+<tr><td>混合云</td><td>公开照片放公有云 + 学生信息放校内私有云</td><td>中</td><td>高</td><td>兼顾弹性与隐私</td></tr>
+</table>
+<p><b>归类练习（口头 / 纸条）：</b>判断以下属于哪种部署模型——</p>
+<ul>
+<li>微信小程序云开发 → <b>公有云</b></li>
+<li>学校财务系统内网服务器 → <b>私有云</b></li>
+<li>政务系统「敏感数据校内 + 对外服务公有云」 → <b>混合云</b></li>
+<li>行业联盟共享平台 → <b>社区云</b></li>
+</ul>
 
 <b>验收清单：</b>
 <ul class="chk">
-<li><code>java -version</code> 与 <code>javac -version</code> 均显示 1.8.x</li>
-<li>CloudSim 3.0.3 解压完整，commons-math3 jar 已加入构建路径（Libraries）</li>
-<li>成功运行 CloudSimExample1，控制台出现 <code>Simulation completed!</code></li>
-<li>能说出 CloudSim 在模拟什么（数据中心 / 虚拟机 / 任务调度的资源分配）</li>
+<li>成功在控制台开通一个免费资源（OSS 桶 或 试用 ECS）并截图</li>
+<li>能说出它属于「公有云」部署</li>
+<li>能列举 2 条以上「归用户负责」的责任共担项</li>
+<li>能区分 公有云 / 私有云 / 混合云 并各举一例</li>
 </ul>
 
 <div class="box warn"><b>常见问题与救场：</b>
 <ul>
-<li><b>JDK 版本不匹配：</b>CloudSim 3.0.3 必须用 <b>JDK 8</b>；JDK 11+ 容易报类找不到。想用 CloudSim 4.0 才需 Maven，新手先别碰。</li>
-<li><b>Eclipse 报找不到包：</b>九成是 commons-math3 没加进 Libraries，回去 Add External JARs 补上。</li>
-<li><b>机房禁装：</b>改用独立文件 <code>上机实操_图文走查版.html</code>——老师按上面三步演示，学生把每一步的截图和关键输出抄进实验报告，照样算完成本章实战。</li>
+<li><b>实名认证卡住：</b>教师统一演示即可，学生不必人人实名；或改用「仅参观控制台、不创建资源」的图文走查版。</li>
+<li><b>怕产生费用：</b>只用免费额度 / 按量试用，创建前看清金额为 0；下课统一释放实例、退出登录。</li>
+<li><b>地域选错：</b>删除重建即可；OSS / ECS 创建后地域一般不可改，注意选近的。</li>
+<li><b>机房限制账号注册：</b>改用独立文件 <code>上机实操_图文走查版.html</code>——老师按步骤演示，学生把每一步截图和关键输出抄进实验报告，照样完成本章实战。</li>
 </ul>
 </div>
 
-<div class="box tip"><b>进阶（学有余力）：</b>把 <code>CloudSimExample1</code> 里的虚拟机数量、任务长度改一改再跑，观察控制台输出的执行时间变化——这就是「部署方式 / 资源配置」对性能的影响的直观体现，正好呼应本章「云计算的部署」主题。</div>
+<div class="box tip"><b>进阶（学有余力）：</b>把「班级相册」设计成<b>混合云</b>：敏感原图放私有云（校内服务器）、对外展示的缩略图放公有云 OSS，画一张拓扑并用箭头标出数据流向——正好呼应本章「云计算的部署」主题。</div>
 </div>
 </div>
 <div class="foot">第 3 章 · 云计算的部署</div>
